@@ -1,0 +1,30 @@
+\documentclass[a4paper,twoside,titlepage,english,toc=listofnumbered, toc=bibliographynumbered]{scrbook}
+
+%packages
+\input{includes/header}
+
+\begin{document}
+
+\selectlanguage{english}
+
+\setcounter{page}{1} \pagenumbering{roman} 
+
+\input{includes/titlepage}
+\input{includes/quote}
+
+\setcounter{page}{1} \pagenumbering{arabic} 
+
+\tableofcontents
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+
+\cleardoublepage
+
+\appendix
+\input{chapters/appendix/appendix}
+
+\input{includes/acknowledgements}
+\end{document}
+
