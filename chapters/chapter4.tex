@@ -1,4 +1,5 @@
 % vim: tw=80
+
 \chapter{Jet Reconstruction}
 
 In scattering processes with large momentum transfers, the outgoing partons
@@ -77,6 +78,15 @@ elements based on a constant distance in the $\eta-\phi$ space, are affected by
 the mentioned issues leading to the popularity of the sequential recombination
 algorithms which are used in almost all modern jet-based analyses.
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/drawings/infrared_safety/jetinfrared.pdf}
+    \includegraphics[width=0.4\textwidth]{figures/drawings/infrared_safety/jetcollinear.pdf}
+    \caption{The obtained jet areas for the the discussed \kt based algorithm
+        and the cone-based SISCone algorithm~\cite{Salam:2009jx}.}
+    \label{fig:jet_shapes}
+\end{figure}
+
 \subsection{Generalized \kt Jet Algorithm}
 
 The most popular sequential recombination algorithms are the the \kt jet
@@ -85,10 +95,15 @@ additional parameter $p$ introducing a dependence on the transverse momentum of
 the input objects. The pair-wise algorithm uses a list of input objects like stable
 particles or particle flow candidates. 
 
-\begin{align} d_{ij} &=
-    \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\Delta R_{ij}^2}{R^2}\\
-    d_{i\mathrm{B}} &= k_{\mathrm{T}i}^{2p} \intertext{with the angular
-    distance}\\ \Delta R_{ij}^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2\\
+\begin{align} 
+    d_{ij} &= \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\Delta R_{ij}^2}{R^2}\\
+    d_{i\mathrm{B}} &= k_{\mathrm{T}i}^{2p}
+\end{align} 
+
+with the angular distance
+
+\begin{align}
+    \Delta R_{ij}^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2\\
 \end{align} 
 
 At first the distances $d_{ij}$ between the two particles and $d_{iB}$ are
@@ -102,10 +117,11 @@ the $\eta-\phi$ plane are not circular but are irregular, see
 Figure~\ref{fig:jet_shapes}. Based on the parameter $p$, there are three
 important \kt based algorithms with distinct properties
 
-\begin{figure}{htb}
+\begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/jet_reconstruction/jet_shapes.pdf}
-    \caption{JetShapes~\cite{Salam:2009jx}}
+    \caption{The obtained jet areas for the the discussed \kt based algorithm
+        and the cone-based SISCone algorithm~\cite{Salam:2009jx}.}
     \label{fig:jet_shapes}
 \end{figure}
 
@@ -132,7 +148,7 @@ number of infinitely soft particles, so-called ghost particles, are evenly
 distributed in the event and the area of a jet $A_j$ is assumed to be propoprtinal to the
 number of ghost particles clustered into the jet. The jet area is
 especially important in the context of pile-up mitigation, which makes use of
-the median pile-up and underlying event \pt density \rho in the event 
+the median pile-up and underlying event \pt density $\rho$ in the event 
 
 \begin{equation}
     \rho = \text{median} \frac{\pt^j}{A_j}
@@ -141,3 +157,54 @@ the median pile-up and underlying event \pt density \rho in the event
 describing the median energy deposition of per unit area.
 
 \section{Jet Energy Corrections}
+
+A detailed understanding of th jet energy scale and the jet transverse momentum
+resolution is important to draw conclusions about the properties of quarks and
+gluon produced in hih-energy prcesses. On experimental side, there are multiple
+effects causing the reconstructed jet energy to not correspond to the true jet
+energy, like electronic noise, pile-up and underlying event effects, but also
+non-linearities in the calorimeter response and numerous further small effects.
+The jet reconstruction and definition itself also introduce effects due to the
+fragmentation model, initial state- and final state radiation \etc. 
+
+The jet energy corrections (JEC) relate the measured jet energy to the
+corresponding true particle jet. CMS uses a factorices correction approach
+consisting of, at least, three corrections steps based on each other. The total
+correction factor to be applied on an uncorrected jet is
+
+\begin{equation}
+    \pt^{\mathrm{corr}} = c_{\mathrm{res.}} (\eta, \pt') \cdot c_{\mathrm{MC}}
+    (\eta \pt'') \cdot c_{\mathrm{pileup}}(\eta, \rho, A_j, \pt^{\mathrm{raw}}) \cdot \pt^{\mathrm{raw}} 
+\end{equation}
+
+where \pt' is the transverse momentum of the jet after applying the pile-up
+correction and \pt'' is the \pt of the jet after applying the pile-up and the
+realtive corrections.
+
+\subsection{Pile-up Corrections}
+
+The first step is to remove the effects of pile-up. Additional soft proton-proton
+interactions produce particles being clustered into the jets origination from
+the hard interaction. This additional amount of energy needs to be subtracted by
+the pile-up correction. The applied correction is based on the jet area method
+by using the pile-up density $\rho$ in the event and the jet area $A$. The raw
+jet energy is then corrected by a factor proportional to the pile-up density and
+the jet area.
+
+\subsection{MC Corrections}
+
+Based on a QCD data sample the jet energy scale is further corrected. The
+momentum of a reconstructed jet can differ from a generated particle jet due to
+additional out-of-cone effects or detector ineffiencies, which were modelled
+using the detector simulation. The inverse response of the reconstructed jet to
+a generated jet is applied as correction.
+
+\subsection{Residual Data Corrections}
+
+Additional effects which can not be reliably estimated in a Monte Carlo
+simulation are corrected for using data-driven methods. This correction step is
+only applied on data. The relative residual corrections are based on a
+well-balanced dijet events, in which a forward probe jet is calibrated using a
+tag jet in the well understood barrel region. The last correction step is the
+absolute residual correction in which well balanced Z+jet events are used to
+calibrate the jet energy using the very precisely reconstructed Z.
