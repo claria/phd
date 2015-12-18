@@ -1,0 +1,143 @@
+% vim: tw=80
+\chapter{Jet Reconstruction}
+
+In scattering processes with large momentum transfers, the outgoing partons
+produce a collimated stream of particles in the parton shower and the
+hadronization. The cluster of these particles are the experimental signatures
+for quarks and gluons in the detector and are called \emph{jets}. Jets show up
+in the CMS detector as a localized deposit of energy in the calorimeters
+accompanied by a large number of tracks in the direction of the deposited
+energy. Jets can be reconstructed using different techniques based on the amount
+of information available. If the jets are reconstructed from the energy clusters
+within the calorimeters, they are called \emph{calorimeter jets}. If the jet
+reconstruction uses particle flow object, these are called \emph{particle flow
+jets}.
+
+\section{The Particle Flow Algorithm}
+
+CMS uses the particle flow reconstruction
+algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} to identify particles in
+an event by combining the information of all detector subsystems. These are the
+tracks and vertices, reconstructed from hits in the tracking detectors, the
+deposited energy in the electromagnetic and hadronic calorimeters and the tracks
+in the muon system. The reconstructed particles are then classified as muons,
+electrons, photons, charged hadrons or neutral hadrons. The combination of all
+subdetectors yields an optimal determination of their momentum, energy and type.
+
+The tracks are found using the Combinatorial Track Finder (CTF)
+algorithm~\cite{Adam:2005cg} employed by CMS. Based on these tracks, the primary
+vertices in an event can be identified. The electromagnetic and hadronic
+calorimeters are divided into a grid of cells based on the detector granularity
+to identify calorimeter cluster seeds.  If there are seed with an energy
+exceeding a threshold, they are used in an iterative merging algorithm to form
+particle flow clusters. The different elements of the detector information are
+then linked together into particle flow building blocks based on the geometry
+and \chisq fits. At first, the muons, which can be well identified using the
+tracks in the muon detector, are reonstructed using the building blocks
+connected to the muon system. Building blocks connecting the inner tracking
+system with the ECAL clusters can be used to identify electrons. Similarly
+charged hadrons are then identified using the links between the tracking system
+and the remaining calorimeter clusters. Only neutral objects which have no
+traces in the tracking system are left. ECAL clusters are interpreted as photon
+candidates, while the remaining HCAL clusters are assumed to be deposits of
+neutral hadrons. To avoid any kind of double-counting of energy, all particle
+flow building blocks of succesfully reconstrcuted particle candiates are removed
+and the energy of the calorimeter cluster is recalculated.
+
+Finally a set of so called particle flow candidates is yielded consisting of
+well identified particles, which profit from the improved resolution obtained by
+the inclusion of the tracking information. This collection of particles is then
+used to reconstruct the jets.
+
+\section{Jet Algorithms}
+
+The information of the clustered stream of particles, known as jets, provide the
+link between the short-scale physics and the our final-state observations. There
+are many different algorithms available which cluster jets from a set of input
+objects. Many of them were found to have their very specific problems and today,
+both \CMS and \ATLAS rely on the \antikt and inclusive \kt jet algorithms which proved to be very
+robust and both are collinear and infrared safe, see~\ref{section:coll_safety}.
+They are sequential recombination and combine the input objects based on a
+distance measure in Minkowski space. 
+
+\subsection{Collinear and Infrared Safety}
+\label{section:coll_safety}
+
+Hard partons undergo many collinear splittings in the fragmentation process.
+Additionally there are always emissions of soft particles in QCD-like events,
+caused by non-perturbative and perturbative effects. The reconstructed jets
+should be insensitive to all these effects. Additionally, fixed-order pQCD
+calculations are associated with diverged tree-level matrix elements and the
+corresponding loop matrix level elements. While these divergences cancel for
+infared and collinear safe jets, this is not guaranteed for jet algorithms not
+fullfilling the infrared and collinear safety. Figure~\ref{fig:infrared_safety}
+shows the effect of a collinear splitting and of additinal soft particles on
+unsafe jet algorithm. Most of the cone based jet algorithms which cluster
+elements based on a constant distance in the $\eta-\phi$ space, are affected by
+the mentioned issues leading to the popularity of the sequential recombination
+algorithms which are used in almost all modern jet-based analyses.
+
+\subsection{Generalized \kt Jet Algorithm}
+
+The most popular sequential recombination algorithms are the the \kt jet
+algorithms which cluster jets based on a jet size parameter $R$ and an
+additional parameter $p$ introducing a dependence on the transverse momentum of
+the input objects. The pair-wise algorithm uses a list of input objects like stable
+particles or particle flow candidates. 
+
+\begin{align} d_{ij} &=
+    \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\Delta R_{ij}^2}{R^2}\\
+    d_{i\mathrm{B}} &= k_{\mathrm{T}i}^{2p} \intertext{with the angular
+    distance}\\ \Delta R_{ij}^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2\\
+\end{align} 
+
+At first the distances $d_{ij}$ between the two particles and $d_{iB}$ are
+calculated based on the rapidity difference $\Delta y_{ij}$ and the azimuthal angle
+$\Delta \phi_{ij}$ betwen two particles $i$ and $j$. If distance $d_{ij}$ is
+smaller than the distances two the beam line, the two particles $i$ and $j$ are
+merged into a new particle $k$ which replaces the particles $i$ and $j$ in the
+input list. These steps are repeated until all particles are clustered into
+jets. Since the distance measures are defined in Minkowski space, the shapes in
+the $\eta-\phi$ plane are not circular but are irregular, see
+Figure~\ref{fig:jet_shapes}. Based on the parameter $p$, there are three
+important \kt based algorithms with distinct properties
+
+\begin{figure}{htb}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/jet_reconstruction/jet_shapes.pdf}
+    \caption{JetShapes~\cite{Salam:2009jx}}
+    \label{fig:jet_shapes}
+\end{figure}
+
+\begin{itemize}
+    \item The \textbf{Inclusive \kt algorithm (p=1)} is based on a \ptsq
+        distance measure which attempts to approximately describe the inversion
+        of the QCD branching process.
+    \item The \textbf{Cambridge-Aachen algorithm (p=0)} is only based on the
+        spatial separation of the objects and does not rely on the energy of
+        the input objects. Similarly to the inclusive \kt algorithm its jets
+        have an irregular shape. This jet algorithm is in particular interesting
+        for jet substructure studies.
+    \item The \textbf{Anti-\kt algorithm (p=-1)} favours clustering hard input
+        objects resulting in fairly circular jet shapes for hard jets, while
+        soft jets are crescent-shaped if they are close to a hard jet~\cite{Cacciari:2008gp}.
+\end{itemize}
+
+\subsection{Jet Area}
+
+The jet area describes the space in the $\eta-\phi$ plane covered by a jet
+object. While cone-based jet algorithms yield a $\pi R^2$ size area, the area
+for sequential based jet areas needs to be determined for each jet. A large
+number of infinitely soft particles, so-called ghost particles, are evenly
+distributed in the event and the area of a jet $A_j$ is assumed to be propoprtinal to the
+number of ghost particles clustered into the jet. The jet area is
+especially important in the context of pile-up mitigation, which makes use of
+the median pile-up and underlying event \pt density \rho in the event 
+
+\begin{equation}
+    \rho = \text{median} \frac{\pt^j}{A_j}
+\end{equation}
+
+describing the median energy deposition of per unit area.
+
+\section{Jet Energy Corrections}
