@@ -49,7 +49,7 @@ experiments as can be seen in Figure~\ref{fig:lhc_complex}.
     \caption[CERN accelerator complex]{Schematic view of the CERN
         accelerator complex. It shows the LHC ring  with the four beam crossing
         points as well as the various pre-accelerators~\cite{LHC:COMPLEX}.}
-        \label{fig:lhc_complex}
+    \label{fig:lhc_complex}
 \end{figure}
 
 \subsection{The Compact Muon Solenoid Detector}
@@ -66,6 +66,16 @@ diameter, weighing more than 12000 tons due to its compact design. The detector
 was built as cylyndrical slices constructed at ground level and lowered into the
 cavern. In case of upgrades or repairs, the slices can be pulled apart and easy
 access to the inner components is gained. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_longitudinal_section.pdf}
+    \caption[Longitudinal section of the CMS detector]{asdf}
+    \label{fig:cms:longitudinal_section}
+\end{figure}
+
+\todo{high requirements like 25 ns between collisions, high radiation level,
+advanced detector materials.}
 
 \subsection{Definition of the Coordinate System}
 
@@ -101,6 +111,7 @@ by the transverse momentum \pt related to cartesian coordinates as
 \end{equation}
 
 \subsection{Inner Tracking System}
+\todo{measurement of charged particles.}
 
 To yield a best possible spatial resolution, the particle tracks needs be
 measured as close to the beam line as possible. The inner tracking system of CMS
@@ -109,18 +120,18 @@ collision. Enclosing the interaction point with its diameter of 2.6 m and
 extending 2.8 m in each direction of the beamline, the tracking system covers a
 pseudo-rapidity range up to $|\eta| < 2.5$. 
 
-The inner tracking system comprises two subsystems, the silicon pixel detector,
-consisting of three layers and installed very close to the beam pipe, and the
-silicon strip detector with ten layers in the barrel region. The pixel detector
-contains 65 millon pixels arranged in three cylindrical layers at 4 cm, 7 cm and
-11 cm to the beam pipe. The pixel detector is able to resolve the huge number of
-particle tracks of around 10 million particles per square centimetre and
-reconstruct their tracks. The high spatial resolution achieved by the pixel
+The inner tracking system comprises two subsystems, the \textbf{silicon pixel
+detector}, consisting of three layers and installed very close to the beam pipe,
+and the silicon strip detector with ten layers in the barrel region. The pixel
+detector contains 65 millon pixels arranged in three cylindrical layers at 4 cm,
+7 cm and 11 cm to the beam pipe. The pixel detector is able to resolve the huge
+number of particle tracks of around 10 million particles per square centimetre
+and reconstruct their tracks. The high spatial resolution achieved by the pixel
 detector additionally allows the identification and measurement of secondary
 vertices used to identify long-lived particles.
 
 Reduced particle flux further away from the beam pipe eases the identification
-of tracks. Cost-efficient silicon strip detectors are employed reaching out to
+of tracks. Cost-efficient \textbf{silicon strip detectors} are employed reaching out to
 an radius of 1.3 m. The strip detector consists of a total of 10 million
 detecting strips read out by 80,000 chips. 
 
@@ -129,25 +140,89 @@ detecting strips read out by 80,000 chips.
     \includegraphics[width=0.65\textwidth]{figures/cms_detector/tracker.pdf}\hfill
     \includegraphics[width=0.3\textwidth]{figures/cms_detector/tracking_sytem_barrel_slice.png}
     \caption[Inner Tracking System]{The left figure shows one quadrant of the
-    longitudinal section of the inner tracking system of CMS consisting of the
-silicon pixel detector and the silicon strip detector. The right figure shows a
-transverse section of the tracking system in the barrel region with overlapping
-arrangement of the strip modules. Figures from~\cite{phd:joramberger} and
-\cite{cmsweb:innertracker}.}
-        \label{fig:cms:inner_tracking}
+        longitudinal section of the inner tracking system of CMS consisting of the
+        silicon pixel detector and the silicon strip detector. The right figure shows a
+        transverse section of the tracking system in the barrel region with overlapping
+        arrangement of the strip modules. Figures from~\cite{phd:joramberger} and
+        \cite{cmsweb:innertracker}.}
+    \label{fig:cms:inner_tracking}
 \end{figure}
 
 \subsection{Electromagnetic Calorimeter}
+
+Measuring the track of the traversing particles is not sufficient to derive to
+measure the momentum. The energy needs to be measured by stopping the particles
+in the detector and measuring the size of the deposited energy. The photon and
+electron energy is measured in the electromagnetic calorimeter (ECAL). 
+
+High-energetic photons, electrons or positrons which enter the dense material of the ECAL
+detector, produce an electromagnetic shower via subsequent bremsstrahlung and
+electron-pair production processes. Below a certain threshold, the particles
+deposit their energy via compton scattering and the photo-electric effect in the
+detector material resulting in an excitation of their atomic state. When they
+return to the ground state, they emit photons, which can be measured using
+avalanche photodiodes. The fraction of the deposited energy is to the number of
+emitted photons.
+
+The hermetic calorimeter is made of lead tungstate ($\mathrm{PbWO}_4$), a very
+dense material with a radiation length of $X_0 = 0.89$ cm. Through the
+additional oxygen, it is a highly transparent and scintillates light. These
+material properties allow the calorimeter to be built very compact within the
+solenoid magnet. Additionally, the small Moli`ere  radius of 2.19 cm leads to a
+fine granularity. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_ecal.pdf}\hfill
+    \caption[Electromagnetic Calorimeter]{The electromagnetic calorimeter
+    consists of two submodules covering the barrel regiond and the endcaps.
+    Additionally a preshower detector is mounted in front of the
+    endcaps~\cite{cms:ecal}.}
+    \label{fig:cms:ecal}
+\end{figure}
+
+Figure~\ref{fig:cms:ecal} shows a schematic sketch of the ECAL in the $y$-$z$
+plane. The ECAL consists of three subsystems covering the the pseudo-rapidity
+range upt to 3.0. The \textbf{electromagnetic calorimeter barrel} (EB) covers up
+to $\eta < 1.479$ using more than 60000 crystals forming a homogenous coverage
+in pseudo-rapidity. Each crystal measures 2.2 cm x 2.2 cm x 23 cm corresponding
+to a radiation length of 25.8 $X_0$. The \textbf{electromagnetic calorimeter
+endcaps} (EE) extend the pseudo rapidity coverage from $1.479 < |\eta| < 3.0$. The
+largest part of the ECAL endcap is additionally covered by the
+\textbf{electromagnetic pre-shower detector} (ES). It consists of two
+orthogonal silicon strip sensors. The ES improves the discrimination between single
+high-energetic photos and less interesting low-energy photon pairs as well as
+the discrimination between neutral pions and photons.
+
+The relative energy resolution of the ECAL can be parametrized using the NSC-formula
+
+\begin{equation}
+    \left( \frac{\sigma}{E} \right)^2 = \frac{N^2}{E^2} + \frac{S^2}{E} + C^2
+\end{equation}
+
+in which the first term describes the contribution by noise (N), the second
+term the stochastic (S) component arising from the proportional relation between
+the number of counted photons and the deposited energy and last a constant (C)
+term.
+
 \subsection{Hadronic Calorimeter}
 %thin
 % particle flow needed to improve jet resolution
-% strong magnetic field is the key (Atlas 2T vs. CMS 4T
+% strong magnetic field is the key (Atlas 2T vs. CMS 4T, distinguish
+% neutral/charged hadrons
 \subsection{Superconducting Solenoid}
 \subsection{Muon System}
 
-\subsection{Data aquisition}
-
 \subsection{Trigger system}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_l1_trigger.pdf}\hfill
+    \caption[The L1 Trigger of CMS.]{asdf}
+    \label{fig:cms:l1_trigger}
+\end{figure}
+
+\subsection{Data aquisition}
 
 \section{Software and Computing Infrastructure}
 
