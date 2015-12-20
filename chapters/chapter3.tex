@@ -1,1 +1,156 @@
-\chapter{The CMS Detector}
+% vim: tw=80
+
+\chapter{The CMS Detector at the Large Hadron Collider}
+
+\todo{beschleunigergeschichte cern}
+
+
+LEP adn Tevatron have provided remarkabable insights into the Standard Model and
+precision tests of the Standard Model.
+
+\section{The Large Hadron Collider}
+
+The Large Hadron Collider (LHC) is the world's most powerful particle
+accelerator and collider. The LHC is contained in the circular tunnel of the
+preceding Large Electron Positron (LEP) collider which has a circumference of 27
+km at a depth between 50 and 175 m. The tunnel crosses the border between
+Switzerland and France at four points and two of the four main experiments are
+located in Frace. 
+
+Two adjacent beamlines that intersect at four interactions points contain the
+particle beams travelling in opposite directions. More than 1000 dipole magnets,
+generating a magnetic field of up to 8.3 T bend the proton beams on the circular track while
+almost 400 quadrupole magnets keep the beams focused. 
+
+The proton beams are brought to collision at four interaction points which house
+the LHC experiments ALICE~\cite{ALICE}, ATLAS~\cite{ATLASa}, CMS and
+LHCb~\cite{LHCb}. ALICE is designed to study the quark-gluon plasma produced by
+colliding heavy ions, which resembles the initial state of the universe. LHCB is
+precisely measuring the CP violation and the decay of B mesons. ATLAS and CMS,
+general purpose detectors allowing a broad field of phycis studies, were built
+to search and study the Higgs boson and physics models beyond the standard
+model. Additionally precision measurements of standard model predictions and
+parameters improve the current knowledge and the confidence of predictions of
+the standard model.
+
+Prior to the injection and acceleration of protons in the LHC, the particles
+pass a series of consecutive acceleration steps succesively increasing their
+energy. The linear particle accelerator (LINAC2) generates 50 MeV protons, that
+are further accelerated in the Proton-Synchrotron (PS) to 26 GeV and
+the Super-Proton-Synchrotron (SPS) up to an energy of \SI{450}{\giga
+\electronvolt}. At last the proton beams are injected into the LHC ring and are
+further accelerated up to peak design energy of 13 TeV. All these
+pre-accelerators are not only used to feed the LHC, but also serve other physic
+experiments as can be seen in Figure~\ref{fig:lhc_complex}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/lhc_accelerator_chain.pdf}
+    \caption[CERN accelerator complex]{Schematic view of the CERN
+        accelerator complex. It shows the LHC ring  with the four beam crossing
+        points as well as the various pre-accelerators~\cite{LHC:COMPLEX}.}
+        \label{fig:lhc_complex}
+\end{figure}
+
+\subsection{The Compact Muon Solenoid Detector}
+
+The Compact Muon Solenoid (CMS) detector is a general purpose detector at the
+LHC located at Point 5, at the opposite side of the CERN campus at Meyrin. To
+serve a vast range of physics studies, its design is driven by a cylyndrical
+structure containing layers of different subdetectors each built
+to measure a specific type of particles at high precision. A high-precision
+inner tracking system is surrounded by an electromagnetic and hadronic
+calorimeter which are encased by a superconducting solenoid magnet, and a high
+precision muon detection system. The detector is 21.6 m long and 14.6 m in
+diameter, weighing more than 12000 tons due to its compact design. The detector
+was built as cylyndrical slices constructed at ground level and lowered into the
+cavern. In case of upgrades or repairs, the slices can be pulled apart and easy
+access to the inner components is gained. 
+
+\subsection{Definition of the Coordinate System}
+
+CMS uses a right-handed coordinate system centered at the nominal interaction point inside the
+detector. The $x$-axis points radially inward towards the LHC ring centre, the
+$y$-axis vertically upwards and the $z$-axis along the beam direction towards
+the Jura mountains. Important quantities are the azimuthal angle $\phi$
+measured from the $x$-axis in the $x$-$y$ plane and the polar angle $\theta$,
+measured from the $z$-axis in the $z$-$y$ plane. Instead of the polar angle
+$theta$, the pseudo-rapidity $\eta$ and the rapidity $y$ are commonly used to
+split the phasespace, since the differential flux is approximately constant at
+hadron-hadron colliders. The pseudo-rapidity is defined as
+
+\begin{equation}
+    \eta = - \ln \left( \tan \left( \frac{\theta}{2} \right) \right)
+\end{equation}
+
+Throughout this thesis the rapidity is favoured compared to the pseudo-rapidity
+due to its invariance under longitudinal boosts in the $z$-direction. Rapidity
+and pseudo-rapidity are equivalent in the case of massless particle. The
+rapidity is defined as
+
+\begin{equation}
+    y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right) 
+\end{equation}
+
+The momentum along the beamline is not well defined due to the momentum
+distribution inside the proton. A direct connection to the hard process is given
+by the transverse momentum \pt related to cartesian coordinates as
+
+\begin{equation}
+    \pt = \sqrt{p_x^2 + p_y^2}
+\end{equation}
+
+\subsection{Inner Tracking System}
+
+To yield a best possible spatial resolution, the particle tracks needs be
+measured as close to the beam line as possible. The inner tracking system of CMS
+is designed to measure the tracks of charged particles emerging from the
+collision. Enclosing the interaction point with its diameter of 2.6 m and
+extending 2.8 m in each direction of the beamline, the tracking system covers a
+pseudo-rapidity range up to $|\eta| < 2.5$. 
+
+The inner tracking system comprises two subsystems, the silicon pixel detector,
+consisting of three layers and installed very close to the beam pipe, and the
+silicon strip detector with ten layers in the barrel region. The pixel detector
+contains 65 millon pixels arranged in three cylindrical layers at 4 cm, 7 cm and
+11 cm to the beam pipe. The pixel detector is able to resolve the huge number of
+particle tracks of around 10 million particles per square centimetre and
+reconstruct their tracks. The high spatial resolution achieved by the pixel
+detector additionally allows the identification and measurement of secondary
+vertices used to identify long-lived particles.
+
+Reduced particle flux further away from the beam pipe eases the identification
+of tracks. Cost-efficient silicon strip detectors are employed reaching out to
+an radius of 1.3 m. The strip detector consists of a total of 10 million
+detecting strips read out by 80,000 chips. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/cms_detector/tracker.pdf}\hfill
+    \includegraphics[width=0.3\textwidth]{figures/cms_detector/tracking_sytem_barrel_slice.png}
+    \caption[Inner Tracking System]{The left figure shows one quadrant of the
+    longitudinal section of the inner tracking system of CMS consisting of the
+silicon pixel detector and the silicon strip detector. The right figure shows a
+transverse section of the tracking system in the barrel region with overlapping
+arrangement of the strip modules. Figures from~\cite{phd:joramberger} and
+\cite{cmsweb:innertracker}.}
+        \label{fig:cms:inner_tracking}
+\end{figure}
+
+\subsection{Electromagnetic Calorimeter}
+\subsection{Hadronic Calorimeter}
+%thin
+% particle flow needed to improve jet resolution
+% strong magnetic field is the key (Atlas 2T vs. CMS 4T
+\subsection{Superconducting Solenoid}
+\subsection{Muon System}
+
+\subsection{Data aquisition}
+
+\subsection{Trigger system}
+
+\section{Software and Computing Infrastructure}
+
+% cmssw grid-control, root,
+
+% physics software: herwig/pythia nlojet++/fastNLO:
