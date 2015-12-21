@@ -69,7 +69,7 @@ access to the inner components is gained.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_longitudinal_section.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/cms_detector/cms_longitudinal_section.pdf}
     \caption[Longitudinal section of the CMS detector]{asdf}
     \label{fig:cms:longitudinal_section}
 \end{figure}
@@ -211,9 +211,44 @@ term.
 % strong magnetic field is the key (Atlas 2T vs. CMS 4T, distinguish
 % neutral/charged hadrons
 \subsection{Superconducting Solenoid}
+
+A key component of the CMS detector is the superconductiong magnet which
+produces a magnetic field of 4 T and is located inside the detector between the
+calorimeters and the muon system. It measures a diameter of 6 m and a lenth of
+12.5 m. When operated at design magnetic field strenth, the magnet contains an
+energy of 2.6 GJ. The strong magnetic field is neccessary to bend the particle
+tracks for a high momentum resolution in the tracking system. Operated at a
+temperature of 4 K, the NbTi conductors become superconducting. The muon system
+is installed within a 10,000 t iron yoke which return the magnetic field.
+
 \subsection{Muon System}
 
-\subsection{Trigger system}
+Identifying and measuring muons with high precision is an unrivalled capacity of
+the CMS detector. Unlike most other particles, muons are not stopped by the
+calorimeters but leave the detector. Therefore, the muon system has been placed
+around the other detector components to measure the bended tracks of the muons.
+
+By combining the information of the inner tracking system and the muon
+detectors, the path and the muon momentum can be measured
+precisely. The muon system comprises three different types of detectors each
+suited for a specific task. Drift tubes (DT) cover the barrel region up to
+$\eta < 1.2$, the endcaps up to $\eta < 2.4$ are measured using cathode strip
+chambers (CSC) which also work reliably in spatially varying magnetic field. The
+DT and CSC detectors yield a precise spatial muon resolution. Both system are
+accompanied by resistive plate chambers (RPC) which provide a fast response to
+the trigger system.
+
+\subsection{Trigger and Data Aquisition}
+
+The LHC generates a huge number of collisions. At a beam crossing frequency of
+25 ns, there are 40 million bunch crossings per second with an average of around
+20 collisions per bunch crossing. With todays available hardware, the storage of
+all collision data is not possible. Furthermore, most of the collisions are soft
+and of low interest for physics analyses. Therefore a complex trigger system
+consisting of a very fast hardware implemented component, the Level 1 trigger
+(L1) and a software trigger, the High Level Trigger (HLT), analyses the incoming
+data and decides if a collision event is of interest and should be stored
+permanently or is omitted.
 
 \begin{figure}[htb]
     \centering
@@ -222,10 +257,37 @@ term.
     \label{fig:cms:l1_trigger}
 \end{figure}
 
+When a collision occurs, the detector electronics is readout and directly
+analyzed using custom hardware, the \textbf{L1 trigger}. Of special interest for this
+thesis are the calorimeter triggers. Figure~\ref{fig:cms:l1_trigger} shows the 
+workflow of the L1. The Trigger Primitive Generators convert the frontend
+electronics readout into transverse energy. The Regional Calorimeter Triggers
+(RCT) identify electromagnetic shower in the ECAL and sum up the ECAL and HCAL
+trigger tower. Additonally a patter recognition is performed to identify jets
+and hadronic $\tau$ decays. These candidates are then passed to the Global
+Calorimeter Trigger which sorts the incoming candidates from the all 18 regional
+triggers and passes the top canadites to the Global Trigger (GT). If the global
+trigger accepts the event it is further processed by the data aqusition system
+and passed to the high level trigger.
+
+the \textbf{High Level Trigger} is fully implemented in software running on a
+dedicated computing farm at Point 5. The software is implemented in the CMS
+reconstruction software and can therefore access all information from the whole
+detector as well as aplly basic jet energy corrections. Jet Trigger for example
+need to pass a \pt threshold on reconstructed calorimeter jets before complex
+particle flow and jet reconstruction algorithm are performed to save processing
+time.
+
+The data aquisition system can apply prescales on each trigger to reduce the
+rate at which a trigger fires. Especially for single jet triggers, which
+trigger on the jet \pt, need to be prescaled in the low-\pt region to avoid huge
+rates. Of course the trigger prescales have to be taken into account again when
+the spectrum is reconstructed from the number of events.
+
 \subsection{Data aquisition}
 
 \section{Software and Computing Infrastructure}
 
 % cmssw grid-control, root,
 
-% physics software: herwig/pythia nlojet++/fastNLO:
+% physics software: herwig/pythia nlojt++/fastNLO:
