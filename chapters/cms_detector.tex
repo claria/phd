@@ -2,9 +2,27 @@
 
 \chapter{The CMS Detector at the Large Hadron Collider}
 
-\todo{beschleunigergeschichte cern}
-LEP and Tevatron have provided remarkabable insights into the Standard Model and
-precision tests of the Standard Model.
+The European Organization for Nuclear Research (CERN) was founded in 1954.
+Originally dedicated to the study of atomic nuclei, it is now devoted to
+study sub-atomic particles and their interactions. To accomplish that task, CERN
+built several particle accelerators reaching record-breakign energies and
+explored energy ranges not been accessible before.
+
+
+Ground-breaking achievements like the discovery of neutral currents in the
+Gargamelle bubble chamber, the discovery of the W and Z boson by the UA1 and UA2
+experiments at the LEP accelerator or the creation of antihydrogen atoms were
+made by physicists at CERN.
+
+
+
+The LEP and Tevatron experiments have provided remarkabable insights into the
+Standard Model and performed precision tests of the Standard Model. As a logical
+consequence of the unsuccessfull search for the higgs boson in their energy
+range, a even larger and more powerful accelerator was planned and built, the
+Large Hadron Collider (LHC). The search for the higgs boson finally succeded in
+2012, but many further question like the search for supersymmetry or dark matter
+still need to resolved in the future.
 
 \section{The Large Hadron Collider}
 
@@ -13,7 +31,7 @@ accelerator and collider. The LHC is contained in the circular tunnel of the
 preceding Large Electron Positron (LEP) collider which has a circumference of 27
 km at a depth between 50 and 175 m. The tunnel crosses the border between
 Switzerland and France at four points and two of the four main experiments are
-located in Frace. 
+located in France. 
 
 Two adjacent beamlines that intersect at four interactions points contain the
 particle beams travelling in opposite directions. More than 1000 dipole magnets,
@@ -83,7 +101,7 @@ $y$-axis vertically upwards and the $z$-axis along the beam direction towards
 the Jura mountains. Important quantities are the azimuthal angle $\phi$
 measured from the $x$-axis in the $x$-$y$ plane and the polar angle $\theta$,
 measured from the $z$-axis in the $z$-$y$ plane. Instead of the polar angle
-$theta$, the pseudo-rapidity $\eta$ and the rapidity $y$ are commonly used to
+$\theta$, the pseudo-rapidity $\eta$ and the rapidity $y$ are commonly used to
 split the phasespace, since the differential flux is approximately constant at
 hadron-hadron colliders. The pseudo-rapidity is defined as
 
@@ -141,7 +159,7 @@ detecting strips read out by 80,000 chips.
         longitudinal section of the inner tracking system of CMS consisting of the
         silicon pixel detector and the silicon strip detector. The right figure shows a
         transverse section of the tracking system in the barrel region with overlapping
-        arrangement of the strip modules. Figures from~\cite{phd:joramberger} and
+        arrangement of the strip modules. Figures from~\cite{Berger:2014aca} and
         \cite{cmsweb:innertracker}.}
     \label{fig:cms:inner_tracking}
 \end{figure}
@@ -266,7 +284,7 @@ yield a precise spatial muon resolution. Both system are accompanied by
 resistive plate chambers (RPC) which provide a fast response to the trigger
 system.
 
-\subsection{Trigger and Data Aquisition}
+\subsection{Trigger and Data Aquisition at CMS}
 
 The LHC generates a huge number of collisions. At a beam crossing frequency of
 25 ns, there are 40 million bunch crossings per second with an average of around
@@ -281,7 +299,7 @@ permanently or is omitted.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_l1_trigger.pdf}\hfill
-    \caption[The L1 Trigger of CMS.]{asdf}
+    \caption[The L1 Trigger of CMS]{asdf}
     \label{fig:cms:l1_trigger}
 \end{figure}
 
@@ -312,9 +330,51 @@ trigger on the jet \pt, need to be prescaled in the low-\pt region to avoid huge
 rates. Of course the trigger prescales have to be taken into account again when
 the spectrum is reconstructed from the number of events.
 
-\subsection{Data aquisition}
+The DAQ system assembles the events which it receives from the L1 trigger at a
+rate of 100 kHz.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_daq.pdf}\hfill
+    \caption[The DAQ System of CMS]{asdf}
+    \label{fig:cms:daq_system}
+\end{figure}
+
+The event rate is reduced by the L1 trigger to 100 kHz. The DAQ system then
+reads out the data of all detector components and assembles the complete events
+at this rates, see Figure~\ref{fig:cms:daq_system}. The data is then transferred
+to the HLT computing farm in which the sophisticated software-based trigger further
+reduces the event rate to a few hundred events per second. The passing events
+are then merged by the storage managing system and written to the Tier-0
+computing centre at CERN.
 
 \section{Software and Computing Infrastructure}
+
+The vast amount of and the complexity of the data produced at the LHC
+experiments poses many challenges for the computing infrastructure and the
+software. On the theory side, powerful Monte-Carlo event generators need to be
+developed which are able to simulate the collision events. On the experimental
+side, the raw detector the physical event information needs to be reconstructed. Additionally the
+complex architecture of the detector response needs to be modelled and
+simulated. These central tasks are approached using a common software framework
+within CMS, the CMSSW framework, which interfaces the various theory tools and
+all the reconstruction and detector software. All of these taks are divided
+into smaller processing tasks, called jobs, which are assigned to computing
+centers distributed over many countries. This common computing and storage
+infrastructure is called the worldwide LHC computing grid (LHCG).
+
+%lhcg erklaeren.
+
+
+\subsection{CMS Software Framework}
+\subsection{Analysis Software and Workflow}
+\subsection{Monte-Carlo Event Generators and Simulation Software}
+\label{subsection:mc_generators}
+
+\subsubsection{Pythia}
+\subsubsection{Herwig}
+\subsubsection{Madgraph}
+\subsubsection{NLOJet++ and fastNLO}
 
 % cmssw grid-control, root,
 
