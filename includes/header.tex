@@ -8,10 +8,11 @@
 \usepackage{siunitx}
 \DeclareSIUnit[number-unit-product = {}] \GeV{\giga \electronvolt}
 \DeclareSIUnit[number-unit-product = {}] \TeV{\tera \electronvolt}
-\DeclareSIUnit[number-unit-product = {}] \pbinv{\pico \barn}
-\DeclareSIUnit[number-unit-product = {}] \fbinv{\femto \barn}
+\DeclareSIUnit[number-unit-product = {}] \pbinv{\per \pico \barn}
+\DeclareSIUnit[number-unit-product = {}] \fbinv{\per \femto \barn}
 
 \usepackage{amsmath,amssymb,amstext,amsthm,wasysym,bm}
+\usepackage{cancel}
 \DeclareMathOperator\erf{erf}
 
 \usepackage{graphicx}
@@ -76,6 +77,7 @@
     shadow, 
     color=blue!30,
     figwidth=.75\textwidth]{todonotes}
+\providecommand{\todoi}[1]{\todo[inline]{#1}}
 
 \addtokomafont{caption}{\small}
 \addtokomafont{disposition}{\boldmath}
