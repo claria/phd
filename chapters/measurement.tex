@@ -186,7 +186,7 @@ intervals.
 
 \begin{equation}
 \label{eq:trigger_eff}
-    f_{\text{eff}} (x) = \frac{N(\left\{E_i|T_A(E_i) \wedge T_B(E_i), x)\right\}}{N(\left\{ E_i | T_A(E_i) = \text{true} \right\} , x)}
+    f_{\mathrm{eff}} (x) = \frac{N(\left\{E_i|T_A(E_i) \wedge T_B(E_i), x)\right\}}{N(\left\{ E_i | T_A(E_i) = \mathrm{true} \right\} , x)}
 \end{equation}
 
 The efficiency versus \ptavg is fitted using the sigmoid function~\ref{eq:trigger_eff_fit} describing
@@ -197,7 +197,7 @@ conservative value was used.
 
 \begin{equation}
 \label{eq:trigger_eff_fit}
-    f_{\text{fit}} (x) = \frac{1}{2} \left( 1 + \erf \left(\frac{x-\mu}{\sqrt{2}\sigma}\right)\right)
+    f_{\mathrm{fit}} (x) = \frac{1}{2} \left( 1 + \erf \left(\frac{x-\mu}{\sqrt{2}\sigma}\right)\right)
 \end{equation}
 
 Table~\ref{tab:triggers} contains the L1 and HLT thresholds of each trigger and
@@ -289,10 +289,276 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
     \label{tab:jetid}
 \end{table}
 
+\subsection{Jet Corrections}
+
+Following the latest recommendations of the JERC group, the jet energy corrections \texttt{Winter14 V8}
+and the corresponding uncertainty files were used for data, while the \texttt{START53\_V27} uncertainties
+for run-independent MC were applied on the MC samples.
+
 \subsection{Phase space cuts}
 
-\section{Dijet Resolution}
+% jet 1/2 rapidity < 3.0
+% jet1 pt > 133 GeV
+% jet2 pt > 50 GeV
 
-\section{Unfolding}
+Several cuts in the phase space of the dijet system are applied to select a
+clean phase space region as shown in Table~\ref{tab:jetcuts}. 
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{llll}
+    \toprule
+                    & |y|     & \pt (GeV)\\\midrule
+    Leading jet     & $< 3.0$ & 74.\\
+    Second jet      & $< 3.0$ & 50\\
+    \bottomrule
+    \end{tabular}
+    \caption{The selection cuts applied on the leading and second jet in the
+    event. }
+    \label{tab:jetcuts}
+\end{table}
+
+The rapidity selection restricts the measurement to a phase space region without
+detector inefficencies. In case the leading or second jet has a rapidity higher
+than 3.0, the whole event is rejected. The first and second jet each have
+different transverse momentum cuts to avoid infrared sensitivity of the NLO
+theory calculation.
+
+Effectively there is also a cut on the average \pt of the dijet system
+introduced by the trigger thresholds. Since the first trigger is only fully efficient
+at 133 GeV, the spectrum is only measured above this value. This also avoid any
+turn-on regions of the spectrum which are difficult to model in the unfolding
+procedure.
+
+If there are not at least two jets in the event fullfilling these criteria, the
+whole event is rejected.
+
+\todo{figure with jet rapidities?}
+
+\section{Dijet Transverse Momentum  Resolution}
+\label{sec:resolution}
+
+The true transverse momentum of the jets is smeared through the finite
+resolution of the CMS detector. To measure the resolution of the \ptavg
+observable, the truth information of Monte-Carlo events propagated through the
+detector is used. The jets are clustered from stable generator particles as well
+as from particle flow candidates reconstructed from the simulated detector
+output. When studying the resolution, only events in which the leading two
+generator jets are well matched to the reconstructed jets are used. The distance
+$\Delta R$ in the $\eta$-$\phi$ plane is calculated as
+
+\begin{equation}
+\Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2}
+\end{equation}
+and needs to satisfy $\Delta R < 0.3$.
+
+Measurements of the JERC working group at CMS show that the jet energy
+resolution in data is actually worse than in simulation and the reconstructed
+jet transverse momentum needs to be smeared additonally to match the resolution
+in data. Table~\ref{tab:res_smearing} shows the smearing factors which need to
+be applied on the transverse momentum of simulated reconstructed jets. The
+smearing factors are derived separately for each region of the detector geometry.
+
+\begin{table}[htbp]
+\setlength\tabcolsep{4.5pt} 
+    \centering
+    \begin{tabular}{lccccccr}
+    \toprule
+    & & \multicolumn{6}{c}{$|\eta|$}\\\cmidrule{2-8}
+               & $0.0$ -- $0.5$ & $0.5$ -- $1.1$ & $1.1$ -- $1.7$ & $1.7$ --
+               $2.3$ & $2.3$ -- $2.8$ & $2.8$ -- $3.2$ & $3.2$ -- $5.0$\\
+               $c_\text{res}$ &  &  &  & & & & \\\cmidrule{1-1}
+    central    & 1.079                   & 1.099                   & 1.121    & 1.208                   & 1.254                   & 1.395    & 1.056\\
+    down       & 1.053                   & 1.071                   & 1.092    & 1.162                   & 1.192                   & 1.332 & 0.865\\
+    up         & 1.105                   & 1.127                   & 1.150 & 1.254                   & 1.316                   & 1.458 & 1.247\\
+    \bottomrule
+    \end{tabular}
+    \caption{Since the resolution in data is significantly
+             worse than in MC, the reco jet \pt was smeared using factors obtained from the
+             JER twiki~\cite{JERC:Resolution}.}
+    \label{tab:res_smearing}
+\end{table}
+
+Each reconstructed jet which is matched to a generated jet is smeared  using the formula
+\begin{equation}
+\ptreco = \max \left( 0, \ptgen + c(\eta) \cdot (\ptreco - \ptgen) \right)
+\end{equation}
+
+After applying the mentioned correction factor, the average dijet
+transverse momentum is calculated both using the generator particle jets and
+the particle flow jets on detector level. The response $R$ is calculated as
+
+\begin{equation}
+    R = \frac{\ptavg^{\text{reco}}}{\ptavg^{\text{gen}}}
+\end{equation}
+
+Since the response is dependent on the detector region as well as the transverse
+momentum of the jets, the dijet average transverse momentum resolution is
+calculated as a function of \ptavggen for each measurement bin in the phase
+space variables \ystar and \yboost. Figure~\ref{gen_vs_reco_over_gen} shows the
+two-dimensional distributions for each bin.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
+    \caption{Response matrix used for the unfolding procedure. The response matrices are obtained
+            using the smearing method and are normalized to the number of gen events in each row to improve
+            the readibility.}
+    \label{fig:gen_vs_reco_over_gen}
+\end{figure}
+
+Figure~\ref{fig:resolution_bin} shows the distribution for one \ptavg bin. The
+width is fitted using a gaussian function. The non-gaussian tails, visible in
+the logarithmic representation, were found to not influence the resulting
+resultion. The width of the distributions in each /ptavg is then shown as a
+function of \ptavg. Figure~\ref{fig:resolution_ptavg} shows the final relative
+resolution for each \ystar and \yboost bin. The relative resolution is described
+by a modified version of the NSC formula.
+
+
+\begin{equation}
+    \frac{\sigma_{\text{ptavg}}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
+    \label{eq:resolution}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}
+    \caption{Dijet \ptavg resolution}
+    \label{fig:resolution_bin}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/measurement/resolution_ptavg.pdf}
+    \caption{Dijet \ptavg resolution}
+    \label{fig:resolution_ptavg}
+\end{figure}
+
+The formula is based on the usual NSC formula which describes the resolution in
+terms of noise $N$, a stochastic component $S$ and a constant term $C$.
+Especially in the low-\pt region in which the tracking has a non-negligible
+influence on the resolution due to the particle flow algorithm, a slightly
+better fit is obtained by using the modified resolution
+formula~\ref{eq:resolution}. Table~\ref{tab:resolution_parameters} gives the
+parameters of the fit in each bin of the measurement.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccccr}
+        \toprule
+         \yboost & \ystar & N      & S     & C      & s\\\midrule
+         0 -- 1  & 0 -- 1 & -6.26  & 3.62  & 0.05   & -0.43\\
+         0 -- 1  & 1 -- 2 & -25.96 & 23.05 & 0.05   & -0.91\\
+         0 -- 1  & 2 -- 3 & -6.56  & 4.02  & -0.017 & -0.43\\
+         1 -- 2  & 0 -- 1 & -28.33 & 25.51 & 0.05   & -0.92\\
+         1 -- 2  & 1 -- 2 & -5.79  & 3.13  & 0.03   & -0.35\\
+         2 -- 3  & 0 -- 1 & -7.12  & 3.967 & 0.00   & -0.41\\\hline
+            \bottomrule
+    \end{tabular}
+    \caption{The parameters of the resolution fit are shown for each bin in \ystar and \yboost.}
+    \label{tab:resolution_parameters}
+\end{table}
+
+\section{Unfolding of the Measurement}
+
+The goal of this measurement is the comparison of the dijet production cross section with
+higher-order calculations at particle level. Due to a finite detecter acceptance and resolution
+the measured spectrum is smeared causing differences between the true dijet \ptavg distribution
+and the measured distributiong. The aim of the unfolding procedure is the removal of these effects
+by applying an unfolding algorithm.
+
+Following several other QCD analyses, the iterative d'Agostini algorithm~\cite{D'Agostini:1994zf} was used which is
+implemented in the RooUnfold~\cite{Adye:2011gm} package. The number of
+steps in the iterative procedure is a regularization parameter of the algorithm. A high number
+of iterations leads to an increasing uncertainty and larger bin-by-bin fluctuations. The regularization
+parameter was studied using the MG+P6 MC sample and the best result is achieved using four iterations.
+
+The response matrix used in the unfolding procedure was studied using two methods. The first one
+is using the Monte-Carlo samples processed through the detector simulation and event-by-event the true and the measured entries are
+filled into the response matrix taking into account the missed and fake hits.. While
+this is the most straight-forward and easy to implement method, it has several drawbacks. All used MC samples are only
+leading-order and the shape of the measured distributions in not well described in all cases. Additionally
+the number of events in these samples is limited leading to large statistical fluctuations in less populated
+phase space regions in the response matrix. 
+
+Therefore the second method based on the forward smearing of a fitted NLO
+spectrum is used. For each of the measurement bins, the resolution was measured
+as shown in Section \ref{sec:resolution}. Using a Toy MC method a flat \ptavg
+spectrum was generated, which is weighted according to the NLO distribution
+obtained using fastNLO evaluated with the CT14-NLO PDF set and corrected for
+non-perturbative effects. The distribution of this generated sample resembles
+the fastNLO cross section and is used as the true \ptavg spectrum. This cross
+section is then smeared using gaussian distributed values generated from the
+resolution function obtained before. This allows to fill the response matrix with 
+a very high number of events avoiding any statistical fluctuations. A crosscheck has been 
+done comparing the results of the unfolding using the MC sample and the smeared NLO spectrum
+and the agreement was found to be good within the statistical uncertainties of
+the MC samples.
+
+It was also checked that the bin-by-bin migrations between neigbored \ystar and
+\yboost bins are small. This allows to perform a one-dimensional unfolding
+instead of a three-dimensional unfolding.
+
+The response matrices from the NLO smearing method which are used in the
+unfolding procedure are shown in Figure~\ref{fig:res_matrix}. The matrices in
+the figure are normalized to number of gen events in each row to improve the
+readibility. The response matrices are diagonal with small off-diagonal
+migrations between close-by \ptavg bins.
+
+The statiscal uncertainties is propagated through the unfolding using a toy MC procedure
+in which the measured histogram is smeared according to its statistical uncertainty and the
+unfolding procedure is performed for each of these smeared spectrum as it is implemented in 
+the RooUnfold package. One million generated toy spectra were used to propagate the statistical
+uncertianty. Figure~\ref{fig:statunc_relative} shows the statistical uncertainty before and after
+the unfolding. The uncertainty slightly increases during the unfolding process as it is expected.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
+    \caption{Response matrix used for the unfolding procedure. The response matrices are obtained
+            using the smearing method and are normalized to the number of gen events in each row to improve
+            the readibility.}
+    \label{fig:res_matrix}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
+    \caption{The statistical uncertainties of the measured and the unfolded spectrum. Due
+    to the unfolding procedure, the uncertainties slightly increase compared to the
+    measured spectrum.}
+    \label{fig:statunc_relative}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
+    \caption{Statistical correlations after the unfolding procedure. Close-by bins in \ptavg
+    have a non-negligible correlation after the unfolding prodecure due to bin-by-bin migrations.}
+    \label{fig:exp_uncertainties}
+\end{figure}
+
 
 \section{Uncertainties}
