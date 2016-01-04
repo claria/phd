@@ -4,6 +4,14 @@
 
 \section{Observable definition}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/measurement/ybys.pdf}
+    \caption{}
+    \label{fig:trigger_eff}
+\end{figure}
+
+
 \section{Datasets}
 \label{sec:datasets}
 
@@ -271,16 +279,16 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
     \centering
     \begin{tabular}{llll}
     \toprule
-                          & Property                & Loose ID & Tight ID\\\cmidrule(lr){2-4}
-    Whole $\eta$ region   &                         &          & \\\cmidrule(lr){1-1}
-                          & Neutral Hadron Fraction & $< 0.99$ & $< 0.90$\\
-                          & Neutral EM Fraction     & $< 0.99$ & $< 0.90$\\
-                          & Number of Constituents  & $> 1$    & $> 1$\\
-                          & Muon Fraction           & $< 0.8$  & $< 0.80$\\
-    Only $|\eta| < 2.4$   &                         &          & \\\cmidrule(lr){1-1}
-                          & Charged Hadron Fraction & $> 0$    & $> 0$\\
-                          & Charged Multiplicity    & $> 0$    & $> 0$\\
-                          & Charged EM Fraction     & $< 0.99$ & $< 0.90$\\
+                           & Property                & Loose ID & Tight ID\\\cmidrule(lr){2-4}
+    Whole $\eta$ region    &                         &          & \\\cmidrule(lr){1-1}
+                           & Neutral Hadron Fraction & $< 0.99$ & $< 0.90$\\
+                           & Neutral EM Fraction     & $< 0.99$ & $< 0.90$\\
+                           & Number of Constituents  & $> 1$    & $> 1$\\
+                           & Muon Fraction           & $< 0.8$  & $< 0.80$\\
+    Only $|\eta| < 2.4$    &                         &          & \\\cmidrule(lr){1-1}
+                           & Charged Hadron Fraction & $> 0$    & $> 0$\\
+                           & Charged Multiplicity    & $> 0$    & $> 0$\\
+                           & Charged EM Fraction     & $< 0.99$ & $< 0.90$\\
     \bottomrule
     \end{tabular}
     \caption{The jet identification criteria remove fake jets originating from
@@ -332,6 +340,75 @@ procedure.
 
 If there are not at least two jets in the event fullfilling these criteria, the
 whole event is rejected.
+
+\section{Comparison with Simulated Events}
+
+\subsection{Comparison of Kinematic Quantities}
+
+The measured data distributions on detector level are compared with simulated events
+processed through the whole event generation and detector simulation. In this section
+the basic kinematic quantities of the leading two jets are compared as well as the properties
+of each of the jets mainly describing the constituent fractions of each jet. Figure~\ref{fig:controlplots:kinematic}
+shows the transverse momentum $\pt$, the rapidity $y$ and the azimuthal angle $\phi$ for the leading
+two jets. The kinematic of the two dijet system is well described by the MC simulation apart from
+a few regions with larger discrepancies. The \pt-distribution is not that well described escpecially in
+the lower \pt region and the number of events with forward jets is overestimated in the MC simulation.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet1pt_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet2pt_default.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet1rap_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet2rap_default.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet1phi_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet2phi_default.pdf}
+    \caption{The plots show the basic kinematic quantities of the two leading jets in a selected event.
+             The transvers momentum of the leading (left plot) and the second (right plots) jet is shown
+         in the top row. The rapidity of the jets is shown in the middle row. The azimuthal angle of the
+     leading jet and the second jet is shown on the bottom row.}
+    \label{fig:controlplots:kinematic}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}
+    \caption{The plots show the basic kinematic quantities of the two leading jets in a selected event.
+             The transvers momentum of the leading (left plot) and the second (right plots) jet is shown
+         in the top row. The rapidity of the jets is shown in the middle row. The azimuthal angle of the
+     leading jet and the second jet is shown on the bottom row.}
+    \label{fig:controlplots:rapidity}
+\end{figure}
+
+
+\subsection{Cross section Comparison}
+
+The Monte-Carlo simulation is used to compare the prediction including the detector simulation
+to the measured data distribution which is smeared due to the finite detector resolution. Figure~\ref{fig:ratio_recotodata}
+show the prediction of the MG+P6 and the P8 simulations as a ratio to the measured data spectrum.
+While the agreement in the inner detector region is fine, the shape and especially the normalization
+of the MC prediction cannot describe the data. Additionally the fixed order prediction of NLOJET++
+is shown. This prediction is on parton level and is not corrected for non-perturbative effects. Still
+it describes best the data apart from the known effects due to NP and detector resolution effects.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb2ys0.pdf}
+    \caption{Comparison of the measurement and the predictions using P8 and MG+P6. The data distributions are normalized
+    to the integrated luminosity, the simulated events to the number of generated events and the cross section. The ratio of the simulated
+    events to the data points is shown.}
+    \label{fig:ratio_recotodata}
+\end{figure}
+
 
 \todo{figure with jet rapidities?}
 
@@ -420,7 +497,6 @@ function of \ptavg. Figure~\ref{fig:resolution_ptavg} shows the final relative
 resolution for each \ystar and \yboost bin. The relative resolution is described
 by a modified version of the NSC formula.
 
-
 \begin{equation}
     \frac{\sigma_{\text{ptavg}}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
     \label{eq:resolution}
@@ -468,58 +544,54 @@ parameters of the fit in each bin of the measurement.
 
 \section{Unfolding of the Measurement}
 
-The goal of this measurement is the comparison of the dijet production cross section with
-higher-order calculations at particle level. Due to a finite detecter acceptance and resolution
+The final goal is the comparison of the triple-differential dijet cross section
+with higher-order QCD calculations. Due to the finite detector acceptance and resolution
 the measured spectrum is smeared causing differences between the true dijet \ptavg distribution
-and the measured distributiong. The aim of the unfolding procedure is the removal of these effects
-by applying an unfolding algorithm.
+and the measured distribution. To accomplish that goal, the measurement has
+to be unfolded to yield the result at particle level. Thus all future Monte-Carlo event
+generators can be easily compared with this measurement without needing to apply
+the detector simulation.
 
-Following several other QCD analyses, the iterative d'Agostini algorithm~\cite{D'Agostini:1994zf} was used which is
-implemented in the RooUnfold~\cite{Adye:2011gm} package. The number of
-steps in the iterative procedure is a regularization parameter of the algorithm. A high number
-of iterations leads to an increasing uncertainty and larger bin-by-bin fluctuations. The regularization
-parameter was studied using the MG+P6 MC sample and the best result is achieved using four iterations.
+In this analysis, the iterative d'Agostini algorithm~\cite{D'Agostini:1994zf} which is
+implemented in the RooUnfold~\cite{Adye:2011gm} package is used. The unfolding
+process is regularized by the number of interation steps in this algorithm. A
+higher number of iterations yields a better reduced \chisq but also increases
+the uncertainty and introduces larger bin-by-bin fluctuations and correlations.
+The regularization was optimized using a Monte-Carlo data sample and best
+results with low bin-by-bin correlations and a low \chisq were achieved using
+four iterations in the unfolding algorithm.
 
-The response matrix used in the unfolding procedure was studied using two methods. The first one
-is using the Monte-Carlo samples processed through the detector simulation and event-by-event the true and the measured entries are
-filled into the response matrix taking into account the missed and fake hits.. While
-this is the most straight-forward and easy to implement method, it has several drawbacks. All used MC samples are only
-leading-order and the shape of the measured distributions in not well described in all cases. Additionally
-the number of events in these samples is limited leading to large statistical fluctuations in less populated
-phase space regions in the response matrix. 
+In principal, the response matrix for the unfolding algorithm can be directly
+filled using the Monte-Carlo generated events containing the thue and measured
+information. However this method has several drawbacks. The LO prediction not
+neccesarily describes the shape of the distribution in all cases. Additionally
+the limited number of events in the Monte-Carlo sample, especially at high
+rapidities and high transverse momentum, introduces large statistical
+fluctuations in the response matrix. Because of these undesired effects a
+different stategy is employed to populate the response matrix.
 
-Therefore the second method based on the forward smearing of a fitted NLO
-spectrum is used. For each of the measurement bins, the resolution was measured
-as shown in Section \ref{sec:resolution}. Using a Toy MC method a flat \ptavg
-spectrum was generated, which is weighted according to the NLO distribution
-obtained using fastNLO evaluated with the CT14-NLO PDF set and corrected for
-non-perturbative effects. The distribution of this generated sample resembles
-the fastNLO cross section and is used as the true \ptavg spectrum. This cross
-section is then smeared using gaussian distributed values generated from the
-resolution function obtained before. This allows to fill the response matrix with 
-a very high number of events avoiding any statistical fluctuations. A crosscheck has been 
-done comparing the results of the unfolding using the MC sample and the smeared NLO spectrum
-and the agreement was found to be good within the statistical uncertainties of
-the MC samples.
+Based on the good description of the data spectrum by NLO predictions, a forward
+smearing is applied. At first, the NLO prediction obtained with the CT14-NLO PDF
+set and corrected for non-perturbative effects, is fitted using the function
 
-It was also checked that the bin-by-bin migrations between neigbored \ystar and
-\yboost bins are small. This allows to perform a one-dimensional unfolding
-instead of a three-dimensional unfolding.
+\begin{equation}
+    f(\ptavg) = A_0 \left(
+    \frac{\ptavg}{A_3}\right)^{-A_1}\left(1-\frac{\ptavg}{A_3}\right)^{A_2}
+\end{equation}
 
-The response matrices from the NLO smearing method which are used in the
-unfolding procedure are shown in Figure~\ref{fig:res_matrix}. The matrices in
-the figure are normalized to number of gen events in each row to improve the
-readibility. The response matrices are diagonal with small off-diagonal
-migrations between close-by \ptavg bins.
+Using a Toy MC method a flat \ptavg spectrum is generated, which is weighted
+according to the NLO distribution. The distribution of this generated sample
+resembles the fastNLO cross section prediction and is used as the true \ptavg
+spectrum. The generated events are smeared using the resolution function
+measured in Section~\ref{sec:resolution}. The generation of these Monte-Carlo
+toy events is very fast, and the response matrices are filled with around 100
+million events each resulting in negligible statistical fluctuations.
+Figure~\ref{fig:res_matrix} shows the response matrices used in the unfolding
+process. The matrices in the figure are normalized to number of gen events in
+each row to improve the readibility. The response matrices are diagonal with
+small off-diagonal migrations between close-by \ptavg bins.
 
-The statiscal uncertainties is propagated through the unfolding using a toy MC procedure
-in which the measured histogram is smeared according to its statistical uncertainty and the
-unfolding procedure is performed for each of these smeared spectrum as it is implemented in 
-the RooUnfold package. One million generated toy spectra were used to propagate the statistical
-uncertianty. Figure~\ref{fig:statunc_relative} shows the statistical uncertainty before and after
-the unfolding. The uncertainty slightly increases during the unfolding process as it is expected.
-
-\begin{figure}[htbp]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys0.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys1.pdf}
@@ -532,6 +604,25 @@ the unfolding. The uncertainty slightly increases during the unfolding process a
             the readibility.}
     \label{fig:res_matrix}
 \end{figure}
+
+A closure test was performed by applying the unfolding using response matrices
+filled directly from the Monte-Carlo samples and from the generated and smeared
+toy events. It was found that the results agree in both cases within statistical
+uncertainties.
+
+Additionally it was studied that the bin-by-bin migration between phase space
+bins in \ystar and \yboost are small and the effects neglibible. Thereby it is
+justified to perform the unfolding in each \ystar and \yboost bin separately and
+to not perform a three-dimensional unfolding which is much more cumbersome.
+
+The statistical uncertainties of the data distributions are are propagated
+through the unfolding using a toy MC procedure in which the measured histogram
+is smeared according to its statistical uncertainty and the unfolding procedure
+is performed multiple times for each of these smeared spectra. A million
+generated toy spectra are used to propagate the statistical uncertainty.
+Figure~\ref{fig:statunc_relative} shows the relative statistical uncertainty before and
+after the unfolding procedure. The uncertainty slightly increases during the unfolding
+process as it is expected.
 
 \begin{figure}[htbp]
     \centering
@@ -547,6 +638,11 @@ the unfolding. The uncertainty slightly increases during the unfolding process a
     \label{fig:statunc_relative}
 \end{figure}
 
+Additionally the unfolding introduces a correlation between bins due to bin
+migrations. These correlations are significant for neighbouring bins in \pt and
+negligible for far off bins. Figure~\ref{fig:corr_unfolding_nlo} shows the
+correlations of the statistical uncertainty after the unfolding.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys0.pdf}\hfill
@@ -557,8 +653,9 @@ the unfolding. The uncertainty slightly increases during the unfolding process a
     \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
     \caption{Statistical correlations after the unfolding procedure. Close-by bins in \ptavg
     have a non-negligible correlation after the unfolding prodecure due to bin-by-bin migrations.}
-    \label{fig:exp_uncertainties}
+    \label{fig:corr_unfolding_nlo}
 \end{figure}
 
+\section{Experimental Uncertainties}
 
-\section{Uncertainties}
+
