@@ -2,24 +2,61 @@
 
 \chapter{Theory Predictions for the Triple-Differential Dijet Cross Section}
 
-\section{Discussion of the Diejt Observable}
+Point like parton-parton scattering in high energy collisions can produce high
+energetic jets. Events with two high energetic jets in the final state (dijets)
+can be used to rigorously test predictions of perturbative Quantum
+Chromodynamics (pQCD), determine the proton PDFs and extract SM model parameters
+like the strong coupling constant.
 
-For a long time, leading-order (LO) and next-to-leading (NLO) predictions
-for dijet production processes were the ultimate precision possible. While
-describing the shape and the normalization of many cross section distributions
-accurately, they are also subject to larger scale uncertainties. 
+Since quite a while, next-to-leading (NLO) pQCD predictions are available for
+jet and multijet observables. These accurately describe the shape and the
+normalization of jet cross sections. However they suffer from larger scale
+uncertainties limiting the precision of determined SM parameters like the strong
+coupling constant.
 
-The goal of this thesis is a publication of a high-precision dijet cross section
-measurement to gain a better understanding of the theory of quantum chromodynamics
-at high scales accesible at the LHC. Unlike earlier dijet analyses, the observable
-choice was optimized to yield the best-possible constraints on the proton PDFs as well
-as the strong coupling.
+For nearly ten years, theorists have been working on improving the dijet
+calculation and providing the next-to-next-to-leading order (NNLO) corrections.
+With the completion of this huge project steadily approaching, we provide a
+measurement which was specifically designed to benefit from these improvements.
+The aim of this measurement is the determination of the proton PDFs with high
+precision by using dijet events with large transverse momentum transfers.
 
-For nearly ten years, theorists have been working on the calculation of next-to
-next-to-leading order (NNLO) predictions for dijet cross sections. This  and this
-huge project
+\section{Cross Section Definition}
 
+The partons involved in the scattering process are assumed to be collinear to
+the beam protons. The longitudinal boost of the parton-parton center-of-mass
+(CM) frame with respect to the proton-proton CM frame, \yboost, is calculated from the
+rapidities $y_1$ and $y_2$ of the two jets emerging from the partons. 
 
+\begin{equation*}
+    \yboost = \frac{1}{2} |y_1 + y_2|
+\end{equation*}
+
+The quantity \ystar is defined as half the rapidity separation of the two jets.
+
+\begin{equation*}
+    \ystar = \frac{1}{2} |y_1 - y_2|
+\end{equation*}
+
+$\pm\ystar$ are the jet rapidities of the two jets in the
+parton-parton CM frame and is related to the polar scattering angle $\theta$ with respect
+to the beamline. 
+
+\begin{equation*}
+    \ystar = \frac{1}{2} \left( \frac{1 + |\cos \theta|}{1- | \cos \theta|}
+    \right)
+\end{equation*}
+
+The triple-differential cross sections are measured as a function of the dijet transverse momentum
+\ptavg
+
+\begin{equation*}
+    \ptavg = \frac{p_{\mathrm{T},1} + p_{\mathrm{T},2}}{2}
+\end{equation*}
+
+where $p_{\mathrm{T},1}$ and $p_{\mathrm{T},1}$ are the transverse momenta of
+the two leading jets. The cross sections are binned in the variables \ystar and
+\yboost. 
 
 \section{NLO Prediction}
 
@@ -37,22 +74,91 @@ different PDFs, \as and scales within negligible time.
 
 \subsection{Scale Choice}
 
-Two different scale choices are investigated in the NLO calculation. 
+Within the perturbative cross section calculations, one has to choose a
+factorisation and renormalisation scale. The influence of these scales vanishes
+when the calculation is performed for all orders of the perturbative series.
+However since we truncate the series at NLO, a scale dependence on our result is
+introduced. Three possibilities of the scale choice are studied in this thesis.
+The most natural scale choice which reflects the energy scale of the measurement
+is to use the average \pt of the dijet system as the renormalization and
+factorization scale as it is also used as the binning variable. 
+
+\begin{equation*}
+    \mu = \mur = \muf = \frac{p_{\mathrm{T},1} + p_{\mathrm{T},2}}{2}
+\end{equation*}
+
+While this scale choice yields reasonable results, the $k$-factor and scale
+uncertainties indicate problems, which are discussed in detail
+in the next sections. The second investigated scale choice is based on the
+findings of a recent study by ATLAS~\cite{Aad:2011fc}. They claim that
+fixed-order calculations which are binned in \ystar get unreliable for hig
+\ystar values if the scale is only based on the energy. Based on recommendations
+by theorists~\cite{Ellis:1992en}, a scale which also introduces a dependence on
+the rapdity separation is proposed.
+
+\begin{equation*}
+    \mu = \mur = \muf = p_{\mathrm{T,max}} e^{0.3 \ystar} 
+\end{equation*}
+
+Additionally a variation oft this choice was studied in which the scale is not
+dependent on the transverse momentum of the leading jet but on the average
+transverse momentum of the leading two jets.
+
+\begin{equation*}
+    \mu = \mur = \muf = p_{\mathrm{T,avg}} e^{0.3 \ystar} 
+\end{equation*}
+
+Figure~\ref{fig:xs_nlo_comp} shows the prediction of the NLO calculation using
+the three mentioned scale choices. The cross section predicted by each of
+calculations is similar with larger deviations for the scale choice using the
+maximum transverse momentum instead of the average dijet transverse momentum.
+The differences between the predictions are covered by the scale uncertainties
+afflicted to the prediction.
+
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/nlo_xs_comp_yb2ys0.pdf}
+    \caption{The NLO prediction \NLOJETPP for the dijet measurement. The
+    predictions of three different scale choices are shown. In almost all cases
+    the differences between the calculations are covered by the scale uncertainties.}
+    \label{fig:xs_nlo_comp}
+\end{figure}
+
 
 \subsection{NLO $k$-factors}
 
 To check the influence of the higher-order contributions to the perturbative QCD
 prediction, one calculates the differences between the LO prediction and the NLO
-prediction, expressed as the ratio $k_\mathrm{NLO}$. 
+prediction, expressed as the ratio $k_\mathrm{NLO}$.
 
 \begin{equation*}
     k_{\mathrm{NLO}} = \frac{\sigma_{\mathrm{NLO}}}{\sigma_{\mathrm{LO}}}
 \end{equation*}
 
-The size of the NLO
-correction gives an estimation about the influence of these higher-order
-corrections. If they are very small, the LO result already describes the
-observable cross section precisely.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/kfactor_comp_yb2ys0.pdf}
+    \caption{The $k$-factor between the LO calculation and the NLO calculation
+    shows the influence of the higher-order correction terms. The $k$-factors
+for the calculation with \ptavg as scale choice fall below unity in case of high
+\ystar values indicating that the NLO correction is negative.}
+    \label{fig:kfactor_comp}
+\end{figure}
+
+The size of the NLO correction gives an estimation about the influence of these
+higher-order corrections. If they are very small, the LO result already
+describes the observable cross section precisely.
 
 \section{Non-Perturbative Corrections}
 
@@ -80,7 +186,7 @@ generators and tunes have been used:
 \end{itemize}
 
 \begin{equation}
-  f(\ptavg) = A + B \cdot \ptavg^C
+  f(\ptavg) = a \cdot \ptavg^b + c
   \label{fcn:np_fit}
 \end{equation}
 
@@ -92,7 +198,7 @@ envelope is used as the correction factor.  These corrections are of the size of
 \ref{fig:np_factors} shows the resulting correction factors and the
 corresponding uncertainty.
 
-\begin{figure}[htbp]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/theory/np_factors_calc_yb0ys0.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/theory/np_factors_calc_yb0ys1.pdf}
@@ -141,6 +247,24 @@ factors to the central choice in the following six combinations: $(\mur, \muf) =
 1)$ and $(2, 2)$. The uncertainty is the envelope of the maximum deviation in
 the upwards and downwards direction.  Figure~\ref{fig:theo_uncertainties} shows
 the relative size of the scale uncertainty for each of the measurement bins.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb2ys0.pdf}
+    \caption{The scale uncertainty is estimated using the common approach of
+        independently changing the renormalization and factorization scale
+        choice in six independent variations. The uncertainty is shown for the
+        three investigated scale choices. In most cases the scale uncertainty is
+        reasonable and of the size of 5\% to 10\%. In the high \ystar bin, the
+        scale uncertainty of prediction with the \ptavg scale choice is
+        undesirable large.}
+    \label{fig:scale_uncertainties}
+\end{figure}
 
 \subsection{PDF uncertainties}
 
@@ -202,7 +326,7 @@ uncertainty in this region. This is caused by the very flexible parametrization
 of the NNPDF PDF set which results in large PDF uncertainty in phase space
 regions not covered by data.
 
-\begin{figure}[htbp]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/theory/pdf_unc_comparison_yb0ys0.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/theory/pdf_unc_comparison_yb0ys1.pdf}
@@ -218,7 +342,7 @@ regions not covered by data.
     \label{fig:pdf_uncertainties}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/theory/theo_unc_yb0ys0.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/theory/theo_unc_yb0ys1.pdf}
