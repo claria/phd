@@ -467,6 +467,19 @@ non-perturbative gluon splitting and a decay model.
 \subsubsection{Madgraph}
 
 \subsubsection{NLOJet++ and fastNLO}
+\label{sec:nlojetpp}
+
+% To populate the whole accessible phasespace with sufficient events to get a
+% precise prediction, a huge number of events is neccessary. Since especially the
+% influence of the PDFs and the strong coupling constant is interesting to be
+% studied, the calculation would have to be repeated multiple times with different
+% input parameters. In order to speed-up this process, \NLOJETPP is interfaced to
+% the \fastNLO package~\cite{Kluge:2006xs,Britzger:2012bs}. fastNLO uses
+% sophisticated interpolation tables to store the matrix element coefficients as a
+% function of the scales, the calculation order and the fractional proton
+% momentum. The fastNLO tables can now be evaluated with different PDFs, \as and
+% scales within negligible time. 
+
 
 The complicated NLO cross section for jet productions are calculated using
 \NLOJETPP. It implements the dipole subtraction method for the separation of the

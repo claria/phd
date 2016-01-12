@@ -3,48 +3,61 @@
 \chapter{Theory Predictions for the Triple-Differential Dijet Cross Section}
 
 Point like parton-parton scattering in high energy collisions can produce
-energetic jets. Events containing two jets with large transverse momenta  in the
+jets with large transverse momenta. Events containing two such jets  in the
 final state (dijet events) allow for rigorous tests of perturbative Quantum
 Chromodynamics (pQCD) predictions and can subsequently be used to better
 constrain the proton PDFs and extract Standard Model parameters like the strong
-coupling constant.
+coupling constant~\as.
 
 Since quite a while, next-to-leading-order (NLO) pQCD predictions are available
 for jet and multijet observables. These accurately describe shape and
-normalization of jet cross sections. However NLO predictions suffer from larger scale
+normalization of jet cross sections, though still suffer from larger scale
 uncertainties limiting the precision of Standard Model parameters extracted from
 measurements.
 
-For nearly ten years, theorists have been working on improving the jet cross
-section and providing next-to-next-to-leading order (NNLO) corrections for the
+For almost ten years, theorists have been working on improving the jet cross
+section predictions and providing next-to-next-to-leading-order (NNLO) corrections for
 dijet calculations. When these corrections are publicly available, they will
 push the precision of pQCD jet cross section predictions to a new level.
 
 With the finalization of this huge project steadily approaching, we provide a
-measurement which was specifically designed to benefit from these improvements.
+measurement which is specifically designed to benefit from these improvements.
 The aim of this measurement is the determination of the proton PDFs with high
-precision by using dijet events with large transverse momentum transfers.
+precision by using dijet events with large transverse momenta.
 
 \section{Cross Section Definition}
 
 The partons involved in the scattering process are assumed to be massless and
 collinear to the beam protons. Most information about the initial-state partons
 is gained by differentially measuring the rapidities of the two outgoing jets
-and the energy of \eg the leading jet. However by explicitly binning in the
-leadind and second jet, a dependence on the ordering of the jets is introduced.
-This poses a problem for the pQCD calculation at NLO since the order of the jets
-can change by a soft emission causing a different dijet configuration. Simply
-put, the second jet can become the leading jet and the other way round. Therefore
-it is not guaranteed that all divergences get cancelled and the observable
-becomes infrared unsafe. This can be overcome by filling all histograms twice
-with interchanged leading and second jet. However this produces correlations
-between phasespace regions far off and unneccesary complicates the measurement,
-especially the unfolding procedure.
+and the energy of the jets. At leading order, the jet rapidities are directly
+related to accessed momentum fractions in the proton via
 
-Therefore a different approach was chosen in this analysis. Instead of using the
-rapidities and the transverse momenta of each jet, variables which are symmetric
-between permutations of the ordering were used. Since these observables are
-linear combinations of the original variables, no information is lost.
+\begin{equation*}
+    x_1 = \frac{x_\mathrm{T}}{2} \left( e^{y_1} + e^{y_2} \right)
+    \qquad\text{and}\qquad x_2 = \frac{x_\mathrm{T}}{2} \left( e^{-y_1} +
+    e^{-y_2} \right)
+\end{equation*}
+with $x_{\mathrm{T}} = \sfrac{\pt}{E}$ and the rapidities of the two outgoing
+partons $y_1$ and $y_2$.
+
+However by explicitly binning the measurement in the leading and second jet, a
+dependence on the ordering of the jets is introduced. While the ordering of the
+jets is irrelevant at leading order since both jets are perfectly balanced and
+have the same transverse momentum, it becomes relevant at NLO. The order of the
+jets can be changed by a soft emission causing a different dijet ordering.
+Simply put, the second jet can become the leading jet and vice versa.  Thus it
+is not guaranteed that all divergences are cancelled and the observable is as a
+consequence infrared unsafe.  This can be overcome by filling all histograms
+twice with interchanged leading and second jet. However this produces
+correlations between phasespace regions far off and unneccesary complicates the
+measurement, especially the unfolding procedure.
+
+Therefore a different definition of the cross section is chosen in this
+analysis. Instead of using the rapidities and the transverse momenta of each
+jet, variables which are symmetric between permutations of the leading two jets
+are used. Since these observables are linear combinations of the jet rapidities,
+no information is lost.
 
 The longitudinal boost of the parton-parton center-of-mass (CM) frame with
 respect to the proton-proton CM frame, \yboost, is calculated from the
@@ -54,52 +67,44 @@ rapidities $y_1$ and $y_2$ of the two jets emerging from the partons.
     \yboost = \frac{1}{2} |y_1 + y_2|
 \end{equation*}
 
-The quantity \ystar is defined as half the rapidity separation of the two jets.
+The quantities $\pm\ystar$ are the jet rapidities of the two jets in the
+parton-parton CM frame. Since they are symmetric \ystar is defines as half the
+absolute rapidity separation between the two jets.
 
 \begin{equation*}
     \ystar = \frac{1}{2} |y_1 - y_2|
 \end{equation*}
-
-$\pm\ystar$ are the jet rapidities of the two jets in the parton-parton CM frame
-and is related to the polar scattering angle $\theta$ with respect to the
-beamline. 
+\ystar is related to the polar scattering angle $\theta$ with respect to the
+beamline by 
 
 \begin{equation*}
     \ystar = \frac{1}{2} \left( \frac{1 + |\cos \theta|}{1- | \cos \theta|}
     \right)
 \end{equation*}
 
-\todo{dependence on x1/x2 of yb/ys at LO}
+The triple-differential cross sections are measured as a function of the average dijet
+transverse momentum $\ptavg = \frac{p_{\mathrm{T},1} + p_{\mathrm{T},2}}{2}$ and
+are binned in the variables \ystar and \yboost. $p_{\mathrm{T},1}$ and
+$p_{\mathrm{T},2}$ depict the transverse momenta of the two leading jets. 
 
-The triple-differential cross sections are measured as a function of the dijet
-transverse momentum \ptavg
-
-\begin{equation*}
-    \ptavg = \frac{p_{\mathrm{T},1} + p_{\mathrm{T},2}}{2}
-\end{equation*}
-
-
-where $p_{\mathrm{T},1}$ and $p_{\mathrm{T},2}$ are the transverse momenta of
-the two leading jets. The cross sections are binned in the variables \ystar and
-\yboost. The binning in those two variables has another advantage. It allows
-also to separate between same side (SS) and opposite side (OS) dijet events.
-Fig~\ref{fig:ysyb_schema} contains a descriptive explaination of the dijet topologies
-in the different \ystar and \yboost bins. If the rapidity separation and the
-boost of the dijet event is small, both jets must have a low rapidity, see the
-bottom left part of the figure. If the dijets are boosted but have a small
-separation in rapity, they must be boosted in the forward region but both jets
-are on the same side, see bottom right plot. If instead the separation is large
-and the boost of the dijet system small, the juts must be on opposite sides and
-each jet has a large rapidity. Dijet events with both a large rapidity
-separation and a large boost of the dijet system are suppressed in the
-accessible phase space.
+The binning in those two variables has the additional advantage, that the
+measurement also separates between same side (SS) and opposite side (OS) dijet
+events. Fig.~\ref{fig:ysyb_schema} contains a descriptive representation of the
+dijet topologies in the various \ystar and \yboost bins. If the rapidity
+separation and the boost of the dijet event is small, both jets must have a low
+rapidity, see bottom left plot. If the dijet system is boosted but the two jets
+have a small separation in rapity, they must be boosted in the forward region to
+the same side, see bottom right plot. If instead the separation is large and the
+boost of the dijet system is small, then the jets must be boosted to opposide
+sides. Dijet events with both a large rapidity separation and a large boost of
+the dijet system are suppressed in the accessible phase space.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/measurement/ybys.pdf}
-    \caption{A descriptive drawing of the dijet topologies in the different
-    \ystar and \yboost bins. The binning allows to separate in same side dijet
-    events and opposite side dijet events which allows to draw a conclucion about
+    \includegraphics[width=0.9\textwidth]{figures/measurement/ybys.pdf}
+    \caption{A descriptive representation of the dijet topologies in the various
+    \ystar and \yboost bins. The binning separates in same side dijet
+    events and opposite side dijet events which allows to draw conclusions about
     the initial state parton properties.}
     \label{fig:ysyb_schema}
 \end{figure}
@@ -108,22 +113,23 @@ The differentiation in SS and OS dijet events is especially interesting since
 both event topologies must access different fractional proton momenta while the
 jets manifest themselves in the same (forward) detector region. Therefore
 differences in the predictions can be attributed to the PDFs. This is clearly
-visible in the PDF uncertainties shown later in
-Fig.~\ref{fig:pdf_uncertainties}.
+visible in Fig.~\ref{fig:pdf_uncertainties} which shows the PDF uncertainties of
+the cross section calculations. The measurement bin containing the events with
+the large rapidity separation, see bottom right plot, has a significant larger
+PDF uncertainty since there the high fractional proton momenta are accessed,
+which are not well known.
 
 \section{NLO Prediction}
 
 The NLO cross section of the triple-differential dijet cross section is
-calculated using the \NLOJETPP program~\cite{Nagy:2003tz}. To populate the whole
-accessible phasespace with sufficient events to get a precise prediction, a huge
-number of events is neccessary. Since especially the influence of the PDFs and
-the strong coupling constant is interesting to be studied, the calculation would
-have to be repeated multiple times with different input parameters. In order to
-speed-up this process, \NLOJETPP is interfaced to the \fastNLO
-package~\cite{Kluge:2006xs,Britzger:2012bs}. fastNLO uses sophisticated interpolation tables to store
-the matrix element coefficients as a function of the scales, the calculation
-order and the fractional proton momentum. The fastNLO tables can now be evaluated with
-different PDFs, \as and scales within negligible time. 
+calculated using fastNLO~\cite{Kluge:2006xs,Britzger:2012bs}. The fastNLO interpolation tables are
+filled with the perturbative coefficients of the \NLOJETPP program~\cite{Nagy:2003tz}, see
+Sec.~\ref{sec:nlojetpp}. The PDFs are accessed via the LHAPDF
+library~\cite{lhapdf}. The \as-evolution is done using the provided routines
+by the PDF sets. The advantage of the application of the fastNLO framework
+instead of direct calculation using \NLOJETPP is the possibility to repeat the
+calculations using different PDFs and scale choices as it is neccessary to
+calculate the PDF and scale uncertainties.
 
 \subsection{Scale Choice}
 

@@ -1,12 +1,12 @@
 % vim: tw=80
 
-\chapter{Jet Reconstruction}
+\chapter{Reconstruction of Jets}
 \label{chap:jet_reconstruction}
 
 In scattering processes with large momentum transfers, the outgoing partons
 produce a collimated stream of particles when hadronizing. The clusters of these
 particles are the experimental signatures of quarks and gluons in the detector
-and are called \emph{jets}. Jets show up in the CMS detector as a localized
+and are called \emph{jets}. Jets show up in the \CMS detector as a localized
 deposit of energy in the calorimeters accompanied by a large number of tracks in
 the direction of the deposited energy. Jets are reconstructed using different
 techniques based on the amount of information available. If the jets are
@@ -20,7 +20,7 @@ analysis, we always refer to particle flow CHS jets if not stated otherwise.
 \section{The Particle Flow Algorithm}
 \label{sec:particle_flow_algorithm}
 
-CMS uses the particle flow reconstruction
+\CMS uses the particle flow reconstruction
 algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} to identify and
 reconstruct particles in an event by combining information from all detector
 subsystems. Due to its compact design inside the solenoid, the hadronic
@@ -28,8 +28,8 @@ calorimeter is not able to stop and measure all particles which reduces the
 energy resolution. However, taking into account the additional information of
 the tracking system within the particle flow algorithm enhances the
 reconstruction performance and leads to a jet energy resolution comparable to
-ATLAS. A key element in the particle flow algorithm is the strong magnetic field
-of CMS which allows the precise distinction between neutral and charged hadrons. 
+\ATLAS. A key element in the particle flow algorithm is the strong magnetic field
+of \CMS which allows the precise distinction between neutral and charged hadrons. 
 
 The ingredients of the particle flow algorithm are the
 tracks and vertices, reconstructed from hits in the tracking detectors, the
@@ -39,7 +39,7 @@ electrons, photons, charged hadrons or neutral hadrons. The combination of all
 subdetectors yields an optimal measurement of their momentum, energy and type.
 
 The tracks are found using the Combinatorial Track Finder (CTF)
-algorithm~\cite{Adam:2005cg} employed by CMS. Based on these tracks, the primary
+algorithm~\cite{Adam:2005cg} employed by \CMS. Based on these tracks, the primary
 vertices in an event are identified. The electromagnetic and hadronic
 calorimeters are divided into a grid of cells based on the detector granularity
 to identify calorimeter cluster seeds. If there are seeds with an energy
@@ -74,9 +74,10 @@ observations. There are many different algorithms available which cluster jets
 from a set of input objects. Many of them were found to have their specific
 problems and today, both \CMS and \ATLAS rely on the \antikt and inclusive-\kt
 jet algorithms, which proved to be very robust and both are collinear and
-infrared safe, see Section~\ref{sec:coll_safety}.  They are sequential
+infrared safe, see Section~\ref{sec:coll_safety}. They are sequential
 recombination algorithms and combine the input objects based on a distance
-measure in Minkowski space.
+measure in Minkowski space. All jets were reconstructed using the efficient algorithms
+implemented in the FastJet library~cite{Cacciari:2011ma}.
 
 \subsection{Collinear and Infrared Safety}
 \label{sec:coll_safety}
@@ -153,27 +154,30 @@ are three important \kt based algorithms with distinct properties
 \end{figure}
 
 \begin{itemize}
-    \item The \textbf{Inclusive \kt algorithm ($p=1$)} is based on a \ptsq
+    \item $p=1$: The \textbf{Inclusive $\mathbf{\kt}$
+    algorithm}~\cite{Catani:1991hj,Catani:1992rm} is based on a \ptsq
         distance measure and approximately describes the inversion
         of the QCD branching process.
-    \item The \textbf{Cambridge-Aachen algorithm ($p=0$)} is only based on the
+    \item $p=0$: The \textbf{Cambridge-Aachen
+        algorithm}~\cite{Dokshitzer:1997in} is only based on the
         spatial separation of the objects and does not rely on the energy of
         the input objects. Similarly to the inclusive \kt algorithm its jets
         have an irregular shape. This jet algorithm is particularly interesting
         for jet substructure studies.
-    \item The \textbf{Anti-\kt algorithm ($p=-1$)} favours clustering hard input
+    \item  $p=-1$: The \textbf{Anti-$\mathbf{\kt}$ algorithm}~\cite{Cacciari:2008gp} favours clustering hard input
         objects resulting in fairly circular jet shapes for hard jets, while
-        soft jets are crescent-shaped if they are close to a hard jet~\cite{Cacciari:2008gp}.
+        soft jets are crescent-shaped if they are close to a hard jet.
 \end{itemize}
 
 \subsection{Jet Area}
 
 The jet area describes the space covered by a jet object in the $\eta$-$\phi$
-plane . While cone-based jet algorithms yield a $\pi R^2$ size area, the area
-for sequential jet algorithms needs to be determined for each jet. A large
-number of infinitely soft particles, so-called ghost particles, are evenly
-distributed in the event. The area $A_j$ of a jet $j$ is assumed to be
-proportional to the number of ghost particles clustered into the jet. 
+plane~\ref{Cacciari:2008gn}. While cone-based jet algorithms yield a $\pi R^2$
+size area, the area for sequential jet algorithms needs to be determined for
+each jet. A large number of infinitely soft particles, so-called ghost
+particles, are evenly distributed in the event. The area $A_j$ of a jet $j$ is
+assumed to be proportional to the number of ghost particles clustered into the
+jet. 
 
 The concept of jet areas is especially important in the context of pile-up
 mitigation. The average \pt density $\rho$ in an event is estimated using the inclusive
@@ -190,23 +194,25 @@ Sec.~\ref{pileup_correction}.
 
 \subsection{Charged Hadron Subtraction}
 
-CMS introduced a new technique to reduce pile-up from jets using the high
-resolution of the tracker, called Charged Hadron Subtraction (CHS). Naturally
-the CHS algorithms can only be applied on jets within the tracker coverage of
-$|\eta| < 2.4$. All tracks of particle flow candidates which originate from a
-pile-up vertex are removed. Tracks originating from the main vertex or tracks
-not associated to any vertex remain in the event. The jets are now clustered
-from this set of particles. Since the jet identification criteria in
-the jet selection in the analysis require at least one charged particle in a
-jet, the CHS method effectively reduces the influence of pile-up on real jets as
-well as completely removing a majority of the pile-up jets in the barrel region of the CMS
-detector in combination with the jet identification criteria.
+\CMS introduced a new technique to reduce pile-up from jets using the high
+resolution of the tracker, called Charged Hadron Subtraction
+(CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithms can only be
+applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
+particle flow candidates which originate from a pile-up vertex are removed.
+Tracks originating from the main vertex or tracks not associated to any vertex
+remain in the event. The jets are now clustered from this set of particles.
+Since the jet identification criteria in the jet selection in the analysis
+require at least one charged particle in a jet, the CHS method effectively
+reduces the influence of pile-up on real jets as well as completely removing a
+majority of the pile-up jets in the barrel region of the \CMS detector in
+combination with the jet identification criteria.
 
 The analysis presented in this thesis relies on CHS jets. Especially in the
 low-\pt region, removing pile-up jets mimicking the leading jet in the event
 improves the signal efficiency in the forward region.
 
 \section{Jet Energy Corrections}
+\todo{jec paper ref}
 
 A detailed understanding of the jet energy scale and the jet transverse momentum
 resolution is important when it comes to drawing conclusions about the
@@ -219,7 +225,7 @@ definition itself also introduces effects due to the fragmentation model,
 initial and final state radiation which can cause out-of-cone effects.
 
 The jet energy corrections (JEC) relate the measured jet energy to the
-corresponding true particle jet energy. CMS uses a factorized correction approach
+corresponding true particle jet energy. \CMS uses a factorized correction approach
 consisting of multiple correction steps that build on one anothe. The corrected
 transverse momentum $\pt^{\mathrm{corr}}$ of a jet is yielded by subsequently applying all correction
 factors on an uncorrected jet:
