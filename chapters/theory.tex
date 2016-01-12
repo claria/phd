@@ -122,14 +122,14 @@ which are not well known.
 \section{NLO Prediction}
 
 The NLO cross section of the triple-differential dijet cross section is
-calculated using fastNLO~\cite{Kluge:2006xs,Britzger:2012bs}. The fastNLO interpolation tables are
-filled with the perturbative coefficients of the \NLOJETPP program~\cite{Nagy:2003tz}, see
-Sec.~\ref{sec:nlojetpp}. The PDFs are accessed via the LHAPDF
-library~\cite{lhapdf}. The \as-evolution is done using the provided routines
-by the PDF sets. The advantage of the application of the fastNLO framework
-instead of direct calculation using \NLOJETPP is the possibility to repeat the
-calculations using different PDFs and scale choices as it is neccessary to
-calculate the PDF and scale uncertainties.
+calculated using fastNLO~\cite{Kluge:2006xs,Britzger:2012bs}. The fastNLO
+interpolation tables are filled with the perturbative coefficients of the
+\NLOJETPP program~\cite{Nagy:2003tz}, see Sec.~\ref{sec:nlojetpp}. The PDFs are
+accessed via the LHAPDF library~\cite{Whalley:2005nh,Buckley:2014ana}. The
+\as-evolution is done using the routines provided by the PDF sets. The advantage
+of the application of the fastNLO framework instead of direct calculation using
+\NLOJETPP is the possibility to repeat the calculations using different PDFs and
+scale choices as it is neccessary to calculate the PDF and scale uncertainties.
 
 \subsection{Scale Choice}
 
