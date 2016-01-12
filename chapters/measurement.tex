@@ -2,16 +2,6 @@
 
 \chapter{Measurement of the Triple-Differential Dijet Cross Section}
 
-\section{Observable definition}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/measurement/ybys.pdf}
-    \caption{}
-    \label{fig:trigger_eff}
-\end{figure}
-
-
 \section{Datasets}
 \label{sec:datasets}
 
@@ -26,10 +16,10 @@ triggers were assigned to the \texttt{JetMon} or \texttt{JetHT} primary
 datasets, respectively. The datasets are split into multiple samples
 corresponding to the period of data taking in 2012, called Run A,B,C and D.
 Unfortunately the trigger assignment to the primary datasets changed during the
-data taking period, as can been seen in Table~\ref{tab:datasets}, it was taken
+data taking period, as can been seen in Table~\ref{tab:data:datasets}, it was taken
 care to avoid any double counting. While in run A all events were stored in the
 dataset \texttt{Jet}, the prescaled and unprescaled triggers were split into
-separate streams \emph{JetMon} and \emph{JetHT} in the runs B, C and D.
+separate streams \texttt{JetMon} and \texttt{JetHT} in the runs B, C and D.
 
 \begin{table}[htbp]
     \centering
@@ -42,10 +32,11 @@ separate streams \emph{JetMon} and \emph{JetHT} in the runs B, C and D.
     D & 203777--208686 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & 7.37\\ 
     \bottomrule
     \end{tabular}
-    \caption{The full 2012 dataset is used. In Run A, events of all single jet trigger paths are stored in 
-        the stream Jet, while the prescaled triggers were moved to the JetMon stream in the runs
-        B, C and D. Events triggering the unprescaled trigger are in the stream
-    JetHT.}
+    \caption{The full 2012 dataset is used. In Run A, events of all single jet
+        trigger paths are stored in the stream \texttt{Jet}, while the prescaled
+        triggers were moved to the \texttt{JetMon} stream in the runs B, C and
+        D. Events triggering the unprescaled trigger are collected in the data
+        stream \texttt{JetHT}.}
     \label{tab:data:datasets}
 \end{table}
 
@@ -57,7 +48,7 @@ given in Section~\ref{subsection:mc_generators}. Each MC generator is using and
 optimized tune to simulate the underlying event. Additionally the data samples
 contain not only the hard interaction but also a model for pile-up collionsion,
 through which additional soft scattering events following the pile-up
-distribution in data are mixed into the event. 
+distribution in data are mixed into the event.
 
 The Madgraph+P6 sample is a multi-leg improved HT-binned sample. By using
 Madgraph, the LO matrix elements not only contain the $2 \rightarrow 2$ matrix
@@ -658,4 +649,4 @@ correlations of the statistical uncertainty after the unfolding.
 
 \section{Experimental Uncertainties}
 
-
+\section{Comparison with NLO Predictions}

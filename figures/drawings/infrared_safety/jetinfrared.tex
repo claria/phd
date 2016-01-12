@@ -10,17 +10,17 @@
   %   \clip (-2,0) rectangle (2,1cm);
   %   \draw[dashed] (0,0) circle(2cm and 0.35cm);
   % \end{scope}
-  \draw (-1,3) node (jet1) [thick,rotate=15,ellipse, minimum height=0.5cm,minimum width=3cm,draw] {};
-  \draw (1,4) node (jet2) [thick,rotate=-15,ellipse, minimum height=0.5cm,minimum width=3cm,draw] {};
+  \draw (-1,3) node (jet1) [very thick,rotate=15,ellipse, minimum height=0.5cm,minimum width=3cm,draw] {};
+  \draw (1,4) node (jet2) [very thick,rotate=-15,ellipse, minimum height=0.5cm,minimum width=3cm,draw] {};
   % \draw[thick,->] (0,0) -- node[left,font=\footnotesize] {$x$} (0,4);
   % \draw (aa) -| (bb);
-  \draw[->, thick, shorten >=-1cm] (0,0) -- (-1,3);
-  \draw[thick] (0,0) -- (jet1.west);
-  \draw[thick] (0,0) -- (jet1.east);
+  \draw[->, very thick, shorten >=-1cm] (0,0) -- (-1,3);
+  \draw[very thick] (0,0) -- (jet1.west);
+  \draw[very thick] (0,0) -- (jet1.east);
 
-  \draw[->, thick, shorten >=-1cm] (0,0) -- (1,4);
-  \draw[thick] (0,0) -- (jet2.west);
-  \draw[thick] (0,0) -- (jet2.east);
+  \draw[->, very thick, shorten >=-1cm] (0,0) -- (1,4);
+  \draw[very thick] (0,0) -- (jet2.west);
+  \draw[very thick] (0,0) -- (jet2.east);
 
   \begin{scope}[shift={(5,0)}]
 
@@ -39,9 +39,9 @@
   \draw[gray!20,thick] (0,0) -- (jet2.east);
 
 
-  \draw (0,3) node (jet) [thick,rotate=0,ellipse, minimum height=0.8cm,minimum width=5cm,draw] {};
-  \draw[thick] (0,0) -- (jet.west);
-  \draw[thick] (0,0) -- (jet.east);
+  \draw (0,3) node (jet) [very thick,rotate=0,ellipse, minimum height=0.8cm,minimum width=5cm,draw] {};
+  \draw[very thick] (0,0) -- (jet.west);
+  \draw[very thick] (0,0) -- (jet.east);
 
   \end{scope}
 

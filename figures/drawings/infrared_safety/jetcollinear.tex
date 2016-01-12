@@ -1,15 +1,9 @@
-\documentclass[tikz,border=10pt]{standalone}
+\documentclass[tikz,border=15pt]{standalone}
 \usetikzlibrary{shapes,calc,arrows,through,intersections}
 \begin{document}
 
 \begin{tikzpicture}
 
-  % \draw[step=1.0,thin,gray] (-5,0) grid (14,5);
-  % \begin{scope}
-  %   \clip (-2,0) rectangle (2,1cm);
-  %   \draw[dashed] (0,0) circle(2cm and 0.35cm);
-  % \end{scope}
-  % \draw (0,3) node (jet1) [thick,rotate=0,ellipse, minimum height=0.5cm,minimum width=4cm,draw,label={[xshift=-0.5cm]Jet}] {};
   \draw (0,3) node (jet1) [very thick,rotate=0,ellipse, minimum height=0.5cm,minimum width=4cm,draw] {};
   \draw[->, thick, ] (0,0) -- (-1.5,3);
   \draw[->, very thick, ] (0,0) -- (0,5);

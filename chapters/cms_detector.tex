@@ -8,13 +8,10 @@ study sub-atomic particles and their interactions. To accomplish that task, CERN
 built several particle accelerators reaching record-breakign energies and
 explored energy ranges not been accessible before.
 
-
 Ground-breaking achievements like the discovery of neutral currents in the
 Gargamelle bubble chamber, the discovery of the W and Z boson by the UA1 and UA2
 experiments at the LEP accelerator or the creation of antihydrogen atoms were
 made by physicists at CERN.
-
-
 
 The LEP and Tevatron experiments have provided remarkabable insights into the
 Standard Model and performed precision tests of the Standard Model. As a logical
@@ -363,19 +360,133 @@ into smaller processing tasks, called jobs, which are assigned to computing
 centers distributed over many countries. This common computing and storage
 infrastructure is called the worldwide LHC computing grid (LHCG).
 
-%lhcg erklaeren.
-
-
 \subsection{CMS Software Framework}
+
+The software framework of the CMS collaboration, referred to as CMSSW, offers
+all neccessary tools for a phycis analysis. The tasks in the event processing
+comprise on the one hand calibration and reconstruction of data from raw
+detector read out and on the other hand the event generation and detector
+simulation. Furthermore it provides the possibility to implement analysis code
+to perform the data analysis. 
+
+To cope with this vast range of requirements to the experiment software, CMSSW
+is built on top of an event data model (EDM) in which the event is a
+container for for all measured or simulated data. The reconstruction and
+distribution algorithms in CMSSW are divided into modules, which can be
+modularly loaded and run. Each module can read the event data and add additional
+objects calculated within the algorithm. The execution of the modules is ordered
+in processing chains which are configured by the user. Very often these modules
+access external libraries like Monte Carlo event generators for event
+simulation, Geant 4 for the detector simulation or FastJet for the
+reconstruction of jets. Using this modular approach in which modules are loaded
+dynamically one can easily start with an event containing only the raw detector
+data and process all neccessary steps to arrive at the final event containing
+the reconstructed objects suited for analysis.
+
+While having that much information in the event data is convenient to redo
+reconstruction steps, it is unsuited for fast processing in the analysis due to
+its size and complexity. Therefore a skimming step, in which only the neccesary
+data is preserved is run before the analysis, see Section~\ref{artus_kappa}.
+
 \subsection{Analysis Software and Workflow}
+
+Due to the complexity of the workflows in the HEP data analysis, several tools
+were used or even deloped in the Karlsruhe group to faciliate a reliable and
+fast workflow for the analysis. 
+
+\subsubsection{Artus and Kappa}
+\label{artus_kappa}
+
+The Kappa software is a skimming framework interfaced to CMSSW. It consists of
+different modules which allow to skim only the physics objects needed in the
+subsequent analysis. The data is then stored in its own compact data format
+using the ROOT format. The resulting Kappa tuples provide all neccesary
+information of the events and the lumisection while hiding the complexity of the
+CMSSW datasets. There is a separate tool collection, KappaTools, in which
+functions to access the Jet energy corrections or HLT informations are
+collected.
+
+The analysis itself is built on top of the Artus framework. Artus was developed
+within the Karlsruhe group to combine analysis efforts and profit from mutual
+developments. The framework defines a workflow based on three elements. There
+are \emph{producers}, which calculate quantities and \emph{filters}, which reject events based on
+the defined criteria. In a final step, histograms or nTuples are written out by
+\emph{consumers}. All producers, filters and consumers are written in a modular
+way so that they can be shared with other analyses. Furthermore they are steered
+by a global configuration file in which one can easily adapt all settings and
+cuts.
+
+\subsubsection{grid-control}
+
+The data sets are even after the skimming step to large to be processed on a
+single computer. Therefore special batch system with a huge number of computing
+nodes are employed to process the data. The data processing is split into
+multiple jobs which are then sent to the batch system. grid-control is by far
+the most versatile job submission tool which provides multiple options for data
+splitting and parametrized jobs while hiding the pitfalls of local or remote
+computing resources.
+
+\subsubsection{ROOT}
+
+The object-oriented data analysis framework ROOT has been written almost 20 years
+ago. It is used by all LHC experiments for persistent storage of data. Moreover
+ith provides fast histogramming classes and access to many libraries like MINUIT
+for minimization purposes or TMVA for multivariate data analyses. Despite
+many hours of headaches caused by obscure design decisions in the software, ROOT
+and especially the python bindings PyROOT were used extensively in this analysis.
+
+\subsubsection{matplotlib and numpy}
+
+
+
 \subsection{Monte-Carlo Event Generators and Simulation Software}
 \label{subsection:mc_generators}
 
 \subsubsection{Pythia}
+
+The multi-purpose event generator Pythia simulates events in high-energy
+collisons, comprising a large set of physics processes. Pythia uses the Lund
+string hadronization model in which all but the highest-energy gluons are
+treated as field ines which attract each other by gluon self-interaction and
+form a tube or string of strong color field. In this analysis two version of the
+Pythia event generator are used. The official samples including the detector
+simulation were generated using Madgraph and Pythia 6, while the study of
+non-perturbative effects was performed using the new Pythia 8 version, in which
+all the new tunes were available. 
+
 \subsubsection{Herwig}
+
+Herwig is also a general-purpose event generator for the simulation of
+high-energy hadron-hadron collisions. It includes all steps to fully simulate
+collison events starting from the hard matrix elements, initial- and final-state
+QCD radiation, a cluster model of the hadronization process based on
+non-perturbative gluon splitting and a decay model. 
+
+\todo{new version Herwig 7}
+
 \subsubsection{Madgraph}
+
 \subsubsection{NLOJet++ and fastNLO}
 
-% cmssw grid-control, root,
+The complicated NLO cross section for jet productions are calculated using
+\NLOJETPP. It implements the dipole subtraction method for the separation of the
+divergences. \NLOJETPP can calulate up to three-jet observables at NLO precision.
+It implements the ability run analysis scenarios by which it is interfaced to
+\fastNLO.
 
-% physics software: herwig/pythia nlojt++/fastNLO:
+Since the pQCD cross section calculations in \NLOJETPP are determined in Monte
+Carlo integration and are therefore very time consuming. For fits of the proton
+structure or the extraction of the stroung coupling constant, the cross sections
+need to be evaluated multiple times with different input parameters. The
+\fastNLO framework implements a strategy for a fast recalculation of these cross
+section. It sotres the perturbative coefficients obtained with \NLOJETPP in a
+way that the strong coupling constant and the PDFs can be changed afterwards
+without a recalculation of the perturbative coefficients.
+
+\subsubsection{LHAPDF}
+
+All event generators and cross section calculation tools need the parton
+distribution functions as input. They are either hardcode in the generator or
+accessed using a standardized interface, the LHAPDF library. LHAPDF provides
+interpolation routines by which PDFs read from discretised data files can be
+accessed. 
