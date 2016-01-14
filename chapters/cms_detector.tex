@@ -68,22 +68,30 @@ experiments as can be seen in Figure~\ref{fig:lhc_complex}.
 \subsection{The Compact Muon Solenoid Detector}
 
 The Compact Muon Solenoid (CMS) detector is a general purpose detector at the
-LHC located at Point 5, at the opposite side of the CERN campus at Meyrin. To
-serve a vast range of physics studies, its design is driven by a cylyndrical
-structure containing layers of different subdetectors each built
-to measure a specific type of particles at high precision. A high-precision
-inner tracking system is surrounded by an electromagnetic and hadronic
-calorimeter which are encased by a superconducting solenoid magnet, and a high
-precision muon detection system. The detector is 21.6 m long and 14.6 m in
-diameter, weighing more than 12000 tons due to its compact design. The detector
-was built as cylyndrical slices constructed at ground level and lowered into the
-cavern. In case of upgrades or repairs, the slices can be pulled apart and easy
-access to the inner components is gained. 
+LHC, located at Point 5 of the LHC ring. To serve a wide range of physics
+studies, the detector design is driven by a cylyndrical structure containing
+layers of different subdetectors each built to measure a specific type of
+particles with best precision. A high-precision inner tracking system is
+surrounded by an electromagnetic and a hadronic calorimeter which again are
+enclosed by a superconducting solenoid magnet. The whole inner part of the
+detector is surrounded by a sophisticated muon detection system embedded in a
+iron yoke. The detector is \SI{21.6}{\meter} long and \SI{14.6}{\meter} in
+diameter, but weighing more than \SI{12000}{\tonne} due to its compact design.
+It was built as cylyndrical slices constructed at ground level and lowered into
+the cavern. In case of upgrades or repairs, the slices can be pulled apart and
+the inner components can be easily accessed.
 
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_longitudinal_section.pdf}
-    \caption[Longitudinal section of the CMS detector]{asdf}
+    \caption[Longitudinal section of the CMS
+    detector]{A longitudinal section of one quadrant of the CMS
+        detector in the $y$-$z$ plane. The sketch shows
+    the multi-layer design of the CMS detector starting with the silicon pixel
+and silicon strip detectors close to the interaction point. They are surrounded
+by the electromagnetic (green) and hadronic (yellow) calorimeters. The barrel is
+encompassed by the superconducting magnet (blue). The muon detection system
+(red) is embedded in the iron return yoke~\cite{Berger:2014aca}.}
     \label{fig:cms:longitudinal_section}
 \end{figure}
 
@@ -102,51 +110,56 @@ $\theta$, the pseudo-rapidity $\eta$ and the rapidity $y$ are commonly used to
 split the phasespace, since the differential flux is approximately constant at
 hadron-hadron colliders. The pseudo-rapidity is defined as
 
-\begin{equation}
+\begin{equation*}
     \eta = - \ln \left( \tan \left( \frac{\theta}{2} \right) \right)
-\end{equation}
+\end{equation*}
 
 Throughout this thesis the rapidity is favoured compared to the pseudo-rapidity
 due to its invariance under longitudinal boosts in the $z$-direction. Rapidity
-and pseudo-rapidity are equivalent in the case of massless particle. The
+and pseudo-rapidity are equivalent in the case of massless particles. The
 rapidity is defined as
 
-\begin{equation}
+\begin{equation*}
     y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right) 
-\end{equation}
+\end{equation*}
 
 The momentum along the beamline is not well defined due to the momentum
 distribution inside the proton. A direct connection to the hard process is given
 by the transverse momentum \pt related to cartesian coordinates as
 
-\begin{equation}
+\begin{equation*}
     \pt = \sqrt{p_x^2 + p_y^2}
-\end{equation}
+\end{equation*}
 
 \subsection{Inner Tracking System}
 \todo{measurement of charged particles.}
 
-To yield a best possible spatial resolution, the particle tracks needs be
+To yield a best possible spatial resolution, the particle tracks need to be
 measured as close to the beam line as possible. The inner tracking system of CMS
 is designed to measure the tracks of charged particles emerging from the
-collision. Enclosing the interaction point with its diameter of 2.6 m and
-extending 2.8 m in each direction of the beamline, the tracking system covers a
-pseudo-rapidity range up to $|\eta| < 2.5$. 
+collision. Enclosing the interaction point with a diameter of 2.6 m and
+extending 2.8 m in each direction along the beampipe, the tracking system covers a
+pseudo-rapidity range up to $|\eta| < 2.4$. The inner tracking system comprises
+two subsystems, the silicon pixel detector consisting of three layers and
+installed very close to the beam pipe and the silicon strip detector with ten
+strip layers in the barrel region. 
 
-The inner tracking system comprises two subsystems, the \textbf{silicon pixel
-detector}, consisting of three layers and installed very close to the beam pipe,
-and the silicon strip detector with ten layers in the barrel region. The pixel
-detector contains 65 millon pixels arranged in three cylindrical layers at 4 cm,
-7 cm and 11 cm to the beam pipe. The pixel detector is able to resolve the huge
-number of particle tracks of around 10 million particles per square centimetre
-and reconstruct their tracks. The high spatial resolution achieved by the pixel
-detector additionally allows the identification and measurement of secondary
-vertices used to identify long-lived particles.
+\paragraph{Silicon Pixel Detector} Containing over \SI{65} milion pixels
+arranged in three cylindrical layers at \SI{4}{\centi\meter},
+\SI{7}{\centi\meter} and \SI{11}{\centi\meter} distance to the beam pipe, the
+pixel detector is able to resolve the tracks of the huge number particles. At
+LHC design luminosity, about 1000 particles pass the tracking detector on
+average. The size of each pixel is \SI{100}{\micro \meter} x \SI{150}{\micro
+\meter} giving a average occupancy of $10^{-4}$ per bunch crossing.  The high
+spatial resolution achieved by the pixel detector additionally allows the
+identification and measurement of secondary vertices used to identify long-lived
+particles.
 
-Reduced particle flux further away from the beam pipe eases the identification
-of tracks. Cost-efficient \textbf{silicon strip detectors} are employed reaching out to
-an radius of 1.3 m. The strip detector consists of a total of 10 million
-detecting strips read out by 80,000 chips. 
+\paragraph{Silicon Strip Detector} The pixel detector is complemented by silicon
+strip detector. Reduced particle flux further away from the beam pipe eases the identification
+of tracks. Cost-efficient silicon strips are employed reaching out to
+an radius of \SI{1.3}{\meter}. The strip detector consists of a total of 10 million
+detecting strips read out by \SI{80000} chips. 
 
 \begin{figure}[htp]
     \centering
@@ -296,7 +309,7 @@ permanently or is omitted.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_l1_trigger.pdf}\hfill
-    \caption[The L1 Trigger of CMS]{asdf}
+    \caption[The L1 Trigger of CMS]{asdf\cite{Sphicas:2002gg}}
     \label{fig:cms:l1_trigger}
 \end{figure}
 
@@ -333,7 +346,7 @@ rate of 100 kHz.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_daq.pdf}\hfill
-    \caption[The DAQ System of CMS]{asdf}
+    \caption[The DAQ System of CMS]{asdf~\cite{Sphicas:2002gg}}
     \label{fig:cms:daq_system}
 \end{figure}
 
@@ -456,13 +469,26 @@ all the new tunes were available.
 
 \subsubsection{Herwig}
 
-Herwig is also a general-purpose event generator for the simulation of
-high-energy hadron-hadron collisions. It includes all steps to fully simulate
-collison events starting from the hard matrix elements, initial- and final-state
-QCD radiation, a cluster model of the hadronization process based on
-non-perturbative gluon splitting and a decay model. 
+Herwig is also a multi purpose event generator for the simulation of high-energy
+hadron-hadron collisions. The first version was build in Fortran and is known as
+HERWIG~\cite{Corcella:2000bw}. Herwig++~\cite{Bahr:2008pv} builds up on the
+heritage of the HERWIG version while providing a much more flexible structure as
+it is implemented in C++. The recently released Herwig 7~\cite{Bellm:2015jjp}
+version combines all their developments and supersedes both version. 
 
-\todo{new version Herwig 7}
+The Herwig generator family includes all steps to simulate events. It includes a
+number of hard scattering processes, but also possesses the possibility to
+interface external matrix element generators. The parton shower simulates
+initial- and final-state radiation via angular ordering, multiple partonic
+scatterings are simulated by an eikonal model and a cluster model decribes the
+hadronization. 
+
+Herwig 7 further improves these capabilities by including next-to-leading order
+QCD matrix elements with matched parton showers while keeping the key features
+of the previous Herwig versions. Herwig++ is used in this thesis to study
+non-perturbative effects, see Sec.~\ref{sec:np_factors}. The NLO capabilities of
+Herwig 7 are shown in the comparison of the unfolded measurement to NLO
+predictions with matched parton showers, see Sec.~\ref{sec:nlo_comparisons}.
 
 \subsubsection{Madgraph}
 
