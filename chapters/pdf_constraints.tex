@@ -1,6 +1,6 @@
 % vim: tw=80
 
-\chapter{PDF Constraints of the triple-differential Dijet Measurement}
+\chapter{PDF Constraints of the Triple-Differential Dijet Measurement}
 
 In many precision measurements at the LHC, the proton PDFs are an essential
 ingredient. As the PDFs cannot be calculated from perturbative QCD, they are
@@ -10,180 +10,146 @@ kinematic phasespace. The triple-differential dijet cross section contains
 additional information in the high-$x$ region and can constrain the PDFs, in
 particular the gluon PDF. 
 
-
-% The HERAFitter project~\cite{Aaron:2009kv,Aaron:2009aa,HERAFitter:2013hf} is an open
-% source fitting framework designed to derive PDFs from data. It has a
-% modular structure, encompassing a variety of theoretical predictions
-% for different processes and phenomenological approaches for the PDF
-% determination. Confronting data with theoretical predictions the
-% parton distributions are determined.  In this study HERAFitter is
-% employed to estimate the impact of the CMS inclusive jet data on the
-% PDFs and their uncertainties using the fixed-order theory predictions
-% and NP corrections as defined in the previous section.
-
-
-
-\begin{figure}[tbp]
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_0_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_9_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_7_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_8_1_9.pdf}
-  \caption{}
-  \label{fig:pdfconstraints:direct:19}
-\end{figure}
-
-
-
-\section{Sensitivity of PDFs to Dijet Measurement}
-\label{sec:pdf_sensitivity}
-
-% The potential impact of the CMS inclusive jet data can be illustrated
-% by the correlation between the inclusive jet cross section
-% $\sigma_{\mathrm{jet}}(x,Q^2)$ and the PDF $xf_i(x,Q^2)$ for each
-% parton of flavour $i$. As before, $x$ is the fraction of the proton
-% momentum, and $Q$ is the relevant energy scale of the hard process,
-% which in the case of inclusive jets is identified with the jet \pt.
-%
-% The NNPDF Collaboration~\cite{Ball:2008by} provides PDF sets in the
-% form of an ensemble of PDFs called replicas, which sample variations
-% in the PDF parameter space allowed within uncertainties. Evaluating
-% means and variance with the help of these replicas, predictions
-% including uncertainties are derived for PDF dependent observables.
-% For an NNPDF ensemble with $N_{\mathrm{rep}}$ replicas, the
-% correlation coefficient $\varrho$ between a cross section and the PDF
-% for flavour $i$ is then defined as:
-%
-% \begin{equation}
-%   \varrho_i \left[ \sigma_{\mathrm{jet}}(x,Q^2) , xf_i(x,Q^2) \right] =
-%   \frac{N_{\mathrm{rep}}}{(N_{\mathrm{rep}}-1)} \frac{\langle
-%     \sigma_{\mathrm{jet}}(x,Q^2) xf_i(x,Q^2) \rangle -
-%     \langle \sigma_{\mathrm{jet}} \rangle \langle xf_i(x,Q^2)
-%     \rangle}{\Delta_{\sigma_{\mathrm{jet}}(x,Q^2)} \Delta_{xf_i(x,Q^2)}}\,.
-% \end{equation}
-%
-% Here, the uncertainties of the jet cross sections and the PDFs
-% themselves are represented by $\Delta_{\sigma_\mathrm{jet}}$ and
-% $\Delta_{xf(x,Q^2)}$, respectively.
-% Figure~\ref{fig:correlation_pdf_xs_gqq} presents the correlation
-% coefficient between the inclusive jet cross section and the gluon, up,
-% and down quark PDFs in the proton.
-%
-% \begin{figure}[h!tb]
-%   \centering
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y2_0_bw}
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_quark_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_quark_y2_0_bw}
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_quark_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_quark_y2_0_bw}
-%   \caption{The correlation coefficient between the inclusive jet cross
-%     section and the gluon (top row), the up quark (middle row), and
-%     the down quark PDF (bottom row) as a function of the momentum
-%     fraction $x$ of the proton and the momentum scale $Q$ of the hard
-%     process. The correlation is shown for the central rapidity region
-%     $|y|<0.5$ (left) and for $2.0<|y|<2.5$ (right).}
-%   \label{fig:correlation_pdf_xs_gqq}
-% \end{figure}
-%
-% The correlation between the gluon PDF and the inclusive jet cross
-% section is observed to be largest at central rapidity for all jet
-% transverse momenta. In contrast the correlation between the quark
-% distributions and the jet cross section is rather small in this
-% kinematic region such that a large impact on the quark distribution is
-% not expected from including these jet data into PDF fits. In the
-% forward region though the correlation between the quark distributions
-% and the jet cross sections increases with $x$ at high \pt. In summary,
-% a significant reduction of the PDF uncertainties is expected by
-% including the CMS inclusive jet cross section into fits of the proton
-% structure.
-
-\section{Setup of the HERAFitter fitting framework}
+\section{The HERAFitter Framework}
 \label{section:herafittersetup}
 
-% In the following the impact of the CMS inclusive jet data on proton
-% PDFs is investigated by including the jet cross section measurement
-% into a combined fit with the HERA inclusive DIS cross
-% sections~\cite{Aaron:2009aa}, which were the basis for the
-% determination of the HERAPDF1.0 PDF set.
-%
-% The analysis is performed within the HERAFitter framework, which is
-% based on the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi
-% (DGLAP)~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}
-% evolution scheme at NLO as implemented in the QCDNUM
-% package~\cite{Botje:2010ay}. DIS data in the fit are required to have
-% $Q^2 > Q_\mathrm{min}^2 = 3.5 \GeVsq$ to ensure the applicability of
-% perturbative QCD\@. The following PDFs are assumed to be independent
-% in the fit procedure: $xu_v(x)$, $xd_v(x)$, $xg(x)$, and
-% $x\bar{U}(x)$, $x\bar{D}(x)$, where $x\bar{U}(x) = x\bar{u}(x)$, and
-% $x\bar{D}(x) = x\bar{d}(x) + x\bar{s}(x)$. A parameterization with 13
-% free parameters is used, similar to Ref.~\cite{Abramowicz:1900rp}. At
-% the starting scale $Q_0$ of the QCD evolution, chosen to be $Q_0^2 =
-% 1.9 \GeVsq$, the PDFs are parameterized as follows:
-%
-% \begin{align}
-%   xg(x) &= A_g x^{B_g} (1-x)^{C_g} - A'_g x^{B'_g} (1-x)^{C'_g} \\
-%   xu_v(x) &= A_{u_{v}} x^{B_{u_{v}}} (1-x)^{C_{u_{v}}} (1 + E_{u_{v}}x^2)\\
-%   xd_v(x) &= A_{d_v} x^{B_{d_v}} (1-x)^{C_{d_{v}}}\\
-%   x\bar U(x) &= A_{\bar U} x^{B_{\bar U}} (1-x)^{C_{\bar U}}\\
-%   x\bar D(x) &= A_{\bar D} x^{B_{\bar D}} (1-x)^{C_{\bar D}}
-% \end{align}
-%
-% The normalization parameters $A_g$, $A_{u_{v}}$ and $A_{d_{v}}$ are
-% constrained by QCD sum rules. Additional constraints $B_{\bar
-%   U}=B_{\bar D}$ and $A_{\bar U} = A_{\bar D}(1-f_s)$ are applied to
-% ensure the same normalization for the $\bar u$ and $\bar d$ densities
-% for $x \rightarrow 0$. The strangeness fraction is set to $f_s =
-% 0.31$, as obtained from neutrino-induced di-muon
-% production~\cite{Mason:2007zz}. The parameter $C'_g$ is fixed to
-% 25~\cite{Martin:2009iq,Thorne:2006qt}. A generalized-mass variable
-% flavour number scheme~\cite{Thorne:1997ga,Thorne:2006qt} is used with
-% the strong coupling constant set to $\alpsmz= 0.1176$.
+The constraints of the triple-differential dijet measurement on the proton PDFs
+is demonstrated by including the cross section measurement in a PDF fit in
+combination with inclusive DIS cross sections from the HERA experiments. The
+HERA-II DIS data were the basis for the determination of the HERAPDF 2.0 PDF
+set.
+
+HERAFitter is an open source framework to fit the PDFs to experimental data
+based on the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi
+(DGLAP)~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg} equations. To
+ensure consistency between DIS and QCD calculations, the fits are performed at
+NLO. The DIS cross sections are calculated by the QCDNUM
+software~\cite{Botje:2010ay}.
+
+The parametrization used in the PDF fit is based of the HERAPDF 2.0
+parametrization and introduces additional terms which were found to better
+describe the additional added jet measurement. The PDFs parameterization is
+definded at the
+starting scale $Q_0$ set to $Q_0 = \SI{1.9}{\GeV \square}$ and the five
+independent PDFs $xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and $x\bar{D}(x)$
+are parameterized as follows:
+
+\begin{align}
+  xg(x) &= A_g x^{B_g} (1-x)^{C_g} - A'_g x^{B'_g} (1-x)^{C'_g} \\
+  xu_v(x) &= A_{u_{v}} x^{B_{u_{v}}} (1-x)^{C_{u_{v}}} (1 + E_{u_{v}}x^2)\\
+  xd_v(x) &= A_{d_v} x^{B_{d_v}} (1-x)^{C_{d_{v}}}\\
+  x\bar U(x) &= A_{\bar U} x^{B_{\bar U}} (1-x)^{C_{\bar U}}\\
+  x\bar D(x) &= A_{\bar D} x^{B_{\bar D}} (1-x)^{C_{\bar D}}
+\end{align}
+
+Not all parameters are actually fitted. The normalization parameters $A_g$,
+$A_{u_{v}}$ and $A_{d_{v}}$ are calculated using the QCD sum rules. $B_{\bar
+U}=B_{\bar D}$ and $A_{\bar U} = A_{\bar D}(1-f_s)$ ensure the same
+normalization for the $\bar u$ and $\bar d$ PDF for the $x \rightarrow 0$
+region. The strangeness fraction is set to $f_s = 0.40$. The generalized-mass
+variable flavour number secheme as described in
+in~\cite{Thorne:1997ga,Thorne:2006qt} is used with the strong coupling constant
+set to $\asmz= 0.1180$.
 
 
-\subsection{Determination of PDF uncertainties in the HERAFitter framework}
+\subsection{Treatment of PDF uncertainties in the Fits}
 \label{section:treatment_pdf_uncertainties}
 
-% The uncertainty of the PDFs is subdivided into experimental, model,
-% and parameterization uncertainties, which are studied
-% separately. Experimental uncertainties result from the propagated
-% statistical and systematic uncertainties of the input data.
-% For the model uncertainties the following variations of
-% model assumptions are considered:
-%
-% \begin{itemize}
-% \item The strangeness fraction $f_s$, by default equal to $0.31$, is
-%   varied between $0.23$ and $0.38$.
-% \item The b-quark mass is varied by $\pm 0.25\GeV$ around the central
-%   value of $4.75\GeV$.
-% \item The minimum $Q^2$ value for data used in the fit,
-%   $Q^2_\mathrm{min}$, is varied from $Q^2_\mathrm{min} = 3.5\GeVsq$ to
-%   $5.0\GeVsq$. For the variation fit with $Q_{\mathrm{min}}^2 = 5.0
-%   \GeVsq$, the parameter $B_{g}'$ is fixed to the value obtained in
-%   the central fit.
-% \end{itemize}
-%
-% The parameterization uncertainty is estimated as described in
-% Ref.~\cite{Aaron:2009aa}. Employing the more general form of
-% parameterization
-%
-% \begin{align}
-%   xg(x) &= A_g x^{B_g} (1-x)^{C_g} (1  + D_g x + E_g x^2) - A'_g x^{B'_g} (1-x)^{C'_g};\\
-%   xf(x) &= A_{f}  x^{B_{f}} (1-x)^{C_{f}} (1 + D_{f}x + E_{f}x^2)
-% \end{align}
-%
-% it is tested successively whether the inclusion of additional fit
-% parameters leads to a variation in the shape of the fitted results.
-% Furthermore, the starting scale $Q_0$ is changed to $Q^2_0 =
-% 1.5\GeVsq$ and $Q^2_0 = 2.5\GeVsq$.  The maximal deviations of the
-% resulting PDFs from those obtained in the central fit define the
-% parameterization uncertainty. The experimental, model, and
-% parameterization uncertainties are added in quadrature to give the
-% final PDF uncertainty.
-%
+The uncertainty of the PDFs is subdivided into three independent sources, which
+are evaluated separately and finally added in quadrature to give the total
+uncertainty.
+
+\paragraph{Experimental Uncertainties} They result from propagated statistical and systematic
+uncertainties of the data points and are propagated to the PDF using the Hessian
+eigenvector method~\cite{Pumplin:2001ct}. The Hessian matrix is defined by the second derivatives of
+the fitted PDF parameters at the \chisq minimum. The matrix is diagonalized and
+the eigenvectors are computed, see Fig.~\ref{fig:eigenvector_basis_set}. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/pdf_constraints/hessianmethod.pdf}
+  \caption[Transformation of the parameter basis to the eigenvector basis.]
+    {Transformation from the original parameter basis to the orthonormal
+    eigenvector basis. The uncertainty on the PDF can be propagated to a
+    physical quantity $X$ using these eigenvector PDF sets~\cite{Pumplin:2001ct}.}
+    \label{fig:eigenvector_basis_set}
+\end{figure}
+
+Using an iterative method, the down- and upwards variation of each eigenvector
+corresponding to $\chisq = \chisq_{\mathrm{min}} + 1$ is calculated. Since the
+eigenvectors are orthogonal, the eigenvector variation PDFs correspond to
+independent sources of uncertainty on the PDFs.
+
+The asymmetric uncertainties $\Delta X^+$ and $\Delta X^-$ on a quantity of
+interest $X$ is evaluated as
+
+\begin{align*}
+  \Delta X^+_{\mathrm{exp}} &= \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[ \max(X_i^{\mathrm{up}}
+    -X_0, X_i^{\mathrm{dn}} - X_0, 0)\right]^2}\\
+    \Delta X^-_{\mathrm{exp}} &= \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[ \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}
+\end{align*}
+
+with $X_0$ describing the central prediction and $X_i^{\mathrm{up}}$ and
+$X_i^{\mathrm{dn}}$ giving the quantity using the up- and downwards variation of
+the eigenvector PDF set $i$ of the total number of eigenvectors
+$N_{\mathrm{EV}}$ in the PDF set.
+
+
+\paragraph{Model uncertainties} The uncertainties of several parameters input in the PDF fits are condensed in
+one PDF model uncertainty. For the model uncertainties the following variations
+on the input parameters are considered:
+
+\begin{itemize}
+\item The assumption is made, that the shape of the strange PDF follows the
+  shape of the fitted down-like sea quarks. Though the strange quark PDF is not
+  fitted but determined as a fraction of $xD$ PDF.The strangeness fraction
+  $f_s$, by default equal to $0.40$, is varied between $0.30$ and $0.50$.
+  \item The b-quark mass is set to $\SI{4.5}{\GeV}$ and varied between
+  $\SI{4.25}{\GeV}$ and $\SI{4.75}{\GeV}$.
+  \item The c-quark mass, set by default to $\SI{1.47}{\GeV}$ and varied between
+  $\SI{1.41}{\GeV}$ and $\SI{1.53}{\GeV}$.
+  \item The minimum $Q^2$ value for data used in the fit,
+    $Q^2_\mathrm{min}=\SI{7.5}{\GeVsq}$, is varied to $Q^2_\mathrm{min} =
+    \SI{5.0}{\GeV\square}$ and $Q^2_\mathrm{min} = \SI{10.0}{\GeV\square}$.
+\end{itemize}
+
+The uncertainties are evaluated similar to the eigenvector PDF uncertainties.
+The variation of each input parameter is treated as an independent variation.
+
+\begin{align*}
+  \Delta X^+_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{N_{\mathrm{par}}}}} \left[ \max(X_i^{\mathrm{up}}
+    -X_0, X_i^{\mathrm{dn}} - X_0, 0)\right]^2}\\
+    \Delta X^-_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{N_{\mathrm{par}}}}} \left[ \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}
+\end{align*}
+
+\paragraph{Parameterization uncertainty}
+
+To estimate the influence of the chosen PDF parameterization on the outcome, a
+more general form of parametrization is used. Using the general parametrization
+for the gluon PDF $xg(x)$ and the quark PDFs $xf(x)$
+
+\begin{align}
+   xg(x) &= A_g x^{B_g} (1-x)^{C_g} (1  + D_g x + E_g x^2) - A'_g x^{B'_g} (1-x)^{C'_g};\\
+   xf(x) &= A_{f}  x^{B_{f}} (1-x)^{C_{f}} (1 + D_{f}x + E_{f}x^2)
+\end{align}
+
+it is studied if the inclusion of additional parameters in the fit yields a
+different result. Each parameter is succesively added in the PDF fit and the
+envelope of all changes to the PDF shape is collected in a parmeterization
+uncertainty. Furthermore the variation of the starting scale $Q_0^2 =
+\SI{1.9}{\GeV}$ from \SI{1.6}{\GeV}$ to \SI{2.2}{\GeV}$ is treated as
+parametrization uncertainty.
+
+\begin{align*}
+  \Delta X^+_{\mathrm{par}} &= \max_{i}^{n} \left[ X^i - X^0, 0 \right]\\
+  \Delta X^-_{\mathrm{par}} &= \max_{i}^{n} \left[ X^0 - X^i, 0 \right]
+\end{align*}
+
 
 \subsection{Definition of the goodness-of-fit estimator}
-\label{sec:fitsetup}
+\label{sec:chi2_definition}
+
+
 
 % The agreement between data points $D_i$ and the theoretical
 % predictions $T_i$ is estimated via a least-squares method. All $K$
@@ -239,46 +205,29 @@ particular the gluon PDF.
 % Table~\ref{tab:cmsjets2011:nuisance} demonstrates that this is the
 % case for the CMS jet data with the described procedure.
 %
-% \begin{table}[htbp]
-%   \caption{19 independent sources of systematic uncertainty are considered in the
-%     CMS inclusive jet measurement. Out of these 16 are related to the JES
-%     and are listed first. In order to implement the improved correlation
-%     treatment as described in Section~\ref{sec:measurementjec}, the
-%     \textsc{SinglePion} source, see also the
-%     Appendix~\ref{sec:jessources}, has been split up into five
-%     sources. The shift from the default value in each source of systematic
-%     uncertainty is determined by nuisance parameters in the fit and is
-%     presented in units of standard deviations.}
-%   \label{tab:cmsjets2011:nuisance}
-%   \centering
-%   \begin{tabular}{lrlr}
-%     \hline\hline
-%     Systematic source         & Shift in $\sigma$ & Systematic source & Shift in $\sigma$\rbthm\\\hline\hline
-%     \textsc{Absolute}         & -0.20 &   \textsc{RelativeJEREC2}   & -0.28\rbtrr\\
-%     \textsc{HighPtExtra}      & -0.60 &   \textsc{RelativeJERHF}    &  0.00\rbtrr\\
-%     \textsc{SinglePionBarrel} &  0.64 &   \textsc{RelativeStatEC2}  & -0.28\rbtrr\\
-%     \textsc{SinglePionEndcap} & -1.64 &   \textsc{RelativeStatHF}   &  0.00\rbtrr\\
-%     \textsc{SinglePionY0005}  & -0.10 &   \textsc{RelativeFSR}      & -0.01\rbtrr\\
-%     \textsc{SinglePionY0510}  &  0.12 &   \textsc{PileUpDataMC}     &  0.69\rbtrr\\
-%     \textsc{SinglePionY1015}  &  0.85 &   \textsc{PileUpOOT}        & -0.09\rbtrr\\
-%     \textsc{Flavor}           &  0.21 &   \textsc{PileUpPt}         &  0.48\rbtrr\\
-%     \textsc{Time}             & -0.32 &   \textsc{PileUpBias}       &  0.26\rbtrr\\
-%     \textsc{RelativeJEREC1}   &  0.55 &   \textsc{PileUpJetRate}    &  0.62\rbtrr\\
-%     \hline
-%     \textsc{Unfolding}        & -0.45 &   \textsc{Luminosity}       &  0.13\rbtrr\\
-%     \textsc{NPCorrection}     &  0.84 &                             &      \rbtrr\\
-%     \hline\hline
-%   \end{tabular}
-% \end{table}
-%
-% In contrast it was observed that with the original assumption of full
-% correlation within the 16 JES systematic sources across all \yabs
-% bins, tensions with shifts beyond $2\sigma$ became obvious and lead to
-% a reexamination of this issue and the improved correlation treatment
-% of the JES uncertainties as described
-% previously in Section~\ref{sec:measurementjec}.
-
-
+\begin{table}[htbp]
+  \caption{asdf}
+  \label{tab:pdfconstraints:nuisance}
+  \centering
+  \begin{tabular}{lrlr}
+    \hline\hline
+    Systematic source         & Shift in $\sigma$ & Systematic source & Shift in $\sigma$\rbthm\\\hline\hline
+    \textsc{Absolute}         & -0.20 &   \textsc{RelativeJEREC2}   & -0.28\rbtrr\\
+    \textsc{HighPtExtra}      & -0.60 &   \textsc{RelativeJERHF}    &  0.00\rbtrr\\
+    \textsc{SinglePionBarrel} &  0.64 &   \textsc{RelativeStatEC2}  & -0.28\rbtrr\\
+    \textsc{SinglePionEndcap} & -1.64 &   \textsc{RelativeStatHF}   &  0.00\rbtrr\\
+    \textsc{SinglePionY0005}  & -0.10 &   \textsc{RelativeFSR}      & -0.01\rbtrr\\
+    \textsc{SinglePionY0510}  &  0.12 &   \textsc{PileUpDataMC}     &  0.69\rbtrr\\
+    \textsc{SinglePionY1015}  &  0.85 &   \textsc{PileUpOOT}        & -0.09\rbtrr\\
+    \textsc{Flavor}           &  0.21 &   \textsc{PileUpPt}         &  0.48\rbtrr\\
+    \textsc{Time}             & -0.32 &   \textsc{PileUpBias}       &  0.26\rbtrr\\
+    \textsc{RelativeJEREC1}   &  0.55 &   \textsc{PileUpJetRate}    &  0.62\rbtrr\\
+    \hline
+    \textsc{Unfolding}        & -0.45 &   \textsc{Luminosity}       &  0.13\rbtrr\\
+    \textsc{NPCorrection}     &  0.84 &                             &      \rbtrr\\
+    \hline\hline
+  \end{tabular}
+\end{table}
 
 \section{Constraining PDFs with HERAFitter using the Dijet Measurement}
 \label{section:cmsjets2011_pdfconstraints}
@@ -346,6 +295,16 @@ particular the gluon PDF.
 % other. Finally, Fig.~\ref{fit:cmsjets2011:overview} shows an overview
 % of the gluon, sea, u valence, and d valence distributions at the
 % starting scale of $Q^2 = 1.9 \GeVsq$ within one plot.
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_0_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_9_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_7_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/direct/HFTD_HERACMSTDJETS_V017_EIG_8_1_9.pdf}
+  \caption{}
+  \label{fig:pdfconstraints:direct:19}
+\end{figure}
+
 
 % \begin{figure}[tbp]
 %   \centering
@@ -467,19 +426,6 @@ particular the gluon PDF.
 %   \label{fit:cmsjets2011:overview}
 % \end{figure}
 %
-% With respect to the gluon distribution, a significant improvement of
-% precision in the high-$x$ region of $x \gtrsim 0.01$ is observed. In
-% particular, the parameterization uncertainty is reduced.
-% % For the gluon distribution it can be seen, as illustrated in the
-% % figures, that uncertainties are significantly reduced in the high-$x$
-% % region of $x \gtrsim 0.01$.
-% % In the range of $0.03 < x < 0.3$ some increase in experimental
-% % uncertainty is observed. This is not unusual, since previous
-% % extrapolations implying large model and parameterization uncertainties
-% % are now more restricted through the inclusion of the new data set with
-% % its experimental uncertainties.
-% % In particular the parameterization uncertainty is dramatically
-% % improved.
 % At the same time CMS jet data favour a larger gluon PDF at high $x$
 % compared to the DIS data alone. As expected, no improvement is
 % exhibited in the low-$x$ region, where the gluon is well constrained

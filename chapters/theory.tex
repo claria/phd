@@ -242,15 +242,17 @@ reliable and as expected from previous studies.
 Cross section calculations beyond leading order combining parton showers, MPI
 and hadronization models are very complicated. Double counting of terms in the
 perturbative series and the parton shower needs to be avoided. The recently
-released version of Herwig includes NLO predictions with matched parton
-showers. The calculation uses the MC@NLO type matching as it is implemented in
-the Matchbox module of Herwig. The PDFs are accessed from the MMHT 2014 NLO PDF
-set. For the calculation of the matrix elements, the NJet~\cite{njet} library is
-interfaced to Herwig and the scale choice is set to $\mu = \ptmax$. As the
-integration and event generation steps are extremely time consuming the phase
-space was split into 12 mutually exclusive regions binned in the transverse
-momentum of the leading jet and the phase space regions were stitched together
-on analysis level.
+released version of Herwig includes NLO predictions with matched parton showers.
+The calculation uses the MC@NLO type matching as it is implemented in the
+Matchbox module~\cite{Platzer:2011bc} of Herwig. The PDFs of the MMHT 2014 NLO PDF set are accessed
+using LHAPDF. For the calculation of the matrix elements, the
+NJet~\cite{Badger:2012pg} library is interfaced to Herwig and the scale choice
+is set to $\mu = \ptmax$. As the integration and event generation steps are
+extremely time consuming the phase space was split into 12 mutually exclusive
+regions binned in the transverse momentum of the leading jet and the phase space
+regions were stitched together on analysis level.
+
+\todo{add and describe figure with results.}
 
 \section{Non-Perturbative Corrections}
 
