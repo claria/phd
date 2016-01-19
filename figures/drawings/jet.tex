@@ -1,0 +1,17 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usetikzlibrary{calc}
+\begin{document}
+  \begin{tikzpicture}
+    % \begin{scope}
+    %   \clip (-2,0) rectangle (2,1cm);
+    %   \draw[dashed] (0,0) circle(2cm and 0.35cm);
+    % \end{scope}
+    \begin{scope}
+      % \clip (-2,0) rectangle (2,-1cm);
+      \draw (0,0) circle(2cm and 0.35cm);
+    \end{scope}
+    \draw[thick,->] (0,-4) -- node[left,font=\footnotesize] {$x$} (0,1);
+    % \draw (aa) -| (bb);
+    \draw (-2,0) -- (0,-4) -- (2,0);
+  \end{tikzpicture}
+\end{document}
