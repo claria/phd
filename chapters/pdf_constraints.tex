@@ -95,9 +95,9 @@ the eigenvector PDF set $i$ of the total number of eigenvectors
 $N_{\mathrm{EV}}$ in the PDF set.
 
 
-\paragraph{Model uncertainties} The uncertainties of several parameters input in the PDF fits are condensed in
-one PDF model uncertainty. For the model uncertainties the following variations
-on the input parameters are considered:
+\paragraph{Model uncertainties} The uncertainties of several parameters input in
+the PDF fits are condensed in one PDF model uncertainty. For the model
+uncertainties the following variations on the input parameters are considered:
 
 \begin{itemize}
 \item The assumption is made, that the shape of the strange PDF follows the
@@ -149,83 +149,53 @@ parametrization uncertainty.
 \subsection{Definition of the goodness-of-fit estimator}
 \label{sec:chi2_definition}
 
+The minimization of the PDF fit is using a least-squares method. The \chisq is
+calculated with the data points $D_i$ and the theoretical prediction $T_i$. All
+$K$ correlated systematic uncertainties $\beta_k$ are treated using nuisance
+parameters $r_k$ in a multiplicative way to avoid the bias that arises from data
+uncertainties, see~\cite{Lyons:1989gh}. The \chisq is defined as
 
-
-% The agreement between data points $D_i$ and the theoretical
-% predictions $T_i$ is estimated via a least-squares method. All $K$
-% fully correlated sources of systematic uncertainty $\beta_{k}$ are
-% treated using nuisance parameters $r_k$ and are assumed to be
-% multiplicative to avoid the statistical bias that arises from
-% uncertainty estimations taken from data~\cite{Lyons:1989gh}.
-% % in order to avoid the d'Agostini bias~\cite{D'Agostini:2003nk}.
-% As a consequence the covariance matrix,
-% defined as $\mathrm{C} = \mathrm{cov}_{\mathrm{stat}} +
-% \mathrm{cov}_{\mathrm{uncor}}$, has to be reevaluated in each
-% iteration step.
-%
-% To inhibit the compensation of large systematic shifts by increasing
-% the theory prediction and the statistical uncertainties at the same
-% time, the systematic shifts of the theory are taken into account
-% before the rescaling of the statistical uncertainty. Otherwise
-% alternative minima in \chisq, which is defined as
-%
-% \begin{equation}
-%   \chi^2 = \sum_{ij}^N \left(D_i - T_i - \sum_k^K r_k \beta_{ik}\right) \mathrm{C}_{ij}^{-1}
-%   \left(D_j - T_j - \sum_k^K r_k \beta_{jk} \right) + \sum_k^K r_k^2\,,
-%   \label{chi2_nuisance}
-% \end{equation}
-%
-% could be found that are associated to a high theory prediction with at
-% the same time large shifts (pulls) for the nuisance parameters. This
-% is clearly undesirable~\cite{HERAFitter:2013hf}.
+\begin{equation}
+  \chi^2 = \sum_{ij}^N \left(D_i - T_i - \sum_k^K r_k \beta_{ik}\right) \mathrm{C}_{ij}^{-1}
+  \left(D_j - T_j - \sum_k^K r_k \beta_{jk} \right) + \sum_k^K r_k^2\,,
+  \label{chi2_nuisance}
+\end{equation}
 
 
 \subsection{Treatment of CMS data uncertainties}
 \label{section:cmsdatauncertainties}
 
-% The jet energy scale is the dominant source of experimental systematic
-% uncertainty on jet cross sections. As described in
-% Section~\ref{sec:measurementjec}, the \pt and $\eta$ dependent jet
-% energy scale uncertainties are split into 16 uncorrelated sources
-% which are fully correlated among themselves. Following the modified
-% recommendation for the correlations versus rapidity of the
-% \textsc{Single Pion} source as given in
-% Section~\ref{sec:measurementjec}, it is necessary to split this source
-% into five parts for the purpose of using the uncertainties published
-% in~\cite{CMS-PAPERS-QCD-11-004} within the \chisq fits. The complete
-% setup including other uncertainties is shown in
-% Table~\ref{tab:cmsjets2011:nuisance}.
-%
-% Employing the technique of nuisance parameters, the impact of each
-% systematic source of uncertainty on the fit result can be examined
-% separately. In case of an adequate estimation of the size and the
-% correlations of all uncertainties it is expected that the majority of
-% all systematic sources are shifted by less than one standard deviation
-% $\sigma$ from the default in the fitting procedure.
-% Table~\ref{tab:cmsjets2011:nuisance} demonstrates that this is the
-% case for the CMS jet data with the described procedure.
-%
+The dominant source of experimental uncertainty is due to the jet energy scale.
+The uncertainty is split into 25 mutually independent sources which are fully
+correlated among themselves. 
+
+Since the correlated sources of uncertainty are treated using nuisance
+parameters in the \chisq formula, the pull of each source on the fit result can
+be examined. Tab.~\ref{tab:pdfconstraints:nuisance} show the 27 sources of
+systematic uncertainty and their pulls. Most of the systematic sources shift by
+leass one standard deviation $\sigma$ as expected.
+
 \begin{table}[htbp]
   \caption{asdf}
   \label{tab:pdfconstraints:nuisance}
   \centering
   \begin{tabular}{lrlr}
-    \hline\hline
-    Systematic source         & Shift in $\sigma$ & Systematic source & Shift in $\sigma$\rbthm\\\hline\hline
-    \textsc{Absolute}         & -0.20 &   \textsc{RelativeJEREC2}   & -0.28\rbtrr\\
-    \textsc{HighPtExtra}      & -0.60 &   \textsc{RelativeJERHF}    &  0.00\rbtrr\\
-    \textsc{SinglePionBarrel} &  0.64 &   \textsc{RelativeStatEC2}  & -0.28\rbtrr\\
-    \textsc{SinglePionEndcap} & -1.64 &   \textsc{RelativeStatHF}   &  0.00\rbtrr\\
-    \textsc{SinglePionY0005}  & -0.10 &   \textsc{RelativeFSR}      & -0.01\rbtrr\\
-    \textsc{SinglePionY0510}  &  0.12 &   \textsc{PileUpDataMC}     &  0.69\rbtrr\\
-    \textsc{SinglePionY1015}  &  0.85 &   \textsc{PileUpOOT}        & -0.09\rbtrr\\
-    \textsc{Flavor}           &  0.21 &   \textsc{PileUpPt}         &  0.48\rbtrr\\
-    \textsc{Time}             & -0.32 &   \textsc{PileUpBias}       &  0.26\rbtrr\\
-    \textsc{RelativeJEREC1}   &  0.55 &   \textsc{PileUpJetRate}    &  0.62\rbtrr\\
-    \hline
-    \textsc{Unfolding}        & -0.45 &   \textsc{Luminosity}       &  0.13\rbtrr\\
-    \textsc{NPCorrection}     &  0.84 &                             &      \rbtrr\\
-    \hline\hline
+    \toprule
+    Systematic source        & Shift in $\sigma$ & Systematic source        & Shift in $\sigma$\rbthm\\\midrule
+    \textsc{AbsoluteMPFBias} & 0.00              & \textsc{RelativeJEREC1}  & 0.00\rbtrr\\
+    \textsc{AbsoluteScale}   & 0.00              & \textsc{RelativeJEREC2}  & 0.00\rbtrr\\
+    \textsc{AbsoluteStat}    & 0.00              & \textsc{RelativeJERHF}   & 0.00\rbtrr\\
+    \textsc{FlavorQCD}       & 0.00              & \textsc{RelativePtBB}    & 0.00\rbtrr\\
+    \textsc{Fragmentation}   & 0.00              & \textsc{RelativePtEC1}   & 0.00\rbtrr\\
+    \textsc{PileUpDataMC}    & 0.00              & \textsc{RelativePtEC2}   & 0.00\rbtrr\\
+    \textsc{PileUpPtBB}      & 0.00              & \textsc{RelativePtHF}    & 0.00\rbtrr\\
+    \textsc{PileUpPtEC1}     & 0.00              & \textsc{RelativeStatEC2} & 0.00\rbtrr\\
+    \textsc{PileUpPtEC2}     & 0.00              & \textsc{RelativeStatFSR} & 0.00\rbtrr\\
+    \textsc{PileUpPtHF}      & 0.00              & \textsc{RelativeStatHF}  & 0.00\rbtrr\\
+    \textsc{PileUpPtRef}     & 0.00              & \textsc{SinglePionECAL}  & 0.00\rbtrr\\
+    \textsc{RelativeFSR}     & 0.00              & \textsc{SinglePionHCAL}  & 0.00\rbtrr\\
+    \textsc{Luminosity}     & 0.00               & \textsc{NP uncertainty}  & 0.00\rbtrr\\
+    \bottomrule
   \end{tabular}
 \end{table}
 
@@ -248,43 +218,46 @@ parametrization uncertainty.
 % to $Q^2 = 10^4 \GeVsq$.
 %
 
-% \begin{table}[htbp]
-%   \caption{Partial \chisq's, \chipsq, for each dataset in the HERA DIS (middle
-%     section) or the combined fit including CMS jet data (right section).
-%     \ndata is the number of data points available for the determination of
-%     the 13 parameters. The bottom two lines show the total \chisq and
-%     \chisqndof. The difference between the sum of all
-%     \chipsq and the total \chisq for the combined fit is attributed to
-%     the nuisance parameters.}
-%   \label{tab:fit:results}
-%   \centering
-%   \begin{tabular}{lr|rc|rc}
-%     \hline\hline
-%     \multicolumn{2}{c|}{} &
-%     \multicolumn{2}{c|}{HERA data} &
-%     \multicolumn{2}{c}{HERA \& CMS data}\rbthm\\
-%     Dataset &
-%     \multicolumn{1}{c|}{\ndata} &
-%     \multicolumn{1}{c}{\chipsq} &
-%     \multicolumn{1}{c|}{\chipsqndata} &
-%     \multicolumn{1}{c}{\chipsq} &
-%     \multicolumn{1}{c}{\chipsqndata}\rbthm\\\hline
-%     NC HERA-I H1-ZEUS combined e-p. & 145 & 107 & 0.74 & 108 & 0.74 \rbtrr\\
-%     NC HERA-I H1-ZEUS combined e+p. & 379 & 414 & 1.09 & 417 & 1.10 \rbtrr\\
-%     CC HERA-I H1-ZEUS combined e-p. &  34 &  20 & 0.59 &  22 & 0.65 \rbtrr\\
-%     CC HERA-I H1-ZEUS combined e+p. &  34 &  30 & 0.88 &  33 & 0.97 \rbtrr\\
-%     CMS Inclusive Jets 2011         & 133 & --- &  --- & 107 & 0.80 \rbtrr\\\hline\hline
-%     Dataset(s) & \ndof &
-%     \multicolumn{1}{c}{\chisq} &
-%     \multicolumn{1}{c|}{\chisqndof} &
-%     \multicolumn{1}{c}{\chisq} &
-%     \multicolumn{1}{c}{\chisqndof}\rbthm\\\hline
-%     HERA data                       & 579 & 571 & 0.99 &    --- &  --- \rbtrr\\
-%     HERA \& CMS data                & 712 &    --- &  --- & 694 & 0.97 \rbtrr\\
-%     % All                             & 725 & 570.55 & 578 & 0.99 & 694.38 & 711 & 0.98 \rbtrr\\
-%     \hline\hline
-%   \end{tabular}
-% \end{table}
+\begin{table}[htbp]
+  \caption{Partial \chisq's, \chipsq, for each dataset in the HERA DIS (middle
+    section) or the combined fit including CMS jet data (right section).
+    \ndata is the number of data points available for the determination of
+    the 13 parameters. The bottom two lines show the total \chisq and
+    \chisqndof. The difference between the sum of all
+    \chipsq and the total \chisq for the combined fit is attributed to
+    the nuisance parameters.}
+  \label{tab:fit:results}
+  \centering
+  \begin{tabular}{lr|rc|rc}
+    \toprule
+    \multicolumn{2}{c|}{} &
+    \multicolumn{2}{c|}{HERA data} &
+    \multicolumn{2}{c}{HERA \& CMS data}\rbthm\\
+    Dataset &
+    \multicolumn{1}{c|}{\ndata} &
+    \multicolumn{1}{c}{\chipsq} &
+    \multicolumn{1}{c|}{\chipsqndata} &
+    \multicolumn{1}{c}{\chipsq} &
+    \multicolumn{1}{c}{\chipsqndata}\rbthm\\\midrule
+    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 100 & 0.  & 100 & 0. \rbtrr\\
+    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 100 & 0.  & 100 & 0. \rbtrr\\
+    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 100 & 0.  & 100 & 0. \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 100 & 0.  & 100 & 0. \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 100 & 0.  & 100 & 0. \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 100 & 0.  & 100 & 0. \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 100 & 0.  & 100 & 0. \rbtrr\\
+    CMS triple-differential dijets                              & 122 & --- & --- & 100 & 0.
+    \rbtrr\\\bottomrule
+    Dataset(s) & \ndof &
+    \multicolumn{1}{c}{\chisq} &
+    \multicolumn{1}{c|}{\chisqndof} &
+    \multicolumn{1}{c}{\chisq} &
+    \multicolumn{1}{c}{\chisqndof}\rbthm\\\midrule
+    HERA data                       & 1164 & 571 & 0.99 &    --- &  --- \rbtrr\\
+    HERA \& CMS data                & 1164 &    --- &  --- & 694 & 0.97 \rbtrr\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 %
 %
 % For a direct comparison

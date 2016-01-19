@@ -4,36 +4,38 @@
 
 The European Organization for Nuclear Research (CERN) was founded in 1954.
 Originally dedicated to the study of atomic nuclei, it is now devoted to
-study sub-atomic particles and their interactions. To accomplish that task, CERN
-built several particle accelerators reaching record-breakign energies and
-explored energy ranges not been accessible before.
+the understanding of sub-atomic particles and their interactions. To accomplish that task, CERN
+built several particle accelerators reaching record-breaking energies and
+explored energy ranges not accessible before.
 
 Ground-breaking achievements like the discovery of neutral currents in the
-Gargamelle bubble chamber, the discovery of the W and Z boson by the UA1 and UA2
-experiments at the LEP accelerator or the creation of antihydrogen atoms were
-made by physicists at CERN.
+Gargamelle bubble chamber~\cite{Hasert:1973ff}, the discovery of the W and Z
+boson by the UA1 and UA2 experiments~\cite{Arnison:1983rp} at the SPS
+accelerator or the creation of antihydrogen atoms were made by physicists at
+CERN.
 
-The LEP and Tevatron experiments have provided remarkabable insights into the
-Standard Model and performed precision tests of the Standard Model. As a logical
-consequence of the unsuccessfull search for the higgs boson in their energy
-range, a even larger and more powerful accelerator was planned and built, the
-Large Hadron Collider (LHC). The search for the higgs boson finally succeded in
-2012, but many further question like the search for supersymmetry or dark matter
-still need to resolved in the future.
+LEP at CERN and the proton-antiproton collider Tevatron at FNAL have provided
+remarkable insights into the Standard Model and performed precision tests of the
+Standard Model predictions. Since the search for the long awaited higgs boson
+was unsuccesful due to their limited energy range, a even larger and more
+powerful accelerator was planned and built, the Large Hadron Collider (LHC). The
+search for the higgs boson finally succeded in 2012~\cite{Chatrchyan:2012xdj},
+but many further question like the search for supersymmetry or dark matter still
+need to resolved in the future.
 
 \section{The Large Hadron Collider}
 
 The Large Hadron Collider (LHC) is the world's most powerful particle
 accelerator and collider. The LHC is contained in the circular tunnel of the
-preceding Large Electron Positron (LEP) collider which has a circumference of 27
-km at a depth between 50 and 175 m. The tunnel crosses the border between
-Switzerland and France at four points and two of the four main experiments are
-located in France. 
+preceding Large Electron Positron (LEP) collider which has a circumference of
+\SI{27}{\kilo \meter} at a depth between \SI{50}{\meter} and \SI{175}{\meter}.
+The tunnel crosses the border between Switzerland and France at four points and
+two of the four main experiments are located in France. 
 
 Two adjacent beamlines that intersect at four interactions points contain the
 particle beams travelling in opposite directions. More than 1000 dipole magnets,
-generating a magnetic field of up to 8.3 T bend the proton beams on the circular track while
-almost 400 quadrupole magnets keep the beams focused. 
+generating a magnetic field of up to \SI{8.3}{\tesla} bend the proton beams on
+the circular track while almost 400 quadrupole magnets keep the beams focused. 
 
 The proton beams are brought to collision at four interaction points which house
 the LHC experiments ALICE~\cite{ALICE}, ATLAS~\cite{ATLASa}, CMS and
@@ -48,11 +50,13 @@ the standard model.
 
 Prior to the injection and acceleration of protons in the LHC, the particles
 pass a series of consecutive acceleration steps succesively increasing their
-energy. The linear particle accelerator (LINAC2) generates 50 MeV protons, that
-are further accelerated in the Proton-Synchrotron (PS) to 26 GeV and
+energy. The linear particle accelerator (LINAC2) generates \SI{50}{\mega
+\electronvolt} protons, that
+are further accelerated in the Proton-Synchrotron (PS) to \SI{26}{\giga
+\electronvolt} and
 the Super-Proton-Synchrotron (SPS) up to an energy of \SI{450}{\giga
 \electronvolt}. At last the proton beams are injected into the LHC ring and are
-further accelerated up to peak design energy of 13 TeV. All these
+further accelerated up to peak design energy of \SI{13}{\tera\electronvolt}. All these
 pre-accelerators are not only used to feed the LHC, but also serve other physic
 experiments as can be seen in Figure~\ref{fig:lhc_complex}.
 
@@ -65,7 +69,9 @@ experiments as can be seen in Figure~\ref{fig:lhc_complex}.
     \label{fig:lhc_complex}
 \end{figure}
 
-\subsection{The Compact Muon Solenoid Detector}
+\section{Luminosity measurement}
+
+\section{The Compact Muon Solenoid Detector}
 
 The Compact Muon Solenoid (CMS) detector is a general purpose detector at the
 LHC, located at Point 5 of the LHC ring. To serve a wide range of physics
@@ -132,13 +138,21 @@ by the transverse momentum \pt related to cartesian coordinates as
 \end{equation*}
 
 \subsection{Inner Tracking System}
-\todo{measurement of charged particles.}
 
 To yield a best possible spatial resolution, the particle tracks need to be
 measured as close to the beam line as possible. The inner tracking system of CMS
-is designed to measure the tracks of charged particles emerging from the
-collision. Enclosing the interaction point with a diameter of 2.6 m and
-extending 2.8 m in each direction along the beampipe, the tracking system covers a
+consisting of silicon detectors is designed to measure the tracks of charged
+particles emerging from the collision. A voltage is applied to the silicon
+detectors to deplete them from free charges. As charged particles pass through
+the detector material, they leave a small ionization currents which can be
+measured and detected as a hit in the detector. By combining multiple hits, the
+track of a charge particle can be reconstructed and the momentum and charge of
+the particle determined. Due to the strong magnetic field of the CMS detector,
+even tracks of particles with high transverse momenta have a measurable
+curvature.
+ 
+The inner tracking detector encloses the interaction point with a diameter of 2.6 m and
+extends up to 2.8 m in each direction along the beampipe, the tracking system covers a
 pseudo-rapidity range up to $|\eta| < 2.4$. The inner tracking system comprises
 two subsystems, the silicon pixel detector consisting of three layers and
 installed very close to the beam pipe and the silicon strip detector with ten
@@ -233,29 +247,6 @@ term.
 
 \subsection{Hadronic Calorimeter}
 
-The compact design of the CMS detector limits the size of the calorimeters. CMS
-therefore built a sampling calorimeter inside the solenoid coil. The hadronic
-calorimeter consists of brass as absorber material which is non-magnetic and
-has a short interaction lenth of $\lambda_I = 16 \si{\centi\metre}$. It is
-interleaved with plastic scintillators measuring the deposited energy. The CMS
-hadronic calorimeter comprises three subsystems. The \textbf{Hadron Barrel
-Calorimeter (HB)} covers the barrel region up to a pseudo-rapidity $|\eta| <
-1.305$. The absorbing material in the barrel has a corresponding thickness of
-$5.39 \lambda$ in the central region up to $10.3 \lambda$ at $|\eta| = 1.3$. The
-HB is complemented by the \textbf{Hadron Outer Calorimeter (HO)} located on top
-of the coil of the magnet. Using the coil as absorbing material it is able to
-meaure the tails of hadron showers penetrating the HB and the coil.The
-\textbf{Hadron Endcap Calorimeter (HE)} extends the pseudo-rapidity coverage up
-to $|\eta| < 3.0$. A major challenge in the construction of the HE were the
-usage of non-magnetic material to not disturb the magnetic field as well as the
-close distance to the beampipe. Radiation damages decrease the detector response
-and have to be corrected for continously. The \textbf{Hadron Forward (HF)}
-calorimeter extends even closer to the beam pipe. With a coverage of $2.8 <
-|\eta| < 5.2$ the calorimeter is adapted to the high radiation environment. The
-HF is desinged using iron absorbers and quartz fibres as active material, which
-measure the Cerenkov light emitted by the relativistic components of the
-shower.
-
 Hadrons entering the calorimeter produce a hadronice shower. High-energetic
 hadrons mostly shower in inelatic interactions producing a large number of pions
 and nucleans. Due to the large transverse momentum of these secondary particles,
@@ -265,6 +256,33 @@ theshold, the energy is deposited by ionisation and low-energy hadronic
 activity. The active scintillation material is excitated eand emits blue-violet
 light. The scintillators are connected to photodiodes using wavelength
 shifters which read out the signals and pass it to the data aquisition system.
+
+The compact design of the CMS detector limits the size of the calorimeters. CMS
+therefore built a sampling calorimeter inside the solenoid coil. The hadronic
+calorimeter consists of brass as absorber material which is non-magnetic and
+has a short interaction lenth of $\lambda_I = 16 \si{\centi\metre}$. It is
+interleaved with plastic scintillators measuring the deposited energy. The CMS
+hadronic calorimeter comprises three subsystems. 
+\paragraph{Hadron Barrel Calorimeter (HB)}
+It covers the barrel region up to a pseudo-rapidity $|\eta| <
+1.305$. The absorbing material in the barrel has a corresponding thickness of
+$5.39 \lambda$ in the central region up to $10.3 \lambda$ at $|\eta| = 1.3$. The
+HB is complemented by the Hadron Outer Calorimeter (HO) located on top
+of the coil of the magnet. Using the coil as absorbing material it is able to
+meaure the tails of hadron showers penetrating the HB and the coil.
+
+\paragraph{Hadron Endcap Calorimeter (HE)} The HE extends the pseudo-rapidity
+coverage up to $|\eta| < 3.0$. A major challenge in the construction of the HE
+were the usage of non-magnetic material to not disturb the magnetic field as
+well as the close distance to the beampipe. Radiation damages decrease the
+detector response and have to be corrected for continously. 
+
+\paragraph{Hadron Forward Calorimeter (HF)} 
+The forward calorimeter extends even closer to the beam pipe. With a coverage of
+$2.8 < |\eta| < 5.2$ the calorimeter is adapted to the high radiation
+environment. The HF is desinged using iron absorbers and quartz fibres as active
+material, which measure the Cerenkov light emitted by the relativistic
+components of the shower.
 
 \subsection{Superconducting Solenoid}
 
@@ -297,81 +315,129 @@ system.
 \subsection{Trigger and Data Aquisition at CMS}
 
 The LHC generates a huge number of collisions. At a beam crossing frequency of
-25 ns, there are 40 million bunch crossings per second with an average of around
-20 collisions per bunch crossing. With todays available hardware, the storage of
-all collision data is not possible. Furthermore, most of the collisions are soft
-and of low interest for physics analyses. Therefore a complex trigger system
-consisting of a very fast hardware implemented component, the Level 1 trigger
-(L1) and a software trigger, the High Level Trigger (HLT), analyses the incoming
-data and decides if a collision event is of interest and should be stored
-permanently or is omitted.
+\SI{25}{\nano \second}, there are 40 million bunch crossings per second with an
+average of around 20 collisions per bunch crossing in the 2012 run era. With
+todays available hardware, the storage of all collision data is not possible.
+Furthermore, most of the collisions are soft and of low interest for physics
+analyses. Therefore a complex trigger system consisting of a very fast
+hardware-implemented component, the Level 1 trigger (L1) and a High Level
+software trigger (HLT) analyze the events and accept only events which are
+interesting for physics analyses.
 
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_l1_trigger.pdf}\hfill
-    \caption[The L1 Trigger of CMS]{asdf\cite{Sphicas:2002gg}}
+    \caption[The L1 Trigger of CMS]{Workflow of the L1 trigger system. The
+        regional triggers search for jets and compute the transverse and missing
+        energy of an event. The global calorimeter trigger sorts the the objects
+        from the regional calorimeter triggers and passes a part of the trigger
+        obects to the Global triger, which accepts or rejects the event. If it
+        is accepted, the complete data and the trigger objects are passed to the
+        DAQ~\cite{Sphicas:2002gg}.}
     \label{fig:cms:l1_trigger}
 \end{figure}
 
-When a collision occurs, the detector electronics is readout and directly
-analyzed using custom hardware, the \textbf{L1 trigger}. Of special interest for
-this thesis are the calorimeter triggers. Figure~\ref{fig:cms:l1_trigger} shows
-the workflow of the L1. The Trigger Primitive Generators convert the frontend
-electronics readout into transverse energy. The Regional Calorimeter Triggers
-(RCT) identify electromagnetic shower in the ECAL and sum up the ECAL and HCAL
-trigger tower. Additonally a patter recognition is performed to identify jets
-and hadronic $\tau$ decays. These candidates are then passed to the Global
-Calorimeter Trigger which sorts the incoming candidates from the all 18 regional
-triggers and passes the top canadites to the Global Trigger (GT). If the global
-trigger accepts the event it is further processed by the data aqusition system
-and passed to the high level trigger.
-
-the \textbf{High Level Trigger} is fully implemented in software running on a
-dedicated computing farm at Point 5. The software is implemented in the CMS
-reconstruction software and can therefore access all information from the whole
-detector as well as aplly basic jet energy corrections. Jet Trigger for example
-need to pass a \pt threshold on reconstructed calorimeter jets before complex
-particle flow and jet reconstruction algorithm are performed to save processing
-time.
-
-The data aquisition system can apply prescales on each trigger to reduce the
-rate at which a trigger fires. Especially for single jet triggers, which
-trigger on the jet \pt, need to be prescaled in the low-\pt region to avoid huge
-rates. Of course the trigger prescales have to be taken into account again when
-the spectrum is reconstructed from the number of events.
-
-The DAQ system assembles the events which it receives from the L1 trigger at a
-rate of 100 kHz.
+\paragraph{L1 Trigger} 
+At the same frequency as collisions occur, the L1 trigger reads out the detector
+electronics and analyzes the data using custom hardware. The workflow of the L1
+trigger is shown in Fig.~\ref{fig:cms:l1_trigger}. Trigger Primitive Generators
+calculate the transverse energy and missing energy from the frontend electronics
+readout. Regional Calorimeter Triggers (RCT) identify electromagnetic showers
+in the ECAL and sum up ECAL and HCAL trigger towers. Furthermore pattern
+recognition is performed to identify jets and hadronic $\tau$ decays. A jet
+candidate is defined that the transverse energy in a region o $4\times4$ trigger
+towers is greater or equal to the transverse energy of the eight surrounding
+regions, see Fig.~\ref{fig:cms:l1_calo_towers}. These
+candidates are passed to the Global Calorimeter Trigger (GCT) which sorts the
+incoming candidates from the all 18 regional triggers and passes the top
+candidates to the Global Trigger (GT). The GT accepts events with a frequency
+of \SI{100}{\kilo\hertz} and passes them to the data aquisition system, which
+processes the data and transfers them to the HLT.
 
 \begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/l1_calo_towers.pdf}\hfill
+    \caption[Jet Candidates in the Level 1 calorimeter trigger]{Jet Candidates
+        in the Level 1 calorimeter trigger ormed from $4\times4$ triger towers. Taken from~\cite{Rose:2009zz}.}
+    \label{fig:cms:l1_calo_towers}
+\end{figure}
+
+
+\paragraph{HLT Trigger} The HLT is fully implemented in software running on a
+dedicated computing farm at Point 5. The software is implemented in a
+streamlined version of the CMS framework. Each HLT trigger path is a sequence of
+reconstruction and selection steps with increasing complexity. The HLT selects
+events a rate of several hundred Hertz which are grouped in non-exclusive data
+streams, \eg the primpary physics stream \emph{A} or the calibration trigger
+stream.
+
+The HLT reconstructs jets using the \antikt clustering algrirthm. Because of the
+high processing time of the particle flow algorithm, see
+Sec.~\ref{sec:particle_flow_algorithm}, the jet trigger paths are divided into
+multiple selection steps. At first the jets are reconstructed from calorimeter
+towers.  Only for events in which at least one calorimeter jet passes a certain
+\pt threshold, the particle flow algorithm is run and the jets are clustered
+again from the particle flow candidates. Due to the flexibility of the HLT, it
+is already possible to apply sophisticated jet energy corrections during the HLT
+processing.
+
+\paragraph{Data Aquisition (DAQ)}
+
+As the L1 trigger accepts events at a rate of \SI{100}{\kilo\hertz}, the DAQ
+system has to process the events at the same speed. It reads out the data of all
+detector subcomponents and assembles the whole events, see
+Fig.~\ref{fig:cms:daq_system}. The data is subsequently passed to the HLT
+trigger which further reduces the rates to a few hundred events per second.
+These events are then merged and saved on a storage system from which they are
+transferred to the Tier 0 computing center at CERN 
+
+\begin{figure}[h!tp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_daq.pdf}\hfill
     \caption[The DAQ System of CMS]{asdf~\cite{Sphicas:2002gg}}
     \label{fig:cms:daq_system}
 \end{figure}
 
-The event rate is reduced by the L1 trigger to 100 kHz. The DAQ system then
-reads out the data of all detector components and assembles the complete events
-at this rates, see Figure~\ref{fig:cms:daq_system}. The data is then transferred
-to the HLT computing farm in which the sophisticated software-based trigger further
-reduces the event rate to a few hundred events per second. The passing events
-are then merged by the storage managing system and written to the Tier-0
-computing centre at CERN.
-
-\section{Software and Computing Infrastructure}
+\section{Computing Infrastructure and Software Tools}
 
 The vast amount of and the complexity of the data produced at the LHC
 experiments poses many challenges for the computing infrastructure and the
-software. On the theory side, powerful Monte-Carlo event generators need to be
+engaged software. On the theory side, powerful Monte-Carlo event generators need to be
 developed which are able to simulate the collision events. On the experimental
 side, the raw detector the physical event information needs to be reconstructed. Additionally the
 complex architecture of the detector response needs to be modelled and
 simulated. These central tasks are approached using a common software framework
 within CMS, the CMSSW framework, which interfaces the various theory tools and
-all the reconstruction and detector software. All of these taks are divided
+all the reconstruction and detector software. All of these tasks are divided
 into smaller processing tasks, called jobs, which are assigned to computing
 centers distributed over many countries. This common computing and storage
 infrastructure is called the worldwide LHC computing grid (LHCG).
+
+\subsection{Worldwide LHC Computing Grid}
+\todo{write}
+
+To overcome the discussed challenges and ease the access of users to the data of
+the LHC experiments, a distributed grid with a tiered infrastructure was
+developed. As the majority of the data is produced at CERN, a hierarchical
+structure with the computing center at CERN, called Tier-0 at the top was
+chosen, see Fig.~\ref{fig:lhc_tier_structure}. The raw data is stored at CERN
+and distributed to globally distributed Tier-1 centers, as they provided further
+storage resources and large computing resources for the reconstruction and
+analysis of the data. Tier-2 sites provide additional computing ressources while
+Tier-3 sites are mostly used by local analysis groups for data analyses.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/lhcg.pdf}\hfill
+    \caption[Tiered structure of the worldwide LHC Computing Grid]{The WLCG is
+        ordered hierarchical with the CERN T0 at the top. Taken
+        from~\cite{Stober:2012abc}.}
+    \label{fig:lhc_tier_structure}
+\end{figure}
+
+Access to the ressources of the WLCG is gained by certificates, which authorize
+the user to access the storage and computing resources.
+
 
 \subsection{CMS Software Framework}
 
@@ -419,15 +485,24 @@ CMSSW datasets. There is a separate tool collection, KappaTools, in which
 functions to access the Jet energy corrections or HLT informations are
 collected.
 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/artus_workflow.pdf}
+    \caption[Workflow of an analysis in the Artus framework]{Workflow of an
+        analysis in the Artus analysis framework. Taken
+        from~\cite{Berger:2014aca}.}
+    \label{fig:lhc_tier_structure}
+\end{figure}
+
 The analysis itself is built on top of the Artus framework. Artus was developed
 within the Karlsruhe group to combine analysis efforts and profit from mutual
 developments. The framework defines a workflow based on three elements. There
-are \emph{producers}, which calculate quantities and \emph{filters}, which reject events based on
-the defined criteria. In a final step, histograms or nTuples are written out by
-\emph{consumers}. All producers, filters and consumers are written in a modular
-way so that they can be shared with other analyses. Furthermore they are steered
-by a global configuration file in which one can easily adapt all settings and
-cuts.
+are \emph{producers}, which calculate quantities and \emph{filters}, which
+reject events based on the defined criteria. In a final step, histograms or
+nTuples are written out by \emph{consumers}. All producers, filters and
+consumers are written in a modular way so that they can be shared with other
+analyses. Furthermore they are steered by a global configuration file in which
+one can easily adapt all settings and cuts.
 
 \subsubsection{grid-control}
 
@@ -450,7 +525,12 @@ and especially the python bindings PyROOT were used extensively in this analysis
 
 \subsubsection{matplotlib and numpy}
 
-
+matplotlib is 2D plotting library written in the python programming language~\cite{Hunter:2007aa}. It
+provides publication quality plots in a variety of output formats and is very
+pleasant to use. All plots in this thesis were made using matplotlib. The
+plotting library matplotlib as well as many scripts used in this thesis rely on
+the scientific computing library NumPy~\cite{Oliphant:2007aa}. NumPy provides
+powerful n-dimensional arrays and tools to manipulate them. 
 
 \subsection{Monte-Carlo Event Generators and Simulation Software}
 \label{subsection:mc_generators}
@@ -473,7 +553,7 @@ Herwig is also a multi purpose event generator for the simulation of high-energy
 hadron-hadron collisions. The first version was build in Fortran and is known as
 HERWIG~\cite{Corcella:2000bw}. Herwig++~\cite{Bahr:2008pv} builds up on the
 heritage of the HERWIG version while providing a much more flexible structure as
-it is implemented in C++. The recently released Herwig 7~\cite{Bellm:2015jjp}
+it is implemented in C++. The recently released Herwig~7~\cite{Bellm:2015jjp}
 version combines all their developments and supersedes both version. 
 
 The Herwig generator family includes all steps to simulate events. It includes a
@@ -490,7 +570,12 @@ non-perturbative effects, see Sec.~\ref{sec:np_factors}. The NLO capabilities of
 Herwig 7 are shown in the comparison of the unfolded measurement to NLO
 predictions with matched parton showers, see Sec.~\ref{sec:nlo_comparisons}.
 
-\subsubsection{Madgraph}
+\subsubsection{MadGraph}
+
+MadGraph is a multi-purpose tree-element matrix element generator. It implements
+a large number of processes and can be interfaced to Monte Carlo Event
+generators. In this thesis the MadGraph matrix elements are used together with
+the Pythia 6 event generator for general comparisons to data.
 
 \subsubsection{NLOJet++ and fastNLO}
 \label{sec:nlojetpp}

@@ -32,7 +32,7 @@
 \usepackage{booktabs}
 \usepackage{xspace}
 \usepackage{tabularx}
-\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage[usenames,dvipsnames,table,hyperref]{xcolor}
 
 \usepackage[titles]{tocloft}
 \setlength{\cftfignumwidth}{3.2em}
@@ -94,7 +94,10 @@
 \usepackage[pdftex,
     linktoc=all,
     breaklinks,
-    hidelinks,
+    % hidelinks,
+    colorlinks=true,
+    breaklinks=true,
+    ocgcolorlinks,
     pdftitle={none},
     pdfauthor={Georg Sieber},
     pdfsubject={none},
@@ -102,6 +105,11 @@
     hyperindex,
     pdfpagemode=UseNone,
     bookmarksopen=true]{hyperref}
+\hypersetup{
+    linkcolor=[RGB]{0, 28, 127},
+    urlcolor=[RGB]{0, 28, 127},
+    citecolor=[RGB]{0, 28, 127}
+}
 
 \usepackage[nomain,
     acronym,
