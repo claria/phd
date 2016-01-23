@@ -2,26 +2,27 @@
 
 \chapter{The CMS Detector at the Large Hadron Collider}
 
-The European Organization for Nuclear Research (CERN) was founded in 1954.
-Originally dedicated to the study of atomic nuclei, it is now devoted to
-the understanding of sub-atomic particles and their interactions. To accomplish that task, CERN
-built several particle accelerators reaching record-breaking energies and
-explored energy ranges not accessible before.
+The European Organization for Nuclear Research (\CERN) was founded in 1954.
+Originally dedicated to the study of atomic nuclei, it is now devoted to the
+research of sub-atomic particles and their interactions. To accomplish that
+task, \CERN built several particle accelerators reaching record-breaking
+energies and explored energy ranges not accessible before.
 
 Ground-breaking achievements like the discovery of neutral currents in the
 Gargamelle bubble chamber~\cite{Hasert:1973ff}, the discovery of the W and Z
 boson by the UA1 and UA2 experiments~\cite{Arnison:1983rp} at the SPS
 accelerator or the creation of antihydrogen atoms were made by physicists at
-CERN.
+\CERN.
 
-LEP at CERN and the proton-antiproton collider Tevatron at FNAL have provided
-remarkable insights into the Standard Model and performed precision tests of the
-Standard Model predictions. Since the search for the long awaited higgs boson
-was unsuccesful due to their limited energy range, a even larger and more
-powerful accelerator was planned and built, the Large Hadron Collider (LHC). The
-search for the higgs boson finally succeded in 2012~\cite{Chatrchyan:2012xdj},
-but many further question like the search for supersymmetry or dark matter still
-need to resolved in the future.
+Remarkable insights into the Standard Model were gained by measurements at the
+LEP accelerator at which the mass of the of the Z~boson and W~boson were
+precisely measured. The proton-antiproton collider Tevatron at FNAL discovered
+and measured the mass of the top quark accurately. Since the search for the long
+anticipated higgs boson was unsuccesful due to their limited energy reach, an even
+larger and more powerful accelerator was planned and built, the Large Hadron
+Collider (LHC). The search for the higgs boson finally succeded in
+2012~\cite{Chatrchyan:2012xdj}, but many further questions like the search for
+supersymmetry or dark matter still need to be resolved in the future.
 
 \section{The Large Hadron Collider}
 
@@ -63,13 +64,62 @@ experiments as can be seen in Figure~\ref{fig:lhc_complex}.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/lhc_accelerator_chain.pdf}
-    \caption[CERN accelerator complex]{Schematic view of the CERN
-        accelerator complex. It shows the LHC ring  with the four beam crossing
-        points as well as the various pre-accelerators~\cite{LHC:COMPLEX}.}
+    \caption[\CERN accelerator complex]{Several particle accelerators are
+        chained together to feed proton beams into the LHC. Further experiments are
+        located along the accelerator complex serving a broad program of physics
+        studies~\cite{LHC:COMPLEX}.}
     \label{fig:lhc_complex}
 \end{figure}
 
 \section{Luminosity measurement}
+
+The cross section $\sigma$ of a physical process is related to the
+event rate $\dot{N}$ by the luminosity~$\mathcal{L}$
+
+\begin{equation*}
+    \dot{N} = \mathcal{L} \sigma.
+\end{equation*}
+
+The luminosity is dependent on the particle beam parameters and can be expressed
+by
+
+\begin{equation*}
+    \mathcal{L} = = \frac{n_p^2
+        n_b f_\mathrm{rev} \gamma F}{4 \pi \epsilon_n \beta^*}
+\end{equation*}
+
+where $n_p$ is the number of particles per bunch, $n_b$ the number of bunches
+per beam, $f_\mathrm{rev}$ the revolution frequency, $\gamma$ the relativistic
+gamma factor and $F$ the geometric luminosity reduction factor. The effective
+collision area of the two beams is related to the normalized transverse beam
+emittance $\epsilon_n$ and the value of the betatron function $\beta^*$ at the
+interaction point.
+
+The luminosity is constantly measured by the experiments. CMS employs two
+methods to measure the relative instantaneous luminosity. The particle flux
+measured in the hadron forward calorimeter is proportional to the instantaneous
+luminosity. The second method counts the number of reconstructed vertices in the pixel
+tracking detector. The results of both methods agree. The absolute luminosity
+measurement is relying on van-der-Meer scans which are carried out in special
+runs of the LHC~\cite{vanderMeer:296752}.
+
+Fig.~\ref{fig:cms:lumi_integrated} shows the integrated luminosity delived by
+LHC to the CMS experiments in the run periods from 2010 to 2012.
+
+The uncertainty on the luminosity measurement for the 2012 LHC run is estimated
+to 2.5\% (syst.) + 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. As it fully
+propagates on any absolute cross section measurement, the uncertainty is later
+on taken into account in the dijet cross section measurement.
+
+\begin{figure}[h!tp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cms_detector/lumi_integrated.pdf}
+    \caption[Integrated luminosity delivered to CMS]{Integrated luminosity
+        delivered by the LHC to CMS in the 2010, 2011 and 2012 LHC run periods.
+        Taken from~\cite{Berger:2014aca}.}
+    \label{fig:cms:lumi_integrated}
+\end{figure}
+
 
 \section{The Compact Muon Solenoid Detector}
 
@@ -87,6 +137,13 @@ It was built as cylyndrical slices constructed at ground level and lowered into
 the cavern. In case of upgrades or repairs, the slices can be pulled apart and
 the inner components can be easily accessed.
 
+Fig.~\ref{fig:cms:longitudinal_section} shows a longitudinal section of one
+quadrant of the CMS detector and the location of all subsystems.
+
+The detector and physics performance of the CMS detector are discussed in
+great detail in~\cite{Bayatian:922757,Ball:2007zza}. This section gives only a
+short overview of the design and functional principles of the detector.
+
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_longitudinal_section.pdf}
@@ -100,9 +157,6 @@ encompassed by the superconducting magnet (blue). The muon detection system
 (red) is embedded in the iron return yoke~\cite{Berger:2014aca}.}
     \label{fig:cms:longitudinal_section}
 \end{figure}
-
-\todo{high requirements like 25 ns between collisions, high radiation level,
-advanced detector materials.}
 
 \subsection{Definition of the Coordinate System}
 
@@ -183,53 +237,58 @@ detecting strips read out by \SI{80000} chips.
         longitudinal section of the inner tracking system of CMS consisting of the
         silicon pixel detector and the silicon strip detector. The right figure shows a
         transverse section of the tracking system in the barrel region with overlapping
-        arrangement of the strip modules. Figures from~\cite{Berger:2014aca} and
-        \cite{cmsweb:innertracker}.}
+        arrangement of the strip modules. Figures taken
+        from~\cite{Berger:2014aca} andi~\cite{cmsweb:innertracker}.}
     \label{fig:cms:inner_tracking}
 \end{figure}
 
 \subsection{Electromagnetic Calorimeter}
 
-Measuring the track of the traversing particles is not sufficient to derive to
-measure the momentum. The energy needs to be measured by stopping the particles
-in the detector and measuring the size of the deposited energy. The photon and
-electron energy is measured in the electromagnetic calorimeter (ECAL). 
+Measuring only the tracks of traversing particles is not sufficient to identify
+the particles and derive their momentum. The energy needs to be measured as well
+by stopping the particles in the detector and measuring the
+deposited energy. The photon and electron energy is measured in the
+electromagnetic calorimeter (ECAL). 
 
-High-energetic photons, electrons or positrons which enter the dense material of the ECAL
-detector, produce an electromagnetic shower via subsequent bremsstrahlung and
-electron-pair production processes. Below a certain threshold, the particles
-deposit their energy via compton scattering and the photo-electric effect in the
-detector material resulting in an excitation of their atomic state. When they
-return to the ground state, they emit photons, which can be measured using
-avalanche photodiodes. The fraction of the deposited energy is to the number of
-emitted photons.
+High-energetic photons, electrons or positrons which enter the dense material of
+the ECAL detector, produce an electromagnetic shower via subsequent
+bremsstrahlung and electron-pair production processes. Below a certain
+threshold, the particles deposit their energy via compton scattering and the
+photo-electric effect in the detector material resulting in an excitation of
+the materials atomic state. When they return to ground state, they emit photons,
+which are measured using avalanche photodiodes. The fraction of the deposited
+energy is proportional to the number of emitted photons.
 
 The hermetic calorimeter is made of lead tungstate ($\mathrm{PbWO}_4$), a very
-dense material with a radiation length of $X_0 = 0.89$ cm. Through the
-additional oxygen, it is a highly transparent and scintillates light. These
-material properties allow the calorimeter to be built very compact within the
-solenoid magnet. Additionally, the small Moli`ere  radius of 2.19 cm leads to a
-fine granularity. 
+dense material with a radiation length of $X_0 = \SI{0.89}{\centi\meter}$.
+Through the additional oxygen, it is highly transparent and scintillates light.
+The small Moli`ere  radius of \SI{2.19}{\centi\meter} leads to a fine granularity
+These material properties allow the ECAL to be built very compact and to
+be placed within solenoid magnet. 
 
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_ecal.pdf}\hfill
     \caption[Electromagnetic Calorimeter]{The electromagnetic calorimeter
-    consists of two submodules covering the barrel regiond and the endcaps.
-    Additionally a preshower detector is mounted in front of the
-    endcaps~\cite{cms:ecal}.}
+    consists of two submodules covering the barrel region and the endcaps.
+    An additional preshower detector is mounted in front of the
+    endcaps. Taken from~\cite{cms:ecal}.}
     \label{fig:cms:ecal}
 \end{figure}
 
 Figure~\ref{fig:cms:ecal} shows a schematic sketch of the ECAL in the $y$-$z$
-plane. The ECAL consists of three subsystems covering the the pseudo-rapidity
-range upt to 3.0. The \textbf{electromagnetic calorimeter barrel (EB)} covers up
-to $\eta < 1.479$ using more than 60000 crystals forming a homogenous coverage
-in pseudo-rapidity. Each crystal measures 2.2 cm x 2.2 cm x 23 cm corresponding
-to a radiation length of 25.8 $X_0$. The \textbf{electromagnetic calorimeter
-endcaps (EE)} extend the pseudo rapidity coverage from $1.479 < |\eta| < 3.0$.
-The largest part of the ECAL endcap is additionally covered by the
-\textbf{electromagnetic pre-shower detector (ES)}. It consists of two orthogonal
+plane. The ECAL comprises three subsystems covering the the pseudo-rapidity
+range up to 3.0. 
+
+\paragraph{Electromagnetic Calorimeter Barrel (EB)} The EB covers up to $\eta <
+1.479$ using more than 60000 crystals forming a homogenous coverage in
+pseudo-rapidity. Each crystal measures $\SI{2.2}{\centi\meter} \times
+\SI{2.2}{\centi\meter} \times \SI{23}{\centi\meter}$ corresponding to a
+radiation length of 25.8 $X_0$.
+\paragraph{Electromagnetic Calorimeter Endcaps
+(EE)} It extend the pseudo rapidity coverage from $1.479 < |\eta| < 3.0$.  The
+largest part of the ECAL endcap is additionally covered by the
+\paragraph{Electromagnetic Pre-shower Detector (ES)}. It consists of two orthogonal
 silicon strip sensors. The ES improves the discrimination between single
 high-energetic photos and less interesting low-energy photon pairs as well as
 the discrimination between neutral pions and photons.
@@ -389,7 +448,7 @@ detector subcomponents and assembles the whole events, see
 Fig.~\ref{fig:cms:daq_system}. The data is subsequently passed to the HLT
 trigger which further reduces the rates to a few hundred events per second.
 These events are then merged and saved on a storage system from which they are
-transferred to the Tier 0 computing center at CERN 
+transferred to the Tier 0 computing center at \CERN 
 
 \begin{figure}[h!tp]
     \centering
@@ -407,7 +466,7 @@ developed which are able to simulate the collision events. On the experimental
 side, the raw detector the physical event information needs to be reconstructed. Additionally the
 complex architecture of the detector response needs to be modelled and
 simulated. These central tasks are approached using a common software framework
-within CMS, the CMSSW framework, which interfaces the various theory tools and
+within CMS, the \CMSSW framework, which interfaces the various theory tools and
 all the reconstruction and detector software. All of these tasks are divided
 into smaller processing tasks, called jobs, which are assigned to computing
 centers distributed over many countries. This common computing and storage
@@ -418,9 +477,9 @@ infrastructure is called the worldwide LHC computing grid (LHCG).
 
 To overcome the discussed challenges and ease the access of users to the data of
 the LHC experiments, a distributed grid with a tiered infrastructure was
-developed. As the majority of the data is produced at CERN, a hierarchical
-structure with the computing center at CERN, called Tier-0 at the top was
-chosen, see Fig.~\ref{fig:lhc_tier_structure}. The raw data is stored at CERN
+developed. As the majority of the data is produced at \CERN, a hierarchical
+structure with the computing center at \CERN, called Tier-0 at the top was
+chosen, see Fig.~\ref{fig:lhc_tier_structure}. The raw data is stored at \CERN
 and distributed to globally distributed Tier-1 centers, as they provided further
 storage resources and large computing resources for the reconstruction and
 analysis of the data. Tier-2 sites provide additional computing ressources while
@@ -430,7 +489,7 @@ Tier-3 sites are mostly used by local analysis groups for data analyses.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/lhcg.pdf}\hfill
     \caption[Tiered structure of the worldwide LHC Computing Grid]{The WLCG is
-        ordered hierarchical with the CERN T0 at the top. Taken
+        ordered hierarchical with the \CERN T0 at the top. Taken
         from~\cite{Stober:2012abc}.}
     \label{fig:lhc_tier_structure}
 \end{figure}
@@ -441,17 +500,17 @@ the user to access the storage and computing resources.
 
 \subsection{CMS Software Framework}
 
-The software framework of the CMS collaboration, referred to as CMSSW, offers
+The software framework of the CMS collaboration, referred to as \CMSSW, offers
 all neccessary tools for a phycis analysis. The tasks in the event processing
 comprise on the one hand calibration and reconstruction of data from raw
 detector read out and on the other hand the event generation and detector
 simulation. Furthermore it provides the possibility to implement analysis code
 to perform the data analysis. 
 
-To cope with this vast range of requirements to the experiment software, CMSSW
+To cope with this vast range of requirements to the experiment software, \CMSSW
 is built on top of an event data model (EDM) in which the event is a
 container for for all measured or simulated data. The reconstruction and
-distribution algorithms in CMSSW are divided into modules, which can be
+distribution algorithms in \CMSSW are divided into modules, which can be
 modularly loaded and run. Each module can read the event data and add additional
 objects calculated within the algorithm. The execution of the modules is ordered
 in processing chains which are configured by the user. Very often these modules
@@ -476,12 +535,12 @@ fast workflow for the analysis.
 \subsubsection{Artus and Kappa}
 \label{artus_kappa}
 
-The Kappa software is a skimming framework interfaced to CMSSW. It consists of
+The Kappa software is a skimming framework interfaced to \CMSSW. It consists of
 different modules which allow to skim only the physics objects needed in the
 subsequent analysis. The data is then stored in its own compact data format
 using the ROOT format. The resulting Kappa tuples provide all neccesary
 information of the events and the lumisection while hiding the complexity of the
-CMSSW datasets. There is a separate tool collection, KappaTools, in which
+\CMSSW datasets. There is a separate tool collection, KappaTools, in which
 functions to access the Jet energy corrections or HLT informations are
 collected.
 
@@ -491,7 +550,7 @@ collected.
     \caption[Workflow of an analysis in the Artus framework]{Workflow of an
         analysis in the Artus analysis framework. Taken
         from~\cite{Berger:2014aca}.}
-    \label{fig:lhc_tier_structure}
+    \label{fig:artus_workflow}
 \end{figure}
 
 The analysis itself is built on top of the Artus framework. Artus was developed
