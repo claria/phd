@@ -138,11 +138,12 @@ slices constructed at ground level and lowered into the cavern. In case of
 upgrades or repairs, the slices can be pulled apart and the inner components can
 be easily accessed.
 
-\todo{cms slice fig caption}
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/cms_detector/cms_slice.pdf}
-    \caption[Transverse slice of the CMS detector]{asdf}
+    \includegraphics[width=0.9\textwidth]{figures/cms_detector/cms_slice.png}
+    \caption[Transverse slice of the CMS detector]{The transverse slice through the
+        CMS detector shows the various subdetectors and the signatures by which
+        they are detected. Taken from~\cite{Barney:2120661}.}
     \label{fig:cms:transverse_slice}
 \end{figure}
 
@@ -285,7 +286,7 @@ and to be placed within the solenoid magnet.
     \caption[Electromagnetic Calorimeter]{The electromagnetic calorimeter
     consists of submodules covering the barrel region (EB) and the endcaps (EE).
     A complementary preshower detector (ES) is mounted in front of the
-    endcaps. Taken from~\cite{cms:ecal}.}
+    endcaps. Taken from~\cite{Bayatian:922757}.}
     \label{fig:cms:ecal}
 \end{figure}
 
@@ -441,28 +442,28 @@ processes the data and transfers them to the HLT.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/l1_calo_towers.pdf}\hfill
     \caption[Jet Candidates in the Level 1 calorimeter trigger]{Jet Candidates
-        in the Level 1 calorimeter trigger ormed from $4\times4$ triger towers. Taken from~\cite{Rose:2009zz}.}
+        in the Level 1 calorimeter trigger are formed from $4\times4$ triger
+        towers. Taken from~\cite{Rose:2009zz}.}
     \label{fig:cms:l1_calo_towers}
 \end{figure}
+\todo{improve image}
 
+\paragraph{HLT Trigger} 
+The HLT is a software-based trigger running on a dedicated computing farm at
+Point 5. The software is implemented in a streamlined version of the CMS
+software framework. Each HLT trigger path is a sequence of reconstruction and
+selection steps with increasing complexity. In the end, the HLT accepts several
+100 events per second for permanent storage and analysis.
 
-\paragraph{HLT Trigger} The HLT is fully implemented in software running on a
-dedicated computing farm at Point 5. The software is implemented in a
-streamlined version of the CMS framework. Each HLT trigger path is a sequence of
-reconstruction and selection steps with increasing complexity. The HLT selects
-events a rate of several hundred Hertz which are grouped in non-exclusive data
-streams, \eg the primpary physics stream \emph{A} or the calibration trigger
-stream.
-
-The HLT reconstructs jets using the \antikt clustering algrirthm. Because of the
-high processing time of the particle flow algorithm, see
+Jets are reconstructed in the HLT using the \antikt jet clustering algorithm. Because of the
+high processing time of the Particle Flow algorithm, see
 Sec.~\ref{sec:particle_flow_algorithm}, the jet trigger paths are divided into
-multiple selection steps. At first the jets are reconstructed from calorimeter
+multiple selection steps. At first, jets are reconstructed from calorimeter
 towers.  Only for events in which at least one calorimeter jet passes a certain
-\pt threshold, the particle flow algorithm is run and the jets are clustered
-again from the particle flow candidates. Due to the flexibility of the HLT, it
+\pt threshold, the Particle Flow algorithm is run and the jets are clustered
+again from the Particle Flow candidates. Due to the flexibility of the HLT, it
 is already possible to apply sophisticated jet energy corrections during the HLT
-processing.
+trigger selection.
 
 \paragraph{Data Aquisition (DAQ)}
 
@@ -471,30 +472,35 @@ system has to process the events at the same speed. It reads out the data of all
 detector subcomponents and assembles the whole events, see
 Fig.~\ref{fig:cms:daq_system}. The data is subsequently passed to the HLT
 trigger which further reduces the rates to a few hundred events per second.
-These events are then merged and saved on a storage system from which they are
-transferred to the Tier 0 computing center at \CERN 
+These events are then merged and saved on a local storage system from which they
+are continously transferred to the Tier 0 computing center at \CERN.
 
 \begin{figure}[h!tp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_daq.pdf}\hfill
-    \caption[The DAQ System of CMS]{asdf~\cite{Sphicas:2002gg}}
+    \caption[The DAQ System of CMS]{The L1 trigger accepts events at a rate of
+        \SI{100}{\kilo\hertz} and passes them to the DAQ. The DAQ reads out
+        all detector signals, builds the complete event and passes it to the
+        HLT. All events accepted by the HLT are stored and transferred to the
+        Tier 0 computing center. Taken from~\cite{Sphicas:2002gg}.}
     \label{fig:cms:daq_system}
 \end{figure}
 
 \section{Computing Infrastructure and Software Tools}
 
-The vast amount of and the complexity of the data produced at the LHC
-experiments poses many challenges for the computing infrastructure and the
-engaged software. On the theory side, powerful Monte-Carlo event generators need to be
-developed which are able to simulate the collision events. On the experimental
-side, the raw detector the physical event information needs to be reconstructed. Additionally the
-complex architecture of the detector response needs to be modelled and
-simulated. These central tasks are approached using a common software framework
-within CMS, the \CMSSW framework, which interfaces the various theory tools and
-all the reconstruction and detector software. All of these tasks are divided
-into smaller processing tasks, called jobs, which are assigned to computing
-centers distributed over many countries. This common computing and storage
-infrastructure is called the worldwide LHC computing grid (LHCG).
+The vast amount of data produced at the LHC experiments and the complexity of
+the software poses many challenges for the computing infrastructure and the
+engaged software. On the theory side, powerful Monte-Carlo event generators need
+to be developed which are able to simulate the collision events. On experimental
+side, the physical event information needs to be reconstructed from the raw
+detector readout. Furthermore the complex architecture of the detector response
+needs to be modelled and simulated. These central tasks are approached using a
+common software framework within CMS, the \CMSSW framework, which interfaces the
+various theory tools and all the reconstruction and detector software. All of
+these tasks are divided into smaller processing tasks, called jobs, which are
+assigned to computing centers distributed over many countries. This common
+computing and storage infrastructure is called the worldwide LHC computing grid
+(LHCG).
 
 \subsection{Worldwide LHC Computing Grid}
 \todo{write}
@@ -512,38 +518,35 @@ Tier-3 sites are mostly used by local analysis groups for data analyses.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/lhcg.pdf}\hfill
-    \caption[Tiered structure of the worldwide LHC Computing Grid]{The WLCG is
-        ordered hierarchical with the \CERN T0 at the top. Taken
+    \caption[Tiered structure of the worldwide LHC Computing Grid]{The Worldwide
+        LHC Computing Grid is ordered hierarchical with the \CERN T0 at the top. Taken
         from~\cite{Stober:2012abc}.}
     \label{fig:lhc_tier_structure}
 \end{figure}
 
-Access to the ressources of the WLCG is gained by certificates, which authorize
+Access to the resources of the WLCG is gained by certificates, which authorize
 the user to access the storage and computing resources.
 
 
 \subsection{CMS Software Framework}
 
-The software framework of the CMS collaboration, referred to as \CMSSW, offers
-all neccessary tools for a phycis analysis. The tasks in the event processing
+The software framework of the CMS collaboration (\CMSSW)~\cite{Bayatyan:838359}, offers
+all neccessary tools for a physics analysis. The tasks in the event processing
 comprise on the one hand calibration and reconstruction of data from raw
-detector read out and on the other hand the event generation and detector
-simulation. Furthermore it provides the possibility to implement analysis code
+detector read-out and on the other hand the event generation and detector
+simulation. Furthermore, it provides the possibility to implement analysis code
 to perform the data analysis. 
 
 To cope with this vast range of requirements to the experiment software, \CMSSW
-is built on top of an event data model (EDM) in which the event is a
-container for for all measured or simulated data. The reconstruction and
+is built on top of an event data model (EDM), in which the event is a
+container for all measured or simulated data. The reconstruction and
 distribution algorithms in \CMSSW are divided into modules, which can be
-modularly loaded and run. Each module can read the event data and add additional
-objects calculated within the algorithm. The execution of the modules is ordered
-in processing chains which are configured by the user. Very often these modules
+dynamically loaded and run. Each module reads the event data and can add additional
+objects to the event. The execution of modules is ordered
+in processing chains which can be configured by the user. Very often these modules
 access external libraries like Monte Carlo event generators for event
 simulation, Geant 4 for the detector simulation or FastJet for the
-reconstruction of jets. Using this modular approach in which modules are loaded
-dynamically one can easily start with an event containing only the raw detector
-data and process all neccessary steps to arrive at the final event containing
-the reconstructed objects suited for analysis.
+reconstruction of jets. 
 
 While having that much information in the event data is convenient to redo
 reconstruction steps, it is unsuited for fast processing in the analysis due to
@@ -552,21 +555,19 @@ data is preserved is run before the analysis, see Section~\ref{artus_kappa}.
 
 \subsection{Analysis Software and Workflow}
 
-Due to the complexity of the workflows in the HEP data analysis, several tools
-were used or even deloped in the Karlsruhe group to faciliate a reliable and
-fast workflow for the analysis. 
+Due to the complexity of the workflows in the HEP data analysis, several
+analysis tools were used or even deloped in the Karlsruhe group to faciliate a reliable and
+fast workflow of the analysis. 
 
 \subsubsection{Artus and Kappa}
 \label{artus_kappa}
 
-The Kappa software is a skimming framework interfaced to \CMSSW. It consists of
-different modules which allow to skim only the physics objects needed in the
-subsequent analysis. The data is then stored in its own compact data format
-using the ROOT format. The resulting Kappa tuples provide all neccesary
-information of the events and the lumisection while hiding the complexity of the
-\CMSSW datasets. There is a separate tool collection, KappaTools, in which
-functions to access the Jet energy corrections or HLT informations are
-collected.
+The Kappa software~\cite{Kappa:2015aa} is a skimming framework interfaced to
+\CMSSW. It consists of different modules which allow to skim only the physics
+objects needed in the subsequent analysis. The data is stored in its distinct
+compact data format using the ROOT object serialization capabilities. The
+resulting Kappa tuples provide all neccesary information of the events and the
+lumisections, while hiding the complexity of the \CMSSW datasets.
 
 \begin{figure}[htp]
     \centering
@@ -577,38 +578,41 @@ collected.
     \label{fig:artus_workflow}
 \end{figure}
 
-The analysis itself is built on top of the Artus framework. Artus was developed
-within the Karlsruhe group to combine analysis efforts and profit from mutual
-developments. The framework defines a workflow based on three elements. There
-are \emph{producers}, which calculate quantities and \emph{filters}, which
-reject events based on the defined criteria. In a final step, histograms or
-nTuples are written out by \emph{consumers}. All producers, filters and
-consumers are written in a modular way so that they can be shared with other
-analyses. Furthermore they are steered by a global configuration file in which
-one can easily adapt all settings and cuts.
+The analysis itself is built on top of the Artus framework~\ref{Berger:2015qao}.
+Artus has been developed within the Karlsruhe group to combine analysis efforts
+and to profit from mutual developments. The framework defines a workflow based
+on three elements, see Fig.~\ref{fig:artus_workflow}. There are
+\emph{producers}, which calculate quantities and \emph{filters}, which reject
+events based on the defined criteria. In a final step, histograms or tuples are
+written out by \emph{consumers}. All producers, filters and consumers are
+written in a modular way so that they can be shared with other analyses.
+Furthermore they are steered by a global configuration file in which all
+settings and cuts can be easily adapted.
 
 \subsubsection{grid-control}
 
-The data sets are even after the skimming step to large to be processed on a
-single computer. Therefore special batch system with a huge number of computing
-nodes are employed to process the data. The data processing is split into
-multiple jobs which are then sent to the batch system. grid-control is by far
-the most versatile job submission tool which provides multiple options for data
-splitting and parametrized jobs while hiding the pitfalls of local or remote
-computing resources.
+The data sets are even after the skimming step too large to be processed on a
+single computer. Therefore special batch systems with a large number of
+computing nodes are employed to process the data. The data processing is split
+into multiple jobs which are then sent to the batch system.
+grid-control~\cite{Gridcontrol:2015aa} is by far the most versatile job
+submission tool which provides multiple options for data splitting and
+parametrized jobs while hiding the pitfalls of local or remote computing
+resources.
 
 \subsubsection{ROOT}
 
-The object-oriented data analysis framework ROOT has been written almost 20 years
-ago. It is used by all LHC experiments for persistent storage of data. Moreover
-ith provides fast histogramming classes and access to many libraries like MINUIT
-for minimization purposes or TMVA for multivariate data analyses. Despite
-many hours of headaches caused by obscure design decisions in the software, ROOT
-and especially the python bindings PyROOT were used extensively in this analysis.
+The object-oriented data analysis framework ROOT~\cite{Brun:1997pa} has been
+written more than 20 years ago. However it is still very popular and used by all
+LHC experiments for persistent storage of data. Moreover, ROOT provides fast
+histogramming classes and access to many libraries like MINUIT for minimization
+purposes or TMVA for multivariate data analyses. Despite many hours of headaches
+caused by obscure design decisions in the software, ROOT and especially the
+python bindings \textsc{PyROOT} are used extensively in this analysis.
 
 \subsubsection{matplotlib and numpy}
 
-matplotlib is 2D plotting library written in the python programming language~\cite{Hunter:2007aa}. It
+matplotlib is a 2D plotting library written in the python programming language~\cite{Hunter:2007aa}. It
 provides publication quality plots in a variety of output formats and is very
 pleasant to use. All plots in this thesis were made using matplotlib. The
 plotting library matplotlib as well as many scripts used in this thesis rely on
@@ -626,9 +630,10 @@ string hadronization model in which all but the highest-energy gluons are
 treated as field ines which attract each other by gluon self-interaction and
 form a tube or string of strong color field. In this analysis two version of the
 Pythia event generator are used. The official samples including the detector
-simulation were generated using Madgraph and Pythia 6, while the study of
-non-perturbative effects was performed using the new Pythia 8 version, in which
-all the new tunes were available. 
+simulation were generated using Madgraph and Pythia~6~\cite{Sjostrand:2006za},
+while the study of non-perturbative effects was performed using the new
+Pythia~8~\cite{Sjostrand:2007gs} version, in which all the employed tunes are
+available. 
 
 \subsubsection{Herwig}
 
@@ -655,45 +660,36 @@ predictions with matched parton showers, see Sec.~\ref{sec:nlo_comparisons}.
 
 \subsubsection{MadGraph}
 
-MadGraph is a multi-purpose tree-element matrix element generator. It implements
-a large number of processes and can be interfaced to Monte Carlo Event
-generators. In this thesis the MadGraph matrix elements are used together with
-the Pythia 6 event generator for general comparisons to data.
+MadGraph~\cite{Alwall:2011uj} is an automated multi-purpose tree-element matrix
+element generator. It implements a large number of processes and can be
+interfaced to Monte Carlo Event generators. In this thesis the MadGraph matrix
+elements are used together with the Pythia 6 event generator for general
+comparisons to data.
 
 \subsubsection{NLOJet++ and fastNLO}
 \label{sec:nlojetpp}
 
-% To populate the whole accessible phasespace with sufficient events to get a
-% precise prediction, a huge number of events is neccessary. Since especially the
-% influence of the PDFs and the strong coupling constant is interesting to be
-% studied, the calculation would have to be repeated multiple times with different
-% input parameters. In order to speed-up this process, \NLOJETPP is interfaced to
-% the \fastNLO package~\cite{Kluge:2006xs,Britzger:2012bs}. fastNLO uses
-% sophisticated interpolation tables to store the matrix element coefficients as a
-% function of the scales, the calculation order and the fractional proton
-% momentum. The fastNLO tables can now be evaluated with different PDFs, \as and
-% scales within negligible time. 
-
-
 The complicated NLO cross section for jet productions are calculated using
-\NLOJETPP. It implements the dipole subtraction method for the separation of the
-divergences. \NLOJETPP can calulate up to three-jet observables at NLO precision.
-It implements the ability run analysis scenarios by which it is interfaced to
-\fastNLO.
+\NLOJETPP~\cite{Nagy:2003tz}. It implements the dipole subtraction method for
+the separation of the divergences. \NLOJETPP can calulate up to three-jet
+observables at NLO precision. It implements the ability run analysis scenarios
+by which it is interfaced to \fastNLO~\cite{Kluge:2006xs,Britzger:2012bs}.
 
 Since the pQCD cross section calculations in \NLOJETPP are determined in Monte
-Carlo integration and are therefore very time consuming. For fits of the proton
-structure or the extraction of the stroung coupling constant, the cross sections
-need to be evaluated multiple times with different input parameters. The
-\fastNLO framework implements a strategy for a fast recalculation of these cross
-section. It sotres the perturbative coefficients obtained with \NLOJETPP in a
-way that the strong coupling constant and the PDFs can be changed afterwards
-without a recalculation of the perturbative coefficients.
+Carlo integration and are therefore very time consuming, it is not feasible to
+repeatedly calculate the cross sections as it is neccessary for PDF fits or
+uncertainty estimations. The \fastNLO framework implements a strategy for fast
+recalculations of cross sections. It stores the perturbative coefficients
+obtained with \NLOJETPP in a way that the strong coupling constant and the PDFs
+can be changed afterwards without a recalculation of the perturbative
+coefficients.
 
 \subsubsection{LHAPDF}
 
 All event generators and cross section calculation tools need the parton
-distribution functions as input. They are either hardcode in the generator or
-accessed using a standardized interface, the LHAPDF library. LHAPDF provides
-interpolation routines by which PDFs read from discretised data files can be
-accessed. 
+distribution functions as input. They are either hardcoded in the generator or
+accessed using a standardized interface, the LHAPDF
+library~\cite{Whalley:2005nh,Buckley:2014ana}. LHAPDF stores the PDFs in a discritized
+structure in data files. It provides interpolation routines to read the PDFs and
+interpolate the PDFs at all scales. LHAPDF is used by almost all major MC
+generators.
