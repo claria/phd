@@ -606,6 +606,37 @@ bins in \ystar and \yboost are small and the effects neglibible. Thereby it is
 justified to perform the unfolding in each \ystar and \yboost bin separately and
 to not perform a three-dimensional unfolding which is much more cumbersome.
 
+The statistical uncertainties of the data distributions are propagated through
+the unfolding procedure using toy experiments. The procedure as well as the
+results are discussed in detail in Sec.~\ref{sec:stat_unf_uncert}.
+
+
+\section{Experimental Uncertainties}
+
+This section presents all experimental uncertainties, which affect the
+measurement.  The luminosity uncertainty affects the
+overall normalization of the cross section measurement. The dominant source of
+uncertainty arises from the jet energy corrections which is split into 25
+% separate sources of uncertainty. Table~\ref{tab:exp_uncerts} gives an overview
+of the different sources of uncertainty and their influence on the measurement
+
+% \todo{table exp uncertainties}
+
+\subsection {Uncertainty on Luminosity Measurement}
+
+As discussed in Sec.~\ref{sec:lumi_measurement}, the luminosity is measured from
+the number of clusters in the silicon pixel detector. The integrated luminosity
+for the selected data in the 2012 LHC run is determined to be \SI{19.71}{\per
+\femto \barn}. 
+
+The uncertainty on the luminosity measurement for the 2012 LHC run is estimated
+to be 2.5\% (syst.) and 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. The luminosity
+uncertainty afffects the normalization of any absolute cross section measurement
+and is therefore taken into account.
+
+\subsection{Unfolding and Statistical Uncertainty}
+\label{sec:stat_unf_uncert}
+
 The statistical uncertainties of the data distributions are are propagated
 through the unfolding using a toy MC procedure in which the measured histogram
 is smeared according to its statistical uncertainty and the unfolding procedure
@@ -629,7 +660,7 @@ process as it is expected.
     \label{fig:statunc_relative}
 \end{figure}
 
-Additionally the unfolding introduces a correlation between bins due to bin
+Futhermore, the unfolding introduces a correlation between bins due to bin
 migrations. These correlations are significant for neighbouring bins in \pt and
 negligible for far off bins. Figure~\ref{fig:corr_unfolding_nlo} shows the
 correlations of the statistical uncertainty after the unfolding.
@@ -647,7 +678,62 @@ correlations of the statistical uncertainty after the unfolding.
     \label{fig:corr_unfolding_nlo}
 \end{figure}
 
-\section{Experimental Uncertainties}
+\subsection{Jet Energy Correction Uncertainty}
+
+The dominant part of the experimental uncertainties comes from jet energy
+calibration, which correct the measured jet energy for a variety of detector
+effects, see Sec.~\ref{sec:jec}. As the corrections are afflicted with multiple
+sources of systematic uncertainty, these are propgated individually to the cross section
+measurement to conserve all correlations.
+
+The JEC uncertainties are split into 25 mutually independent sources of
+uncertainty (JES), in which each source is fully correlated in \pt and $\eta$
+and presents a $1\sigma$ shift. As these uncertainties can be asymmetric, the
+upwards and downwards variation are treated separately. The sum in quadrature of
+all uncertainty sources equals the total uncertainty. Therefore they can be
+treated exactly like the PDF eigenvectors sets, which were discussed in
+Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainties are grouped in
+four categories which relate to the underlying correction. In the following
+list, a short summary of the sources of uncertainty is given. The calibration
+procedure and the uncertainties are described in great detail
+in~\ref{jec_paper}.
+
+\begin{description}
+    \item[Pile-up JES] Differences in the transverse momentum between the true
+        offset and the random cone offset observed in simulation. This
+        difference is propagated using Z/$\gamma$+jet and dijet balancing
+        methods to estimate the residual pileup uncertainty after the
+        calibration.
+    \item[Relative JES] The relative $\eta$-dependent corrections calibrate
+        forward jets using balanced dijet events. The largest contribution to
+        the uncertainty arises from jet energy resolution and soft-radiation
+        bias corrections. 
+    \item[Absolute JES]  The absolute calibration of the jet energy scale relies
+        on Z/$\gamma$+jet and multijet events. The uncertainties are related to
+        the lepton momentum scale for muon and the single-pion response in the
+        HCAL. Observed differences in applied methods, traced back to neutrinos
+        and ISR, are also accounted for. 
+    \item[Flavor JES] Differences in the flavor response are studied using
+        simulation by cross-checking the results with quark- and gluon-tagged
+        photon+jet and Z+jet events. The uncertainty is derived based on
+        differences observed in the Pythia6 and Herwig++ simulation.
+\end{description}
+
+\subsection{Jet Energy Resolution Uncertainty}
 
 \section{Comparison with NLO Predictions}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_Ct14nlo+np_totcomp_yb2ys0.pdf}
+    \caption[]{}
+    \label{fig:corr_unfolding_nlo}
+\end{figure}
+
+
 \label{sec:nlo_comparisons}

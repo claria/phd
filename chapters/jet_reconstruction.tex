@@ -11,18 +11,18 @@ deposit of energy in the calorimeters accompanied by a large number of tracks in
 the direction of the deposited energy. Jets are reconstructed using different
 techniques based on the amount of information available. If the jets are
 reconstructed from the energy clusters within the calorimeters, they are called
-\emph{calorimeter jets}. If the jet reconstruction uses particle flow candidate
-objects, these are called \emph{particle flow jets}. By removing pile-up tracks
-from the particle flow candidates before the jet clustering, one yields
+\emph{calorimeter jets}. If the jet reconstruction uses particle flow
+candidates, these are called \emph{particle flow jets}. By removing pile-up
+tracks from the particle flow candidates before the jet clustering, one yields
 \emph{particle flow CHS jets}. Later on, when talking about jets in the physics
-analysis, we always refer to particle flow CHS jets if not stated otherwise.
+analysis, it is always referred to particle flow CHS jets if not stated otherwise.
 
 \section{The Particle Flow Algorithm}
 \label{sec:particle_flow_algorithm}
 
 \CMS uses the particle flow reconstruction
 algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} to identify and
-reconstruct particles in an event by combining information from all detector
+reconstruct particles by combining information from all detector
 subsystems. Due to its compact design inside the solenoid, the hadronic
 calorimeter is not able to stop and measure all particles which reduces the
 energy resolution. However, taking into account the additional information of
@@ -34,9 +34,10 @@ of \CMS which allows the precise distinction between neutral and charged hadrons
 The ingredients of the particle flow algorithm are the
 tracks and vertices, reconstructed from hits in the tracking detectors, the
 deposited energy in the electromagnetic and hadronic calorimeters and the tracks
-in the muon system. The reconstructed particles are then classified as muons,
+in the muon system. The reconstructed particles are classified as muons,
 electrons, photons, charged hadrons or neutral hadrons. The combination of all
-subdetectors yields an optimal measurement of their momentum, energy and type.
+subdetectors yields an optimal identification and  measurement of their momentum
+and energy.
 
 The tracks are found using the Combinatorial Track Finder (CTF)
 algorithm~\cite{Adam:2005cg} employed by \CMS. Based on these tracks, the primary
@@ -63,21 +64,20 @@ well identified particles, which profit from the improved resolution gained by
 the inclusion of tracking information. This collection of particles is then
 used to reconstruct the jets and further physical objects.
 
-\todo{Jetbild?}
+\todo{Jetbild?/pf bild}
 
 \section{Jet Algorithms}
 \label{sec:jet_algorithms}
 
 The information of the clustered stream of particles, also known as jets,
-provides the link between the short-scale physics and our final-state
+provides the link between the short-scale physics and the final-state
 observations. There are many different algorithms available which cluster jets
-from a set of input objects. Many of them were found to have their specific
-problems and today, both \CMS and \ATLAS rely on the \antikt and inclusive-\kt
-jet algorithms, which proved to be very robust and both are collinear and
-infrared safe, see Section~\ref{sec:coll_safety}. They are sequential
-recombination algorithms and combine the input objects based on a distance
-measure in Minkowski space. All jets were reconstructed using the efficient algorithms
-implemented in the FastJet library~cite{Cacciari:2011ma}.
+from a set of input objects. Both \CMS and \ATLAS rely on the \antikt and
+inclusive-\kt jet algorithms, which proved to be very robust and both are
+collinear and infrared safe, see Section~\ref{sec:coll_safety}. They are
+sequential recombination algorithms and combine the input objects based on a
+distance measure in Minkowski space. All jets were reconstructed using the
+efficient algorithms implemented in the FastJet library~\cite{Cacciari:2011ma}.
 
 \subsection{Collinear and Infrared Safety}
 \label{sec:coll_safety}
@@ -212,6 +212,7 @@ low-\pt region, removing pile-up jets mimicking the leading jet in the event
 improves the signal efficiency in the forward region.
 
 \section{Jet Energy Corrections}
+\label{sec:jec}
 \todo{jec paper ref}
 
 A detailed understanding of the jet energy scale and the jet transverse momentum
