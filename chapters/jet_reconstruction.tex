@@ -86,7 +86,7 @@ Hard partons undergo many collinear splittings in the fragmentation process.
 Additionally, there are always emissions of soft particles in QCD-like events
 caused by non-perturbative and perturbative effects. The reconstructed jets
 should be insensitive to all these effects. Furthermore, fixed-order pQCD
-calculations are associated with diverged tree-level matrix elements and the
+calculations are associated with divergent tree-level matrix elements and the
 corresponding loop level matrix elements. While these divergences cancel for
 infared safe and collinear safe jet algorithms, this is not guaranteed for jet
 algorithms not fullfilling the infrared and collinear safety requirements.
@@ -125,14 +125,15 @@ difference $\Delta y_{ij}$ and the azimuthal angle $\Delta \phi_{ij}$ between tw
 particles $i$ and $j$
 
 \begin{align*} 
-    d_{ij} &= \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\Delta R_{ij}^2}{R^2}\\
+    d_{ij} &= \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\left(\Delta
+        R_{ij}\right)^2}{R^2}\\
     d_{i\mathrm{B}} &= k_{\mathrm{T}i}^{2p}
 \end{align*} 
 
 with the angular distance
 
 \begin{align*}
-    \Delta R_{ij}^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2
+    \left(\Delta R_{ij}\right)^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2
 \end{align*} 
 
 If distance $d_{ij}$ is smaller than the distances to the beam line, the two
@@ -189,21 +190,21 @@ entire $\phi$-$\eta$ phasespace. The average \pt density is defined as
 \end{equation*}
 
 $\rho$ is a measure for the underlying event and pile-up activity in the event
-and is used later on to correct the jets for pile-up effects, see
+and is used later on to correct the jets for these effects, see
 Sec.~\ref{pileup_correction}.
 
 \subsection{Charged Hadron Subtraction}
 
 \CMS introduced a new technique to reduce pile-up from jets using the high
 resolution of the tracker, called Charged Hadron Subtraction
-(CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithms can only be
+(CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithm can only be
 applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
 particle flow candidates which originate from a pile-up vertex are removed.
 Tracks originating from the main vertex or tracks not associated to any vertex
-remain in the event. The jets are now clustered from this set of particles.
+remain in the event. The jets are clustered from this set of particles.
 Since the jet identification criteria in the jet selection in the analysis
-require at least one charged particle in a jet, the CHS method effectively
-reduces the influence of pile-up on real jets as well as completely removing a
+require at least one charged particle in a jet, the CHS method is effectively
+reducing the influence of pile-up on real jets as well as completely removing a
 majority of the pile-up jets in the barrel region of the \CMS detector in
 combination with the jet identification criteria.
 
@@ -217,17 +218,17 @@ improves the signal efficiency in the forward region.
 
 A detailed understanding of the jet energy scale and the jet transverse momentum
 resolution is important when it comes to drawing conclusions about the
-properties of quarks and gluon produced in high-energy scattering processes. On the
+properties of quarks and gluons produced in high-energy scattering processes. On the
 experimental side, there are multiple effects causing the reconstructed jet
-energy to not correspond to the true jet energy like electronic noise, pile-up
+energy not to correspond to the true jet energy like electronic noise, pile-up
 and underlying event effects, but also non-linearities in the calorimeter
 response and numerous further small effects. The jet reconstruction and
 definition itself also introduces effects due to the fragmentation model,
-initial and final state radiation which can cause out-of-cone effects.
+initial- and final-state radiation which can cause out-of-cone effects.
 
 The jet energy corrections (JEC) relate the measured jet energy to the
 corresponding true particle jet energy. \CMS uses a factorized correction approach
-consisting of multiple correction steps that build on one anothe. The corrected
+consisting of multiple correction steps that build on one another. The corrected
 transverse momentum $\pt^{\mathrm{corr}}$ of a jet is yielded by subsequently applying all correction
 factors on an uncorrected jet:
 
@@ -244,7 +245,7 @@ derived from MC studies. Finally a correction for residual effects
 $c_{\mathrm{res}}$ derived from data is applied to yield the corrected jet
 transverse momentum.
 
-\subsection{Pile-up Corrections}
+\paragraph{Pile-up Corrections}
 \label{pileup_correction}
 
 The first step removes the effects of pile-up contamination. Additional soft
@@ -255,15 +256,15 @@ jet area method by using the pile-up density $\rho$ in the event and the jet
 area $A_j$. The raw jet energy is then corrected by a factor proportional to the
 pile-up density and the jet area.
 
-\subsection{MC Corrections}
+\paragraph{MC Corrections}
 
-Based on a QCD data samples the jet energy scale is further corrected. The
+Based on simulated QCD events, the jet energy scale is further corrected. The
 momentum of a reconstructed jet can differ from a generated particle jet due to
-additional out-of-cone effects or detector ineffiencies, which are modelled
-using the detector simulation. The inverse response of the reconstructed jet to
-a generated jet is applied as correction to remove these effects.
+out-of-cone effects or detector ineffiencies, which are modelled by the detector
+simulation. The inverse response of the reconstructed jet to a generated jet is
+applied as correction to remove these effects.
 
-\subsection{Residual Data Corrections}
+\paragraph{Residual Data Corrections}
 
 Additional effects which can not be reliably estimated in a Monte Carlo
 simulation are corrected for using data-driven methods. This correction step is
