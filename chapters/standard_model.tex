@@ -33,7 +33,8 @@ energy regime.
 
 The \emph{factorization theorem} separates the short-distance interactions,
 which are calculated in the hard matrix element, from long-distance
-interactions at an additionally introduced factorization scale \muf.
+interactions at an additionally introduced factorization scale \muf. This soft
+part of the interaction is defined by the parton distributions in the proton.
 
 The cross section calculation 
 
@@ -42,11 +43,61 @@ The cross section calculation
 
 \subsection{Parton Distribution Functions}
 
-
-
-
 \section{Hadronization and Parton Shower}
-\section{Dijet Production at the LHC}
+
+As perturbative QCD calculations lack the capabilities of describing the
+soft component of the interaction, additional models are employed which describe
+the emission of additional partons and the hadronization into color-less bound
+states. 
+
+\subsection{Parton showers}
+
+The accelerated colored partons undergo subsequent emission of gluons. Unlike in
+QED radiation, gluons themselves carry color charge and therefore also emit
+further gluons, leading to the parton shower. 
+
+The dominant contributions come from collinear parton splitting and soft gluon
+emissions. The collinear splitting of a parton is described by splitting
+functions which are identical to the DGLAP splitting functions. The
+subsequential application of the splitting to the colored particles leads to the
+parton shower. The evolution of the shower is determined by an evolution
+variable, \eg the virtual-mass squared of the partons in the shower. The upper
+limit on the initial virtuality is given by the momentum transfer scale of the
+hard process while the shower is terminated when the virtualities fall below the
+hadronization scale, which is of the order of $\SI{1}{\GeV}$.
+
+Actually the parton shower mimics the effect of effect of higher-order
+corrections. As they are often not feasible to be calculated, the parton shower
+approximation is instead used. Though great take has to be taken to avoid any
+double counting if using a NLO generator in combination with a parton shower.
+
+
+\subsection{Hadronization}
+
+The result of the parton shower is a large number of color charged particles. As
+color charged particles cannot be observed, they have to hadronize into bound
+states which are color-less. The MC event generators Pythia and Herwig employ
+different models to simulate the hadronization process. Pythia uses the Lund
+string fragmentation model while Herwig is based on the cluster fragmentation
+model.
+
+\paragraph{Lund String Fragmentation Model}
+
+Within the Lund string model, the attraction between a $q\bar q$ pair is
+modeled through string, whose energy follows a coulomb potential as a function
+of the distance between the two quarks. Final-state gluons from the parton
+shower are considered as kinks in the strings. If the string exceeds a certain
+threshold, it breaks up and new quark-antiquark pairs are formed. If the
+available energy is too small, the quarks and antiquarks recombine into mesons
+and baryons.
+
+\paragraph{Cluster Fragmentation Model}
+
+At first, all gluons are split into quark antiquark pairs. Neighbouring pais are
+grouped together to form color-less clusters. Most of the clusters decay into
+hadrons in an isotropic two-body phase space model.
+
+\section{Dijet Production in Hadron-Hadron Collisions}
 
 % The majority of the visible universe is built up by baryonic matter, held
 % together by the strong interaction. This interaction is responsible for the
