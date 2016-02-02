@@ -21,8 +21,52 @@ Quantum chromodynamics (QCD) is the theory of the strong interaction. It
 describes the interaction between quarks and gluons, the fundamental particles
 which make up hadrons.
 
+\section{Renormalization}
+
+\begin{equation} 
+    \mur^2 \frac{d}{d \mur^2} X \left(\frac{Q^2}{\mur^2},\as(\mur^2)\right) = \left(
+    \mur^2 \frac{\partial X}{\partial \mur^2} + \mur^2 \frac{\partial
+    \as(\mu^2)}{\partial \mur^2} \frac{\partial X}{\partial \as(\mu^2)} \right) \stackrel{!}{=} 0 
+\end{equation}
+
+
+\begin{equation}
+    \mur^2 \frac{d \as}{d \mur^2} = \beta(\as) = - \left( \beta_0 \as^2 + \beta_1 \as^3
+    + \beta_2 \as^4 + \ldots \right)
+\end{equation}
+
+\begin{equation} 
+    \beta_0 = \frac{33 - 2 n_f}{12\pi}
+\end{equation}
+
+\begin{equation} 
+    \beta_1 = \frac{153 - 19 n_f}{24\pi^2}
+\end{equation}
+
+\begin{equation} 
+   \beta_2 = \frac{2857 -\left(\sfrac{5033}{9}\right)n_f + \left(\sfrac{335}{27}
+   \right)n_f^2}{128 \pi^3}
+\end{equation}
+
+\begin{equation*}
+   \as(\mur^2) = \frac{1}{\beta_0 \ln \left( \sfrac{\mur^2}{\Lambda^2} \right)}
+\end{equation*}
+
+
+alphas from mz
+
+\begin{equation*}
+   \as\left(\mur, \as(\mz)\right) = \frac{\as(\mz)}{1 + \as(\mz)\beta_0 \ln
+       \left( \sfrac{\mur^2}{\mz^2} \right)}
+\end{equation*}
+
+
+\todo{scale dependence of perturbative series}
+\todo{scale dependence of the cross section}
 
 \section{Running of the Strong Coupling}
+
+
 
 
 \section{Factorization and Parton Density Functions}
@@ -38,10 +82,53 @@ part of the interaction is defined by the parton distributions in the proton.
 
 The cross section calculation 
 
-\subsection{Factorization}
+\subsection{Factorization theorem}
+
+
+\subsection{DGLAP Evolution Equations}
 
 
 \subsection{Parton Distribution Functions}
+
+The structure of the proton is described by parton distribution functions
+(PDFs).
+They represent the probability density\footnote{more precise a number density as
+the pDFs are normalized to the number of partons} to find a parton carrying a momentum
+fraction $x$ of the proton momentum at a squared energy scale $Q^2$. 
+
+The DGLAP equations describe the evolution of the PDFs from a starting scale
+$Q_0$ to an arbitray scale $Q$. However, the $x$-dependence of the PDFs as well
+as the PDFs themselves at the starting scale $Q_0$ cannot be calculated, but
+have to be derived from fits to data from experiments.
+
+Several groups determine the proton PDFs in global fits to a large variety of
+measurements from different experiments. Instead of determining all the 13 quark,
+antiquark and gluon PDFs independently, the number can be reduced by choosing a
+sufficiently low starting scale $Q_0$ below the threshold of the charm quark
+mass and calculating the heavy flavour PDFs in a heavy flavour
+scheme~\cite{rt_scheme}. Furthermore the PDF of the top and anti-top quark is
+often neglected due to its large rest-mass. In the fits, each parton is
+parametrized with sufficiently flexible function to the describe the $x$
+dependence at the starting scale $Q_0$. The PDFs are evolved to the higher
+scales of each measurement and the PDF parameters are adapted in an iterative
+$\chisq$ fit.
+
+Global PDFs are determined by the CTEQ collaboration~\cite{Dulat:2015mca}, the
+MMHT group~\cite{Harland-Lang:2014zoa}, the NNPDF
+collaboration~\cite{Ball:2014uwa} and the ABM group~\cite{Alekhin:2013nda} at
+LO, NLO and NNLO. While the measurements which are put into the fit are often
+similar, there are differences in the applied minimization approach,
+phenomenological differences and the uncertainty estimation. More details are
+given in Sec.~\ref{sec:pdf_uncertainties} in which the uncertainy of the PDFs on
+the cross section measurement is discussed.
+
+The HERAPDF group~\cite{Abramowicz:2015mha} uses a slightly different approach
+by using a less flexible parameterization but restricting the data to
+measurements from the HERA experiments, which provide a very precise and
+compatible dataset. Furthermore the HERAPDF group released their fitting
+framework HERAFitter~\cite{Alekhin:2014irh} as open source software, which can
+be used by anyone.  HERAFitter is employed in Sec.~\ref{sec:pdf_constraints} to
+study the constraints of the triple differential dijet measurements on the PDFs.
 
 \section{Hadronization and Parton Shower}
 

@@ -1,6 +1,7 @@
 % vim: tw=80
 
 \chapter{PDF Constraints of the Triple-Differential Dijet Measurement}
+\label{sec:pdf_constraints}
 
 In many precision measurements at the LHC, the proton PDFs are an essential
 ingredient. As the PDFs cannot be calculated from perturbative QCD, they are
@@ -29,10 +30,9 @@ software~\cite{Botje:2010ay}.
 The parametrization used in the PDF fit is based of the HERAPDF 2.0
 parametrization and introduces additional terms which were found to better
 describe the additional added jet measurement. The PDFs parameterization is
-definded at the
-starting scale $Q_0$ set to $Q_0 = \SI{1.9}{\GeV \square}$ and the five
-independent PDFs $xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and $x\bar{D}(x)$
-are parameterized as follows:
+definded at the starting scale $Q_0$ set to $Q_0 = \SI{1.9}{\GeV \square}$ and
+the five independent PDFs $xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and
+$x\bar{D}(x)$ are parameterized as follows:
 
 \begin{align}
   xg(x) &= A_g x^{B_g} (1-x)^{C_g} (1 + E_g x^2) - A'_g x^{B'_g} (1-x)^{C'_g} \\
@@ -59,11 +59,13 @@ The uncertainty of the PDFs is subdivided into three independent sources, which
 are evaluated separately and finally added in quadrature to give the total
 uncertainty.
 
-\paragraph{Experimental Uncertainties} They result from propagated statistical and systematic
-uncertainties of the data points and are propagated to the PDF using the Hessian
-eigenvector method~\cite{Pumplin:2001ct}. The Hessian matrix is defined by the second derivatives of
-the fitted PDF parameters at the \chisq minimum. The matrix is diagonalized and
-the eigenvectors are computed, see Fig.~\ref{fig:eigenvector_basis_set}. 
+\paragraph{Experimental Uncertainties} 
+They result from propagated statistical and systematic uncertainties of the data
+points and are propagated to the PDF using the Hessian eigenvector
+method~\cite{Pumplin:2001ct}. The Hessian matrix is defined by the second
+derivatives of the fitted PDF parameters at the \chisq minimum. The matrix is
+diagonalized and the eigenvectors are computed, see
+Fig.~\ref{fig:eigenvector_basis_set}. 
 
 \begin{figure}[htb]
   \centering
