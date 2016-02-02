@@ -35,10 +35,10 @@ independent PDFs $xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and $x\bar{D}(x)$
 are parameterized as follows:
 
 \begin{align}
-  xg(x) &= A_g x^{B_g} (1-x)^{C_g} - A'_g x^{B'_g} (1-x)^{C'_g} \\
-  xu_v(x) &= A_{u_{v}} x^{B_{u_{v}}} (1-x)^{C_{u_{v}}} (1 + E_{u_{v}}x^2)\\
+  xg(x) &= A_g x^{B_g} (1-x)^{C_g} (1 + E_g x^2) - A'_g x^{B'_g} (1-x)^{C'_g} \\
+  xu_v(x) &= A_{u_{v}} x^{B_{u_{v}}} (1-x)^{C_{u_{v}}}(1 + D_{u_{v}}x + E_{u_{v}}x^2)\\
   xd_v(x) &= A_{d_v} x^{B_{d_v}} (1-x)^{C_{d_{v}}}\\
-  x\bar U(x) &= A_{\bar U} x^{B_{\bar U}} (1-x)^{C_{\bar U}}\\
+  x\bar U(x) &= A_{\bar U} x^{B_{\bar U}} (1-x)^{C_{\bar U}}(1 + D_{\bar U}x)\\
   x\bar D(x) &= A_{\bar D} x^{B_{\bar D}} (1-x)^{C_{\bar D}}
 \end{align}
 
@@ -173,7 +173,7 @@ Since the correlated sources of uncertainty are treated using nuisance
 parameters in the \chisq formula, the pull of each source on the fit result can
 be examined. Tab.~\ref{tab:pdfconstraints:nuisance} show the 27 sources of
 systematic uncertainty and their pulls. Most of the systematic sources shift by
-leass one standard deviation $\sigma$ as expected.
+less than one standard deviation $\sigma$ as expected.
 
 \begin{table}[htbp]
   \caption{asdf}
@@ -182,25 +182,40 @@ leass one standard deviation $\sigma$ as expected.
   \begin{tabular}{lrlr}
     \toprule
     Systematic source        & Shift in $\sigma$ & Systematic source        & Shift in $\sigma$\rbthm\\\midrule
-    \textsc{AbsoluteMPFBias} & 0.00              & \textsc{RelativeJEREC1}  & 0.00\rbtrr\\
-    \textsc{AbsoluteScale}   & 0.00              & \textsc{RelativeJEREC2}  & 0.00\rbtrr\\
-    \textsc{AbsoluteStat}    & 0.00              & \textsc{RelativeJERHF}   & 0.00\rbtrr\\
-    \textsc{FlavorQCD}       & 0.00              & \textsc{RelativePtBB}    & 0.00\rbtrr\\
-    \textsc{Fragmentation}   & 0.00              & \textsc{RelativePtEC1}   & 0.00\rbtrr\\
-    \textsc{PileUpDataMC}    & 0.00              & \textsc{RelativePtEC2}   & 0.00\rbtrr\\
-    \textsc{PileUpPtBB}      & 0.00              & \textsc{RelativePtHF}    & 0.00\rbtrr\\
-    \textsc{PileUpPtEC1}     & 0.00              & \textsc{RelativeStatEC2} & 0.00\rbtrr\\
-    \textsc{PileUpPtEC2}     & 0.00              & \textsc{RelativeStatFSR} & 0.00\rbtrr\\
-    \textsc{PileUpPtHF}      & 0.00              & \textsc{RelativeStatHF}  & 0.00\rbtrr\\
-    \textsc{PileUpPtRef}     & 0.00              & \textsc{SinglePionECAL}  & 0.00\rbtrr\\
-    \textsc{RelativeFSR}     & 0.00              & \textsc{SinglePionHCAL}  & 0.00\rbtrr\\
-    \textsc{Luminosity}     & 0.00               & \textsc{NP uncertainty}  & 0.00\rbtrr\\
+    \textsc{AbsoluteMPFBias} & 1.07              & \textsc{RelativeJEREC1}  & 0.72\rbtrr\\
+    \textsc{AbsoluteScale}   & 0.04              & \textsc{RelativeJEREC2}  & -0.04\rbtrr\\
+    \textsc{AbsoluteStat}    & 0.12              & \textsc{RelativeJERHF}   & -0.04\rbtrr\\
+    \textsc{FlavorQCD}       & 1.23              & \textsc{RelativePtBB}    & 0.27\rbtrr\\
+    \textsc{Fragmentation}   & -0.21             & \textsc{RelativePtEC1}   & -0.43\rbtrr\\
+    \textsc{PileUpDataMC}    & -0.08             & \textsc{RelativePtEC2}   & -2.01\rbtrr\\
+    \textsc{PileUpPtBB}      & 0.59              & \textsc{RelativePtHF}    & -0.02\rbtrr\\
+    \textsc{PileUpPtEC1}     & -0.84             & \textsc{RelativeStatEC2} & -0.17\rbtrr\\
+    \textsc{PileUpPtEC2}     & 0.03              & \textsc{RelativeStatFSR} & 0.05\rbtrr\\
+    \textsc{PileUpPtHF}      & -0.01             & \textsc{RelativeStatHF}  & -0.03\rbtrr\\
+    \textsc{PileUpPtRef}     & -1.43             & \textsc{SinglePionECAL}  & 0.57\rbtrr\\
+    \textsc{RelativeFSR}     & 2.78              & \textsc{SinglePionHCAL}  & -0.44\rbtrr\\
+    \textsc{Luminosity}      & 0.88              & \textsc{NP uncertainty}  & -3.10\rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \section{Constraining PDFs with HERAFitter using the Dijet Measurement}
 \label{section:cmsjets2011_pdfconstraints}
+
+The quality of the fit with and without including the dijet measurement is
+reported in Table~\ref{tab:fit:results}. The partial \chisq per data point for
+each dataset as well the \chisq per \ndof for all datasets demonstrate
+the compatibility of the CMS dijet measurement and the DIS data from the HERA
+experiments. 
+
+The resulting PDF for the gluon, u valence, d valence and sea quark PDF are
+arranged next to each other in the
+Figs.~\ref{fig:pdfconstraints:split:gluonqsea:19}--\ref{fig:pdfconstraints:split:dvaluval:19}
+while Fig.~\ref{fig:pdfconstraints:direct:19} gives a direct comparison of the
+PDFs with total uncertainties. 
+
+For all PDFs, the parametrization and model uncertainties are reduced when
+including the jet data in the fit. Especially the gluon PDF shows significant
 
 % The partial \chisq's per no.\ of data points \ndata are reported in
 % Table~\ref{tab:fit:results} for each dataset in the HERA DIS or the
@@ -219,8 +234,9 @@ leass one standard deviation $\sigma$ as expected.
 %
 
 \begin{table}[htbp]
-  \caption{Partial \chisq's, \chipsq, for each dataset in the HERA DIS (middle
-    section) or the combined fit including CMS jet data (right section).
+  \caption{The Partial \chisq's  for each dataset in the HERA DIS (middle
+    section) or the combined fit including the triple-differential dijet data
+    (right section) are shown.
     \ndata is the number of data points available for the determination of
     the 13 parameters. The bottom two lines show the total \chisq and
     \chisqndof. The difference between the sum of all
@@ -239,25 +255,48 @@ leass one standard deviation $\sigma$ as expected.
     \multicolumn{1}{c|}{\chipsqndata} &
     \multicolumn{1}{c}{\chipsq} &
     \multicolumn{1}{c}{\chipsqndata}\rbthm\\\midrule
-    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 100 & 0.  & 100 & 0. \rbtrr\\
-    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 100 & 0.  & 100 & 0. \rbtrr\\
-    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 100 & 0.  & 100 & 0. \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 100 & 0.  & 100 & 0. \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 100 & 0.  & 100 & 0. \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 100 & 0.  & 100 & 0. \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 100 & 0.  & 100 & 0. \rbtrr\\
-    CMS triple-differential dijets                              & 122 & --- & --- & 100 & 0.
+    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 60.47  & 1.44  & 60.37  & 1.44 \rbtrr\\
+    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 41.47  & 1.06  & 45.04  & 1.15 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 223.35 & 1.40  & 221.91 & 1.40 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 203.91 & 1.09  & 203.15 & 1.09 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 196.27 & 0.84  & 198.36 & 0.85 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 59.02  & 0.94  & 61.13  & 0.97 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 369.42 & 1.11  & 395.66 & 1.19 \rbtrr\\
+    CMS triple-differential dijets                              & 122 & ---    & ---   & 167.61 & 1.37
     \rbtrr\\\bottomrule
     Dataset(s) & \ndof &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c|}{\chisqndof} &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof}\rbthm\\\midrule
-    HERA data                       & 1164 & 571 & 0.99 &    --- &  --- \rbtrr\\
-    HERA \& CMS data                & 1164 &    --- &  --- & 694 & 0.97 \rbtrr\\
+    HERA data                       & 1042 & 1216.42 & 1.17  &  --- &  --- \rbtrr\\
+    HERA \& CMS data                & 1164 &    --- &  --- & 1438.12 & 1.24 \rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
+
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_hera/HFTD_HERA_V017_EIG_0_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_heracms/HFTD_HERACMSTDJETS_V017_EIG_0_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_hera/HFTD_HERA_V017_EIG_9_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_heracms/HFTD_HERACMSTDJETS_V017_EIG_9_1_9.pdf}
+  \caption{}
+  \label{fig:pdfconstraints:split:gluonqsea:19}
+\end{figure}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_hera/HFTD_HERA_V017_EIG_7_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_heracms/HFTD_HERACMSTDJETS_V017_EIG_7_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_hera/HFTD_HERA_V017_EIG_8_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/split_heracms/HFTD_HERACMSTDJETS_V017_EIG_8_1_9.pdf}
+  \caption{}
+  \label{fig:pdfconstraints:split:dvaluval:19}
+\end{figure}
+
+
 %
 %
 % For a direct comparison
@@ -316,9 +355,8 @@ leass one standard deviation $\sigma$ as expected.
 % this case, because the fitting procedure does not converge anymore
 % with inclusive DIS data alone when \alpsmz is considered as a free
 % parameter. %
+
 % Including the CMS jet data the strong coupling constant is determined
 % to be $\alpsmz = 0.1192\,^{+0.0017}_{-0.0015}$, where the uncertainty
 % accounts for the experimental uncertainties of the inclusive HERA DIS
-% and CMS jet data, and the NP uncertainties. The fitted value for
-% \alpsmz is in agreement with the results described in the next
-% section.
+% and CMS jet data, and the NP uncertainties.
