@@ -146,17 +146,19 @@
 %     numberedsection=nolabel]{glossaries} 
 % \makeglossaries 
 
-\usepackage{titlesec}
-% \renewcommand{\thechapter}{\Roman{chapter}}
-\titleformat{\chapter}[display]
-{\bfseries\Large}
-{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
-{4ex}
-{\titlerule
-\vspace{3ex}%
-\LARGE\filcenter}
-[\vspace{3ex}%
-\titlerule]
+% chapter style, requires chapterprefix=true
+\newcommand\titlerule[1][1pt]{\rule{\textwidth}{#1}}
+\renewcommand*{\chapterformat}{%
+  \parbox{\textwidth}{\Large\hfill\MakeUppercase{\chapappifchapterprefix{\,}} \Huge\thechapter\enskip}}
+  \renewcommand\chapterlineswithprefixformat[3]{%
+    #2\nobreak%
+    \ifstr{#2}{}{}{\vspace*{-\dp\strutbox}}%
+    \titlerule\par\vspace{2ex}\nobreak%
+    {\LARGE\centering#3}%
+    \vspace{2ex}\nobreak\titlerule\vspace{1ex}%
+  }
+\addtokomafont{disposition}{\normalfont\bfseries}
+\addtokomafont{chapterprefix}{\bfseries\scshape}
 
 \input{includes/abbrev}
 
