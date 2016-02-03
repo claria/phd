@@ -1,4 +1,4 @@
-\usepackage[ngerman, english]{babel}
+\usepackage[english, ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -61,7 +61,28 @@
         maxbibnames=3]{biblatex}
 \usepackage{notoccite}
 \addbibresource{papers.bib}
-
+% new line for doi
+\DeclareFieldFormat{doi}{%
+  \newline
+  \mkbibacro{DOI}\addcolon\space
+    \ifhyperref
+      {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
+      {\nolinkurl{#1}}}
+% use collaboration instead of author if available
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=Collaboration, match=\regexp{([^,]+)}, fieldset=usera, fieldvalue={$1 Collaboration}, final=true]
+    }
+  }
+}
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+      \printfield{usera}%
+  }%
+}%
 \DefineBibliographyStrings{ngerman}{ 
    andothers = {{et\,al\adddot}},             
 }
@@ -136,9 +157,6 @@
 \LARGE\filcenter}
 [\vspace{3ex}%
 \titlerule]
-
-% \setlength{\parindent}{0em}
-% \setlength{\parskip}{1em}
 
 \input{includes/abbrev}
 
