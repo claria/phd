@@ -1,42 +1,61 @@
-% vim: tw=80
+ vim: tw=80
 
 \chapter{Measurement of the Triple-Differential Dijet Cross Section}
 \label{sec:measurement}
 
-\section{Datasets}
+The motivation for a triple-differential dijet cross section measurement which
+optimally exploits the kinematics of the dijet system is given in
+Chapter~\ref{theory_predictions}. The theoretical considerations are completed
+by providing a comprehensive measurement of these cross sections at the CMS
+detector which allow detailed studies of the proton structure as discussed in
+Chapter~\ref{sec:pdf_constraints}. 
+
+Section~\ref{sec:datasets} discusses the
+analyzed data samples, while the selection of dijet events meeting all quality
+criteria are reviewed in Section~\ref{sec:event_selection}. A comparison with
+simulated events and subsequently the correction of the measured data for
+detector effects using an unfolding procedure is explained in detail in
+Section~\ref{sec:simulated_events} and Section~\ref{sec:unfolding}. Uncertainty
+Sources of experimental origin which affect the cross section measurement are
+
+Finally, the comparison of unfolded data to NLO predictions is presented in
+Section~\ref{sec:nlo_comparisons}. Comparisons to NLO calculations with matched
+parton showers from the recently released Herwig~7 MC event generator are of
+particular interest.
+
+\section{Data samples}
 \label{sec:datasets}
 
-\subsection{Data Samples}
+The measurement is based on a data sample collected by CMS in the 2012 run
+period of the LHC at a center-of-mass energy of $\sqrt{s} = 8 \si{\TeV}$. The
+accumulated data corresponds to a total integrated luminosity of $\mathcal{L} =
+19.71 \si{\fbinv}$. 
 
-Within the run 1 of the data-taking at the LHC, the CMS experiment collected in
-2012 data at a center-of-mass energy of $\sqrt{s} = 8 \si{\TeV}$. The data
-sample corresponds to a total integrated luminosity of $\mathcal{L} = 19.71
-\si{\fbinv}$. The events are streamed into different primary datasets based on
-the trigger decision. All data triggering the prescaled or unprescaled jet
-triggers were assigned to the \texttt{JetMon} or \texttt{JetHT} primary
-datasets, respectively. The datasets are split into multiple samples
-corresponding to the period of data taking in 2012, called Run A,B,C and D.
-Unfortunately the trigger assignment to the primary datasets changed during the
-data taking period, as can been seen in Table~\ref{tab:data:datasets}, it was taken
-care to avoid any double counting. While in run A all events were stored in the
-dataset \texttt{Jet}, the prescaled and unprescaled triggers were split into
-separate streams \texttt{JetMon} and \texttt{JetHT} in the runs B, C and D.
+The 2012 LHC run is divided into four periods A, B, C and D and the datasets are
+split into samples according to the run period. Each dataset is further split up
+into subsets containing only a fraction of the events triggered by a specific
+group of triggers. The events triggered by a prescaled jet trigger were streamed
+into the datasets \texttt{Jet} and \texttt{JetMon} while the events of the
+unprescaled jet triggers are moved into the datasets \texttt{JetHT}. As this
+assignment changed over the 2012 run period, great care has been taken to only
+select the correct subset of events. The used datasets and the luminosity of
+each dataset can be seen in Table~\ref{tab:data:datasets}.
 
 \begin{table}[htbp]
     \centering
-    \caption[Datasets of the 2012 LHC run period]{The full 2012 dataset is used. In Run A, events of all single jet
-        trigger paths are stored in the stream \texttt{Jet}, while the prescaled
-        triggers were moved to the \texttt{JetMon} stream in the runs B, C and
-        D. Events triggering the unprescaled trigger are collected in the data
-        stream \texttt{JetHT}.}
+    \caption[Datasets of the 2012 LHC run period]
+       {The complete 2012 data comprises 4 datasets collected in the run periods
+           A, B, C and D. As the dataset names, in which the events selected by the
+           jet triggers are stored, changed over time, great care has to be
+           taken to select the correct subset of events from each dataset.}
     \label{tab:data:datasets}
     \begin{tabular}{llll}
     \toprule
-    Run & Run Range & Dataset & Luminosity (\si{\fbinv})\\\midrule
-    A & 190456--193621 & /Jet/Run2012A-22Jan2013-v1/AOD & 0.88\\
-    B & 193834--196531 & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & 4.49\\
-    C & 198022--203742 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & 7.06 \\
-    D & 203777--208686 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & 7.37\\ 
+    Run & Run Range & Dataset & Luminosity\\\midrule
+    A & 190456--193621 & /Jet/Run2012A-22Jan2013-v1/AOD & \SI{0.88}{\fbinv}\\
+    B & 193834--196531 & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & \SI{4.49}{\fbinv}\\
+    C & 198022--203742 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \SI{7.06}{\fbinv}\\
+    D & 203777--208686 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \SI{7.37}{\fbinv}\\ 
     \bottomrule
     \end{tabular}
 \end{table}
@@ -45,64 +64,73 @@ separate streams \texttt{JetMon} and \texttt{JetHT} in the runs B, C and D.
 
 To compare the data distributions with simulated events, two Monte-Carlo event
 generators were considered. An overview about the Monte-Carlo generators is
-given in Section~\ref{subsection:mc_generators}. Each MC generator is using and
+given in Section~\ref{subsection:mc_generators}. Each MC generator is utilizing an
 optimized tune to simulate the underlying event. Additionally the data samples
-contain not only the hard interaction but also a model for pile-up collionsion,
+contain not only the hard interaction but also a model for pile-up collisions,
 through which additional soft scattering events following the pile-up
 distribution in data are mixed into the event.
 
-The Madgraph+P6 sample is a multi-leg improved HT-binned sample. By using
-Madgraph, the LO matrix elements not only contain the $2 \rightarrow 2$ matrix
-elements, but also the $2 \rightarrow 3$ matrix elements better describing
-multijet events. The underlying event is modelled using the tune $Z2*$. The
-parton shower and hadronization is carried out using the Pythia 6 event
-generator which is interfaced to Madgraph using the LHE event record.
+The Madgraph+P6 Monte Carlo sample is generated with a multi-leg improved QCD
+process. By using Madgraph, the LO matrix elements do not only contain the $2
+\rightarrow 2$ matrix elements, but also the $2 \rightarrow 3$ matrix elements
+which better describe multijet events, but have to be matched to subsequent
+parton shower. The underlying event is modeled using the tune $Z2*$. The parton
+shower and hadronization is carried out using the Pythia~6 event generator which
+is interfaced to Madgraph by the LHE event record.
 
-Additionally a Pythia 8 data sample is analyzed. While including only the $2
+Furthermore a Pythia 8 data sample is analyzed. While including only the $2
 \rightarrow 2$ LO matrix elements, the event simulation and the underlying event
-tune are improved in this newer Pythia version. Both Monte-Carlo samples are
-processed through the complete CMS detector simulation to allow studies of the
-detector response and compare to the measured data on detector level. 
+tune are improved in this newer version of the Pythia Monte Carlo generator.
 
+Both Monte-Carlo samples are processed through the complete CMS detector
+simulation to allow studies of the detector response and compare to measured
+data on detector level. 
+\todo{add table with complete list, xs and events in appendix}
 \begin{table}[htp]
     \centering
-    \caption[Monte Carlo datasets]{Official MC production samples used in the analysis.}
+    \caption[Monte Carlo datasets]{The official MC production samples used in
+    the analysis were generated as slices in the \pt or HT phasespace. A
+    complete list of all subsamples and the corresponding sub-samples can be found
+     in~\ref{mc_samples}.}
     \label{tab:montecarlo:datasets}
-    \begin{tabular}{llll}
+    \begin{tabular}{lc}
     \toprule
-    Dataset Name & Dataset identifier & Number of events\\\midrule
-    MG+P6 &
-    \makecell{/QCD\_HT-XXToXX\_TuneZ2star\_8TeV-madgraph-pythia/\\ Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM} & \\
-    P8 & \makecell{QCD\_Pt-XXtoXX\_Tune4C\_8TeV\_pythia8/\\
-    Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM} & \\
+    Dataset Name & Dataset Identifier\\\midrule
+    Madgraph & \makecell[l]{/QCD\_HT-XXToXX\_TuneZ2star\_8TeV-madgraph-pythia/\\
+        \phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}\\
+        Pythia 8 & \makecell[l]{/QCD\_Pt-XXtoXX\_Tune4C\_8TeV\_pythia8/\\
+        \phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}\\
     \bottomrule
     \end{tabular}
 \end{table}
 
-Since the jet spectra steeply fall with increasing \pt it is not possible to
-generate a high number of high-\pt events in a reasonable time.  Therefore the
-event generation is split into different phase space region binned in HT, the
-scalar sum of the jet \pt, or the leading jet \pt. The different phase space
-regions are then stitched together later in the data analyses while taking into
-account the cross section in the different phase space regions.
-Table~\ref{tab:montecarlo:datasets} shows the used data sets and the number of
-events per dataset.
+Since jet cross sections which are measured as a function of the transverse
+momentum fall steeply with increasing \pt, it is not possible to generate a
+large number of high-\pt events in a reasonable time. Therefore the event
+generation is split into different phase space region binned in HT, the scalar
+sum of the transverse momentum of all jets, or the leading jet \pt. The
+different phase space regions are then stitched together later in the data
+analyses while taking into account the cross section in the different phase
+space regions.  Table~\ref{tab:montecarlo:datasets} gives the employed Monte
+Carlo datasets.
 
 \section{Event selection}
+\label{sec:event_selection}
+
+The selection of dijet events is based on several quality criteria recommended by CMS
+for jet analyses. Furthermore phase spaces cuts ensure the applicability and
+comparison of NLO theory calculations.
 
 \subsection{Certified Data Selection}
 
-The first step in the event processing chain is to only pick runs and
+The first step in the event processing chain is to only pick data from runs and
 luminosity sections (LS) which fullfill certain criteria. These include the
-proper performance of all detector subsystem and the passing of the data quality
-monitoring (DQM) steps during the validation process. The good lumisections
-within a run are then announced using a JSON data file, called \textit{Golden
-JSON}. The applied lumi certification file in our analysis is based on the final
-event reconstruction of the 2012 datasets.
-
-\begin{verbatim}
-Cert_190456-208686_8TeV_22Jan2013ReReco_Collisions12_JSON.txt
-\end{verbatim}
+proper performance of all detector subsystem and the succesful passing of the
+data quality monitoring (DQM) steps during the validation process. The good
+lumisections within a run are announced using a JSON data file, called
+\textit{Golden JSON}. The applied lumisection certification
+file\footnote{\texttt{Cert\_190456-208686\_8TeV\_22Jan2013ReReco\_Collisions12\_JSON}}
+in our analysis is based on the final event reconstruction of the 2012 datasets.
 
 \subsection{Trigger Selection}
 
@@ -205,29 +233,25 @@ conservative value was used.
 Table~\ref{tab:triggers} contains the L1 and HLT thresholds of each trigger and
 the \ptavg value at which each trigger reaches 99\% efficiency.
 
+It has to be mentioned, that there are also HLT trigger available which
+specifically trigger on the average transverse momentum of the dijet system.
+Naturally they appear to be the better choice for this analysis. The \ptavg
+trigger paths were studied, but the performance is only comparable and partially
+even slightly worse due to larger prescales applied to these trigger paths.
+
 \subsection{Primary Vertex Selection}
 
-The \textbf{good primary vertex selection} further rejects beam background and off-centre bunch
-crossings. The recommended vertex selection cuts ensure at least one well
-reconstructed primary vertex for an event to be further analyzed. The following
-criteria are applied 
+The cuts on the primary vertex further reject beam background and off-centre bunch
+crossings. Each event has to contain at least one primary vertex (PV) which is well
+reconstructed within a distance of $|z_\mathrm{PV}| < \SI{24}{\centi \meter}$ to
+the nominan interaction point of the detector. Futher more the radial distance
+$\rho_\mathrm{PV}$ has to fullfill $\rho_\mathrm{PV} < \SI{2}{\centi\meter}$. To
+ensure a high quality of the vertex reconstruction in the fit, the number of
+degrees of freedom in the vertex fit $n_{\mathrm{dof,PV}}$ needs to be at least
+four. This basically means that at least four tracks need to be present to
+perform the vertex fit.
 
-% Vertex selection
-% To reject further beam backgrounds and off-centre parasitic bunch crossings,
-% the recommended vertex selection cuts are applied. To pass the step of the
-% selection process, an event has to contain at least one well reconstructed
-% primary vertex (PV), within a distance of |z(PV)| < 24 cm between the pri-
-% mary vertex and the nominal interaction point (IP) of the detector. The
-% radial distance ρ(PV) of the vertex from the z axis though the IP is required
-% to be smaller than 2 cm, corresponding to the size of the beam pipe. Addi-
-% tionally, the fit used to determine the vertex needs to have P
-% at least 4 degrees
-% of freedom. For an unconstrained vertex fit, which has 2 i w i − 3 degrees
-% of freedom (w i ≤ 1), this means at least four tracks with weight ≈ 1 are
-% required. The influence of the different steps of the vertex selection is shown
-% in table 6.5.
-
-\subsection{Missing transverse energy cuts}
+\subsection{Missing transverse energy cut}
 
 If all particles could be identified and perfectly measured, the sum of the
 transverse momenta would sum up to zero. The imbalance in the transverse
@@ -291,51 +315,52 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
     \end{tabular}
 \end{table}
 
-\subsection{Jet Corrections}
 
-Following the latest recommendations of the JERC group, the jet energy corrections \texttt{Winter14 V8}
-and the corresponding uncertainty files were used for data, while the \texttt{START53\_V27} uncertainties
-for run-independent MC were applied on the MC samples.
+\subsection{Jet Selection}
 
-\subsection{Phase space cuts}
+The subsequent measurement is based on PFJet objects which are clustered
+with the anti-\kt jet algorithm with a jet size parameter $R=0.7$. As discussed in
+Section~\ref{sec:particle_flow_algorithm}, the input objects of the jet algorithm are not
+calorimeter deposits but particles which are reconstructed by the Particle Flow
+algorithms resulting in a superior performance compared to jets clustered only from
+calorimeter deposits. 
 
-% jet 1/2 rapidity < 3.0
-% jet1 pt > 133 GeV
-% jet2 pt > 50 GeV
+Futhermore the CHS algorithm, detailed in Sec.~\ref{sec:chs_algorithm}, is used which effectively
+reduces the influence of pile-up effects on jets.
 
-Several cuts in the phase space of the dijet system are applied to select a
-clean phase space region as shown in Table~\ref{tab:jetcuts}. 
+All jets are corrected using the recommended jet energy corrections of CMS,
+which relate the measured jet energy to the true particle jet energy. The
+factorized approach employed by CMS is discussed in Sec.~\ref{sec:jec}. There are
+distinct corrections for jets in data\footnote{The JEC version applied on data
+    is internally referred to as \texttt{Winter14\_V8}} and for jets in simulated
+events\footnote{The latest JEC for run-independent Monte Carlo Samples are
+    called \texttt{START53\_V27}}.
 
-\begin{table}[htbp]
-    \centering
-    \caption[Jet Selection Cuts]{The selection cuts applied on the leading and second jet in the
-    event. }
-    \label{tab:jetcuts}
-    \begin{tabular}{llll}
-    \toprule
-                    & |y|     & \pt (GeV)\\\midrule
-    Leading jet     & $< 3.0$ & 74.\\
-    Second jet      & $< 3.0$ & 50\\
-    \bottomrule
-    \end{tabular}
-\end{table}
+
+The accessible phase space in theoretical calculations and the measurement is
+synchronized by selecting jets only from a limited region of the complete phase
+space. These selection cuts ensure a high detector efficiency as well as the
+comparability of theory calculations with the measured cross sections.
+
+\begin{align*}
+    \ptjet &> \SI{50}{\GeV}\\
+    |y_\mathrm{jet}| &\leq 3.0
+    \ptavg &> \SI{133}{\GeV}\\
+\end{align*}
 
 The rapidity selection restricts the measurement to a phase space region without
-detector inefficencies. In case the leading or second jet has a rapidity higher
-than 3.0, the whole event is rejected. The first and second jet each have
-different transverse momentum cuts to avoid infrared sensitivity of the NLO
-theory calculation.
+detector inefficencies. In case the leading or second jet exceeds the rapidity
+selection, not only the jet but the whole event is rejected. It is often
+recommended to have asymmetric cuts on the transverse momentum of the two
+leading jets to avoid an infrared sensitive region. This has no influence in
+this cut due to the much higher cut on the average transverse momentum of dijet
+system which results from the trigger thresholds of the employed jet triggers.
+Another advantage of the high cut on \ptavg is the avoidance of a turn-on region
+which can lead to complications in the unfolding procedure.
 
-Effectively there is also a cut on the average \pt of the dijet system
-introduced by the trigger thresholds. Since the first trigger is only fully efficient
-at 133 GeV, the spectrum is only measured above this value. This also avoid any
-turn-on regions of the spectrum which are difficult to model in the unfolding
-procedure.
-
-If there are not at least two jets in the event fullfilling these criteria, the
-whole event is rejected.
 
 \section{Comparison with Simulated Events}
+\label{sec:simulated_events}
 
 \subsection{Comparison of Kinematic Quantities}
 
@@ -378,6 +403,7 @@ the lower \pt region and the number of events with forward jets is overestimated
     \label{fig:controlplots:rapidity}
 \end{figure}
 
+\todo{pile up reweighting}
 
 \subsection{Cross section Comparison}
 
@@ -538,6 +564,7 @@ parameters of the fit in each bin of the measurement.
 \end{table}
 
 \section{Unfolding of the Measurement}
+\label{sec:unfolding}
 
 The final goal is the comparison of the triple-differential dijet cross section
 with higher-order QCD calculations. Due to the finite detector acceptance and resolution
@@ -616,6 +643,7 @@ results are discussed in detail in Sec.~\ref{sec:stat_unf_uncert}.
 
 
 \section{Experimental Uncertainties}
+\label{experimental_uncertainties}
 
 This section presents all experimental uncertainties, which affect the
 measurement.  The luminosity uncertainty affects the
@@ -726,6 +754,7 @@ in~\ref{jec_paper}.
 \subsection{Jet Energy Resolution Uncertainty}
 
 \section{Comparison with NLO Predictions}
+\label{sec:nlo_comparisons}
 
 \begin{figure}[htbp]
     \centering
