@@ -24,6 +24,12 @@ separate streams \texttt{JetMon} and \texttt{JetHT} in the runs B, C and D.
 
 \begin{table}[htbp]
     \centering
+    \caption[Datasets of the 2012 LHC run period]{The full 2012 dataset is used. In Run A, events of all single jet
+        trigger paths are stored in the stream \texttt{Jet}, while the prescaled
+        triggers were moved to the \texttt{JetMon} stream in the runs B, C and
+        D. Events triggering the unprescaled trigger are collected in the data
+        stream \texttt{JetHT}.}
+    \label{tab:data:datasets}
     \begin{tabular}{llll}
     \toprule
     Run & Run Range & Dataset & Luminosity (\si{\fbinv})\\\midrule
@@ -33,12 +39,6 @@ separate streams \texttt{JetMon} and \texttt{JetHT} in the runs B, C and D.
     D & 203777--208686 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & 7.37\\ 
     \bottomrule
     \end{tabular}
-    \caption{The full 2012 dataset is used. In Run A, events of all single jet
-        trigger paths are stored in the stream \texttt{Jet}, while the prescaled
-        triggers were moved to the \texttt{JetMon} stream in the runs B, C and
-        D. Events triggering the unprescaled trigger are collected in the data
-        stream \texttt{JetHT}.}
-    \label{tab:data:datasets}
 \end{table}
 
 \subsection{Monte Carlo Samples}
@@ -66,6 +66,8 @@ detector response and compare to the measured data on detector level.
 
 \begin{table}[htp]
     \centering
+    \caption[Monte Carlo datasets]{Official MC production samples used in the analysis.}
+    \label{tab:montecarlo:datasets}
     \begin{tabular}{llll}
     \toprule
     Dataset Name & Dataset identifier & Number of events\\\midrule
@@ -75,8 +77,6 @@ detector response and compare to the measured data on detector level.
     Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM} & \\
     \bottomrule
     \end{tabular}
-    \caption{Official MC production samples used in the analysis.}
-    \label{tab:montecarlo:datasets}
 \end{table}
 
 Since the jet spectra steeply fall with increasing \pt it is not possible to
@@ -121,6 +121,11 @@ again when the spectrum is reconstructed.
 
 \begin{table}[htbp]
     \centering
+    \caption[Single Jet Trigger Paths]{Used trigger paths in the analysis. Each path is used in an mutually exclusive phase space in \ptavg. The
+            $p_{\mathrm{T},.99\%}$ threshold gives the value at which a trigger reaches 99\% efficiency compared to lower
+            reference trigger.}
+    \label{tab:triggers}
+
     \begin{tabular}{lcccr}
         \toprule
         Trigger path  & L1 (\si{\GeV}) & HLT (\si{\GeV}) & $p_{\mathrm{T},.99\%}$ (\si{\GeV}) & Eff. Lumi \\\midrule
@@ -132,11 +137,6 @@ again when the spectrum is reconstructed.
         HLT\_PFJet320 & 128                 & 320                  & 412                    & 19.71 \si{\si{\fbinv}}\\
         \bottomrule
     \end{tabular}
-    \caption{Used trigger paths in the analysis. Each path is used in an mutually exclusive phase space in \ptavg. The
-            $p_{\mathrm{T},.99\%}$ threshold gives the value at which a trigger reaches 99\% efficiency compared to lower
-            reference trigger.}
-
-    \label{tab:triggers}
 \end{table}
 
 
@@ -271,6 +271,10 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
 
 \begin{table}[htbp]
     \centering
+    \caption[Jet Identification Criteria]{The jet identification criteria remove fake jets originating from
+    detector noise as well as wrongly clustered electrons and muons. Following
+    the official recipe, the loose jet id was applied.}
+    \label{tab:jetid}
     \begin{tabular}{llll}
     \toprule
                            & Property                & Loose ID & Tight ID\\\cmidrule(lr){2-4}
@@ -285,10 +289,6 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
                            & Charged EM Fraction     & $< 0.99$ & $< 0.90$\\
     \bottomrule
     \end{tabular}
-    \caption{The jet identification criteria remove fake jets originating from
-    detector noise as well as wrongly clustered electrons and muons. Following
-    the official recipe, the loose jet id was applied.}
-    \label{tab:jetid}
 \end{table}
 
 \subsection{Jet Corrections}
@@ -308,6 +308,9 @@ clean phase space region as shown in Table~\ref{tab:jetcuts}.
 
 \begin{table}[htbp]
     \centering
+    \caption[Jet Selection Cuts]{The selection cuts applied on the leading and second jet in the
+    event. }
+    \label{tab:jetcuts}
     \begin{tabular}{llll}
     \toprule
                     & |y|     & \pt (GeV)\\\midrule
@@ -315,9 +318,6 @@ clean phase space region as shown in Table~\ref{tab:jetcuts}.
     Second jet      & $< 3.0$ & 50\\
     \bottomrule
     \end{tabular}
-    \caption{The selection cuts applied on the leading and second jet in the
-    event. }
-    \label{tab:jetcuts}
 \end{table}
 
 The rapidity selection restricts the measurement to a phase space region without
@@ -433,6 +433,11 @@ smearing factors are derived separately for each region of the detector geometry
 \begin{table}[htbp]
 \setlength\tabcolsep{4.5pt} 
     \centering
+    \caption[Jet energy resolution scale factors]{Since the resolution in data is significantly
+             worse than in MC, the reco jet \pt was smeared using factors obtained from the
+             JER twiki~\cite{JERC:Resolution}.}
+    \label{tab:res_smearing}
+
     \begin{tabular}{lccccccr}
     \toprule
     & & \multicolumn{6}{c}{$|\eta|$}\\\cmidrule{2-8}
@@ -444,10 +449,6 @@ smearing factors are derived separately for each region of the detector geometry
     up         & 1.105                   & 1.127                   & 1.150 & 1.254                   & 1.316                   & 1.458 & 1.247\\
     \bottomrule
     \end{tabular}
-    \caption{Since the resolution in data is significantly
-             worse than in MC, the reco jet \pt was smeared using factors obtained from the
-             JER twiki~\cite{JERC:Resolution}.}
-    \label{tab:res_smearing}
 \end{table}
 
 Each reconstructed jet which is matched to a generated jet is smeared  using the formula
@@ -521,6 +522,8 @@ parameters of the fit in each bin of the measurement.
 
 \begin{table}[htbp]
     \centering
+    \caption[Relative dijet transverse momentum resolution parameters]{The parameters of the resolution fit are shown for each bin in \ystar and \yboost.}
+    \label{tab:resolution_parameters}
     \begin{tabular}{cccccr}
         \toprule
          \yboost & \ystar & N      & S     & C      & s\\\midrule
@@ -532,8 +535,6 @@ parameters of the fit in each bin of the measurement.
          2 -- 3  & 0 -- 1 & -7.12  & 3.967 & 0.00   & -0.41\\\hline
             \bottomrule
     \end{tabular}
-    \caption{The parameters of the resolution fit are shown for each bin in \ystar and \yboost.}
-    \label{tab:resolution_parameters}
 \end{table}
 
 \section{Unfolding of the Measurement}
