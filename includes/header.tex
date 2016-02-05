@@ -9,10 +9,10 @@
 % \usepackage[babel]{microtype}
 
 \usepackage{siunitx}
-\DeclareSIUnit[number-unit-product = {}] \GeV{\giga \electronvolt}
-\DeclareSIUnit[number-unit-product = {}] \TeV{\tera \electronvolt}
-\DeclareSIUnit[number-unit-product = {}] \pbinv{\per \pico \barn}
-\DeclareSIUnit[number-unit-product = {}] \fbinv{\per \femto \barn}
+\DeclareSIUnit[] \GeV{\giga \electronvolt}
+\DeclareSIUnit[] \TeV{\tera \electronvolt}
+\DeclareSIUnit[] \pbinv{\per \pico \barn}
+\DeclareSIUnit[] \fbinv{\per \femto \barn}
 
 \usepackage{amsmath,amssymb,amstext,amsthm,wasysym,bm}
 \usepackage{cancel}
@@ -61,6 +61,9 @@
         maxbibnames=3]{biblatex}
 \usepackage{notoccite}
 \addbibresource{papers.bib}
+% online title upright
+\DeclareFieldFormat[online]{title}{\mkbibquote{#1}}
+\DeclareFieldFormat[TECHREPORT]{title}{\mkbibquote{#1}}
 % new line for doi
 \DeclareFieldFormat{doi}{%
   \newline

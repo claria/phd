@@ -261,16 +261,28 @@ detector undetected and do contribute to the MET. MET is an important ingredient
 in many measurements involving W bosons, top quarks or searches for physics
 beyond the standard model which involve undetectable particles. 
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/measurement/metoversumet.pdf}
+    \caption[Missing transverse energy distribution]{Missing transverse energy
+    fraction of the total transverse energy per event in data and simulated
+    events. To remove background and noise, events with a fraction exceeding a
+    threshold are rejected. }
+    \label{fig:mc:met_fraction}
+\end{figure}
+
 A large fraction of the MET is not always caused by physics processes. Very
 often the reason can be found in detector noise, cosmic rays or beam-halo
 particles. Therefore there are a sequence of algorithms developed by the MET
 working group at CMS identifying and rejecting these events. Additionally a cut
 was introduced which removes events in which the missing transverse energy
-fraction \met constitutes a large fraction of the total transverse energy.
+fraction \met constitutes a large fraction of the total transverse energy, see
+Fig.~\ref{fig:mc:met_fraction}.
 
 \begin{equation}
     \frac{\met}{\sum_i E_{T,i}} < 0.3
 \end{equation}
+
 
 \subsection{Jet ID selection}
 
@@ -362,6 +374,39 @@ which can lead to complications in the unfolding procedure.
 \section{Comparison with Simulated Events}
 \label{sec:simulated_events}
 
+\subsection{Pile-up Reweighting}
+
+The official Monte-Carlo samples are enriched with an admixture of pile-up to
+mimic the pile-up distribution expected in data. Ideally the estimated pile-up
+distribution in data $N_\mathrm{data} (N_\mathrm{PU, est.})$ would match with
+the simulated distribution $N_\mathrm{MC} (N_\mathrm{PU, truth})$. Since the
+admixture is only a rough estimate of the pile-up distribution expected in the
+forthcoming data taking, a perfect matching cannot be achieved. To still get
+comparable pile-up distributions in data and simulated events, the simulated
+events are reweighted with a weight $w_\mathrm{PU}$ to match the distribution in
+data: 
+
+\begin{equation*}
+    w_{\mathrm{PU}} (N_{mathrm{PU, truth}}) = \frac{N_\mathrm{data}
+    (N_\mathrm{PU, est.}) / \sum N_\mathrm{data}}{N_\mathrm{MC}
+    (N_\mathrm{PU, truth}) / \sum N_\mathrm{MC}}
+\end{equation*}
+
+
+Fig.~\ref{fig:mc:npv_reweighting} shows the number of reconstructed vertices
+before and after reweighting. The significant mismatch of the
+pile-up distributions in data and simulated events, which can be observed before
+the reweighting, completely vanishes.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/measurement/npv_beforereweighting.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/npv_afterreweighting.pdf}
+    \caption[Number of reconstructed vertices]{Number of reconstruced vertices in data and simulated events before
+    (left) and after (right) the pile-up reweighting.}
+    \label{fig:mc:npv_reweighting}
+\end{figure}
+
 \subsection{Comparison of Kinematic Quantities}
 
 The measured data distributions on detector level are compared with simulated events
@@ -381,7 +426,7 @@ the lower \pt region and the number of events with forward jets is overestimated
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet2rap_default.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet1phi_default.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet2phi_default.pdf}
-    \caption{The plots show the basic kinematic quantities of the two leading jets in a selected event.
+    \caption[Control plots of kinematic quantities of the dijet system]{The plots show the basic kinematic quantities of the two leading jets in a selected event.
              The transvers momentum of the leading (left plot) and the second (right plots) jet is shown
          in the top row. The rapidity of the jets is shown in the middle row. The azimuthal angle of the
      leading jet and the second jet is shown on the bottom row.}
@@ -396,14 +441,13 @@ the lower \pt region and the number of events with forward jets is overestimated
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/jet12_rapidity_yb2ys0.pdf}
-    \caption{The plots show the basic kinematic quantities of the two leading jets in a selected event.
+    \caption[Rapidities of the two leading jets in the various \ystar and \yboost bins]{
+        The plots show the basic kinematic quantities of the two leading jets in a selected event.
              The transvers momentum of the leading (left plot) and the second (right plots) jet is shown
          in the top row. The rapidity of the jets is shown in the middle row. The azimuthal angle of the
      leading jet and the second jet is shown on the bottom row.}
     \label{fig:controlplots:rapidity}
 \end{figure}
-
-\todo{pile up reweighting}
 
 \subsection{Cross section Comparison}
 
@@ -429,8 +473,6 @@ it describes best the data apart from the known effects due to NP and detector r
     \label{fig:ratio_recotodata}
 \end{figure}
 
-
-\todo{figure with jet rapidities?}
 
 \section{Dijet Transverse Momentum  Resolution}
 \label{sec:resolution}
@@ -459,9 +501,15 @@ smearing factors are derived separately for each region of the detector geometry
 \begin{table}[htbp]
 \setlength\tabcolsep{4.5pt} 
     \centering
-    \caption[Jet energy resolution scale factors]{Since the resolution in data is significantly
-             worse than in MC, the reco jet \pt was smeared using factors obtained from the
-             JER twiki~\cite{JERC:Resolution}.}
+    \caption[Jet energy resolution scale factors]{
+             The jet energy resolution in data is significantly worse than in
+             simulated events. Therefore, the reconstructed jet tansverse
+             momentum in simulated events is smeared using a factor $c$ to
+             effectively match the resolution in data, following the
+             recommendations of \JetMET group of CMS~\cite{jetmet:resolution}.
+             The uncertainty on the resolution is given by an upwards and
+             downwards variation $c_\mathrm{up}$ and
+             $c_\mathrm{down}$ of the smearing factor.}
     \label{tab:res_smearing}
 
     \begin{tabular}{lccccccr}
