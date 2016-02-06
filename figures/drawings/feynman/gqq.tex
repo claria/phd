@@ -59,7 +59,8 @@
 
 \begin{document}
 \begin{tikzpicture}
-  \fill (2,0) circle (0.04cm);
+  \path (0,-2) rectangle (4,2);
+  \fill (2,0) circle (0.05cm);
   \path (2,0.0) edge[decorate,decoration={gluon, amplitude=3.0pt, segment length=5pt, aspect=1.1}] (0,0);
   \draw[postaction={decorate, decoration={markings, mark=at position 0.5 with {\arrow[xshift=3.333pt]{triangle 45}}}}] (2.0,0.0) -- (3.4,1.4);
   \draw[postaction={decorate, decoration={markings, mark=at position 0.5 with {\arrow[xshift=3.333pt]{triangle 45}}}}] (2.0,0.0) -- node {} (3.4,-1.4);

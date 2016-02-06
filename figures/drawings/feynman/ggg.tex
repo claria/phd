@@ -56,7 +56,8 @@
 \makeatother
 \begin{document}
   \begin{tikzpicture}
-        \fill (2,0) circle (0.04cm);
+        \path (0,-2) rectangle (4,2);
+        \fill (2,0) circle (0.05cm);
         \path (2,0.0) edge[decorate,decoration={gluon, amplitude=3.0pt, segment length=5pt, aspect=1.1}] (0,0);
         \path (2.0,0.0) edge[decorate,decoration={gluon, amplitude=3.0pt, segment length=5pt, aspect=1.0}] (3.4,1.4);
         \path (2.0,0.0) edge[decorate,decoration={gluon, amplitude=3.0pt, segment length=5pt, aspect=1.0}] (3.4,-1.4);

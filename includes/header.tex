@@ -14,7 +14,8 @@
 \DeclareSIUnit[] \pbinv{\per \pico \barn}
 \DeclareSIUnit[] \fbinv{\per \femto \barn}
 
-\usepackage{amsmath,amssymb,amstext,amsthm,wasysym,bm}
+% \usepackage{amsmath,amssymb,amstext,amsthm,wasysym,bm}
+\usepackage{amsmath}
 \usepackage{cancel}
 \usepackage{xfrac}
 \DeclareMathOperator\erf{erf}
@@ -25,11 +26,13 @@
 % \usepackage{abstract}
 
 
-\DeclareFontFamily{T1}{lmtt}{} 
-\DeclareFontShape{T1}{lmtt}{m}{n}{<-> ec-lmtl10}{} 
-\DeclareFontShape{T1}{lmtt}{m}{\itdefault}{<-> ec-lmtlo10}{} 
-\DeclareFontShape{T1}{lmtt}{\bfdefault}{n}{<-> ec-lmtk10}{} 
-\DeclareFontShape{T1}{lmtt}{\bfdefault}{\itdefault}{<-> ec-lmtko10}{} 
+% \DeclareFontFamily{T1}{lmtt}{} 
+% \DeclareFontShape{T1}{lmtt}{m}{n}{<-> ec-lmtl10}{} 
+% \DeclareFontShape{T1}{lmtt}{m}{\itdefault}{<-> ec-lmtlo10}{} 
+% \DeclareFontShape{T1}{lmtt}{\bfdefault}{n}{<-> ec-lmtk10}{} 
+% \DeclareFontShape{T1}{lmtt}{\bfdefault}{\itdefault}{<-> ec-lmtko10}{} 
+\normalfont
+\DeclareFontShape{T1}{lmr}{bx}{sc} { <-> ssub * cmr/bx/sc }{}
 
 \usepackage{multicol}
 \usepackage{multirow}
@@ -63,7 +66,7 @@
 \addbibresource{papers.bib}
 % online title upright
 \DeclareFieldFormat[online]{title}{\mkbibquote{#1}}
-\DeclareFieldFormat[TECHREPORT]{title}{\mkbibquote{#1}}
+\DeclareFieldFormat[report]{title}{\mkbibquote{#1}}
 % new line for doi
 \DeclareFieldFormat{doi}{%
   \newline

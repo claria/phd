@@ -175,7 +175,7 @@ again when the spectrum is reconstructed.
     \includegraphics[width=0.45\textwidth]{figures/measurement/trigger_eff_HLT_PFJET200_default.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/trigger_eff_HLT_PFJET260_default.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/trigger_eff_HLT_PFJET320_default.pdf}\hfill
-    \caption{Trigger efficiencies turn-on curves for the single jet trigger
+    \caption[Turn-on curves of single jet HLT trigger paths]{Trigger efficiencies turn-on curves for the single jet trigger
     paths used in the analysis. To determine the 99\% efficiency threshold, the
     trigger paths are fitted using a sigmoid function taking into account the
     uncertainties using Clopper-Pearson confidence intervals.}
@@ -252,7 +252,7 @@ four. This basically means that at least four tracks need to be present to
 perform the vertex fit.
 
 \subsection{Missing transverse energy cut}
-
+\todo{cite jet met filter twiki}
 If all particles could be identified and perfectly measured, the sum of the
 transverse momenta would sum up to zero. The imbalance in the transverse
 momentum of all visible particles, which can be measured in the detector, is
@@ -370,6 +370,12 @@ system which results from the trigger thresholds of the employed jet triggers.
 Another advantage of the high cut on \ptavg is the avoidance of a turn-on region
 which can lead to complications in the unfolding procedure.
 
+\subsection{Jet Pseudo-Rapidity Correction}
+\todo{write}
+
+\subsection{Stability versus Run Periods}
+\todo{write}
+
 
 \section{Comparison with Simulated Events}
 \label{sec:simulated_events}
@@ -467,7 +473,7 @@ it describes best the data apart from the known effects due to NP and detector r
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_reco_to_data_yb2ys0.pdf}
-    \caption{Comparison of the measurement and the predictions using P8 and MG+P6. The data distributions are normalized
+    \caption[Comparison of data with simulated events]{Comparison of the measurement and the predictions using P8 and MG+P6. The data distributions are normalized
     to the integrated luminosity, the simulated events to the number of generated events and the cross section. The ratio of the simulated
     events to the data points is shown.}
     \label{fig:ratio_recotodata}
@@ -552,9 +558,11 @@ two-dimensional distributions for each bin.
     \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
-    \caption{Response matrix used for the unfolding procedure. The response matrices are obtained
-            using the smearing method and are normalized to the number of gen events in each row to improve
-            the readibility.}
+    \caption[Comparison generated vs. reconstructed transverse energy]{The
+    average transverse momentum generated as a function of the ratio of
+generated and reconstructed \ptavg. The width of the distribution indicating the
+jet energy resolution improves for higher values of \ptavg as expected. The
+resolution is extracted for each bin separately.}
     \label{fig:gen_vs_reco_over_gen}
 \end{figure}
 
@@ -669,7 +677,7 @@ small off-diagonal migrations between close-by \ptavg bins.
     \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
-    \caption{Response matrix used for the unfolding procedure. The response matrices are obtained
+    \caption[Response matrix used for the unfolding procedure]{Response matrix used for the unfolding procedure. The response matrices are obtained
             using the smearing method and are normalized to the number of gen events in each row to improve
             the readibility.}
     \label{fig:res_matrix}
@@ -743,7 +751,7 @@ process as it is expected.
     \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
-    \caption{The statistical uncertainties of the measured and the unfolded spectrum. Due
+    \caption[Statistical uncertainty of measured and unfolded sprectrum]{The statistical uncertainties of the measured and the unfolded spectrum. Due
     to the unfolding procedure, the uncertainties slightly increase compared to the
     measured spectrum.}
     \label{fig:statunc_relative}
@@ -762,8 +770,10 @@ correlations of the statistical uncertainty after the unfolding.
     \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
-    \caption{Statistical correlations after the unfolding procedure. Close-by bins in \ptavg
-    have a non-negligible correlation after the unfolding prodecure due to bin-by-bin migrations.}
+    \caption[Correlations of statistical uncertainty]{Correlation of the
+        statistical uncertainty introduced by the unfolding procedure.
+        Neighbouring bins have a significant correlation or anti-correlation
+        through bin-by-bin migrations.}
     \label{fig:corr_unfolding_nlo}
 \end{figure}
 
@@ -837,7 +847,12 @@ Fig.~\ref{fig:exp_unc_overview}.
     \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb2ys0.pdf}
-    \caption[]{}
+    \caption[Overview of experimental uncertainties]{Overview of all
+    experimental uncertainties affecting the cross section measurement. The
+    errorbars indicate the statistical uncertainty after unfolding. The colored
+    lines give the uncertainties resulting of jet energy corrections, jet energy
+    resolution, luminosity and residual effects. The total uncertainty is yielded by
+    adding in quadrature the individual sources of uncertainty.}
     \label{fig:exp_unc_overview}
 \end{figure}
 
