@@ -50,10 +50,10 @@ jets is irrelevant at LO since both jets are perfectly balanced and have the
 same transverse momentum, it becomes relevant at NLO. The order of the jets can
 be changed by a soft emission causing a different ordering of the jets in \pt.
 Simply put, the second jet can become the leading jet and vice versa. Thus it is
-not guaranteed that all divergences are cancelled. As a consequence the
+not guaranteed that all divergences are canceled. As a consequence the
 observable becomes infrared unsafe. This can be overcome by filling all events
 twice into the histograms with interchanged leading and second jet. However this
-produces correlations between phasespace regions far off in rapidity and unneccesarily
+produces correlations between phasespace regions far off in rapidity and unnecessarily
 complicates the measurement, especially the unfolding procedure.
 
 Therefore a different definition of the cross section is chosen in this
@@ -135,7 +135,7 @@ via the LHAPDF library~\cite{Whalley:2005nh,Buckley:2014ana} and the
 \as-evolution is performed using the routines provided by the PDF sets.
 Employing \fastNLO instead of a direct calculation with \NLOJETPP gives the
 possibility to repeatedly calculate the cross section with  different PDFs and
-scale choices as it is neccessary for the calculation of PDF and scale
+scale choices as it is necessary for the calculation of PDF and scale
 uncertainties.
 
 \subsection{Scale Choice}
@@ -162,7 +162,7 @@ ATLAS collaboration~\cite{Aad:2011fc}. They claim that fixed-order calculations
 which are binned in the rapidity separation \ystar become  unreliable for high
 values of \ystar if the scale choice only depends on the energy. Based on
 recommendations by theorists~\cite{Ellis:1992en}, a scale which also depends on
-the rapdity separation is proposed.
+the rapidity separation is proposed.
 \todo{more motivation}
 
 \begin{equation*}
@@ -242,7 +242,7 @@ reliable and meet the expectations from previous studies.
         shows the influence of the NLO correction terms. The $k$-factors for the
         calculation with \ptavg as scale choice fall below unity in case of high
         \ystar values indicating that the NLO correction is negative in this
-        phasespace region.}
+        phase space region.}
     \label{fig:kfactor_comp}
 \end{figure}
 
@@ -280,7 +280,7 @@ calculating the cross section including effects from multi-parton interactions
 (MPI) and hadronization. The non-perturbative (NP) correction $c_k^\mathrm{NP}$
 obtained with a MC event generator $k$ is defined as the ratio between the
 nominal cross section including the effects and a cross section calculation
-neglection those, see Eq.~\ref{eq:np_definition}. The superscript in the
+neglecting those, see Eq.~\ref{eq:np_definition}. The superscript in the
 equation indicates the applied steps in the simulation, the parton shower (PS),
 the multi-parton interaction model (MPI) and the hadronization (HAD). The
 correction is then applied as a bin-by-bin correction factor to the NLO cross
@@ -369,7 +369,7 @@ the truncated perturbative series, a scale dependence remains. The effects of
 neglected higher-order contributions are collected in a source of uncertainty.
 
 There is a common approach in estimating the influence of the scale on the cross
-section~\cite{Banfi:2010xy}. The cross section calculation is performed using
+section~\cite{Cacciari:2003fi}. The cross section calculation is performed using
 multiple scale choices and the differences compared to the cross section
 obtained using the central scale choice are translated into an uncertainty,
 called scale uncertainty. The variations are applied as multiplicative factors
@@ -451,7 +451,7 @@ eigenvectors upwards and downwards, a set of eigenvector pairs is generated
 which can be used to determine the asymmetric uncertainty $\Delta X^+$ and
 $\Delta X^-$ of a quantity $X$. $X_0$ depicts the central prediction,
 $X_i^{\mathrm{up}}$ and $X_i^{\mathrm{dn}}$ are the predictions using the
-upwards and downvards variation of the eigenvector PDF set $i$ and
+upwards and downwards variation of the eigenvector PDF set $i$ and
 $N_{\mathrm{EV}}$ is the number of eigenvectors in the PDF set.
 
 \begin{equation*}
@@ -470,7 +470,7 @@ downwards variation.
     X_i^-}{2} \right]^2}
 \end{equation*}
 
-The uncertaintiy assigned to the CT14 PDF set describes a 90\% confidence
+The uncertainty assigned to the CT14 PDF set describes a 90\% confidence
 interval (CI), while the MMHT and NNPDF PDF uncertainties represent a 68\% CI.
 The CT14 uncertainties are scaled to 68\% CI using $s = \sqrt{2}
 \erf^{-1}(0.9) = 1.645$.
@@ -484,7 +484,7 @@ of the cross section for high values of \ystar and low values of \yboost in
 which two forward jets are on opposite sides of the detector is also relatively
 small. Most interestingly the uncertainty strongly increases for the bin with
 large values of \yboost and small values of \ystar.  Especially in the high-\pt
-region, the uncertainty is sizeable. To achieve a high boost of the dijet system
+region, the uncertainty is sizable. To achieve a high boost of the dijet system
 and a high \ptavg value, the protons must be accessed in the high-$x$ region
 which is not well determined up to now and is afflicted with large PDF
 uncertainties. Especially the NNPDF PDF set has a large uncertainty in this
@@ -502,7 +502,7 @@ data.
     \includegraphics[width=0.45\textwidth]{figures/theory/pdf_unc_comparison_yb2ys0.pdf}
     \caption[PDF uncertainty]{The relative PDF uncertainty is calculated using the three PDF sets
     NNDFP 3.0, CT14 and MMHT 2014. The uncertainty represents a 68\% confidence
-    interval. The PDF uncertainty is sizeable especially in the forward region in
+    interval. The PDF uncertainty is sizable especially in the forward region in
     which both jets have the same sign and high fractional proton momenta are
     accessed. }
     \label{fig:pdf_uncertainties}
@@ -519,7 +519,7 @@ data.
     \caption[Overview of theoretical uncertaintites]{Overview of the theoretical uncertainties of the NLO prediction.
     The scale uncertainty is the dominant uncertainty in the low-\pt region. At
     high-\pt and especially in the forward region, the PDF uncertainty becomes
-    dominant. The NP uncertainty is sizeable only in low-\pt region and becomes
+    dominant. The NP uncertainty is sizable only in low-\pt region and becomes
     negligible at higher \pt when the NP correction approaches unity.}
     \label{fig:theo_uncertainties}
 \end{figure}

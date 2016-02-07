@@ -36,7 +36,7 @@ tracks and vertices, reconstructed from hits in the tracking detectors, the
 deposited energy in the electromagnetic and hadronic calorimeters and the tracks
 in the muon system. The reconstructed particles are classified as muons,
 electrons, photons, charged hadrons or neutral hadrons. The combination of all
-subdetectors yields an optimal identification and  measurement of their momentum
+sub-detectors yields an optimal identification and measurement of their momentum
 and energy.
 
 The tracks are found using the Combinatorial Track Finder (CTF)
@@ -88,8 +88,8 @@ caused by non-perturbative and perturbative effects. The reconstructed jets
 should be insensitive to all these effects. Furthermore, fixed-order pQCD
 calculations are associated with divergent tree-level matrix elements and the
 corresponding loop level matrix elements. While these divergences cancel for
-infared safe and collinear safe jet algorithms, this is not guaranteed for jet
-algorithms not fullfilling the infrared and collinear safety requirements.
+infrared safe and collinear safe jet algorithms, this is not guaranteed for jet
+algorithms not fulfilling the infrared and collinear safety requirements.
 Fig.~\ref{fig:infrared_safety} shows the effect of a collinear splitting (right
 plot) and of additional soft particles (left plot) on the results of an unsafe
 jet algorithm. Most of the cone-based jet algorithms which cluster elements
@@ -104,7 +104,7 @@ analyses.
     \includegraphics[width=0.45\textwidth]{figures/drawings/infrared_safety/jetcollinear.pdf}
     \caption[Effect of infrared emissions and collinear splittings on jet
     algorithms]{The influence of an infrared emission and a quasi
-        collinear splitting on a jet algorithm not fullfilling the infrared safe
+        collinear splitting on a jet algorithm not fulfilling the infrared safe
         and collinear safe requirements is shown. An additional soft particle (left plot)
     leads to the combination of the two jets into one large jet. A
 quasi-collinear splitting of a particle (right plot) changes the result of the
@@ -184,7 +184,7 @@ jet.
 The concept of jet areas is especially important in the context of pile-up
 mitigation. The average \pt density $\rho$ in an event is estimated using the inclusive
 \kt algorithm which also clusters many soft jets in the event and covers the
-entire $\phi$-$\eta$ phasespace. The average \pt density is defined as
+entire $\phi$-$\eta$ phase space. The average \pt density is defined as
 
 \begin{equation*}
     \rho = \text{median} \frac{\pt^j}{A_j}
@@ -233,12 +233,15 @@ The jet energy corrections (JEC) relate the measured jet energy to the
 corresponding true particle jet energy. \CMS uses a factorized correction approach
 consisting of multiple correction steps that build on one another. The corrected
 transverse momentum $\pt^{\mathrm{corr}}$ of a jet is yielded by subsequently applying all correction
-factors on an uncorrected jet:
+factors on an uncorrected jet
 
 \begin{equation*}
     \pt^{\mathrm{corr}} = c_{\mathrm{res}} (\eta, \pt^{\prime}) \cdot c_{\mathrm{mc}}
-    (\eta, \pt^{\prime\prime}) \cdot c_{\mathrm{pileup}}(\eta, \rho, A_j, \pt^{\mathrm{raw}}) \cdot \pt^{\mathrm{raw}} 
+    (\eta, \pt^{\prime\prime}) \cdot c_{\mathrm{pileup}}(\eta, \rho, A_j,
+    \pt^{\mathrm{raw}}) \cdot \pt^{\mathrm{raw}},
 \end{equation*}
+
+\todo{switch to $p_{\mu}$?}
 
 where $\pt^{\mathrm{raw}}$ is the transverse momentum of the uncorrected jet,
 $\pt^{\prime}$ is the transverse momentum after applying the pile-up correction
@@ -263,7 +266,7 @@ pile-up density and the jet area.
 
 Based on simulated QCD events, the jet energy scale is further corrected. The
 momentum of a reconstructed jet can differ from a generated particle jet due to
-out-of-cone effects or detector ineffiencies, which are modelled by the detector
+out-of-cone effects or detector inefficiencies, which are modeled by the detector
 simulation. The inverse response of the reconstructed jet to a generated jet is
 applied as correction to remove these effects.
 

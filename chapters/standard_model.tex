@@ -8,9 +8,10 @@ of the theoretical predictions and accompanying experimental meausurements.
 Theoretical models try to describe the behaviour of nature and have to be
 confirmed or excluded in precise measurements.
 
-This chapter shortly summarizes the Standard Model of particle physics, with a
-focus on quantum chromodynamics (QCD), the theory describing the strong
-interaction.
+This chapter shortly summarizes the Standard Model of particle physics and
+concentrates on quantum chromodynamics (QCD) and its important properties which
+are the theoretical foundation of this thesis. Extensive and much more profound
+discussions can be found in~\cite{all_theory_used}.
 
 \section{Standard Model of Particle Physics}
 
@@ -49,6 +50,7 @@ Recently, it was discovered in at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
 
 
 
+
 % \todo{check t3 of gluon, compare with joram thesis}
 % \begin{table}[htb]
 % \centering
@@ -67,13 +69,41 @@ Recently, it was discovered in at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
 
 \section{Quantum Chromodynamics}
 
-Quantum chromodynamics (QCD) is the theory of the strong interaction. It
-describes the interaction between quarks and gluons, the fundamental particles
-which make up hadrons.
+Quantum chromodynamics (QCD) is the gauge field theory that describes the
+strong interaction of quarks and gluons. The gauge group of the theory is a
+special unitary group SU(3). The QCD Lagrangian is given by
 
 \begin{equation*}
-    F_{\mu\nu}^A = \partial_\mu 
-\end{equation*}<++>
+   \mathcal{L} = \sum_q \bar \psi_{q,a} \left( i \gamma^\mu \partial_\mu
+   \delta_{ab} - g_s \gamma^\mu t_{ab}^C \mathcal{A}_{\mu}^C - m_q \delta_{ab}
+   \right) \psi_{q,b} - \frac{1}{4} F_{\mu\nu}^{A} F^{A \mu\nu},
+\end{equation*}
+
+in which $\gamma_\mu$ are the Dirac $\gamma$-matrices, $\psi_{q,a}$ are
+quark-field spinors for a quark with flavor $q$ and mass $m_q$ and a color of
+index $a$ which runs from $1$ to $N_C=3$. $\mathcal{A}_\mu^C$ denotes the gluon
+fields and $C$ runs from 1 to $N_C-1$ resulting in eight kinds of gluons. The
+QCD coupling strength is defined by $g_s$. The first part describes
+
+The field tensor $F_{\mu\nu}^A$ is given by, 
+
+\begin{equation*}
+    F_{\mu\nu}^A = \partial_\mu \mathcal{A}_\nu^A - \partial_{\nu}
+    \mathcal{A}_{\mu}^A - g_s f_{ABC} \mathcal{A}_{\mu}^B
+    \mathcal{A}_{\nu}^C
+\end{equation*}
+
+where $f_{ABC}$ are the structure constants of the SU(3) group. The last term of
+the field tensor originates from the non-Abelian structure,  where the generators
+do not commutate, but obey the relation
+
+\begin{equation*}
+    \left[t^A, t^B \right] = if_{ABC} t^{C},
+\end{equation*}
+
+causing the self-coupling of gluons, one of the prominent features of QCD. The
+fundamental interaction vertices of QCD can be illustrated by the Feynman graphs
+in Fig.~\ref{fig:fundamental_couplings}.
 
 
 \begin{figure}[htb] 
@@ -83,8 +113,8 @@ which make up hadrons.
     \includegraphics[width=0.33\textwidth]{figures/drawings/feynman/gggg.pdf}\hfill
     \caption[Fundamental vertices of QCD]{The fundamental Feynman rules of QCD
     comprise a quark-antiquark-gluon vertex, a three-gluon vertex and a 4-gluon
-    vertex. The first two are proportional to $g_\mathrm{S}$, the last one
-    proportional to $g_\mathrm{S}^2$.} 
+    vertex. The first two are proportional to $g_{s}$, the last one
+    proportional to $g_{s}^2$.} 
     \label{fig:fundamental_couplings} 
 \end{figure}
 
