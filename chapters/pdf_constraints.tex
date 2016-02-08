@@ -224,15 +224,15 @@ experiments.
     the nuisance parameters.}
   \label{tab:fit:results}
   \centering
-  \begin{tabular}{lr|rc|rc}
+  \begin{tabular}{lrrcrc}
     \toprule
-    \multicolumn{2}{c|}{} &
-    \multicolumn{2}{c|}{HERA data} &
-    \multicolumn{2}{c}{HERA \& CMS data}\rbthm\\
-    Dataset &
-    \multicolumn{1}{c|}{\ndata} &
+    \multicolumn{2}{c}{} &
+    \multicolumn{2}{c}{HERA data} &
+    \multicolumn{2}{c}{HERA \& CMS data}\rbtrr\\\cmidrule(l){3-6}
+    data set &
+    \multicolumn{1}{c}{\ndata} &
     \multicolumn{1}{c}{\chipsq} &
-    \multicolumn{1}{c|}{\chipsqndata} &
+    \multicolumn{1}{c}{\chipsqndata} &
     \multicolumn{1}{c}{\chipsq} &
     \multicolumn{1}{c}{\chipsqndata}\rbthm\\\midrule
     CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 60.47  & 1.44  & 60.37  & 1.44 \rbtrr\\
@@ -244,9 +244,9 @@ experiments.
     NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 369.42 & 1.11  & 395.66 & 1.19 \rbtrr\\
     CMS Triple-Differential Dijets                              & 122 & ---    & ---   & 167.61 & 1.37
     \rbtrr\\\bottomrule
-    Dataset(s) & \ndof &
+    data set(s) & \ndof &
     \multicolumn{1}{c}{\chisq} &
-    \multicolumn{1}{c|}{\chisqndof} &
+    \multicolumn{1}{c}{\chisqndof} &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof}\rbthm\\\midrule
     HERA data                       & 1042 & 1216.42 & 1.17  &  --- &  --- \rbtrr\\
@@ -258,13 +258,35 @@ experiments.
 The resulting PDF for the gluon, u valence, d valence and sea quark PDF are
 arranged next to each other in the
 Figs.~\ref{fig:pdfconstraints:split:gluonqsea:19}--\ref{fig:pdfconstraints:split:dvaluval:19}
-while Fig.~\ref{fig:pdfconstraints:direct:19} gives a direct comparison of the
-PDFs with total uncertainties. 
+while Fig.~\ref{fig:pdfconstraints:direct:19} and
+Fig.~\ref{fig:pdfconstraints:direct:10000} give a direct comparison of the PDFs
+with total uncertainties. The fit quality reported in
+Table~\ref{tab:fit:results} shows that both HERA DIS and CMS dijet data are
+compatible in a combined fit. The uncertainty breakdown in
+Fig.~~\ref{fig:pdfconstraints:split:gluonqsea:19} reveals the large impact of
+the the dijet data. The uncertainty of the gluon PDF is reduced over almost the
+whole range in $x$. The experimental uncertainty is drastically reduced in the
+high-$x$ region above $x \gtrsim 0.1$. Less pronounced changes are visible in
+the low-$x$ gluon PDF in which most of the uncertainty changes can be attributed
+to the parameterization uncertainty. The large changes of uncertainties come
+along with a noticeably change of the high-$x$ gluon PDF shape. The gluon PDF is
+much harder compared to the fit with HERA DIS data alone. These changes were
+observed before, \eg in~\cite{Khachatryan:2014waa}, but are even more pronounced
+in this study.
 
-For all PDFs, the parametrization and model uncertainties are reduced when
-including the jet data in the fit. Especially the gluon PDF shows significant
+The changes of the sea quark PDF, defined as $asdf$, are much less pronounced.
+Only the parametertrization uncertainty is clearly lower in the high-$x$ region.
+The u valence and d valence quark PDFs also show uncertainty reductions over
+the whole $x$-range. The uncertainty decrease of the experimental uncertainty is
+sizable for high-$x$, while the main differences result from the parametrization
+uncertainty, which is signifcant for the fit with HERA DIS data alone, but
+almost completely vanishes in the fit including the CMS dijet data.
 
-
+Unlike all previous figures, Fig.~\ref{fig:pdfconstraints:direct:10000} shows
+the PDFs after evolution to scale $Q^2 = \SI{10000}{\GeV \square}$. The PDFs
+exhibit the same features compared to the starting scale $Q_0$. Finally, an
+overview of of the gluon, sea, u valence and d valence quark PDFs is given in
+Fig.~\ref{fig:pdfconstraints:overview:19}.   
 
 \begin{figure}[tbp]
   \centering
@@ -325,12 +347,12 @@ right) PDFs as a function of $x$ as derived from HERA-II inclusive DIS data
 alone (dashed line) and in combination with CMS dijet data (full line). The PDFs
 are shown at the starting scale $Q^2 = \SI{10000}{\GeV \square}$. The total
 uncertainty of the PDF is shown (hatched and solid bands).}
-  \label{fig:pdfconstraints:direct:10000}
+\label{fig:pdfconstraints:direct:10000}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/overview/HFTD_HERACMSTDJETS_V017_EIG/pdfoverview/HFTD_HERACMSTDJETS_V017_EIG_1_9.pdf}\hfill%
+  \includegraphics[width=0.9\textwidth]{figures/pdf_constraints/hftd/overview/HFTD_HERACMSTDJETS_V017_EIG/pdfoverview/HFTD_HERACMSTDJETS_V017_EIG_1_9.pdf}\hfill%
   \caption[Overview of gluon and quark PDFs]{Overview of the gluon, sea, u
   valence and d valence quark Pdfs before (dashed line) and after (full line)
   including the CMS dijet data int the fit. The PDFs are shown at the starting

@@ -134,8 +134,7 @@ sufficiently accurate results after the first orders of the perturbative series,
 if $\as \ll 1$ and the series converges quickly. However several features
 complicate the perturbative calculations. Ultra-violet (UV) divergences enter
 the calculations beyond leading order in form of loop corrections. The
-divergences can be removed by a procedure called renormalization in which a new
-scale $\mur$, the renormalization scale, is introduced, see
+divergences can be removed by a procedure called renormalization, see
 Sec.~\ref{sec:renormalization}.
 
 Soft and collinear divergences also need to be handled in perturbative
@@ -147,11 +146,17 @@ which can be factorized into the PDFs, see Sec.~\ref{sec:factorization}.
 \subsection{Renormalization and Running of the Strong Coupling}
 \label{sec:renormalization}
 
-UV divergences are
-absorbed into the coupling strength which consequently depends also on the
-renormalization scale. There are different renormalization schemes, of which the
-$\bar{\mathrm{MS}}$-scheme is the most popular.
+Beyond LO, the calculations include loop corrections, which result in UV
+divergences when calculating the momenta integrals of the loops. To make the
+result finite, a regularization procedure called renormalization is applied. The
+renormalization introduces another scale $\mur$, the renormalization scale.
+There are different renormalization schemes, of which the
+$\overline{\mathrm{MS}}$-scheme is the most popular. Consequently the observable
+$X$ and the \as become functions of this scale \mur. 
 
+Nonetheless, the observable $X$ may not depend on the arbitrarily chosen \mur.
+The renormalization group equation (RGE) states that the dependence of $X$ on
+\mur must cancel. This can be mathematically expressed by
 
 \begin{equation} 
     \mur^2 \frac{d}{d \mur^2} X \left(\frac{Q^2}{\mur^2},\as(\mur^2)\right) = \left(
@@ -159,11 +164,20 @@ $\bar{\mathrm{MS}}$-scheme is the most popular.
     \as(\mu^2)}{\partial \mur^2} \frac{\partial X}{\partial \as(\mu^2)} \right) \stackrel{!}{=} 0 
 \end{equation}
 
+and states that any dependence of $X$ on \mur must be cancelled by the
+\mur-depedence of \as. Subsequently the strong coupling has to fulfill the
+equation
 
 \begin{equation}
     \mur^2 \frac{d \as}{d \mur^2} = \beta(\as) = - \left( \beta_0 \as^2 + \beta_1 \as^3
     + \beta_2 \as^4 + \ldots \right)
+    \label{eq:as_rge}
 \end{equation}
+
+where $\beta_0$, $\beta_1$ and $\beta 2$ are the 1-loop, 2-loop and 3-loop 
+$\beta$-function coefficients, which are given for the coupling of an effective
+theory, in which the $n_f$ quark flavors are light ($m_q \ll \mur$). Here, they
+are given in the $\overline{\mathrm{MS}}$-scheme.
 
 \begin{equation} 
     \beta_0 = \frac{33 - 2 n_f}{12\pi}
@@ -178,17 +192,27 @@ $\bar{\mathrm{MS}}$-scheme is the most popular.
    \right)n_f^2}{128 \pi^3}
 \end{equation}
 
+By integrating Eq.~\ref{as:rge} the energy dependence of \as is given. In an
+enery range of constant number of flavors, an exact analytic solution exists in
+1-loop approximation. 
+
 \begin{equation*}
    \as(\mur^2) = \frac{1}{\beta_0 \ln \left( \sfrac{\mur^2}{\Lambda^2} \right)}
 \end{equation*}
 
-
-alphas from mz
+$\Lambda$ is the constant of the integration and corresponds to the scale at
+which the perturbative coupling would diverege. Very often it is convenient to
+give the strong coupling at a specific scale, from which the coupling at any
+scale is calculated. It is common practice to report \asmz, consequently the
+1-loop analytical function becomes
 
 \begin{equation*}
    \as\left(\mur, \as(\mz)\right) = \frac{\as(\mz)}{1 + \as(\mz)\beta_0 \ln
        \left( \sfrac{\mur^2}{\mz^2} \right)}
 \end{equation*}
+
+As the parameter is a free parameter of the theory, it is determined from
+experimental measurements and evolved to the sclae of the $Z$-boson.
 
 \subsection{Factorization and Parton Density Functions}
 
@@ -206,15 +230,17 @@ The cross section calculation
 \subsection{Factorization theorem}
 \label{sec:factorization_theorem}
 
-
 \subsection{DGLAP Evolution Equations}
-
-
 
 \begin{equation*}
     \frac{\partial f_a (x, \muf^2)}{\partial \muf^2} = \sum_b \frac{\as(\muf^2)}{2 \pi} \int_x^1
     \frac{d \zeta}{\zeta} P_{ab} \left(\frac{x}{\zeta},
     \as(\muf^2)\right) f_b(\zeta, \muf)
+\end{equation*}
+
+\begin{equation*}
+    \muf \frac{\partial}{\partial \muf} f_a(x, \muf^2)  = \sum_{j=q,\bar q, g}
+    P_{aj} \otimes f_j(x, \muf^2)
 \end{equation*}
 
 
