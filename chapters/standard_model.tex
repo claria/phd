@@ -34,11 +34,10 @@ field. The gauge bosons of the unified electroweak theory are a mixture
 resulting in massize $W^\pm$ and the $Z^0$ boson and the massless photon. The
 eigenstates of the weak interaction differ from the mass eigenstates and can be
 calculated by rotating the mass-eigenstates using the CKM
-matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}. The
-same effect is observed in the lepton sector in which the mass eigenstates of
-the neutrinos do not match the interaction eigenstates leading to oscillations
-between neutrino flavors. The analogue matrix is called PMNS
-matrix~\cite{Maki:1962mu,Pontecorvo:1957qd}.
+matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}. The same effect is observed in
+the lepton sector in which the mass eigenstates of the neutrinos do not match
+the interaction eigenstates leading to oscillations between neutrino flavors.
+The analogue matrix is called PMNS matrix~\cite{Maki:1962mu,Pontecorvo:1957qd}.
 
 The strong force is described by the unbroken $\mathrm{SU}(3)$ color gauge
 theory, called quantum chromodynamics. There are eight gauge bosons, the gluons,
@@ -211,41 +210,70 @@ scale is calculated. It is common practice to report \asmz, consequently the
        \left( \sfrac{\mur^2}{\mz^2} \right)}
 \end{equation*}
 
+\begin{figure}[htb] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/sm_model/as_running.pdf}\hfill
+    \caption[Running of the strong coupling]{} 
+    \label{fig:fundamental_couplings} 
+\end{figure}
+
+
 As the parameter is a free parameter of the theory, it is determined from
-experimental measurements and evolved to the sclae of the $Z$-boson.
+experimental measurements and evolved to the sclae of the $Z$-boson. The current
+world average value of the strong coupling according to the PDG reads
+
+\begin{equation*}
+    \asmz = 0.1185 \pm 0.0006.
+\end{equation*}
 
 \subsection{Factorization and Parton Density Functions}
 
-The perturbative series is only converging for $\as(\mur) \ll 1$. As this is not
-given for low energies, perturbative calculations are not applicable in this
-energy regime. 
+The perturbative series is only converging sufficiently fast for $\as(\mur) \ll
+1$. As this is not given for low energies, perturbative calculations are not
+applicable in this energy regime. 
+
 
 The \emph{factorization theorem} separates the short-distance interactions,
-which are calculated in the hard matrix element, from long-distance
-interactions at an additionally introduced factorization scale \muf. This soft
-part of the interaction is defined by the parton distributions in the proton.
+which are calculated in the hard matrix element, from long-distance interactions
+at an additionally introduced factorization scale \muf. This non-perturbative
+long-distance part of the interaction is included in the parton distributions of
+the proton. Consequently they PDFs cannot be calculated in pQCD, but have to be
+determined experimentally.
 
-The cross section calculation 
+\paragraph{DGLAP Evolution Equations}
 
-\subsection{Factorization theorem}
-\label{sec:factorization_theorem}
+Emissions which modify the momentum of a parton are to a large extent collinear
+to the parton. The \emph{factorization theorem} describes the separation of
+these long-distance interations from the short-distance interactions, the hard
+process. The factorization again involes an arbitrary choice of factorization
+scale \muf. Emission with transverse momenta above \muf are included in the hard
+scattering perturbative coefficiencts while emission softer than \muf are
+accounted for within the PDFs.
 
-\subsection{DGLAP Evolution Equations}
+Consequently, the PDF depend on the scale \muf. The resulting dependence can be
+described by the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) equations,
+which are in LO defined as
 
 \begin{equation*}
     \frac{\partial f_a (x, \muf^2)}{\partial \muf^2} = \sum_b \frac{\as(\muf^2)}{2 \pi} \int_x^1
-    \frac{d \zeta}{\zeta} P_{ab} \left(\frac{x}{\zeta},
-    \as(\muf^2)\right) f_b(\zeta, \muf)
+    \frac{d \xi}{\xi} P_{ab} \left(\frac{x}{\xi},
+    \as(\muf^2)\right) f_b(\xi, \muf)
 \end{equation*}
+
+where $f_a$ is the parton distribution function of flavor $a$ and $P_{ab}$ are
+the Altarelli-Parisi kernels, known as splitting functions. 
 
 \begin{equation*}
     \muf \frac{\partial}{\partial \muf} f_a(x, \muf^2)  = \sum_{j=q,\bar q, g}
-    P_{aj} \otimes f_j(x, \muf^2)
+    P_{aj} \otimes f_j(x, \muf^2
 \end{equation*}
 
+\begin{equation*}
+    \left[ P \otimes f \right] = \int_{x}^1 \frac{d \xi}{\xi} f\left(\xi,
+    \muf \right) P\left(\frac{x}{\xi}\right)
+\end{equation*}
 
-
-\subsection{Parton Distribution Functions}
+\paragraph{Parton Distribution Functions}
 
 The structure of the proton is described by parton distribution functions
 (PDFs).  They represent the probability density\footnote{more precise a number
@@ -286,6 +314,14 @@ compatible dataset. Furthermore the HERAPDF group released their fitting
 framework HERAFitter~\cite{Alekhin:2014irh} as open source software, which can
 be used by anyone.  HERAFitter is employed in Sec.~\ref{sec:pdf_constraints} to
 study the constraints of the triple differential dijet measurements on the PDFs.
+
+\begin{figure}[htb] 
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/sm_model/phasespace.pdf}\hfill
+    \caption[Kinematic phase space of the experiments]{} 
+    \label{fig:fundamental_couplings} 
+\end{figure}
+
 
 \section{Hadronization and Parton Shower}
 

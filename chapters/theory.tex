@@ -221,14 +221,14 @@ fall below unity, in which case the NLO corrections are negative and the total c
 section decreases when adding the correction.  Fig.~\ref{fig:kfactor_comp} shows
 the $k$-factors of the \NLOJETPP cross section calculations using the discussed
 scale choices in Sec.~\ref{sec:scale_coice}. The $k$-factors are similar in the
-central region, but become quite different in regions with larger rapidity
-separations.  Especially the $k$-factors in the phase space region with a
+central region, but the differences increase in regions with larger rapidity
+separations. Especially the $k$-factors in the phase space region with a
 rapidity separation of $2.0 \leq \ystar < 3.0$ are smaller than unity for the
 \ptavg scale choice, while it is larger than one for the scale choices including
 the \ystar dependence.
 
 Apart from the findings for the \ptavg scale choice, the $k$-factors are
-reliable and meet the expectations from previous studies.
+reliable and meet the expectations from previous studies of jet observables.
 
 \begin{figure}[htp]
     \centering
@@ -251,15 +251,16 @@ reliable and meet the expectations from previous studies.
 Cross section calculations beyond leading order combining parton showers, MPI
 and hadronization models are very complicated. Double counting of terms in the
 perturbative series and the parton shower needs to be avoided. The recently
-released version of Herwig includes NLO predictions with matched parton showers.
-The calculation uses the MC@NLO type matching as it is implemented in the
-Matchbox module~\cite{Platzer:2011bc} of Herwig. The PDFs of the MMHT 2014 NLO
-PDF set are accessed using LHAPDF. For the calculation of the matrix elements,
-the NJet~\cite{Badger:2012pg} library is interfaced to Herwig and the scale
-choice is set to $\mu = \ptmax$. As the integration and event generation steps
-are extremely time consuming the phase space was split into 12 mutually
-exclusive regions binned in the transverse momentum of the leading jet and the
-phase space regions were stitched together on analysis level.
+released version 7 of Herwig includes NLO predictions with matched parton
+showers.  The calculation uses the MC@NLO type matching as it is implemented in
+the Matchbox module~\cite{Platzer:2011bc} of Herwig. The PDFs of the MMHT 2014
+NLO PDF set are accessed using LHAPDF. For the calculation of the matrix
+elements, the NJet library~\cite{Badger:2012pg} is interfaced to Herwig and the
+renormalization and factorizaton scale are set to $\mu = \ptmax$. As the
+integration and event generation steps are extremely time consuming, the phase
+space was split into 12 mutually exclusive regions binned in the transverse
+momentum of the leading jet and the phase space regions were stitched together
+on analysis level.
 
 \todo{add and describe figure with results.}
 
@@ -270,37 +271,37 @@ phase space regions were stitched together on analysis level.
 The perturbative QCD calculations of \NLOJETPP give a cross section at NLO
 parton level. These so-called fixed-order pQCD calculations cannot be directly
 compared to the unfolded data, as they do not include additional soft QCD
-effects. While a part of these effects is absorbed by the applied jet-algorithm,
+effects. While a part of these effects is absorbed by the jet-algorithm,
 they still must be estimated and accounted for in comparisons of fixed-order
 calculations to data.
 
-The effects of these soft effects are estimated using Monte Carlo event
+The influence of these soft effects are estimated using Monte Carlo event
 generators which are able to simulate those. The usual approach consists of
 calculating the cross section including effects from multi-parton interactions
 (MPI) and hadronization. The non-perturbative (NP) correction $c_k^\mathrm{NP}$
 obtained with a MC event generator $k$ is defined as the ratio between the
-nominal cross section including the effects and a cross section calculation
+nominal cross section including MPI and hadronization effects and a cross section calculation
 neglecting those, see Eq.~\ref{eq:np_definition}. The superscript in the
-equation indicates the applied steps in the simulation, the parton shower (PS),
+equation indicates the applied steps in the simulation: the parton shower (PS),
 the multi-parton interaction model (MPI) and the hadronization (HAD). The
 correction is then applied as a bin-by-bin correction factor to the NLO cross
 section.
 
-\begin{equation}
+\begin{equation*}
     c_{k}^{\mathrm{NP}} = \frac{\sigma^{\mathrm{PS+HAD+MPI}}}{\sigma^{\mathrm{PS}}}
     \label{eq:np_definition}
-\end{equation}
+\end{equation*}
 
 The NP corrections have been calculated by employing two Monte Carlo
 event generators using the newest available tunes within CMS. Herwig++ is used
 with the tune UE-EE-5C and Pythia 8 with the tune CUETP8M1. The ratio is fitted
-by a power-law function, see Eq.~\ref{fcn:np_fit}.
+by a power-law function
 \todo{ref to tune}
 
-\begin{equation}
-  f(\ptavg) = a \cdot \ptavg^b + c
+\begin{equation*}
+  f(\ptavg) = a \cdot \ptavg^b + c.
   \label{fcn:np_fit}
-\end{equation}
+\end{equation*}
 
 Since the correction factors obtained from Herwig++ and Pythia8 are quite
 different in the low-\pt region, an uncertainty was assigned to the correction
@@ -315,10 +316,10 @@ The uncertainty quoted for the NP correction factors is half the difference
 between the two correction factors.
 
 Fig.~\ref{fig:np_factors} shows the resulting correction factors and the
-corresponding uncertainty. The corrections vary between 10\% to 15\% at
+corresponding uncertainty. The corrections vary between 10\% and 15\% at
 \SI{100}{\GeV} and get smaller at higher values of \ptavg. While the correction
-decreases for higher transverse momenta, it does not approach unity especially
-in the bins containing forward boosted jets. 
+decreases for higher transverse momenta, it does not approach unity, especially
+in the bins containing boosted jets. 
 
 \begin{figure}[htp]
     \centering
@@ -340,17 +341,18 @@ represents the uncertainty on the correction.}
 \section{Theory Uncertainties}
 
 Multiple sources of uncertainty limit the precision of the NLO cross section
-calculation. In this section, the derivation of the scale, PDF and NP
-uncertainties is described. 
+calculation. In this section, the derivation of the scale and PDF
+uncertainties is described and a comparison of all studied theoretical
+uncertainties is shown in Fig.~\ref{fig:theo_uncertainties}. The NP
+uncertainties are discussed in Sec.~\ref{sec:np_factors}, in which the
+non-perturbative corrections are determined. 
 
-A comparison of all studied theoretical uncertainties is shown in
-Fig.~\ref{fig:theo_uncertainties}. The scale uncertainty is the dominant source
-of uncertainty in the low-\pt region and is of the size of 5\% to 10\% most of
-the time. For increasing transverse momenta of the dijet system, the PDF
-uncertainties become the dominant uncertainties. The size ranges from 5\% in the
-low-\pt region up to 50\% for highest \pt. The uncertainty afflicted to
-non-perturbative corrections is only sizeable for lower \pt and is less than 5\%
-all the time.
+The scale uncertainty is the dominant source of uncertainty in the low-\pt
+region and is of the size of 5\% to 10\% in most of the phase space regions. For increasing
+transverse momenta of the dijet system, the PDF uncertainty becomes the
+dominant source. Its size ranges from 5\% in the low-\pt region up to
+50\% for highest \pt. The uncertainty afflicted to non-perturbative corrections
+is only sizeable for lower \pt and is less than 5\% in all bins.
 
 As the cross section calculation is performed using \fastNLO interfaced to
 \NLOJETPP, multiple independent calculations can be merged to increase the
@@ -366,19 +368,20 @@ uncertainty is neglected in all further comparisons.
 As discussed in Sec.~\ref{sec:scale_coice}, one has to choose a factorization
 and renormalization scale for a perturbative cross section calculation. Due to
 the truncated perturbative series, a scale dependence remains. The effects of
-neglected higher-order contributions are collected in a source of uncertainty.
+neglected higher-order contributions are covered by a systematic theoretical
+uncertainty.
 
 There is a common approach in estimating the influence of the scale on the cross
 section~\cite{Cacciari:2003fi}. The cross section calculation is performed using
 multiple scale choices and the differences compared to the cross section
-obtained using the central scale choice are translated into an uncertainty,
-called scale uncertainty. The variations are applied as multiplicative factors
-to the central choice in the following six combinations: $(\mur, \muf) =
-(\sfrac{1}{2}, \sfrac{1}{2}), (\sfrac{1}{2}, 1), (1, \sfrac{1}{2}), (1, 2), (2,
-1)$ and $(2, 2)$. The uncertainty on a quantity $X$, \eg the cross section, is
-the envelope of the maximum deviation in the upwards and downwards direction,
-while $X^0$ depicts the value of the quantity with the default scale choice and
-$n$ denotes the number of variations.
+obtained using the central scale choice are translated into a scale uncertainty.
+The variations are applied as multiplicative factors to the central choice in
+the following six combinations: $(\mur, \muf) = (\sfrac{1}{2}, \sfrac{1}{2}),
+(\sfrac{1}{2}, 1), (1, \sfrac{1}{2}), (1, 2), (2, 1)$ and $(2, 2)$ times new
+nominal scale. The uncertainty on a quantity $X$, \eg the cross section, is the
+envelope of the maximum deviation in the upwards and downwards direction, while
+$X^0$ denotes the value of the quantity with the default scale choice and $n$
+denotes the number of variations.
 
 \begin{align*}
     \Delta X^+ &= \max_{i}^{n} \left[ X^i - X^0, 0 \right]\\
@@ -386,13 +389,11 @@ $n$ denotes the number of variations.
 \end{align*}
 
 
-Fig.~\ref{fig:theo_uncertainties} shows the relative size of the scale
+Fig.~\ref{fig:scale_uncertainties} shows the relative size of the scale
 uncertainty for each bin of the measurement and the discussed scale choices. The
-scale uncertainty is very reasonable in most cases and of the size of 5\% to
-10\%. However, when using the scale choice $\mu=\ptavg$, the bin with the large
-rapidity separation exhibits a large increase of the uncertainty up to 40\%,
-which is undesired.
-
+scale uncertainty if of the size of 5\% to 10\%. However, when using the scale
+choice $\mu=\ptavg$, the bin with the largest rapidity separation exhibits a large
+increase of the uncertainty of up to 40\%, which is undesired.
 
 \begin{figure}[htp]
     \centering
@@ -402,13 +403,15 @@ which is undesired.
     \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/theory/scale_uncert_comp_yb2ys0.pdf}
-    \caption[Scale Uncertainties of NLO calculation]{The scale uncertainty is estimated using the common approach of
-        independently varying the renormalization and factorization scale
-        choice in six independent combinations. The uncertainty is shown for the
-        three investigated scale choices. In most cases the scale uncertainty is
-        reasonable and of the size of 5\% to 10\%. In the region with the
-        largest values of \ystar, the scale uncertainty of the prediction with
-    the scale choice $\mu=\ptavg$ is undesirably large.}
+    \caption[Scale Uncertainties of NLO calculation]{The scale uncertainty of
+        the cross section calculation in each of the six bins in \ystar and
+        \yboost. The uncertainty is estimated using the common approach of
+        independently varying the renormalization and factorization scale choice
+        in six independent combinations. The uncertainty is shown for the three
+        investigated scale choices, indicated by different colors. In most cases
+        the scale uncertainty is reasonable and of the size of 5\% to 10\%. In
+        the region with the largest values of \ystar, the scale uncertainty of
+        the prediction with the scale choice $\mu=\ptavg$ is undesirably large.}
     \label{fig:scale_uncertainties}
 \end{figure}
 
@@ -421,10 +424,10 @@ fits to data from several experiments. Different sources of
 uncertainty affect the PDFs. These comprise the choice and the
 functional form of the parametrization, the chosen theory model and input
 parameters like the strong coupling constant \as or the quark masses and, of
-course also the uncertainties of the data points included in the PDF fit.
+course also the statistical and systematic uncertainty sources of the data points included in the PDF fit.
 
 When determining the PDFs, all these uncertainties are taken into account and
-are propagated to the PDFs. The groups deriving the PDF sets provide
+are propagated in the PDFs. The groups deriving the PDF sets provide
 prescriptions how to evaluate these uncertainties. In
 Sec.~\ref{sec:nlo_comparisons}, several comparisons of unfolded data to predictions using the
 global PDF sets NNPDF 3.0, CT14 and MMHT2014 are shown. In the following a short
@@ -449,7 +452,7 @@ uncertainties. A transformation from the parameter basis to the eigenvector
 basis is done to yield mutually uncorrelated eigenvectors. By varying the
 eigenvectors upwards and downwards, a set of eigenvector pairs is generated
 which can be used to determine the asymmetric uncertainty $\Delta X^+$ and
-$\Delta X^-$ of a quantity $X$. $X_0$ depicts the central prediction,
+$\Delta X^-$ of a quantity $X$. $X_0$ denotes the central prediction,
 $X_i^{\mathrm{up}}$ and $X_i^{\mathrm{dn}}$ are the predictions using the
 upwards and downwards variation of the eigenvector PDF set $i$ and
 $N_{\mathrm{EV}}$ is the number of eigenvectors in the PDF set.
@@ -478,12 +481,12 @@ The CT14 uncertainties are scaled to 68\% CI using $s = \sqrt{2}
 Fig.~\ref{fig:pdf_uncertainties} shows the fractional PDF uncertainty for the
 three global PDF sets discussed. The PDF uncertainty in the bins with small
 \ystar and small \yboost values is comparatively small. This is due to the fact
-that mostly events opposite side jets contribute, in which the medium $x$ region
+that mostly events with opposite side jets contribute, in which the medium $x$ region
 of the proton PDFs is accessed which are well known already. The PDF uncertainty
 of the cross section for high values of \ystar and low values of \yboost in
 which two forward jets are on opposite sides of the detector is also relatively
 small. Most interestingly the uncertainty strongly increases for the bin with
-large values of \yboost and small values of \ystar.  Especially in the high-\pt
+largest values of \yboost and small values of \ystar.  Especially in the high-\pt
 region, the uncertainty is sizable. To achieve a high boost of the dijet system
 and a high \ptavg value, the protons must be accessed in the high-$x$ region
 which is not well determined up to now and is afflicted with large PDF

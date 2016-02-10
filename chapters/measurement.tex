@@ -252,6 +252,7 @@ four. This basically means that at least four tracks need to be present to
 perform the vertex fit.
 
 \subsection{Missing transverse energy cut}
+
 \todo{cite jet met filter twiki}
 If all particles could be identified and perfectly measured, the sum of the
 transverse momenta would sum up to zero. The imbalance in the transverse
@@ -328,6 +329,30 @@ phase space considered in this analysis. Therefore the loose jet id was applied.
 \end{table}
 
 
+\section{Jet ID Efficiency}
+
+The jet ID selection ensures a high purity of real jet events while keeping more than 99\% of the real jets.
+The efficiency of the jet id is studied using a tag-and-probe approach. Well balanced jets in $\phi$ are selected
+using a criteria of $\Delta \phi > 2.7$. While one jet needs to pass the tight jet id criteria, the balanced jet is probed
+if if satisfies the criteria as well. The ratio of events where the probe jet passes the criteria versus the number of events
+in which the probe doesn't pass the critera is used to estimate the efficiency. The efficiency is plotted as a function of the
+dijet \ptavg as can be seen in Figure~\ref{fig:jetid_eff}. The efficiency is in all bins larger than 99\%.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetideff_yb2ys0.pdf}
+    \caption[Efficiency of the jet ID]{Jet ID efficiency studied using a
+    tag-and-probe approach on clear dijet event signatures. The efficiency is
+    shown as a function of the average dijet \pt for all bins in \ystar \yboost. The
+    efficiency is in all cases larger than 99\%..}
+    \label{fig:jetid_eff}
+\end{figure}
+
 \subsection{Jet Selection}
 
 The subsequent measurement is based on PFJet objects which are clustered
@@ -370,12 +395,72 @@ system which results from the trigger thresholds of the employed jet triggers.
 Another advantage of the high cut on \ptavg is the avoidance of a turn-on region
 which can lead to complications in the unfolding procedure.
 
-\subsection{Jet Pseudo-Rapidity Correction}
-\todo{write}
+\subsection{Pseudo-Rapidity Bias Correction}
+
+The jet energy corrections relate the measured jet energy to the true jet
+energy, but they do not include any correction for reconstruction deficiencies
+of the jet pseudo-rapidity. However, especially in the transition regions of the
+detector, a systematic mismodelling is observed. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_corr.pdf}
+    \caption[Differences of pseudo-rapidity of reconstructed jets to
+        generator-level jets]{The difference between the pseudo-rapdity of the
+            reconstructed jets and the generated jets is shown over the
+            pseuudo-rapidity of the generated jet. The distribution is shown
+            before (left) and after (right) applying the pseudo-rapidity
+            correction. The blue points indicate the mean of the distribution in
+            each $\eta_{\mathrm{gen}}$ bin.}
+    \label{fig:jet_eta_corr}
+\end{figure}
+
+
+For this study, only well matched jets were considered.
+Fig.~\ref{fig:jet_eta_corr} shows the mismatch of rapidity between generated and
+reconstructed jets as a function of the pseudo-rapidity of the generated jets.
+There is a systematic error evident, which is most prominent in the transition
+region $\eta \approx 2.4$ in which the coverage of the tracker ends. Jets are
+reconstructed with systematically larger pseudo-rapidity, \ie shifted towards
+the forward region. However, Fig~\ref{fig:jet_eta_corr_vs_pt} this effect is pronounced only at low transverse
+momenta and decreases for larger \pt. 
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_vs_genpt.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_vs_genpt_corr.pdf}
+    \caption[Differences of pseudo-rapidity of reconstructed jets to
+        generator-level jets vs. transverse momentum]{The pseudo-rapidity of the
+            generated jets is shown as a function of the transverse momentum of
+            the jets. The color indicates the differences of the pseudo-rapidity
+            of the generated and reconstructed jets. The distribution is shown
+            before (left) and after (right) applying the pseudo-rapidity
+        correction.}
+    \label{fig:jet_eta_corr_vs_pt}
+\end{figure}
+
+The bias is corrected by applying a correction on each jet based on the averaged
+difference between the pseudo-rapidity of particle level jets and the
+reconstructed jets as a function of \pt and pseudo-rapidity of the reconstructed
+jet. The Figs.~\ref{fig:jet_eta_corr} and ~\ref{fig:jet_eta_corr_vs_pt} also
+show the dstribution after applying the correction, in which the majority of the
+$\eta$ dependent effects is removed.
 
 \subsection{Stability versus Run Periods}
-\todo{write}
 
+The experimental conditions for data-taking change slightly over the various run
+periods, due to changes of the detector calibration or different trigger
+prescales. Nonetheless the finally measured cross section must not depend on
+these effects. This is checked by calculating the result separately for each run
+period, see Fig.~\ref{fig:run_comparison}, which shows the ratio of the cross
+section in each run period to the cross section obtained in run D. 
+
+There are changes visible, most notably due to statistical fluctuations in the
+high-\pt region. Futhermore, a slight slope of the cross section obtained in run
+B is observed. However, in general all results are in good agreement and the
+differences are negligible.
 
 \begin{figure}[htbp]
     \centering
@@ -428,6 +513,26 @@ the reweighting, completely vanishes.
     \label{fig:mc:npv_reweighting}
 \end{figure}
 
+
+\section{Control distributions}
+
+Figure~\ref{fig:controlplots:properties} show the numerous energy fractions of the jet constituents. The top
+row of this figure show the charged and neutral fraction of hadrons in the jet. The middle row shows
+the fraction of muons and photons within the jet while the bottom row show the electron fraction and
+the HF hadron fraction.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_chf_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_nhf_default.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_gammaf_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_muf_default.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_ef_default.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/jetprop_hf_emf_default.pdf}
+    \caption{Control distribution for the jet constituent fractions. .}
+    \label{fig:controlplots:properties}
+\end{figure}
+
 \subsection{Comparison of Kinematic Quantities}
 
 The measured data distributions on detector level are compared with simulated events
@@ -436,7 +541,7 @@ the basic kinematic quantities of the leading two jets are compared as well as t
 of each of the jets mainly describing the constituent fractions of each jet. Figure~\ref{fig:controlplots:kinematic}
 shows the transverse momentum $\pt$, the rapidity $y$ and the azimuthal angle $\phi$ for the leading
 two jets. The kinematic of the two dijet system is well described by the MC simulation apart from
-a few regions with larger discrepancies. The \pt-distribution is not that well described escpecially in
+a few regions with larger discrepancies. The \pt-distribution is not that well described especially in
 the lower \pt region and the number of events with forward jets is overestimated in the MC simulation.
 
 \begin{figure}[htbp]
@@ -604,7 +709,7 @@ by a modified version of the NSC formula.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/measurement/resolution_ptavg.pdf}
+    \includegraphics[width=0.95\textwidth]{figures/measurement/resolution_ptavg.pdf}
     \caption{Dijet \ptavg resolution}
     \label{fig:resolution_ptavg}
 \end{figure}
