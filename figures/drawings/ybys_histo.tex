@@ -1,0 +1,198 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+
+\definecolor{color0}{HTML}{4C72B0}
+\definecolor{color1}{HTML}{55A868}
+\definecolor{color2}{HTML}{C44E52}
+\definecolor{color3}{HTML}{8172B2}
+\definecolor{color4}{HTML}{CCB974}
+\definecolor{color5}{HTML}{64B5CD}
+
+\begin{document}
+
+\newcommand{\histo}[1][]{
+
+}
+
+\begin{tikzpicture}
+  \draw [<->,thick] (0,10) node (yaxis) [above right] {}
+  |- (10,0) node (xaxis) [right] {};
+
+  \node[anchor=south east,rotate=90] at (-0.5,10) {\Large $y* = \frac{1}{2}|y_1 -y_2|$};
+  \node[anchor=north east] at (10,-0.5) {\Large $y_\mathrm{b} = \frac{1}{2}|y_1+y_2|$};
+
+  \draw (0,1pt) -- (0,-3pt) node[anchor=north] {0};
+  \draw (3,1pt) -- (3,-3pt) node[anchor=north] {1};
+  \draw (6,1pt) -- (6,-3pt) node[anchor=north] {2};
+  \draw (9,1pt) -- (9,-3pt) node[anchor=north] {3};
+  \draw (1pt,0) -- (-3pt,0) node[anchor=east] {0}; 
+  \draw (1pt,3) -- (-3pt,3) node[anchor=east] {1}; 
+  \draw (1pt,6) -- (-3pt,6) node[anchor=east] {2}; 
+  \draw (1pt,9) -- (-3pt,9) node[anchor=east] {3}; 
+
+  \draw[dashed] (3,0) -- (3,9);
+  \draw[dashed] (6,0) -- (6,6);
+  \draw[dashed] (9,0) -- (9,3);
+  \draw[dashed] (0,3) -- (9,3);
+  \draw[dashed] (0,6) -- (6,6);
+  \draw[dashed] (0,9) -- (3,9);
+
+  \begin{scope}[shift={(1.5,1.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,0.0)}]
+      \draw[color0,thick]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3) --
+      (0.3,-0.4) -- (0.4, -0.4) --
+      (0.4,-0.5) -- (0.5, -0.5) --
+      (0.5,-0.6) -- (0.6, -0.6) --
+      (0.6,-0.7) -- (0.7, -0.7) --
+      (0.7,-0.8) -- (0.8, -0.8) --
+      (0.8,-0.9) -- (0.9, -0.9);
+    \end{scope}
+  \end{scope}
+
+  %yb1ys0
+
+
+  \begin{scope}[shift={(4.5,1.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,-0.2)}]
+      \draw[thick,color4]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3) --
+      (0.3,-0.4) -- (0.4, -0.4) --
+      (0.4,-0.5) -- (0.5, -0.5) --
+      (0.5,-0.6) -- (0.6, -0.6) --
+      (0.6,-0.7) -- (0.7, -0.7);
+    \end{scope}
+
+  \end{scope}
+
+  \begin{scope}[shift={(7.5,1.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,-0.4)}]
+      \draw[thick,color5]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3) --
+      (0.3,-0.4) -- (0.4, -0.4) --
+      (0.4,-0.5) -- (0.5, -0.5);
+    \end{scope}
+
+  \end{scope}
+
+  \begin{scope}[shift={(1.5,4.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,-0.2)}]
+      \draw[color1,thick]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3) --
+      (0.3,-0.4) -- (0.4, -0.4) --
+      (0.4,-0.5) -- (0.5, -0.5) --
+      (0.5,-0.6) -- (0.6, -0.6) --
+      (0.6,-0.7) -- (0.7, -0.7);
+    \end{scope}
+
+  \end{scope}
+
+  \begin{scope}[shift={(4.5,4.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,-0.2)}]
+      \draw[color3,thick]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3) --
+      (0.3,-0.4) -- (0.4, -0.4) --
+      (0.4,-0.5) -- (0.5, -0.5) --
+      (0.5,-0.6) -- (0.6, -0.6) --
+      (0.6,-0.7) -- (0.7, -0.7);
+    \end{scope}
+
+  \end{scope}
+
+  \begin{scope}[shift={(1.5,7.5)}]
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (1,-1);
+    \draw[] (-1,-1) -- node[left,font=\footnotesize] {} (-1,1);
+    \node[anchor=north east] at (1,-1) {$p_{\mathrm{T,avg}}$};
+    \node[anchor=north east] at (-1,1) {$\sigma$};
+    \begin{scope}[shift={(0.0,-0.6)}]
+      \draw[color2,thick]  (-0.9,0.8) -- (-0.8, 0.8) --
+      (-0.8,0.7) -- (-0.7, 0.7) --
+      (-0.7,0.6) -- (-0.6, 0.6) --
+      (-0.6,0.5) -- (-0.5, 0.5) --
+      (-0.5,0.4) -- (-0.4, 0.4) --
+      (-0.4,0.3) -- (-0.3, 0.3) --
+      (-0.3,0.2) -- (-0.2, 0.2) --
+      (-0.2,0.1) -- (-0.1, 0.1) --
+      (-0.1,0.0) -- (-0.0, 0.0) --
+      (-0.0,-0.1) -- (0.1, -0.1) --
+      (0.1,-0.2) -- (0.2, -0.2) --
+      (0.2,-0.3) -- (0.3, -0.3);
+    \end{scope}
+
+  \end{scope}
+
+
+
+\end{tikzpicture}
+\end{document}

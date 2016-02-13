@@ -17,7 +17,7 @@
   \draw[thick] (8,6) node[draw,rectangle,minimum width=2cm,minimum height=2cm] (C) {\huge $\hat \sigma_{i,j}$};
 
   \path[name path=A1] (0,8.2) -- (4,8.2);
-  \draw [->,name intersections={of=A1 and circleA}, thick]  (0,8.2) -- (intersection-1) node[above,very near start] {$P_1$};
+  \draw [->,name intersections={of=A1 and circleA}, thick]  (0,8.2) -- (intersection-1) node[above,very near start] {$P_i$};
   \path[name path=A2] (0,8.0) -- (4,8.0);
   \draw [->,name intersections={of=A2 and circleA}, thick]  (0,8.0) -- (intersection-1);
   \path[name path=A3] (0,7.8) -- (4,7.8);
@@ -31,7 +31,7 @@
   \draw [->,name intersections={of=B2 and circleB}, thick]  (0,3.8) -- (intersection-1) node[below,very near start] {$P_2$};
 
   \draw [thick,->]  (circleANode) -- (C) node[midway,above,inner sep=.2cm] {$x_1P_1$};
-  \draw [thick,->]  (circleBNode) -- (C) node[midway,below] {$x_2P_2$};
+  \draw [thick,->]  (circleBNode) -- (C) node[midway,below] {$x_jP_j$};
 \end{tikzpicture}
 
 \end{document}
