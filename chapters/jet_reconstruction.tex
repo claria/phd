@@ -151,7 +151,8 @@ are three important \kt based algorithms with distinct properties
     \caption[Jet areas of various jet algorithms]{The figure shows jet areas obtained by the described \kt based algorithm
         and the cone-based SISCone algorithm~\cite{Salam:2009jx}. For most jet
         algorithms the shape is irregular, while the \antikt algorithm yields
-        circular shapes for hard jets while soft jets are crescent shaped.}
+        circular shapes for hard jets while soft jets are crescent shaped. Taken
+        from~\ref{Berger:2014aca}}
     \label{fig:jet_shapes}
 \end{figure}
 
@@ -201,19 +202,29 @@ Sec.~\ref{pileup_correction}.
 resolution of the tracker, called Charged Hadron Subtraction
 (CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithm can only be
 applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
-particle flow candidates which originate from a pile-up vertex are removed.
-Tracks originating from the main vertex or tracks not associated to any vertex
-remain in the event. The jets are clustered from this set of particles.
-Since the jet identification criteria in the jet selection in the analysis
-require at least one charged particle in a jet, the CHS method is effectively
-reducing the influence of pile-up on real jets as well as completely removing a
-majority of the pile-up jets in the barrel region of the \CMS detector in
-combination with the jet identification criteria.
+particle flow candidates which originate from a pile-up vertex are removed, see
+Fig.~\ref{fig:chs_jets}. Tracks originating from the main vertex or tracks not
+associated to any vertex remain in the event. The jets are clustered from this
+set of particles.  Since the jet identification criteria in the jet selection in
+the analysis require at least one charged particle in a jet, the CHS method is
+effectively reducing the influence of pile-up on real jets as well as completely
+removing a majority of the pile-up jets in the barrel region of the \CMS
+detector in combination with the jet identification criteria.
 
 The analysis presented in this thesis relies on CHS jets. Especially in the
 low-\pt region, removing pile-up jets mimicking the leading jet in the event
 improves the signal efficiency in the forward region.
-\todo{joram chs bild}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/jet_reconstruction/chs.pdf}
+    \caption[Charged Hadron Subtraction]{Illustration of particles clustered
+    into a jet which orginates from the main vertex or into a pile-up jet. The
+    CHS algorithm removes charged particles not originating from the main vertex
+    before clustering the jets.}
+    \label{fig:chs_jets}
+\end{figure}
+
 
 \section{Jet Energy Corrections}
 \label{sec:jec}
