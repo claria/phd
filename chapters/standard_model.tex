@@ -15,7 +15,15 @@ This chapter shortly summarizes the Standard Model while concentrating on
 quantum chromodynamics (QCD) and its important properties which are the
 theoretical foundations of this thesis. Extensive and much more profound
 discussions can be found in~\cite{Agashe:2014kda,Ellis:1991qj}.
-\todo{add all theory used.}
+
+Throughout this thesis, the common unit conventions in particle physics are used.
+They are based on SI units, but also include the units electron volt (eV) and barn
+(b). Furthermore the speed of light $c$ and the reduced Planck constant $\hbar$
+are set to unity:
+
+\begin{equation*}
+    c = \hbar = 1
+\end{equation*}
 
 \section{Standard Model of Particle Physics}
 
@@ -48,31 +56,12 @@ the interaction eigenstates leading to oscillations between neutrino flavors.
 The analogue matrix is called PMNS matrix~\cite{Maki:1962mu,Pontecorvo:1957qd}.
 
 The strong force is described by the unbroken $\mathrm{SU}(3)$ color gauge
-theory, called quantum chromodynamics. There are eight gauge bosons, the gluons,
+theory~\cite{9,10}, called quantum chromodynamics. There are eight gauge bosons, the gluons,
 which carry color charge. 
 
 The Higgs boson, the field quanta of the Higgs field which causes the
 electroweak symmetry breaking and was predicted for a long time by theorists.
 Recently, it was discovered in at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
-
-
-
-
-% \todo{check t3 of gluon, compare with joram thesis}
-% \begin{table}[htb]
-% \centering
-% \caption[The gauge bosons and their properties]{The properties of the gauge
-% bosons mediating the four fundamental interaction forces in the Standard Model:
-% The mass, the spin and parity, the charge and the weak isospin.}
-% \label{tab:fundamental_interactions}
-% \begin{tabular}{lcccccc} \toprule
-% Interaction                         & Range (m)                   & Vector boson & Mass (\si{\giga \electronvolt})   & $J^P$ & Q (e)  & $T_3$\\\midrule
-% electromanetism                     & $\infty$                    & $\gamma$     & 0                                 & $1^-$ & 0      & 0\\
-% \multirow{2}{*}{weak interaction}   & \multirow{2}{*}{$10^{-13}$} & $Z$          & 91.19                             & 1     & 0      & 0\\
-%                                     &                             & $W^\pm$      & 80.40                             & 1     & $\pm$e & $\pm$1\\
-% strong                              & $10^{-15}$                  & gluons       & 0                                 & $1^-$ & 0      & 0\\\bottomrule
-% \end{tabular}
-% \end{table}
 
 \section{Quantum Chromodynamics}
 
@@ -90,9 +79,8 @@ in which $\gamma_\mu$ are the Dirac $\gamma$-matrices, $\psi_{q,a}$ are
 quark-field spinors for a quark with flavor $q$ and mass $m_q$ and a color of
 index $a$ which runs from $1$ to $N_C=3$. $\mathcal{A}_\mu^C$ denotes the gluon
 fields and $C$ runs from 1 to $N_C-1$ resulting in eight kinds of gluons. The
-QCD coupling strength is defined by $g_s$. The first part describes
-
-The field tensor $F_{\mu\nu}^A$ is given by, 
+QCD coupling strength is defined by $g_s$. The field tensor $F_{\mu\nu}^A$ is
+given by
 
 \begin{equation*}
     F_{\mu\nu}^A = \partial_\mu \mathcal{A}_\nu^A - \partial_{\nu}
@@ -110,7 +98,9 @@ do not commutate, but obey the relation
 
 causing the self-coupling of gluons, one of the prominent features of QCD. The
 fundamental interaction vertices of QCD can be illustrated by the Feynman graphs
-in Fig.~\ref{fig:fundamental_couplings}.
+in Fig.~\ref{fig:fundamental_couplings}. The complete QCD Lagrangian also
+includes a gauge-fixing term and the Faddeev-Popov ghost
+term~\cite{Faddeev:1967fc}, which are neglected here.
 
 \begin{figure}[htb] 
     \centering
@@ -242,11 +232,18 @@ scale is calculated. It is common practice to report \asmz, consequently the
 
 As the parameter is a free parameter of the theory, it is determined from
 experimental measurements and evolved to the sclae of the $Z$-boson. The current
-world average value of the strong coupling according to the PDG reads
+world average value of the strong coupling according to the
+PDG~\cite{Agashe:2014kda} reads
 
 \begin{equation*}
     \asmz = 0.1185 \pm 0.0006.
 \end{equation*}
+
+and is determined from hadronic $\tau$-lepton decaus, lattice QCD calculations,
+deep-inelastic scattering data, electron-positron annihilation processes and
+electroweak precision fits. Fig.~\ref{fig:as_running} shows various
+determinations of the strong coupling constant from measurements at scales $Q$,
+which describe the running of the strong coupling up to the \SI{1}{\TeV} scale.
 
 \subsection{Factorization and Parton Density Functions}
 \label{sec:factorization}
@@ -288,8 +285,8 @@ the Altarelli-Parisi kernels, known as splitting functions.
 \paragraph{Parton Distribution Functions}
 
 The structure of the proton is described by parton distribution functions
-(PDFs). They represent the probability density\footnote{more precise a number
-density as the PDFs are normalized to the number of partons} to find a parton
+(PDFs). They represent the probability density\footnote{More precise a number
+density as the PDFs are normalized to the number of partons.} to find a parton
 carrying a momentum fraction $x$ of the proton momentum at a squared energy
 scale $Q^2$. 
 
@@ -303,7 +300,7 @@ measurements from different experiments. Instead of determining all the 13
 quark, antiquark and gluon PDFs independently, the number can be reduced by
 choosing a sufficiently low starting scale $Q_0$ below the threshold of the
 charm quark mass and calculating the heavy flavour PDFs in a heavy flavour
-scheme~\cite{rt_scheme}. Furthermore the PDF of the top and anti-top quark is
+scheme~\cite{Thorne:2006qt}. Furthermore the PDF of the top and anti-top quark is
 often neglected due to its large rest-mass. In the fits, each parton is
 parametrized with sufficiently flexible function to the describe the $x$
 dependence at the starting scale $Q_0$. The PDFs are evolved to the higher
@@ -380,7 +377,6 @@ corrections. As they are often not feasible to be calculated, the parton shower
 approximation is instead used. Though great take has to be taken to avoid any
 double counting if using a NLO generator in combination with a parton shower.
 
-
 \subsection{Hadronization}
 
 The result of the parton shower is a large number of color charged particles. As
@@ -405,3 +401,203 @@ and baryons.
 At first, all gluons are split into quark antiquark pairs. Neighbouring pais are
 grouped together to form color-less clusters. Most of the clusters decay into
 hadrons in an isotropic two-body phase space model.
+
+\section{Jet Algorithms}
+\label{sec:jet_algorithms}
+
+The information of the clustered stream of particles, also known as jets,
+provides the link between the short-scale physics and the final-state
+observations. There are many different algorithms available which cluster jets
+from a set of input objects. Both \CMS and \ATLAS rely on the \antikt and
+inclusive-\kt jet algorithms, which proved to be very robust and both are
+collinear and infrared safe, see Section~\ref{sec:coll_safety}. They are
+sequential recombination algorithms and combine the input objects based on a
+distance measure in Minkowski space. All jets were reconstructed using the
+efficient algorithms implemented in the FastJet library~\cite{Cacciari:2011ma}.
+
+\subsection{Collinear and Infrared Safety}
+\label{sec:coll_safety}
+
+Hard partons undergo many collinear splittings in the fragmentation process.
+Additionally, there are always emissions of soft particles in QCD-like events
+caused by non-perturbative and perturbative effects. The reconstructed jets
+should be insensitive to all these effects. Furthermore, fixed-order pQCD
+calculations are associated with divergent tree-level matrix elements and the
+corresponding loop level matrix elements. While these divergences cancel for
+infrared safe and collinear safe jet algorithms, this is not guaranteed for jet
+algorithms not fulfilling the infrared and collinear safety requirements.
+Fig.~\ref{fig:infrared_safety} shows the effect of a collinear splitting (right
+plot) and of additional soft particles (left plot) on the results of an unsafe
+jet algorithm. Most of the cone-based jet algorithms which cluster elements
+by employing a constant distance measure in the $\eta-\phi$ space are affected by the
+previously mentioned issues. This leads to the popularity of the modern sequential
+recombination algorithms which are used in almost all of todays jet-based
+analyses.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/drawings/infrared_safety/jetinfrared.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/drawings/infrared_safety/jetcollinear.pdf}
+    \caption[Effect of infrared emissions and collinear splittings on jet
+    algorithms]{The influence of an infrared emission and a quasi
+        collinear splitting on a jet algorithm not fulfilling the infrared safe
+        and collinear safe requirements is shown. An additional soft particle (left plot)
+    leads to the combination of the two jets into one large jet. A
+quasi-collinear splitting of a particle (right plot) changes the result of the
+jet clustering algorithm.}
+    \label{fig:infrared_safety}
+\end{figure}
+
+\subsection{Generalized \kt Jet Algorithm}
+
+The most popular sequential recombination algorithms are the \kt jet
+algorithms which cluster jets based on a jet size parameter $R$ and an
+additional parameter $p$, introducing a dependence on the transverse momentum of
+the input objects. The pair-wise algorithm uses a list of input objects like stable
+particles or particle flow candidates. 
+
+At first, the distance $d_{ij}$ between two particles and the distances of the
+particles to the beam $d_{iB}$ and $d_{jB}$ are calculated based on the rapidity
+difference $\Delta y_{ij}$ and the azimuthal angle $\Delta \phi_{ij}$ between two
+particles $i$ and $j$
+
+\begin{align*} 
+    d_{ij} &= \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\left(\Delta
+        R_{ij}\right)^2}{R^2}\\
+    d_{i\mathrm{B}} &= k_{\mathrm{T}i}^{2p}
+\end{align*} 
+
+with the angular distance
+
+\begin{align*}
+    \left(\Delta R_{ij}\right)^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2
+\end{align*} 
+
+If distance $d_{ij}$ is smaller than the distances to the beam line, the two
+particles $i$ and $j$ are merged into a new particle $k$ which then replaces the
+particles $i$ and $j$ in the input list. These steps are repeated until all
+particles are clustered into jets. Since the distance measures are defined in
+Minkowski space, the shapes of the jets in the $\eta-\phi$ plane are not circular but
+irregular, see Figure~\ref{fig:jet_shapes}. Based on the parameter $p$, there
+are three important \kt based algorithms with distinct properties
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/jet_reconstruction/jet_shapes.pdf}
+    \caption[Jet areas of various jet algorithms]{Catchment areas of jets obtained by the described \kt-based algorithm
+        and the cone-based SISCone algorithm~\cite{Salam:2009jx}. For most jet
+        algorithms the shape is irregular, while the \antikt algorithm yields
+        circular shapes for hard jets while soft jets are crescent shaped. Taken
+        from~\cite{Berger:2014aca}.}
+    \label{fig:jet_shapes}
+\end{figure}
+
+\begin{itemize}
+    \item $p=1$: The \textbf{Inclusive $\mathbf{\kt}$
+    algorithm}~\cite{Catani:1991hj,Catani:1992rm} is based on a \ptsq
+        distance measure and approximately describes the inversion
+        of the QCD branching process.
+    \item $p=0$: The \textbf{Cambridge-Aachen
+        algorithm}~\cite{Dokshitzer:1997in} is only based on the
+        spatial separation of the objects and does not rely on the energy of
+        the input objects. Similarly to the inclusive \kt algorithm its jets
+        have an irregular shape. This jet algorithm is particularly interesting
+        for jet substructure studies.
+    \item  $p=-1$: The \textbf{anti-$\mathbf{\kt}$ algorithm}~\cite{Cacciari:2008gp} favours clustering hard input
+        objects resulting in fairly circular jet shapes for hard jets, while
+        soft jets are crescent-shaped if they are close to a hard jet.
+\end{itemize}
+
+\section{Dijet Production at Hadron-Hadron Colliders}
+
+When two hadrons collide, the actual interaction takes place between the
+constituents of the proton, the partons. Applying factorization, the total cross
+sectiono of such a hard scattering of two hadrons $H_1$ and $H_2$ into a final
+state $X$ can be expressed as
+
+\begin{equation*}
+    \begin{split}
+    \sigma{H_1 H_2 \rightarrow X} = &\sum_{i,j} \int dx_1 dx_2 f_{i, H_1}
+    \left(x_1, \muf^2 \right) f_{j,H_2} \left(x_2, \muf^2 \right) \\ 
+    &\times \hat
+    \sigma{i,j \rightarrow X} \left( x_1 P_1, x_2P_2, \as(\mur^2),
+    \frac{Q^2}{\muf^2} \right)
+\end{split}
+\end{equation*}
+
+where the sum runs over all contributing initial-state partons $i$ and $j$.
+$f_{i}$ and $f_{j}$ denote the non-perturbative PDFs and $\hat \sigma $ the
+perturbative hard scattering cross section.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/drawings/hardscattering.pdf}
+    \caption[Factorization of hard scattering cross section.]
+        {The total cross section is factorized into the hard scattering cross
+        section and the PDFs.}
+    \label{fig:dijet_cm_lab_frame}
+\end{figure}
+\todo{finalize figure}
+
+\subsection{Kinematics of the Dijet System}
+
+The outgoing partons of a hard interaction manifest themselves as a spray of
+collimated particles, which are clustered into jets. Consequently, the
+properties of jets are studied in order to gain a deeper understanding about
+QCD and the proton structure. In the following disscussion, the partons
+involved in the scattering process are assumed to be massless and collinear to
+the beam protons. Furthermore, it is convenient to describe the kinematic of
+the dijet system using the transverse momentum \pt and the rapidity $y$, as it
+is introduced in Sec.~\ref{sec:coord_system}. 
+
+The rapidity $y$, defined as
+
+\begin{equation*}
+    y = \frac{1}{2} \ln \left( \frac{E+p_z}{E-p_z} \right) 
+\end{equation*}
+
+is at lowest order directly related to the proton momentum fractions $x_1$ and
+$x_2$ via
+
+\begin{equation*}
+    x_1 = \frac{x_\mathrm{T}}{2} \left( e^{y_1} + e^{y_2} \right)
+    \qquad\text{and}\qquad x_2 = \frac{x_\mathrm{T}}{2} \left( e^{-y_1} +
+    e^{-y_2} \right)
+\end{equation*}
+with $x_{\mathrm{T}} = \sfrac{\pt}{E}$ and the rapidities $y_1$ and $y_2$ of the
+two outgoing partons.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/drawings/dijet_lab.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/drawings/dijet_cm.pdf}
+    \caption[Dijet event in laboratory and center-of-mass frame.]
+        {Dijet event in the laboratory frame (left) with the rapidities $y_1$
+        and $y_2$ of the jets and in the center-of-mass frame (right) with the
+    rapidities $\pm\ystar$.}
+    \label{fig:dijet_cm_lab_frame}
+\end{figure}
+
+The longitudinal boost of the parton-parton center-of-mass (CM) frame with
+respect to the proton-proton CM frame, \yboost, is calculated from the
+rapidities $y_1$ and $y_2$ of the two jets emerging from the partons. 
+
+\begin{equation*}
+    \yboost = \frac{1}{2} |y_1 + y_2|
+\end{equation*}
+
+The quantities $\pm\ystar$ are the jet rapidities of the two jets in the
+parton-parton CM frame. Since they are symmetric, \ystar is defined as half the
+absolute rapidity separation between the two jets.
+
+\begin{equation*}
+    \ystar = \frac{1}{2} |y_1 - y_2|
+\end{equation*}
+
+\ystar is related to the polar scattering angle $\theta^*$ with respect to the
+beamline by 
+
+\begin{equation*}
+    \ystar = \frac{1}{2} \ln \left( \frac{1 + |\cos \theta^*|}{1- | \cos \theta^*|} \right).
+\end{equation*}

@@ -29,72 +29,26 @@ especially the gluon PDF, by analyzing dijet events with large transverse moment
 \section{Cross Section Definition}
 \label{sec:crosssection_definition}
 
-Partons involved in the scattering process are assumed to be massless and
-collinear to the beam protons. Most information about initial-state partons is
-gained by differentially measuring the rapidities as well as the energy of the
-two outgoing jets. In calculations at LO accuracy, the jet rapidities are
-directly related to the proton momentum fractions $x_1$ and $x_2$ via
-
-\begin{equation*}
-    x_1 = \frac{x_\mathrm{T}}{2} \left( e^{y_1} + e^{y_2} \right)
-    \qquad\text{and}\qquad x_2 = \frac{x_\mathrm{T}}{2} \left( e^{-y_1} +
-    e^{-y_2} \right)
-\end{equation*}
-with $x_{\mathrm{T}} = \sfrac{\pt}{E}$ and the rapidities $y_1$ and $y_2$ of the two outgoing
-partons.
-
-However by explicitly binning the measurement in the leading and second jet as
-it is suggested in~\cite{Giele:1994xd}, a dependence on the ordering of the jets
-is introduced. While the ordering according to the transverse momentum of the
-jets is irrelevant at LO since both jets are perfectly balanced and have the
-same transverse momentum, it becomes relevant at NLO. The order of the jets can
-be changed by a soft emission causing a different ordering of the jets in \pt.
-Simply put, the second jet can become the leading jet and vice versa. Thus it is
-not guaranteed that all divergences are canceled. As a consequence the
-observable becomes infrared unsafe. This can be overcome by filling all events
-twice into the histograms with interchanged leading and second jet. However this
-produces correlations between phasespace regions far off in rapidity and unnecessarily
-complicates the measurement, especially the unfolding procedure.
-
-Therefore a different definition of the cross section is chosen in this
-analysis. Instead of using the rapidities and the transverse momenta of each
-jet, variables which are symmetric between permutations of the leading two jets
-are used. These finally chosen observables are linear combinations of the jet
-rapidities, so no information is lost.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{figures/drawings/dijet_lab.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/drawings/dijet_cm.pdf}
-    \caption[Dijet event in laboratory and center-of-mass frame.]
-        {Dijet event in the laboratory frame (left) with the rapidities $y_1$
-        and $y_2$ of the jets and in the center-of-mass frame (right) with the
-    rapidities $\pm\ystar$.}
-    \label{fig:ysyb_schema}
-\end{figure}
+% However by explicitly binning the measurement in the leading and second jet as
+% it is suggested in~\cite{Giele:1994xd}, a dependence on the ordering of the jets
+% is introduced. While the ordering according to the transverse momentum of the
+% jets is irrelevant at LO since both jets are perfectly balanced and have the
+% same transverse momentum, it becomes relevant at NLO. The order of the jets can
+% be changed by a soft emission causing a different ordering of the jets in \pt.
+% Simply put, the second jet can become the leading jet and vice versa. Thus it is
+% not guaranteed that all divergences are canceled. As a consequence the
+% observable becomes infrared unsafe. This can be overcome by filling all events
+% twice into the histograms with interchanged leading and second jet. However this
+% produces correlations between phasespace regions far off in rapidity and unnecessarily
+% complicates the measurement, especially the unfolding procedure.
+%
+% Therefore a different definition of the cross section is chosen in this
+% analysis. Instead of using the rapidities and the transverse momenta of each
+% jet, variables which are symmetric between permutations of the leading two jets
+% are used. These finally chosen observables are linear combinations of the jet
+% rapidities, so no information is lost.
 
 
-The longitudinal boost of the parton-parton center-of-mass (CM) frame with
-respect to the proton-proton CM frame, \yboost, is calculated from the
-rapidities $y_1$ and $y_2$ of the two jets emerging from the partons. 
-
-\begin{equation*}
-    \yboost = \frac{1}{2} |y_1 + y_2|
-\end{equation*}
-
-The quantities $\pm\ystar$ are the jet rapidities of the two jets in the
-parton-parton CM frame. Since they are symmetric, \ystar is defined as half the
-absolute rapidity separation between the two jets.
-
-\begin{equation*}
-    \ystar = \frac{1}{2} |y_1 - y_2|
-\end{equation*}
-\ystar is related to the polar scattering angle $\theta^*$ with respect to the
-beamline by 
-
-\begin{equation*}
-    \ystar = \frac{1}{2} \ln \left( \frac{1 + |\cos \theta^*|}{1- | \cos \theta^*|} \right).
-\end{equation*}
 
 The triple-differential cross sections are measured as a function of the average
 dijet transverse momentum $\ptavg = \frac{1}{2}\left(p_{\mathrm{T},1} +

@@ -168,6 +168,7 @@ encompassed by the superconducting magnet (blue). The muon detection system
 \end{figure}
 
 \subsection{Definition of the Coordinate System}
+\label{sec:coord_system}
 
 CMS uses a right-handed coordinate system centered at the nominal interaction point inside the
 detector. The $x$-axis points radially inward towards center of the LHC ring, the
@@ -691,3 +692,189 @@ library~\cite{Whalley:2005nh,Buckley:2014ana}. LHAPDF stores the PDFs in a discr
 structure in data files. It provides interpolation routines to read the PDFs and
 interpolate the PDFs at all scales. LHAPDF is used by almost all major MC
 generators.
+
+
+\section{Reconstruction of Jets}
+\label{sec:jet_reconstruction}
+
+In scattering processes with large momentum transfers, the outgoing partons
+produce a collimated stream of particles when hadronizing. The clusters of these
+particles are the experimental signatures of quarks and gluons in the detector
+and are called \emph{jets}. Jets show up in the \CMS detector as a localized
+deposit of energy in the calorimeters accompanied by a large number of tracks in
+the direction of the deposited energy. Jets are reconstructed using different
+techniques based on the amount of information available. If the jets are
+reconstructed from the energy clusters within the calorimeters, they are called
+\emph{calorimeter jets}. If the jet reconstruction uses particle flow
+candidates, these are called \emph{particle flow jets}. By removing pile-up
+tracks from the particle flow candidates before the jet clustering, one yields
+\emph{particle flow CHS jets}. Later on, when talking about jets in the physics
+analysis, it is always referred to particle flow CHS jets if not stated otherwise.
+
+\subsection{The Particle Flow Algorithm}
+\label{sec:particle_flow_algorithm}
+
+\CMS uses the particle flow reconstruction
+algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} to identify and
+reconstruct particles by combining information from all detector
+subsystems. Due to its compact design inside the solenoid, the hadronic
+calorimeter is not able to stop and measure all particles which reduces the
+energy resolution. However, taking into account the additional information of
+the tracking system within the particle flow algorithm enhances the
+reconstruction performance and leads to a jet energy resolution comparable to
+\ATLAS. A key element in the particle flow algorithm is the strong magnetic field
+of \CMS which allows the precise distinction between neutral and charged hadrons. 
+
+The ingredients of the particle flow algorithm are the
+tracks and vertices, reconstructed from hits in the tracking detectors, the
+deposited energy in the electromagnetic and hadronic calorimeters and the tracks
+in the muon system. The reconstructed particles are classified as muons,
+electrons, photons, charged hadrons or neutral hadrons. The combination of all
+sub-detectors yields an optimal identification and measurement of their momentum
+and energy.
+
+The tracks are found using the Combinatorial Track Finder (CTF)
+algorithm~\cite{Adam:2005cg} employed by \CMS. Based on these tracks, the primary
+vertices in an event are identified. The electromagnetic and hadronic
+calorimeters are divided into a grid of cells based on the detector granularity
+to identify calorimeter cluster seeds. If there are seeds with an energy
+exceeding a certain threshold, they are used in an iterative merging algorithm
+to form particle flow clusters. The different elements of the detector
+information are then linked together into particle flow building blocks based on
+the geometry and \chisq fits. At first, muons, which can be well identified
+using the tracks in the muon detector, are reconstructed using the building
+blocks connected to the muon system. Blocks connecting the inner
+tracking system with the ECAL clusters are used to identify electrons.
+Similarly, charged hadrons are identified using links between the
+tracking system and the remaining calorimeter clusters. Only neutral objects
+which leave no traces in the tracking system, remain. ECAL clusters are
+interpreted as photon candidates, while the remaining HCAL clusters are assumed
+to be deposits of neutral hadrons. To avoid any kind of double-counting of
+energy, all particle flow building blocks of successfully reconstructed particle
+candidates are removed and the energy of the calorimeter clusters is recalculated.
+
+Finally, a set of so-called particle flow candidates is yielded. They consist of
+well identified particles, which profit from the improved resolution gained by
+the inclusion of tracking information. This collection of particles is then
+used to reconstruct the jets and further physical objects.
+
+\todo{Jetbild?/pf bild}
+
+\subsection{Jet Area}
+
+The jet area describes the space covered by a jet object in the $\eta$-$\phi$
+plane~\cite{Cacciari:2008gn}. While cone-based jet algorithms yield a $\pi R^2$
+size area, the area for sequential jet algorithms needs to be determined for
+each jet. A large number of infinitely soft particles, so-called ghost
+particles, are evenly distributed in the event. The area $A_j$ of a jet $j$ is
+assumed to be proportional to the number of ghost particles clustered into the
+jet. 
+
+The concept of jet areas is especially important in the context of pile-up
+mitigation. The average \pt density $\rho$ in an event is estimated using the inclusive
+\kt algorithm which also clusters many soft jets in the event and covers the
+entire $\phi$-$\eta$ phase space. The average \pt density is defined as
+
+\begin{equation*}
+    \rho = \text{median} \frac{\pt^j}{A_j}
+\end{equation*}
+
+$\rho$ is a measure for the underlying event and pile-up activity in the event
+and is used later on to correct the jets for these effects, see
+Sec.~\ref{pileup_correction}.
+
+\section{Charged Hadron Subtraction}
+\label{sec:chs_algorithm}
+
+\CMS introduced a new technique to reduce pile-up from jets using the high
+resolution of the tracker, called Charged Hadron Subtraction
+(CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithm can only be
+applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
+particle flow candidates which originate from a pile-up vertex are removed, see
+Fig.~\ref{fig:chs_jets}. Tracks originating from the main vertex or tracks not
+associated to any vertex remain in the event. The jets are clustered from this
+set of particles.  Since the jet identification criteria in the jet selection in
+the analysis require at least one charged particle in a jet, the CHS method is
+effectively reducing the influence of pile-up on real jets as well as completely
+removing a majority of the pile-up jets in the barrel region of the \CMS
+detector in combination with the jet identification criteria.
+
+The analysis presented in this thesis relies on CHS jets. Especially in the
+low-\pt region, removing pile-up jets mimicking the leading jet in the event
+improves the signal efficiency in the forward region.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/jet_reconstruction/chs.pdf}
+    \caption[Charged Hadron Subtraction]{Illustration of particles clustered
+    into a jet which orginates from the main vertex or into a pile-up jet. The
+    CHS algorithm removes charged particles not originating from the main vertex
+    before clustering the jets.}
+    \label{fig:chs_jets}
+\end{figure}
+
+
+\subsection{Jet Energy Corrections}
+\label{sec:jec}
+\todo{jec paper ref}
+
+A detailed understanding of the jet energy scale and the jet transverse momentum
+resolution is important when it comes to drawing conclusions about the
+properties of quarks and gluons produced in high-energy scattering processes. On the
+experimental side, there are multiple effects causing the reconstructed jet
+energy not to correspond to the true jet energy like electronic noise, pile-up
+and underlying event effects, but also non-linearities in the calorimeter
+response and numerous further small effects. The jet reconstruction and
+definition itself also introduces effects due to the fragmentation model,
+initial- and final-state radiation which can cause out-of-cone effects.
+
+The jet energy corrections (JEC) relate the measured jet energy to the
+corresponding true particle jet energy. \CMS uses a factorized correction approach
+consisting of multiple correction steps that build on one another. The corrected
+transverse momentum $\pt^{\mathrm{corr}}$ of a jet is yielded by subsequently applying all correction
+factors on an uncorrected jet
+
+\begin{equation*}
+    \pt^{\mathrm{corr}} = c_{\mathrm{res}} (\eta, \pt^{\prime}) \cdot c_{\mathrm{mc}}
+    (\eta, \pt^{\prime\prime}) \cdot c_{\mathrm{pileup}}(\eta, \rho, A_j,
+    \pt^{\mathrm{raw}}) \cdot \pt^{\mathrm{raw}},
+\end{equation*}
+
+\todo{switch to $p_{\mu}$?}
+
+where $\pt^{\mathrm{raw}}$ is the transverse momentum of the uncorrected jet,
+$\pt^{\prime}$ is the transverse momentum after applying the pile-up correction
+factor $c_{\mathrm{pileup}}$. $\pt^{\prime\prime}$ is the transverse momentum
+after the additional correction $c_\mathrm{MC}$ of relative and absolute effects
+derived from MC studies. Finally a correction for residual effects
+$c_{\mathrm{res}}$ derived from data is applied to yield the corrected jet
+transverse momentum.
+
+\paragraph{Pile-up Corrections}
+\label{pileup_correction}
+
+The first step removes the effects of pile-up contamination. Additional soft
+proton-proton interactions produce particles being clustered into the jets
+originating from the hard interaction. This additional amount of energy needs to
+be subtracted by the pile-up correction. The applied correction is based on the
+jet area method by using the pile-up density $\rho$ in the event and the jet
+area $A_j$. The raw jet energy is then corrected by a factor proportional to the
+pile-up density and the jet area.
+
+\paragraph{MC Corrections}
+
+Based on simulated QCD events, the jet energy scale is further corrected. The
+momentum of a reconstructed jet can differ from a generated particle jet due to
+out-of-cone effects or detector inefficiencies, which are modeled by the detector
+simulation. The inverse response of the reconstructed jet to a generated jet is
+applied as correction to remove these effects.
+
+\paragraph{Residual Data Corrections}
+
+Additional effects which can not be reliably estimated in a Monte Carlo
+simulation are corrected for using data-driven methods. This correction step is
+only applied on data. The relative residual corrections are based on
+well-balanced dijet events in which a forward probe jet is calibrated using a
+tag jet in the well understood barrel region. The last correction step is the
+absolute residual correction in which reconstructed Z~bosons balanced to a jet
+are used to calibrate the jet energy using the very precisely reconstructed Z~boson.
