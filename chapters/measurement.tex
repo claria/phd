@@ -688,57 +688,78 @@ resolution is extracted for each bin separately.}
 \end{figure}
 
 Figure~\ref{fig:resolution_bin} shows the distribution for one \ptavg bin. The
-width is fitted using a gaussian function. The non-gaussian tails, visible in
-the logarithmic representation, were found to not influence the resulting
-resultion. The width of the distributions in each /ptavg is then shown as a
-function of \ptavg. Figure~\ref{fig:resolution_ptavg} shows the final relative
-resolution for each \ystar and \yboost bin. The relative resolution is described
-by a modified version of the NSC formula.
+width is fitted using a gaussian and a crystal ball function. Despite the
+differences in the description of the non-gaussian tails, the width of the
+distribution is very similar. Nonetheless, the crystal ball function is used to
+determine the resolution, as it better describes the measured distributions,
+especially in the low-\pt region.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/resolution_yb0ys0_bin10_cb.pdf}
+    \caption[Gaussian and crystal ball fit of resolution.]{The resolution in
+        each bin is fitted using a gaussian (left) and a double-sided crystal ball
+        (right) function. The fit using the crystal ball function better describes the
+        non-gaussian tails of the distribution.}
+    \label{fig:resolution_bin}
+\end{figure}
+
+Fig.~\ref{fig:resolution_ptavg} shows the resolution in each each \ystar and
+\yboost bin as a function of \ptavg. The relative resolution is fitted using a
+modified version of the NSC formula.
+
 
 \begin{equation}
     \frac{\sigma_{\text{ptavg}}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
     \label{eq:resolution}
 \end{equation}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}
-    \caption{Dijet \ptavg resolution}
-    \label{fig:resolution_bin}
-\end{figure}
-
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.95\textwidth]{figures/measurement/resolution_ptavg.pdf}
-    \caption{Dijet \ptavg resolution}
-    \label{fig:resolution_ptavg}
-\end{figure}
-
-The formula is based on the usual NSC formula which describes the resolution in
+The formula is based on the common NSC formula which describes the resolution in
 terms of noise $N$, a stochastic component $S$ and a constant term $C$.
 Especially in the low-\pt region in which the tracking has a non-negligible
 influence on the resolution due to the particle flow algorithm, a slightly
 better fit is obtained by using the modified resolution
-formula~\ref{eq:resolution}. Table~\ref{tab:resolution_parameters} gives the
-parameters of the fit in each bin of the measurement.
+formula~\ref{eq:resolution}. The influence of the different resolution formula
+on the unfolded cross section however is negligible, as the spectrum starts at
+much higher \pt. Table~\ref{tab:resolution_parameters} gives the parameters of
+the fit in each \ystar and \yboost bin of the measurement.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/measurement/resolution_ptavg_crystalball.pdf}
+    \caption[Relative jet resolution vs \ptavg]{The relative jet transverse
+    momentum resolution of all \ystar/\yboost bins as a function of \ptavg.}
+    \label{fig:resolution_ptavg}
+\end{figure}
+
 
 \begin{table}[htbp]
     \centering
-    \caption[Relative dijet transverse momentum resolution parameters]{The parameters of the resolution fit are shown for each bin in \ystar and \yboost.}
+    \caption[Relative dijet transverse momentum resolution parameters]
+    {Fitted paramameters of the modified NSC formula describing the transverse
+    momentum resolution in the individual \ystar and \yboost bins.}
     \label{tab:resolution_parameters}
-    \begin{tabular}{cccccr}
+    \begin{tabular}{cccccc}
         \toprule
          \yboost & \ystar & N      & S     & C      & s\\\midrule
-         0 -- 1  & 0 -- 1 & -6.26  & 3.62  & 0.05   & -0.43\\
-         0 -- 1  & 1 -- 2 & -25.96 & 23.05 & 0.05   & -0.91\\
-         0 -- 1  & 2 -- 3 & -6.56  & 4.02  & -0.017 & -0.43\\
-         1 -- 2  & 0 -- 1 & -28.33 & 25.51 & 0.05   & -0.92\\
-         1 -- 2  & 1 -- 2 & -5.79  & 3.13  & 0.03   & -0.35\\
-         2 -- 3  & 0 -- 1 & -7.12  & 3.967 & 0.00   & -0.41\\\hline
+         0 -- 1  & 0 -- 1 & -2.68  & 1.43  & 0.03   & -0.26\\
+         0 -- 1  & 1 -- 2 & -8.00  & 5.81  & 0.04   & -0.73\\
+         0 -- 1  & 2 -- 3 & -0.02  & 1.98  & -0.018 & -0.36\\
+         1 -- 2  & 0 -- 1 & -8.13  & 5.96  & 0.04   & -0.73\\
+         1 -- 2  & 1 -- 2 &  2.85  & 1.16  & 0.02   & -0.17\\
+         2 -- 3  & 0 -- 1 &  3.96  & 1.23  & 0.00   & -0.18\\\hline
             \bottomrule
     \end{tabular}
 \end{table}
+
+% '_yb0ys0' : [-2.6835062466895137   , 1.4339556210745454 , 0.03210681271611586    , -0.2619257672117121]  ,
+% '_yb0ys1' : [-7.996156808607226    , 5.81239213954197   , 0.036218558561974055   , -0.7255831535576661]  ,
+% '_yb0ys2' : [-0.018678593510861676 , 1.9869339904761814 , -0.018150844203989405  , -0.3561449639303097]  ,
+% '_yb1ys0' : [-8.129397037628276    , 5.9615751818553235 , 0.035701552716092336   , -0.7303736246616257]  ,
+% '_yb1ys1' : [2.84759347024343      , 1.1560187974736167 , 0.023025604138762628   , -0.1735034105669628]  ,
+% '_yb2ys0' : [3.9621774436007855    , 1.226872807345649  , -9.953582373476196e-07 , -0.17825393862986405] ,
 
 \section{Unfolding of the Measurement}
 \label{sec:unfolding}

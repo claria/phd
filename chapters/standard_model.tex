@@ -3,15 +3,19 @@
 \chapter{Theoretical Foundations}
 \label{sec:theoretical_foundations}
 
-A deeper understanding about physical principles relies always on the interplay
-of the theoretical predictions and accompanying experimental meausurements.
+A deeper understanding about physical principles always relies on the interplay
+of theoretical predictions and accompanying experimental meausurements.
 Theoretical models try to describe the behaviour of nature and have to be
-confirmed or excluded in precise measurements.
+confirmed or excluded in precise measurements. In the second half of the 20th
+century, theorists and experimentalists made great progress in describing the
+fundamental particles and their interaction in a self-consistent model which is
+now-a-days established as the Standard Model of particle physics.
 
-This chapter shortly summarizes the Standard Model of particle physics and
-concentrates on quantum chromodynamics (QCD) and its important properties which
-are the theoretical foundation of this thesis. Extensive and much more profound
-discussions can be found in~\cite{all_theory_used}.
+This chapter shortly summarizes the Standard Model while concentrating on
+quantum chromodynamics (QCD) and its important properties which are the
+theoretical foundations of this thesis. Extensive and much more profound
+discussions can be found in~\cite{Agashe:2014kda,Ellis:1991qj}.
+\todo{add all theory used.}
 
 \section{Standard Model of Particle Physics}
 
@@ -19,10 +23,14 @@ The Standard Model of particle physics (SM) is a comprehensive theoretical
 concept which describes the fundamental particles and their interactions from
 basic principles. The SM is founded on the concept of quantum field theories, in
 which the interaction between particles are mediated by quantized gauge fields.
+While predictions of the SM demonstrated to be extremely robust in a huge variety
+of experiments, it falls short in being a complete theory of everything as it
+does not include the gravitational force and cannot describe dark matter as well
+as non-zero neutrino masses coming along with neutrino oscillations.
 
 Each of the fundamental spin-$\sfrac{1}{2}$ particles, also known as fermions,
 has a corresponding antiparticle with same properties but opposite sign of
-quantum bumbers. They are classified in three families and carry quantum numbers
+quantum numbers. They are classified in three families and carry quantum numbers
 of electric charge $Q$, weak isospin $T$ and color. The weak hypercharge $Y_W$
 is related to the weak isospin and the electric charge by $Y_W = 2(Q-T_3)$. The
 quantum numbers define the coupling of the fermions. There are four fundamental
@@ -44,7 +52,7 @@ theory, called quantum chromodynamics. There are eight gauge bosons, the gluons,
 which carry color charge. 
 
 The Higgs boson, the field quanta of the Higgs field which causes the
-electroweak symmetry breaking and  was predicted for a long time by theorists.
+electroweak symmetry breaking and was predicted for a long time by theorists.
 Recently, it was discovered in at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
 
 
@@ -104,7 +112,6 @@ causing the self-coupling of gluons, one of the prominent features of QCD. The
 fundamental interaction vertices of QCD can be illustrated by the Feynman graphs
 in Fig.~\ref{fig:fundamental_couplings}.
 
-
 \begin{figure}[htb] 
     \centering
     \includegraphics[width=0.33\textwidth]{figures/drawings/feynman/gqq.pdf}\hfill
@@ -117,7 +124,16 @@ in Fig.~\ref{fig:fundamental_couplings}.
     \label{fig:fundamental_couplings} 
 \end{figure}
 
-\todo{confinement and asymptotic freedom}
+Unlike the other forces, the strong force force exhibits two unique and opposing
+features. It is shown in experiments that quarks and gluons behave like free
+particles at high energies or small distances, called \emph{Asymptotic freedom}
+described in QCD by the falling of the strong coupling at high energies.
+However, quarks and gluons cannot be observed as free particles at larger
+distances. The strong force rise with increasing distance and the creation of
+new quark-antiquark pairs are favored at some point. This phenomenon, called
+\emph{confinement}, implies that the strong coupling increases at small energies
+and is divergent. Consequently, perturbative QCD is not applicable in this
+energy regime.
 
 \subsection{Perturbative QCD}
 
@@ -137,7 +153,7 @@ divergences can be removed by a procedure called renormalization, see
 Sec.~\ref{sec:renormalization}.
 
 Soft and collinear divergences also need to be handled in perturbative
-calculations. They arise from singularities at phase-space boundaries and the
+calculations. They arise from singularities at phase-space boundaries and
 neglected quark masses. Observables need to be defined infrared safe and
 short-distance effects need to be separated from the divergent long-range part,
 which can be factorized into the PDFs, see Sec.~\ref{sec:factorization}.
@@ -150,8 +166,9 @@ divergences when calculating the momenta integrals of the loops. To make the
 result finite, a regularization procedure called renormalization is applied. The
 renormalization introduces another scale $\mur$, the renormalization scale.
 There are different renormalization schemes, of which the
-$\overline{\mathrm{MS}}$-scheme is the most popular. Consequently the observable
-$X$ and the \as become functions of this scale \mur. 
+$\overline{\mathrm{MS}}$-scheme~\cite{Weinberg:1951ss,tHooft:1973mm} is the most
+popular. Consequently the observable $X$ and the \as become functions of this
+scale \mur. 
 
 Nonetheless, the observable $X$ may not depend on the arbitrarily chosen \mur.
 The renormalization group equation (RGE) states that the dependence of $X$ on
@@ -212,9 +229,14 @@ scale is calculated. It is common practice to report \asmz, consequently the
 
 \begin{figure}[htb] 
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/sm_model/as_running.pdf}\hfill
-    \caption[Running of the strong coupling]{} 
-    \label{fig:fundamental_couplings} 
+    \includegraphics[width=0.95\textwidth]{figures/sm_model/as_running.pdf}\hfill
+    \caption[Running of the strong coupling]{Running of the strong coupling
+        constant as predicted by QCD. Determinations of the strong coupling from
+        several experiments are shown at the scale of the measurement and prove
+        the running up to \SI{1}{\TeV}. Recent measurements from
+        CMS~\cite{Khachatryan:2014waa,CMS:2014mna} probe the running at even
+        higher scales. Figure taken from~\cite{Agashe:2014kda}.} 
+    \label{fig:as_running} 
 \end{figure}
 
 
@@ -256,29 +278,18 @@ described by the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) equations,
 which are in LO defined as
 
 \begin{equation*}
-    \frac{\partial f_a (x, \muf^2)}{\partial \muf^2} = \sum_b \frac{\as(\muf^2)}{2 \pi} \int_x^1
-    \frac{d \xi}{\xi} P_{ab} \left(\frac{x}{\xi},
-    \as(\muf^2)\right) f_b(\xi, \muf)
+    \muf^2 \frac{\partial f_a (x, \muf^2)}{\partial \muf^2} = \sum_b \frac{\as(\muf^2)}{2 \pi} \int_x^1
+    \frac{d z}{z} P_{ab}(z) f_b(\frac{x}{z}, \muf^2)
 \end{equation*}
 
 where $f_a$ is the parton distribution function of flavor $a$ and $P_{ab}$ are
 the Altarelli-Parisi kernels, known as splitting functions. 
 
-\begin{equation*}
-    \muf \frac{\partial}{\partial \muf} f_a(x, \muf^2)  = \sum_{j=q,\bar q, g}
-    P_{aj} \otimes f_j(x, \muf^2
-\end{equation*}
-
-\begin{equation*}
-    \left[ P \otimes f \right] = \int_{x}^1 \frac{d \xi}{\xi} f\left(\xi,
-    \muf \right) P\left(\frac{x}{\xi}\right)
-\end{equation*}
-
 \paragraph{Parton Distribution Functions}
 
 The structure of the proton is described by parton distribution functions
-(PDFs).  They represent the probability density\footnote{more precise a number
-density as the pDFs are normalized to the number of partons} to find a parton
+(PDFs). They represent the probability density\footnote{more precise a number
+density as the PDFs are normalized to the number of partons} to find a parton
 carrying a momentum fraction $x$ of the proton momentum at a squared energy
 scale $Q^2$. 
 
@@ -299,13 +310,6 @@ dependence at the starting scale $Q_0$. The PDFs are evolved to the higher
 scales of each measurement and the PDF parameters are adapted in an iterative
 $\chisq$ fit.
 
-\begin{figure}[htb] 
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/sm_model/phasespace.pdf}\hfill
-    \caption[Kinematic phase space of the experiments]{} 
-    \label{fig:fundamental_couplings} 
-\end{figure}
-
 Global PDFs are determined by the
 CTEQ~\cite{Dulat:2015mca},MMHT~\cite{Harland-Lang:2014zoa},
 NNPDF~\cite{Ball:2014uwa} and the ABM~\cite{Alekhin:2013nda} groups at LO, NLO
@@ -314,6 +318,17 @@ there are differences in the applied minimization method, phenomenological
 approaches and the estimation of the uncertainties. More details are given in
 Sec.~\ref{sec:pdf_uncertainties} in which the uncertainy of the PDFs on the
 cross section measurement is discussed.
+
+\begin{figure}[htb] 
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_100.pdf}
+    \caption[CT14 NNLO PDF sets]{The CT14 NNLO PDF set with the gluon and quark
+        PDFs at scale $Q=\SI{2}{\GeV}$ (left) and evolved to $Q=\SI{100}{\GeV}$
+    (right) using the DGLAP evolution equations. Figure taken
+    from~\cite{Dulat:2015mca}.}
+    \label{fig:ct14_parton_distributions} 
+\end{figure}
 
 The HERAPDF group~\cite{Abramowicz:2015mha} uses a slightly different approach
 by using a less flexible parameterization but restricting the data to
@@ -325,10 +340,16 @@ study the constraints of the triple differential dijet measurements on the PDFs.
 
 \begin{figure}[htb] 
     \centering
-    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_2.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_100.pdf}
-    \caption[CT14 NNLO PDF sets]{} 
-    \label{fig:fundamental_couplings} 
+    \includegraphics[width=0.8\textwidth]{figures/sm_model/phasespace.pdf}\hfill
+    \caption[Kinematic phase space region of the experiments]{The phase space
+        coverage in $x$ and $Q^2$ which is accessible in current experiments.
+        The most important input for the PDFs still results from DIS data
+        measured at HERA. Further important constraints at high $x$ and low
+        scales are given by fixed-target experiments. The latest PDF sets also
+        include LHC measurements with provide constraints at high scales $Q^2$
+        and high-$x$ (jets, $t\bar t$) and at medium-$x$ ($W$,$Z$,+jets). Figure
+        taken from~\cite{Agashe:2014kda}.} 
+    \label{fig:kinematic_phasepace} 
 \end{figure}
 
 \section{Hadronization and Parton Shower}
@@ -384,7 +405,3 @@ and baryons.
 At first, all gluons are split into quark antiquark pairs. Neighbouring pais are
 grouped together to form color-less clusters. Most of the clusters decay into
 hadrons in an isotropic two-body phase space model.
-
-\section{Detector Simulation}
-
-\section{Dijet Production in Hadron-Hadron Collisions}
