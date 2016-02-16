@@ -1,9 +1,44 @@
-% vim: tw=80
+% vim: tw=9999
 
 \chapter{Appendix}
 \label{ch:app:physics}
 
+\section{Datasets}
 
+
+\section{Monte-Carlo Datasets}
+
+
+\begin{table}[htp]
+    \centering
+    \caption[Monte Carlo datasets]{The official MC production samples used in
+    the analysis were generated as slices in the \pt or HT phasespace.}
+    \label{tab:mc_samples}
+    \small
+    \setlength\tabcolsep{3.5pt} 
+    \begin{tabular}{lccc}
+    \toprule
+    \textbf{Generator}        & \textbf{Identifier}                                                                                                                       & \textbf{Events} & \textbf{Cross Section}\\
+                              &                                                                                                                                           &                 & \si{\pico \barn}\\\midrule
+    \multirow{4}{*}{Pythia 8} & \tiny{\makecell[l]{/QCD\_Pt-30to50\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}               & \num{1000080}   & \num{7.500e7}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-50to80\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}               & \num{1000026}   & \num{9.264e6}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-80to120\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}              & \num{1000054}   & \num{1.165e6}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-120to170\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}             & \num{800064}    & \num{1.750e5}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-170to300\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}             & \num{800046}    & \num{3.797e4}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-300to470\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}             & \num{500038}    & \num{1.939e3}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-470to600\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}             & \num{500051}    & \num{1.249e2}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-600to800\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}             & \num{492988}    & \num{2.955e1}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-800to1000\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}            & \num{400059}    & \num{3.87}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-1000to1400\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}           & \num{400050}    & \num{0.803}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-1400to1800\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}           & \num{200070}    & \num{0.363e-1}\\
+                              & \tiny{\makecell[l]{/QCD\_Pt-1800toInf\_Tune4C\_8TeV\_pythia8/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}            & \num{200013}    & \num{0.198e-2}\\\midrule
+    \multirow{4}{*}{Madgraph} & \tiny{\makecell[l]{/QCD\_HT-100To250\_TuneZ2star\_8TeV-madgraph-pythia/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}  & \num{50129518}  & \num{1.036e7}\\
+                              & \tiny{\makecell[l]{/QCD\_HT-250To500\_TuneZ2star\_8TeV-madgraph-pythia/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}}  & \num{27062078}  & \num{2.760e5}\\
+                              & \tiny{\makecell[l]{/QCD\_HT-500To1000\_TuneZ2star\_8TeV-madgraph-pythia/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}} & \num{30599292}  & \num{8.426e3}\\
+                              & \tiny{\makecell[l]{/QCD\_HT-1000ToInf\_TuneZ2star\_8TeV-madgraph-pythia/\\\phantom{aaaa}Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM}} & \num{13843863}  & \num{2.040e2}\\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \section{Individual sources of Jet energy correction uncertainties}
 

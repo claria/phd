@@ -17,13 +17,13 @@ accelerator or the creation of antihydrogen atoms were accomplished by physicist
 
 Remarkable insights into the Standard Model were gained by measurements at
 subsequent collider experiments. The mass of the Z and W~boson were precisely
-measured at the LEP experiment. The proton-antiproton collider Tevatron at FNAL
+measured at the LEP collider. The proton-antiproton collider Tevatron at FNAL
 discovered the top quark and measured its mass accurately. Since the search
-for the long anticipated higgs boson was unsuccesful due to their limited energy
+for the long anticipated Higgs boson was unsuccesful due to their limited energy
 reach, an even larger and more powerful accelerator was planned and built, the
-Large Hadron Collider (LHC). The search for the higgs boson finally succeded in
+Large Hadron Collider (LHC). The search for the Higgs boson finally succeded in
 2012~\cite{Chatrchyan:2012xdj,Aad:2012tfa}, but many further questions like the
-search for supersymmetry or dark matter are yet to be resolved.
+nature of dark matter or the existence of supersymmetry are yet to be resolved.
 
 \section{The Large Hadron Collider}
 
@@ -53,10 +53,11 @@ confidence in its predictions.
 Prior to injection and acceleration of protons in the LHC, the particles pass a
 series of consecutive acceleration steps, succesively increasing their energy.
 The linear particle accelerator (LINAC2) generates \SI{50}{\mega \electronvolt}
-protons that are further accelerated in the Proton-Synchrotron (PS) to
-\SI{26}{\giga \electronvolt} and the Super-Proton-Synchrotron (SPS) up to an
-energy of \SI{450}{\giga \electronvolt}. At last, the proton beams are injected
-into the LHC ring and are further accelerated up to peak design energy of
+protons that are further accelerated in the Proton Synchrotron Booster (PSB) and
+the Proton-Synchrotron (PS) to \SI{26}{\giga \electronvolt}. The
+Super-Proton-Synchrotron (SPS) further accelerates the protons up to an energy
+of \SI{450}{\giga \electronvolt}. At last, the proton beams are injected into
+the LHC ring in which they are accelerated up to peak design energy of
 \SI{13}{\tera\electronvolt}. All these pre-accelerators are not only used to
 feed the LHC, but also serve other physics experiments like the radioactive ion
 beam facility ISOLDE, see Fig.~\ref{fig:lhc_complex}.
@@ -95,6 +96,7 @@ gamma factor and $F$ the geometric luminosity reduction factor. The effective
 collision area of the two beams is related to the normalized transverse beam
 emittance $\epsilon_n$ and the value of the betatron function $\beta^*$ at the
 interaction point.
+\todo{besser erklaeren}
 
 The instantaneous luminosity is constantly monitored by the experiments. CMS
 employs two methods to estimate the relative instantaneous
@@ -103,7 +105,9 @@ flux in the hadron forward calorimeter which is related to the instantaneous
 luminosity. The second counts the number of clusters in the pixel tracking
 detector measured in zero-bias events. The absolute luminosity measurement is
 relying on van-der-Meer scans carried out in special runs of the
-LHC~\cite{vanderMeer:296752}.
+LHC~\cite{vanderMeer:296752}. The luminosity measurement is affected by an
+uncertainty, which propagates on any absolute cross section measurement, see
+Sec.~\ref{sec:luminosity_uncertainty}.
 
 Fig.~\ref{fig:cms:lumi_integrated} shows the integrated luminosity delivered by
 the LHC to the CMS experiment in the run periods from 2010 to 2012.
@@ -122,13 +126,14 @@ the LHC to the CMS experiment in the run periods from 2010 to 2012.
 
 The Compact Muon Solenoid (CMS) detector is a general purpose detector at the
 LHC, located at Point 5 of the LHC ring. To serve a wide range of physics
-studies, the detector design is driven by a cylindrical structure containing
-layers of different subdetectors each built to measure a specific type of
+studies, the detector design is driven by a cylinder-shaped structure containing
+layers of different subdetectors, each built to measure a specific type of
 particles with best precision, see Fig.~\ref{fig:cms:transverse_slice}. A
 high-precision inner tracking system is surrounded by an electromagnetic and a
 hadronic calorimeter which again are enclosed by a superconducting solenoid
 magnet. The whole inner part of the detector is surrounded by a sophisticated
-muon detection system embedded in an iron yoke
+muon detection system embedded in an iron yoke.
+\todo{vor/nachteile des designs}
 
 \begin{figure}[htp]
     \centering
@@ -143,10 +148,9 @@ The detector is \SI{21.6}{\meter} long and \SI{14.6}{\meter} in diameter, but
 weighs more than \SI{12000}{\tonne} due to its compact design. It was
 constructed as cylyndrical slices constructed at ground level and lowered into
 the cavern. In case of upgrades or repairs, the slices can be pulled apart and
-the inner components can be easily accessed.
-
-Fig.~\ref{fig:cms:longitudinal_section} shows a longitudinal section of one
-quadrant of the CMS detector and the location of all subsystems.
+the inner components can be easily accessed. A longitudinal section of one
+quadrant of the CMS detector, which reveals the location and coverage of all
+subdetectors, is shown in Fig.~\ref{fig:cms:longitudinal_section}.
 
 The detector and physics performance of the CMS detector are discussed in great
 detail in~\cite{Bayatian:922757,Ball:2007zza,Chatrchyan:2008aa}. This section
@@ -226,13 +230,13 @@ layers in the barrel region, see Fig.~\ref{fig:cms:inner_tracking}.
 \paragraph{Silicon Pixel Detector} Containing over \SI{65} milion pixels
 arranged in three cylindrical layers at \SI{4}{\centi\meter},
 \SI{7}{\centi\meter} and \SI{11}{\centi\meter} distance to the beam pipe, the
-pixel detector is able to resolve the tracks of a the huge number of particles. At
-LHC design luminosity, about 1000 particles pass the tracking detector on
-average. The size of each pixel is \SI{100}{\micro \meter} x \SI{150}{\micro
-\meter} giving an average occupancy of $10^{-4}$ per bunch crossing. The high
-spatial resolution achieved by the pixel detector furthermore allows the
-identification and measurement of secondary vertices used to identify long-lived
-particles.
+pixel detector is able to resolve the tracks of a the huge number of particles.
+At LHC design luminosity, about 1000 particles pass the tracking detector on
+average per bunch crossing. The size of each pixel is \SI{100}{\micro \meter} x
+\SI{150}{\micro \meter} giving an average occupancy of $10^{-4}$ per bunch
+crossing. The high spatial resolution achieved by the pixel detector furthermore
+allows the identification and measurement of secondary vertices used to identify
+long-lived particles.
 
 \paragraph{Silicon Strip Detector} The pixel detector is complemented by a silicon
 strip detector. Reduced particle flux further away from the beam pipe eases the identification
@@ -250,7 +254,7 @@ detector area, the strips are are arrangeg overlapping.
         silicon pixel detector and the silicon strip detector. The right figure shows a
         transverse section of the tracking system in the barrel region which
         nicely illustrates the overlapping arrangement of the strip modules. Figures taken
-        from~\cite{Berger:2014aca} and~\cite{cmsweb:innertracker}.}
+        from~\cite{Berger:2014aca} and~\cite{cmsweb:innertracker}, respectively.}
     \label{fig:cms:inner_tracking}
 \end{figure}
 
@@ -278,7 +282,6 @@ light. The small Moli\`ere  radius of \SI{2.19}{\centi\meter} leads to a fine
 granularity.  These material properties allow the ECAL to be built very compact
 and to be placed within the solenoid magnet. 
 
-\todo{where is the ecal image from?}
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/cms_detector/cms_ecal.pdf}\hfill
@@ -325,7 +328,7 @@ offset term.
 
 \subsection{Hadronic Calorimeter}
 
-Hadrons entering the calorimeter produce a hadronic shower. High-energy
+Hadrons entering the calorimeter produce hadronic showers. High-energy
 hadrons mostly shower in inelastic interactions producing a large number of pions
 and nucleons. Due to the large transverse momentum of the secondary particles,
 hadronic showers spread further in the calorimeter than electromagnetic showers.
@@ -400,7 +403,7 @@ system.
 The LHC generates a huge number of collisions. At beam crossing frequencies of
 \SI{25}{\nano \second}, there are 40 million bunch crossings per second with an
 average of around 20 collisions per bunch crossing in the 2012 run period. With
-today's hardware, the storage of all collision events is not possible.
+today's hardware, the storage of all collision events is not feasible.
 Furthermore, most of the collisions are soft and of low interest for physics
 analyses. Therefore, a complex trigger system consisting of a very fast
 component implemented in hardware, the Level 1 trigger (L1) and a High Level
@@ -445,7 +448,6 @@ processes the data and transfers them to the HLT.
         towers. Taken from~\cite{Rose:2009zz}.}
     \label{fig:cms:l1_calo_towers}
 \end{figure}
-\todo{improve image}
 
 \paragraph{HLT Trigger} 
 The HLT is a software-based trigger running on a dedicated computing farm at
@@ -502,7 +504,6 @@ This common computing and storage infrastructure is called the worldwide LHC
 computing grid (LHCG).
 
 \subsection{Worldwide LHC Computing Grid}
-\todo{write}
 
 To overcome the discussed challenges and to ease the access of users to the data of
 the LHC experiments, a distributed grid with a tiered infrastructure was
@@ -700,32 +701,58 @@ generators.
 In scattering processes with large momentum transfers, the outgoing partons
 produce a collimated stream of particles when hadronizing. The clusters of these
 particles are the experimental signatures of quarks and gluons in the detector
-and are called \emph{jets}. Jets show up in the \CMS detector as a localized
-deposit of energy in the calorimeters accompanied by a large number of tracks in
-the direction of the deposited energy. Jets are reconstructed using different
-techniques based on the amount of information available. If the jets are
-reconstructed from the energy clusters within the calorimeters, they are called
-\emph{calorimeter jets}. If the jet reconstruction uses particle flow
-candidates, these are called \emph{particle flow jets}. By removing pile-up
-tracks from the particle flow candidates before the jet clustering, one yields
-\emph{particle flow CHS jets}. Later on, when talking about jets in the physics
-analysis, it is always referred to particle flow CHS jets if not stated otherwise.
+and are called \emph{jets}. The clustering of the particles is performed using
+jet algorithms, which are discussed in Sec.~\ref{sec:jet_algorithms}. An
+important property of jet algorithms is their applicability to all kinds of
+input objects, \ie partons, stable particles or reconstructed particle
+candidates. Consequently, the clustered jets are called parton jets, particle
+jets, and reconstructed jets, respectively\footnote{In analogy, the 
+corresponding levels are later referred to as parton level, particle level
+and reconstructed level.}. Fig.~\ref{fig:jet_levels} illustrates the different
+levels, at which jets can be clustered.
+
+In the \CMS detector, jets show up as localized deposit of energy in the
+calorimeters accompanied by a large number of tracks in the direction of the
+deposited energy. The particle candidates, input of the jet algorithm,  are
+reconstructed using different techniques based on the amount of information
+available. If jets are reconstructed from the energy clusters within the
+calorimeters, they are called \emph{calorimeter jets}. If the jet reconstruction
+uses Particle Flow candidates, they are called \emph{Particle Flow jets}. By
+removing pile-up tracks from the Particle Flow candidates before the jet
+clustering, one yields \emph{Particle Flow CHS jets}. 
+
+In the analysis which is presented in this thesis, all jets are clustered using
+the anti-\kt algorithm with a jet size parameter of $R=0.7$. When talking about
+jets which are clustered at reconstructed level, it is always referred to
+Particle Flow CHS jets.
+
+\begin{figure}[h!tbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/drawings/particlejet.pdf}
+    \caption[Illustration of jet clustering levels]{Illustration of different
+    levels at which jets can be clustered. If partons or stable particles are
+clustered into yets, parton jets or particle jets are yielded, respectively.
+Jets clustered from reconstructed particle candiates are calle reconstructed
+jets.}
+    \label{fig:jet_levels}
+\end{figure}
+
 
 \subsection{The Particle Flow Algorithm}
 \label{sec:particle_flow_algorithm}
 
-\CMS uses the particle flow reconstruction
+\CMS uses the Particle Flow reconstruction
 algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} to identify and
 reconstruct particles by combining information from all detector
 subsystems. Due to its compact design inside the solenoid, the hadronic
 calorimeter is not able to stop and measure all particles which reduces the
 energy resolution. However, taking into account the additional information of
-the tracking system within the particle flow algorithm enhances the
+the tracking system within the Particle Flow algorithm enhances the
 reconstruction performance and leads to a jet energy resolution comparable to
-\ATLAS. A key element in the particle flow algorithm is the strong magnetic field
+\ATLAS. A key element in the Particle Flow algorithm is the strong magnetic field
 of \CMS which allows the precise distinction between neutral and charged hadrons. 
 
-The ingredients of the particle flow algorithm are the
+The ingredients of the Particle Flow algorithm are the
 tracks and vertices, reconstructed from hits in the tracking detectors, the
 deposited energy in the electromagnetic and hadronic calorimeters and the tracks
 in the muon system. The reconstructed particles are classified as muons,
@@ -739,8 +766,8 @@ vertices in an event are identified. The electromagnetic and hadronic
 calorimeters are divided into a grid of cells based on the detector granularity
 to identify calorimeter cluster seeds. If there are seeds with an energy
 exceeding a certain threshold, they are used in an iterative merging algorithm
-to form particle flow clusters. The different elements of the detector
-information are then linked together into particle flow building blocks based on
+to form Particle Flow clusters. The different elements of the detector
+information are then linked together into Particle Flow building blocks based on
 the geometry and \chisq fits. At first, muons, which can be well identified
 using the tracks in the muon detector, are reconstructed using the building
 blocks connected to the muon system. Blocks connecting the inner
@@ -750,15 +777,13 @@ tracking system and the remaining calorimeter clusters. Only neutral objects
 which leave no traces in the tracking system, remain. ECAL clusters are
 interpreted as photon candidates, while the remaining HCAL clusters are assumed
 to be deposits of neutral hadrons. To avoid any kind of double-counting of
-energy, all particle flow building blocks of successfully reconstructed particle
+energy, all Particle Flow building blocks of successfully reconstructed particle
 candidates are removed and the energy of the calorimeter clusters is recalculated.
 
-Finally, a set of so-called particle flow candidates is yielded. They consist of
+Finally, a set of so-called Particle Flow candidates is yielded. They consist of
 well identified particles, which profit from the improved resolution gained by
 the inclusion of tracking information. This collection of particles is then
 used to reconstruct the jets and further physical objects.
-
-\todo{Jetbild?/pf bild}
 
 \subsection{Jet Area}
 
@@ -790,7 +815,7 @@ Sec.~\ref{pileup_correction}.
 resolution of the tracker, called Charged Hadron Subtraction
 (CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithm can only be
 applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
-particle flow candidates which originate from a pile-up vertex are removed, see
+Particle Flow candidates which originate from a pile-up vertex are removed, see
 Fig.~\ref{fig:chs_jets}. Tracks originating from the main vertex or tracks not
 associated to any vertex remain in the event. The jets are clustered from this
 set of particles.  Since the jet identification criteria in the jet selection in
@@ -803,7 +828,7 @@ The analysis presented in this thesis relies on CHS jets. Especially in the
 low-\pt region, removing pile-up jets mimicking the leading jet in the event
 improves the signal efficiency in the forward region.
 
-\begin{figure}[htb]
+\begin{figure}[h!tbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/jet_reconstruction/chs.pdf}
     \caption[Charged Hadron Subtraction]{Illustration of particles clustered
