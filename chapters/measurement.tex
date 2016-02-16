@@ -50,13 +50,14 @@ each dataset can be seen in Table~\ref{tab:data:datasets}.
            jet triggers are stored, changed over time, great care has to be
            taken to select the correct subset of events from each dataset.}
     \label{tab:data:datasets}
-    \begin{tabular}{llll}
+    \begin{tabular}{cccc}
     \toprule
-    Run & Run Range & Dataset & Luminosity\\\midrule
-    A & 190456--193621 & /Jet/Run2012A-22Jan2013-v1/AOD & \SI{0.88}{\fbinv}\\
-    B & 193834--196531 & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & \SI{4.49}{\fbinv}\\
-    C & 198022--203742 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \SI{7.06}{\fbinv}\\
-    D & 203777--208686 & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \SI{7.37}{\fbinv}\\ 
+    \textbf{Run}  & \textbf{Run Range} & \textbf{Dataset}                       & \textbf{Luminosity}\\
+                  &                    &                                        & \si{\fbinv}\\\midrule
+    A             & 190456--193621     & /Jet/Run2012A-22Jan2013-v1/AOD         & \num{0.88}\\
+    B             & 193834--196531     & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & \num{4.49}\\
+    C             & 198022--203742     & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \num{7.06}\\
+    D             & 203777--208686     & /Jet[Mon,HT]/Run2012C-22Jan2013-v1/AOD & \num{7.37}\\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -92,7 +93,7 @@ data on detector level.
     \caption[Monte Carlo datasets]{The official MC production samples used in
     the analysis were generated as slices in the \pt or HT phasespace. A
     complete list of all subsamples and the corresponding sub-samples can be found
-     in~\ref{mc_samples}.}
+     in~\ref{tab:mc_samples}.}
     \label{tab:montecarlo:datasets}
     \begin{tabular}{lc}
     \toprule
@@ -155,15 +156,16 @@ again when the spectrum is reconstructed.
             reference trigger.}
     \label{tab:triggers}
 
-    \begin{tabular}{lcccr}
+    \begin{tabular}{lcccc}
         \toprule
-        Trigger path  & L1 (\si{\GeV}) & HLT (\si{\GeV}) & $p_{\mathrm{T},.99\%}$ (\si{\GeV}) & Eff. Lumi \\\midrule
-        HLT\_PFJet40  & 16                  & 40                   & --                     & 0.08 \si{\pbinv}\\
-        HLT\_PFJet80  & 36                  & 80                   & 123                    & 2.12 \si{\pbinv}\\
-        HLT\_PFJet140 & 68                  & 140                  & 192                    & 55.67 \si{\pbinv}\\
-        HLT\_PFJet200 & 92                  & 200                  & 263                    & 0.26 \si{\si{\fbinv}}\\
-        HLT\_PFJet260 & 128                 & 260                  & 353                    & 1.06 \si{\si{\fbinv}}\\
-        HLT\_PFJet320 & 128                 & 320                  & 412                    & 19.71 \si{\si{\fbinv}}\\
+        \textbf{Trigger path}        & \textbf{L1 threshold} & \textbf{HLT threshold} & \boldmath$p_{\mathrm{T},99\%}$ & \textbf{Eff. Lumi} \\
+                                     & \si{\GeV}             & \si{\GeV}              & \si{\GeV}              & \si{\fbinv}\\\midrule
+                      HLT\_PFJet40   & 16                    & 40                     & --                     & \num{0.8e-4}\\
+                      HLT\_PFJet80   & 36                    & 80                     & 123                    & \num{0.21e-2}\\
+                      HLT\_PFJet140  & 68                    & 140                    & 192                    & \num{0.56e-1}\\
+                      HLT\_PFJet200  & 92                    & 200                    & 263                    & \num{0.26}\\
+                      HLT\_PFJet260  & 128                   & 260                    & 353                    & \num{1.06}\\
+                      HLT\_PFJet320  & 128                   & 320                    & 412                    & \num{19.71}\\
         \bottomrule
     \end{tabular}
 \end{table}
