@@ -11,12 +11,12 @@
 \usepackage{etoolbox}
 % Are printing a hard copy or not?
 \newbool{hardcopybool}
-\booltrue{hardcopybool} 
-% \boolfalse{hardcopybool}  % the default  
+% \booltrue{hardcopybool} 
+\boolfalse{hardcopybool}  % the default  
 
 % Microtype options
-\usepackage[final]{microtype}
-% \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% \usepackage[final]{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
@@ -30,8 +30,7 @@
 \DeclareSIUnit[] \pbinv{\per \pico \barn}
 \DeclareSIUnit[] \fbinv{\per \femto \barn}
 
-\usepackage{amsmath,amssymb,amstext,amsthm}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb,amstext,amsthm,bm}
 \usepackage{cancel}
 \usepackage{xfrac}
 \DeclareMathOperator\erf{erf}
@@ -129,7 +128,6 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage[colorinlistoftodos, 
     shadow, 
-    % color=blue!30,
     figwidth=.75\textwidth]{todonotes}
 \providecommand{\todoi}[1]{\todo[inline]{#1}}
 
