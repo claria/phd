@@ -5,15 +5,35 @@ of the Triple-Differential\\ Dijet Cross Section}
 \label{sec:measurement}
 
 The preceeding chapter laid the foundation for the triple-differential dijet
-cross section measurement by demonstrating that NLO pQCD calculations are
-applicable. The sizable PDF uncertainties especially in phase space regions
-involving boosted dijet topologies indicate that a measurement in these phase
-space regions could be used to better constrain the PDFs.
+cross section measurement by demonstrating the sensitivity of PDFs to the chosen
+observable. The sizable PDF uncertainties especially in phase space regions
+involving boosted dijet topologies indicate that a sufficiently precise
+measurement in these phase space regions could be used to better constrain the
+PDFs. 
 
-The differentially measured cross section is defined as
+This chapter is dedicated to the measurement of the cross section from collision
+data recorded bu CMS during the 2012 LHC run at \SI{8}{\TeV}.
+Sec.~\ref{sec:event_selection} describes the event selection, in which clean
+dijet devents are identified.  Using information from comparisons to simulated
+events, the jet energy resolution is studied which is subsequently used in
+Sec.~\ref{sec:unfolding} to unfold the measured cross section to particle-level.
+A detailed study of all experimental sources of uncertainty in
+Sec.~\ref{sec:experimental_uncertainties} concludes the measurement.
+
+Finally, the comparison of unfolded data to NLO predictions is presented in
+Sec.~\ref{sec:nlo_comparisons}. Furthermore, comparisons to NLO calculations
+complemented with matched parton showers, as made possible with the recently
+released Herwig~7 MC event generator, are of particular interest.
+
+\section{Cross Section Definition}
+
+The observed dijet event yields are transformed into a triple-differrential
+cross section, which is defined as
 %
 \begin{equation*}
-    \frac{d^3 \sigma}{d \ptavg d \ystar d \yboost} = \frac{1}{\epsilon \mathcal{L}_{\mathrm{int, eff}}} \frac{N}{\Delta \ptavg \Delta \ystar \Delta \yboost}    
+    \frac{d^3 \sigma}{d \ptavg d \ystar d \yboost} = \frac{1}{\epsilon
+        \mathcal{L}_{\mathrm{int, eff}}} \frac{N}{\Delta \ptavg \Delta \ystar
+        \Delta \yboost},
 \end{equation*}
 %
 where $N$ denotes the number of dijet events, $\mathcal{L}_{\mathrm{int, eff}}$ the
@@ -21,20 +41,11 @@ effective integrated luminosity and $\epsilon$ the product of trigger and event
 selection efficiencies which are greater than 99\%. The cross section is
 normalized by the widths of the \ptavg, \ystar, and \yboost bins. 
 
-\todo[inline]{work in progress}
-
-Section~\ref{sec:datasets} discusses the
-analyzed data samples, while the selection of dijet events meeting all quality
-criteria are reviewed in Section~\ref{sec:event_selection}. A comparison with
-simulated events and subsequently the correction of the measured data for
-detector effects using an unfolding procedure is explained in detail in
-Section~\ref{sec:simulated_events} and Section~\ref{sec:unfolding}. Uncertainty
-Sources of experimental origin which affect the cross section measurement are
-
-Finally, the comparison of unfolded data to NLO predictions is presented in
-Section~\ref{sec:nlo_comparisons}. Comparisons to NLO calculations with matched
-parton showers from the recently released Herwig~7 MC event generator are of
-particular interest.
+The size of the \ptavg bins is somewhat larger than the observed resolution for
+\ptavg at the bin center. For simplification, the same \ptavg binning is chosen
+as for the inclusive jet cross section measurement, which has a slightly worse
+resolution. The equidistant \ystar and \yboost bins start from zero and go up to
+three with a bin size of one.
 
 \section{Data samples}
 \label{sec:datasets}
@@ -518,12 +529,12 @@ cross section increase is not noticeably.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/rap_corr_data_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb2ys0.pdf}
     \caption[Effect of pseudo-rapidity correction]{The effect of the
         pseudo-rapidity correction is demonstrated by showing the ratio of the
         cross section after applying the correction to the result without
@@ -548,12 +559,12 @@ differences are negligible.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/run_comparison_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/run_comparison_yb2ys0.pdf}
     \caption[Stability of result over all run periods]{Ratio of the measured
     cross section in each run period to the cross section obtained with data
     from Run D. There are small differences, mostly due to statistical fluctuations.
@@ -748,12 +759,12 @@ bin.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
     \caption[Comparison generated vs. reconstructed transverse energy]
             {The response of reconstructed and particle-level jet transverse
                 momentum as a function of the particle-jet transverse momentum.
@@ -776,8 +787,8 @@ region.
 
 \begin{figure}[h!tbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/resolution_yb0ys0_bin10_cb.pdf}
+    \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}\hfill
+    \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10_cb.pdf}
     \caption[Gaussian and crystal ball fit of resolution.]{The resolution in
         each \ptavg bin is fitted using a gaussian (left) and a double-sided crystal ball
         (right) function. The fit using the crystal ball function better describes the
@@ -892,12 +903,12 @@ matrices are diagonal with small off-diagonal migrations between neighboring
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
     \caption[Response matrix used for the unfolding procedure]{Response matrix
         used for the unfolding procedure. The response matrices are obtained
         using the smearing method and are normalized to the number of gen events
@@ -923,23 +934,24 @@ experimental uncertainties are discussed. The uncolded cross sections are shown
 in Sec.~\ref{sec:nlo_comparisons} in which the comparison to NLO calculations is presented.
 
 \section{Experimental Uncertainties}
-\label{experimental_uncertainties}
+\label{sec:experimental_uncertainties}
 
-This section presents the derivation of all experimental sources of uncertainty
-which affect the cross section measurement. The comprehensive uncertainty
-studies involve the statistical uncertaint which was propagated through the
-unfolding, the luminosity uncertainty arising from the imperfection of the CMS
-luminosity, the jet energy correction uncertainty due to the calibration of the
-jet energy energy and the uncertainty of the jet energy resolution measurement.
-Furthermore an uncorrelated residual uncertainty of 1\%, which comprises the
-trigger efficiency uncertainty, the jet id efficiency and further residual
-effects, is considered.
+In this section, all experimental sources of uncertainty which affect the cross
+section measurement are discussed. The comprehensive studies involve five
+sources of uncertainty of wich the jet energy correction uncertainties were
+found to be the dominant. Statistical uncertainties were propagated through the
+unfolding procedure while taking into account correlations due to bin
+migrations. The imperfection of the CMS luminosity measurement causes a
+normalization uncertainty. The uncertainty of the jet energy resolution
+determination is also propagated to the unfolded cross section. Residual
+systematic errors due to jet ID and trigger efficiencies are very small and
+covered by 1\% uncorrelated uncertainty.
 
-Fig.~\ref{fig:exp_unc_overview} shows all sources of experimental uncertainty as
-well as the total uncertainty, obtained by adding in quadrature the individual
-sources. The total uncertainty is 8\% in the measurement bins involving jets at
-central rapidity and increases up to 20\% in bins involving jets in the less
-well understood forward region.
+Fig.~\ref{fig:exp_unc_overview} depicts all sources of experimental uncertainty
+in combination with the total experimental uncertainty, obtained by adding in
+quadrature all individual sources. The total uncertainty is 8\% in the
+measurement bins involving jets at central rapidity and increases up to 20\% in
+bins involving jets in worse understood phase space regions.
 
 \todo{table exp uncertainties}
 
@@ -948,53 +960,54 @@ well understood forward region.
 
 As discussed in Sec.~\ref{sec:lumi_measurement}, the luminosity is measured from
 the number of clusters in the silicon pixel detector. The integrated luminosity
-for the selected data in the 2012 LHC run is determined to be \SI{19.71}{\per
-\femto \barn}. 
-
-The uncertainty on the luminosity measurement for the 2012 LHC run is estimated
-to be 2.5\% (syst.) and 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. The luminosity
-uncertainty afffects the normalization of any absolute cross section measurement
-and is therefore taken into account.
+for certified data of the 2012 LHC run is measured to be \SI{19.71}{\per \femto
+\barn}. The uncertainty on the luminosity measurement for the 2012 LHC run is
+estimated to be 2.5\% (syst.) and 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. As
+the luminosity uncertainty afffects the normalization of any absolute cross
+section measurement, a combined systematic uncertainty of 2.6\% is assigned.
 
 \subsection{Unfolding and Statistical Uncertainty}
 \label{sec:stat_unf_uncert}
 
-The statistical uncertainties of the data distributions are are propagated
-through the unfolding using a toy MC procedure in which the measured histogram
-is smeared according to its statistical uncertainty and the unfolding procedure
-is performed multiple times for each of these smeared spectra. A million
-generated toy spectra are used to propagate the statistical uncertainty.
-Figure~\ref{fig:statunc_relative} shows the relative statistical uncertainty before and
-after the unfolding procedure. The uncertainty slightly increases during the unfolding
-process as it is expected.
+Statistical uncertainties of data points are propagated through the unfolding
+using a toy MC technique in which the measured data points are smeared within
+their statistical uncertainties and the unfolding procedure is performed
+multiple times for each smeared spectra. A million such toy spectra are used to
+propagate the statistical uncertainty.  Figure~\ref{fig:statunc_relative} shows
+the relative statistical uncertainty before and after the unfolding procedure.
+The uncertainty slightly increases during the unfolding process which is
+expected.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
-    \caption[Statistical uncertainty of measured and unfolded sprectrum]{The statistical uncertainties of the measured and the unfolded spectrum. Due
-    to the unfolding procedure, the uncertainties slightly increase compared to the
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
+    \caption[Statistical uncertainty of measured and unfolded sprectrum]{The
+    statistical uncertainties of the measured and the unfolded spectrum. Due to
+    the unfolding procedure, the uncertainties slightly increase compared to the
     measured spectrum.}
     \label{fig:statunc_relative}
 \end{figure}
 
-Futhermore, the unfolding introduces a correlation between bins due to bin
+Futhermore, the unfolding introduces a correlation between bins due to event
 migrations. These correlations are significant for neighbouring bins in \pt and
-negligible for far off bins. Figure~\ref{fig:corr_unfolding_nlo} shows the
-correlations of the statistical uncertainty after the unfolding.
+negligible between bins far off in the phase space.
+Figure~\ref{fig:corr_unfolding_nlo} shows the correlations of the statistical
+uncertainty after the unfolding. Of course, these correlations have to be taken
+into account in a statistical analysis of the data, such as in a PDF fit.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
     \caption[Correlations of statistical uncertainty]{Correlation of the
         statistical uncertainty introduced by the unfolding procedure.
         Neighbouring bins have a significant correlation or anti-correlation
@@ -1007,24 +1020,25 @@ correlations of the statistical uncertainty after the unfolding.
 The dominant part of the experimental uncertainties comes from jet energy
 calibration, which correct the measured jet energy for a variety of detector
 effects, see Sec.~\ref{sec:jec}. As the corrections are afflicted with multiple
-sources of systematic uncertainty, these are propgated individually to the cross section
-measurement to conserve all correlations.
+sources of systematic uncertainty, these are propagated individually to the cross section
+to preserve all correlations.
 
 The JEC uncertainties are split into 25 mutually independent sources of
 uncertainty (JES), in which each source is fully correlated in \pt and $\eta$
-and presents a $1\sigma$ shift. As these uncertainties can be asymmetric, the
-upwards and downwards variation are treated separately. The sum in quadrature of
-all uncertainty sources equals the total uncertainty. Therefore they can be
-treated exactly like the PDF eigenvectors sets, which were discussed in
+but uncorrelated to all other sources. Each variation presents a $1\sigma$
+shift. As these uncertainties can be asymmetric, the upwards and downwards
+variation of each source are treated seperately. The sum in quadrature of all uncertainty
+sources equals the total uncertainty. Therefore they can be treated exactly like
+the PDF eigenvector sets, which were discussed in
 Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainties are grouped in
 four categories which relate to the underlying correction. In the following
 list, a short summary of the sources of uncertainty is given. The calibration
 procedure and the uncertainties are described in great detail
-in~\cite{jec_paper}.
+in~\cite{jec_paper}. The Figs.
 
 \begin{description}
     \item[Pileup JES] Differences in the transverse momentum between the true
-        offset and the random cone offset observed in simulation. This
+        offset and the random cone offset are observed in simulated events. This
         difference is propagated using Z/$\gamma$+jet and dijet balancing
         methods to estimate the residual pileup uncertainty after the
         calibration.
@@ -1035,12 +1049,12 @@ in~\cite{jec_paper}.
     \item[Absolute JES]  The absolute calibration of the jet energy scale relies
         on Z/$\gamma$+jet and multijet events. The uncertainties are related to
         the lepton momentum scale for muon and the single-pion response in the
-        HCAL. Observed differences in applied methods, traced back to neutrinos
-        and ISR, are also accounted for. 
+        HCAL. Observed differences in applied methods can be traced back to neutrinos
+        and ISR and are accounted for in these sources of uncertainty.
     \item[Flavor JES] Differences in the flavor response are studied using
         simulation by cross-checking the results with quark- and gluon-tagged
-        photon+jet and Z+jet events. The uncertainty is derived based on
-        differences observed in the Pythia6 and Herwig++ simulation.
+        $\gamma$+jet and Z+jet events. The uncertainty is derived based on
+        differences observed in the Pythia 6 and Herwig++ simulation.
 \end{description}
 
 \subsection{Jet Energy Resolution Uncertainty}
@@ -1053,25 +1067,24 @@ Table~\ref{tab:res_smearing} shows the smearing factors, which were applied on
 MC to obtain the actual resolution in data. The official recommendations involve
 an uncertainty on this smearing factor to estimate an uncertainty on the
 determined resolution, see the varied smearing factors in
-Table~\ref{tab:res_smearing}. The resolution determination is repeated with the
-up- and downwards variation of the resolution smearing factor $c$ applied. The
-unfolding procedure is also reiterated using the variations of the resolution
-and the differences of the obtained cross section to the nominal cross section
-is accounted for as an additional uncertainty. 
+Table~\ref{tab:res_smearing}. The determination of the resolution is repeated
+with the up- and down-wards variation of the resolution smearing factor $c$
+applied. The unfolding procedure is also reiterated using the variations of the
+resolution and the differences of the obtained cross section to the nominal
+cross section are accounted for as a systematic uncertainty. The uncertainty on
+the cross section is comparably small, about 1\% at low rapidity and increasing
+up to 3\% at larger rapidities, see Fig.~\ref{fig:exp_unc_overview}.
 
-The uncertainty on the cross section is rather small, about 1\% at low rapidity
-and increasing to 2\%-3\% at larger rapidities, see
-Fig.~\ref{fig:exp_unc_overview}.
-
+\todo[inline]{uncertainty overview small paragraph}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/exp_unc_overview_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/exp_unc_overview_yb2ys0.pdf}
     \caption[Overview of experimental uncertainties]{Overview of all
     experimental uncertainties affecting the cross section measurement. The
     errorbars indicate the statistical uncertainty after unfolding. The colored
@@ -1084,9 +1097,9 @@ Fig.~\ref{fig:exp_unc_overview}.
 \section{Comparison with NLO Predictions}
 \label{sec:nlo_comparisons}
 
-The triple-differential dijet cross section measurement is round off by
-comparing the results of the measurement with the NLO cross section calculations
-obtained in Sec.~\ref{sec:theory_predictions}. A general comparison is given in
+After unfolding the measurement to particl-level, it is finally possible to
+compare the cross sections with the NLO calculations which were obtained in
+Sec.~\ref{sec:theory_predictions}. A general comparison is given in
 Fig.~\ref{fig:measurement_result} which shows the data overlayed with the NLO
 theory prediction obtained with the CT14-NLO PDF set. The measurement and the
 prediction agree over eight orders of magnitude in cross section and up to
@@ -1096,40 +1109,42 @@ highest transverse momenta.
     \centering
     \includegraphics[width=0.9\textwidth]{figures/measurement/ptavg_spectrum.pdf}\hfill
     \caption[Spectrum of the Triple-differential Dijet Cross Section]{The
-    triple-differential dijet cross section in 6 bins of \ystar and \yboost. The
-    data is indicated by different markers for each bin and the theory obtained with CT14-NLO by
-    colored lines.}
+    triple-differential dijet cross section in six bins of \ystar and \yboost. The
+    data is indicated by different markers for each bin and the theory obtained
+    with CT14-NLO is depicted by colored lines. Good agreement between data and
+    NLO calculation is observed over many order of magnitude.}
     \label{fig:measurement_result}
 \end{figure}
 
-A detailed comparison revealing plenty of further effects is possible py
-calculating the ratio of the data to the theory calculation.
-Figures~\ref{fig:ratio_ct14_nlo}---\ref{fig:ratio_nnpdf30_nlo} show the ratio to
-data of the theory calculation with the CT14 PDF set and the NNPDF 3.0 PDF set,
-respectively. To emphasize effects due to the different PDFs, the ratio figures
-include also the predictions obtained with the MMHT 2014 PDF set and the ABM11
-PDF set. The predictions with the different PDF sets agree with each other apart
-from ABM 11. The differences caused by ABM 11 are well known and seen in a
-multitude of further jet measurements and are due to a soft gluon PDF
-accompanied by a low value of \asmz in this PDF set. 
+A more detailed comparison is achievable when the ratio of the data to theory is
+calculation. Figures~\ref{fig:ratio_ct14_nlo}---\ref{fig:ratio_nnpdf30_nlo}
+present such a ratio including all statistical and systematic uncertainties. To
+emphasize the sensitivity of PDFs to this observable, calculations using the
+newest CT14, NNPDF 3.0, MMHT 2014 and ABM 11 PDF sets, all derived at NLO, are
+shown. Apart from the bins with high values of \yboost, the predictions of most
+PDF sets coincide within uncertainties. However, the ABM 11 predictions
+systematically underestimate the data. This behaviour of ABM 11 PDF set is well
+known and seen in a multidue of other jet measurements. It is due to the
+combination of a soft gluon PDF accompanied with a low value of \asmz in the PDF
+set.
 
 A further effect in which all theory predictions differ from the data, is
-prominently visible in the central region at large transverse momenta. The
-theory predictions underestimates the data by up to 20\%. This effect has been
-observed earlier and can be attributed to the missing electroweak corrections
-which are positive and sizeable at low rapidity and high transverse momenta.
-Theory colleagues are currently working on providing the electroweak corrections
-specifically for this measurement, but they were not available in
-time\todo{check for ewk}.
+prominently visible in the central region at large transverse momenta. Here, the
+theory predictions underestimate the measured data by up to 20\%. This effect
+has been observed earlier and can be attributed to the neglection of
+electroweak corrections which are positive and sizeable at low rapidity and high
+transverse momenta.  Theory colleagues are currently working on providing the
+electroweak corrections specifically for this measurement, but they were not
+available in time\todo[inline]{check for ewk}.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb2ys0.pdf}
     \caption[Ratio of the cross section to CT14 NLO]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the CT14 NLO PDF set for each bin in \ystar
@@ -1143,12 +1158,12 @@ time\todo{check for ewk}.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb2ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb2ys0.pdf}
     \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar

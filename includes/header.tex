@@ -7,6 +7,7 @@
 \usepackage{relsize}
 \usepackage{geometry}
 \usepackage{rotating}
+\usepackage{layout}
 
 \usepackage{etoolbox}
 % Are printing a hard copy or not?
@@ -15,14 +16,14 @@
 \boolfalse{hardcopybool}  % the default  
 
 % Microtype options
-% \usepackage[final]{microtype}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[final]{microtype}
+% \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
 % factor=1100 - add 10% to the protrusion amount (default is 1000)
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
-\SetTracking{encoding={*}, shape=sc}{40}
+% \SetTracking{encoding={*}, shape=sc}{40}
 
 \usepackage{siunitx}
 % \DeclareSIUnit[] \GeV{\giga \electronvolt}
