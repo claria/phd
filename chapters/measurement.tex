@@ -5,25 +5,28 @@ of the Triple-Differential\\ Dijet Cross Section}
 \label{sec:measurement}
 
 The preceeding chapter laid the foundation for the triple-differential dijet
-cross section measurement by demonstrating the sensitivity of PDFs to the chosen
-observable. The sizable PDF uncertainties especially in phase space regions
-involving boosted dijet topologies indicate that a sufficiently precise
-measurement in these phase space regions could be used to better constrain the
-PDFs. 
+cross section measurement by presenting the NLO pQCD calculations for this
+observable and demonstrating the PDFs sensitivity. The sizable PDF uncertainties
+especially in phase space regions involving boosted dijet topologies indicate
+that a sufficiently precise measurement in these phase space regions could be
+used to better constrain the PDFs. 
 
 This chapter is dedicated to the measurement of the cross section from collision
-data recorded bu CMS during the 2012 LHC run at \SI{8}{\TeV}.
-Sec.~\ref{sec:event_selection} describes the event selection, in which clean
-dijet devents are identified.  Using information from comparisons to simulated
-events, the jet energy resolution is studied which is subsequently used in
-Sec.~\ref{sec:unfolding} to unfold the measured cross section to particle-level.
-A detailed study of all experimental sources of uncertainty in
-Sec.~\ref{sec:experimental_uncertainties} concludes the measurement.
+data recorded by CMS during the 2012 LHC run at a center-of-mass energy of
+\SI{8}{\TeV}. The first two sections give the definition of the measured cross
+section and the analyzed data sets. Sec.~\ref{sec:event_selection} describes the
+event selection, in which clean dijet events are identified. Based on simulated
+events, the detector response is studied and the jet energy resolution derived
+which is used subsequently to correct the measured cross section for detector
+effects in an iterative unfolding procedure. A detailed study of all
+experimental sources of uncertainty in Sec.~\ref{sec:experimental_uncertainties}
+concludes the measurement.
 
 Finally, the comparison of unfolded data to NLO predictions is presented in
 Sec.~\ref{sec:nlo_comparisons}. Furthermore, comparisons to NLO calculations
 complemented with matched parton showers, as made possible with the recently
-released Herwig~7 MC event generator, are of particular interest.
+released Herwig~7 MC event generator, are shown.
+~\todo{mention powheg if ready}
 
 \section{Cross Section Definition}
 
@@ -36,10 +39,11 @@ cross section, which is defined as
         \Delta \yboost},
 \end{equation*}
 %
-where $N$ denotes the number of dijet events, $\mathcal{L}_{\mathrm{int, eff}}$ the
-effective integrated luminosity and $\epsilon$ the product of trigger and event
-selection efficiencies which are greater than 99\%. The cross section is
-normalized by the widths of the \ptavg, \ystar, and \yboost bins. 
+where $N$ denotes the number of dijet events, $\mathcal{L}_{\mathrm{int, eff}}$
+the effective integrated luminosity and $\epsilon$ the product of trigger and
+event selection efficiencies which are greater than 99\% in the measured phase
+space. The cross section is normalized by the widths of the \ptavg, \ystar, and
+\yboost bins. 
 
 The size of the \ptavg bins is somewhat larger than the observed resolution for
 \ptavg at the bin center. For simplification, the same \ptavg binning is chosen
@@ -55,21 +59,21 @@ period of the LHC at a center-of-mass energy of \SI{8}{\TeV}. The accumulated
 data corresponds to a total integrated luminosity of $\SI{19.71}{\fbinv}$. 
 
 The 2012 LHC data taking is subdivided into four periods A, B, C and D and the
-data sets are split accordingly into separate samples. Each dataset is further
-split into subsets containing only a fraction of all triggered events according
-to the physics purpose. This analysis relies on a range of jet triggers. All
-events triggered by prescaled jet triggers were streamed into the data sets
-\texttt{Jet} and \texttt{JetMon} while the events of unprescaled jet triggers
-are moved into the data set \texttt{JetHT}. As this assignment changed over the
-2012 run period, it was taken care of only selecting the correct subset of
-events. Table~\ref{tab:data:datasets} presents the CMS collision data sets
+data sets are split accordingly into separate samples. Each data set is further
+split into subsets containing only a fraction of all triggered events which are
+grouped according to the physics purpose. This analysis relies on a range of jet
+triggers. All events triggered by prescaled jet triggers were streamed into the
+data sets \texttt{Jet} and \texttt{JetMon} while the events of unprescaled jet
+triggers were moved into the data set \texttt{JetHT}. As this assignment changed
+over the 2012 run periods, it was taken care to only select the correct subset
+of events. Table~\ref{tab:data:datasets} presents the CMS collision data sets
 analyzed in this thesis together with the integrated luminosity collected in
 each run period.
 
 \begin{table}[htbp]
     \centering
     \caption[Datasets of the 2012 LHC run period]
-       {The 2012 collision data of CMS comprises four datasets collected in the run periods
+       {The 2012 collision data of CMS comprises four data sets collected in the run periods
            A, B, C and D. The total integrated luminosity of all data collected
            in 2012 sums up to \SI{19.71}{\fbinv}.}
     \label{tab:data:datasets}
@@ -84,26 +88,27 @@ each run period.
     \bottomrule
     \end{tabular}
 \end{table}
+\todo{check for rounding errors}
 
 \subsection{Monte Carlo Samples}
 
-To compare the measured and reconstructed data with simulated events, two
+To compare the measured data with simulated events, two
 Monte-Carlo event generators were used, which are described in
 Sec.~\ref{subsection:mc_generators}. Each MC generator is utilizing an optimized
-tune to simulate the underlying event. Additionally, the Monte Carlo samples
+tune to simulate the underlying event. Additionally, the Monte Carlo event samples
 contain not only the hard scattering event, but also also an admixture
 simulating the pileup collisions observed in real collisions.
 
 The Madgraph Monte Carlo sample is generated with a multi-leg improved QCD
 process. By using Madgraph, the LO matrix elements do not only contain the $2
-\rightarrow 2$ matrix elements, but also the $2 \rightarrow 3$ matrix elements
-which better describe multijet events, but have to be matched to the subsequent
-parton shower. The underlying event is modeled using the tune Z2$^*$. The parton
-shower and hadronization is carried out using the Pythia~6 event generator which
-is interfaced to Madgraph by the LHE event record. This Monte Carlo sample is
-the main sample used for data comparisons, not because of the multileg-improved
-matrix elements which are not as important for this dijet analysis, but because
-of the huge number of events generated and simulated.
+\rightarrow 2$ matrix elements, but also multi-leg matrix elements which better
+describe multi-jet events, but have to be matched to the subsequent parton
+shower. The underlying event is modeled using the tune Z2$^*$. The parton shower
+and hadronization is carried out using the Pythia~6 event generator which is
+interfaced to Madgraph by the LHE event record~\cite{Alwall:2006yp}. This Monte
+Carlo sample is the main sample used for data comparisons, not because of the
+multileg-improved matrix elements which are not as important for this dijet
+analysis, but because of the huge number of events generated and simulated.
 
 Furthermore, a data sample generated with Pythia~8 is used. While including only the $2
 \rightarrow 2$ LO matrix elements, the event simulation and the underlying event
@@ -113,12 +118,12 @@ To be able to perform comparisons between data and simulated events on
 reconstructed level, events from both Monte Carlo generators were propagated
 through the complete simulation of the CMS detector. This allows for further
 studies like the measurement of the jet transverse momentum resolution which are
-needed to finally perform an unfolding of the measurement.
+needed to finally correct the measurement for detector effects.
 
 Predictions of jet cross sections, especially cross sections involving the jet
 transverse momenta, are notoriously difficult because of the steeply falling
 spectrum. Consequently, it isn't possible to generate enough events to populate
-also the high-\pt phase space regions with a sufficiently large number of
+also the highest-\pt phase space regions with a sufficiently large number of
 events. However, there exist two approaches to overcome this issue. The first
 method involves the reweighting of the generation process to generate more
 events at high transverse momentum. Unfortunately, this spoils the absolute
@@ -126,25 +131,26 @@ normalization of the cross section as well as it involves the consideration of
 huge event weights. The second method is based on splitting the phase space in
 multiple regions, in which events are generated separately. The
 different phase space regions are then stitched together later in the data
-analysis while taking into account the cross section in the different phase
+analysis while taking into account the cross sections in the different phase
 space regions. The Madgraph sample is split into four regions according to the
 scalar sum of the transverse momenta, $H_{\mathrm{T}}$, while the Pythia 8
 sample is split into twelve data sets according to the transverse momentum of
-the leading jet. Table~\ref{tab:mc_samples} shows all data sets
+the leading jet. Table~\ref{tab:mc_samples} shows all Monte Carlo data sets
 as well as the cross section and the generated number of events.
 
 \section{Event selection}
 \label{sec:event_selection}
 
-The selection of dijet events is based on several quality criteria recommended by CMS
-for jet analyses. Furthermore, phase spaces cuts ensure the applicability and
-comparibility of NLO theory calculations.
+The selection of events is based on several quality criteria recommended by CMS
+ore developed specifically for this analysis to yield clean dijet events.
+Furthermore, phase spaces cuts on the jets ensure the applicability and comparibility of NLO
+theory calculations.
 
 \subsection{Certified Data Selection}
 
 The first step in the event processing chain is to only pick data from runs and
 luminosity sections which fullfill certain criteria. These criteria include
-proper performance of all detector subsystems as well as the passing of all data
+proper performance of all detector subsystems as well as the passing of data
 quality monitoring (DQM) steps during the validation process. The good
 lumisections within a run are announced using a JSON data file, called
 \textsc{Golden JSON}. The applied lumisection certification
@@ -160,23 +166,24 @@ seed and multiple HLT filters. The L1 trigger has a lower threshold to ensure
 full efficiency versus \pt of the HLT trigger. Since the \pt spectrum is steeply
 falling and the rates for low-\pt jets are very high, it is not feasible to use
 a single unprescaled trigger for the selection of all interesting events.
-Instead, a set of five prescaled low-\pt trigger paths, each with different prescale
-value, is used to collect sufficient data in the lower part of the \pt spectrum.
-Additionally, an unprescaled trigger is used in the \pt-region in which the jet
-rate is sufficiently small, \ie at high \pt, to collect and store all events. A prescale value of
-$n$ means, that only every $n$-th event accepted by a trigger, is kept. Of course, the
-applied prescale values have to be taken into account when reconstructing the
-spectrum.
+Instead, a set of five prescaled low-\pt trigger paths, each with different
+prescale value, is used to collect sufficient data in the lower part of the \pt
+spectrum.  Additionally, one unprescaled trigger is used in the \pt-region in
+which the rate is sufficiently small, \ie at high \pt, to collect and store all
+events. A prescale value of $n$ means, that only every $n$-th event which is accepted by
+a trigger, is kept. Of course, the applied prescale values have to be taken into
+account when the original spectrum is reconstructed. 
 
 \begin{table}[htbp]
     \centering
-    \caption[Single Jet Trigger Paths]{List of all trigger paths used in the analysis. Each
-        trigger is used in an mutually exclusive phase space in \ptavg in which
+    \caption[Single Jet Trigger Paths]{List of all single jet trigger paths used in the analysis. Each
+        trigger is employed in an mutually exclusive phase space in \ptavg in which
         the trigger exhibits an efficiency larger than 99\%. The column
-        $p_{\mathrm{T},.99\%}$ indicates the value a which each trigger reaches
+        $p_{\mathrm{T},99\%}$ indicates the value a which each trigger reaches
         that value. The last column reports the effective luminosity seen by
         each trigger. This number, divided by the total integrated luminosity of
-        \SI{19.71}{\fbinv} gives the effective prescale applied on a trigger.}
+        \SI{19.71}{\fbinv} gives the effective prescale applied on a trigger
+        over the whole run period.}
     \label{tab:triggers}
     \begin{tabular}{lcccc}
         \toprule
@@ -204,7 +211,7 @@ the trigger is fully efficient.
     \includegraphics[width=0.49\textwidth]{figures/measurement/trigger_eff_HLT_PFJET200_default.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/trigger_eff_HLT_PFJET260_default.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/trigger_eff_HLT_PFJET320_default.pdf}\hfill
-    \caption[Turn-on curves of single jet HLT trigger paths]{Trigger efficiencies turn-on curves for the single jet trigger
+    \caption[Turn-on curves of single jet HLT trigger paths]{Trigger turn-on curves for the single jet trigger
     paths used in the analysis. To determine the 99\% efficiency threshold, the
     trigger paths are fitted using a sigmoid function taking into account the
     uncertainties using Clopper-Pearson confidence intervals.}
@@ -214,16 +221,16 @@ the trigger is fully efficient.
 The jet reconstruction algorithms and the jet energy corrections applied on HLT
 level are slightly different compared to the finally reconstructed objects used
 in this analysis. Futhermore, the efficiency of each trigger is not calculated
-as a function of the jet \pt, which was used in the trigger decision, but versus
+as a function of jet \pt, which was used in the trigger decision, but versus
 \ptavg of the two leading jets as used in this analysis. Therefore, the triggers
-show a turn-on behaviour, as can been seen in Figure~\ref{fig:trigger_eff}.
-Consequently, it is neccessary to determine the threshold at which a trigger is
+show a turn-on behaviour, as can been seen in Fig.~\ref{fig:trigger_eff}.
+Consequently, it is neccessary to determine the threshold when a trigger becomes
 fully efficient, which is defined to be the value at which the efficiency is
 larger than 99\%.
 
 Basically, it is possible to calculate the efficiency of a given trigger by
 dividing the number of passing events through the number of events which pass
-the next-lower trigger in \pt, as the lower trigger is by definition efficient,
+the next-lower trigger in \pt, as the looser trigger is by definition efficient,
 when the higher trigger becomes efficient. This is aggravated through the
 different prescales applied to each trigger path. While it is possible to
 normalize the yield by the effective luminosity seen by each trigger, this
@@ -239,12 +246,12 @@ the HLT threshold~\cite{Stober:2012abc}.
 
 Similarly, the trigger decision of the next-higher trigger can be emulated
 starting from a lower trigger path. A set of events $S_1 = \left\{E_i | T_A
-(E_i) = true \right\}$ which was accepted  by the lower trigger path $T_A$ is
+(E_i) = \mathrm{true} \right\}$ which was accepted  by the lower trigger path $T_A$ is
 used to determine the subset $S_2 = \left\{E_i|T_A(E_i) \wedge  T_B(E_i)
 \right\}$ which also passes the next-higher trigger $T_B$, see
 Eq.~\ref{eq:trigger_eff}. The ratio of both event sets is used to determine
-the turn-on curve as shown for each trigger path in Figure~\ref{fig:trigger_eff}
-using the Equation~\ref{eq:trigger_eff}. The uncertainty on the efficiency is
+the turn-on curve as shown for each trigger path in Fig.~\ref{fig:trigger_eff}. 
+The uncertainty on the efficiency is
 indicated by errorbars which represent Clopper-Pearson confidence intervals.
 
 \begin{equation}
@@ -253,7 +260,7 @@ indicated by errorbars which represent Clopper-Pearson confidence intervals.
 \end{equation}
 
 To determine the point, at which the trigger efficiency is larger than 99\%, the
-turn-on distribution is fitted using a sigmoid function, whiche describes the
+turn-on distribution is fitted using a sigmoid function, that describes the
 turn-on behaviour of the trigger paths.
 
 \begin{equation}
@@ -261,15 +268,15 @@ turn-on behaviour of the trigger paths.
     f_{\mathrm{fit}} (x) = \frac{1}{2} \left( 1 + \erf \left(\frac{x-\mu}{\sqrt{2}\sigma}\right)\right)
 \end{equation}
 
-The thresholds which were finally used in the data analysis and ar given in
-Table~\ref{tab:triggers}, deviate slightly from the ones shown in
-Figure~\ref{fig:trigger_eff} as each trigger threshold was measured in each
-\ystar and \yboost bin respectively and the most conservative, thus the highest
-threshold, is used in the end.
+The thresholds which were finally used in the data analysis deviate slightly
+from the ones shown in Figure~\ref{fig:trigger_eff} as each trigger threshold
+was measured separately in each \ystar and \yboost bin respectively and the most
+conservative, thus the highest threshold, is finally chosen. They are given in
+Table~\ref{tab:triggers}
 
 It has to be mentioned, that there are also HLT triggers available which
 specifically trigger on the average transverse momentum of the dijet system.
-These were implemented for dijet calibration purposes. Naturally they appear to
+These were implemented for dijet calibration purposes. Naturally, they appear to
 be the better choice also for this analysis. The \ptavg trigger paths were studied,
 but the performance is only comparable and partially even slightly worse due to
 larger prescales applied to these trigger paths which result in larger
@@ -277,19 +284,18 @@ statistical uncertainties compared to the single jet trigger paths.
 
 \subsection{Primary Vertex Selection}
 
-The cuts on the primary vertex further reject beam background and off-centre bunch
+The cuts on the primary vertices further reject beam background and off-centre bunch
 crossings. Each event has to contain at least one primary vertex (PV) which is well
 reconstructed within a distance of $|z_\mathrm{PV}| < \SI{24}{\centi \meter}$ to
 the nominal interaction point of the detector. Futhermore, the radial distance
 $\rho_\mathrm{PV}$ needs to be smaller than $\SI{2}{\centi\meter}$. To
 ensure a high quality of the vertex reconstruction in the fit, the number of
-degrees of freedom in the vertex fit $n_{\mathrm{dof,PV}}$ needs to be at least
-four. Consequently, at least four tracks need to be present to
-perform the vertex fit.
+degrees of freedom in the vertex fit, $n_{\mathrm{dof,PV}}$ needs to be at least
+four. Consequently, at least four tracks need to be present in order to
+perform a valid vertex fit.
 
 \subsection{Missing transverse energy cut}
 
-\todo{cite jet met filter twiki}
 If all particles could be identified and perfectly measured, the transverse
 momentum of all particles would sum up to zero. The imbalance in the transverse
 momentum of all visible particles, which can be measured in the detector is
@@ -308,12 +314,12 @@ beyond the standard model which involve undetectable particles.
     \label{fig:mc:met_fraction}
 \end{figure}
 
-However, a large fraction of MET is not always caused by physics processes. Very
-often, the reason can be found in detector noise, cosmic rays or beam-halo
-particles. Therefore, a sequence of algorithms developed by the MET working
-group at CMS~\cite{jetmet:metfilters}, is employed which identifies and rejects
-these events.  Moreover, a cut is applied which removes events in which the
-missing transverse energy fraction \met constitutes a large fraction of the
+However, a large fraction of MET in an event is not always caused by physics
+processes. Very often, the reason can be found in detector noise, cosmic rays or
+beam-halo particles. Therefore, a sequence of algorithms developed by the MET
+working group at CMS~\cite{jetmet:metfilters}, is employed which identifies and
+rejects these events.  Moreover, a cut is applied which removes events in which
+the missing transverse energy fraction \met constitutes a large fraction of the
 total transverse energy $\sum_i E_{\mathrm{T},i}$, see
 Fig.~\ref{fig:mc:met_fraction},
 
@@ -326,7 +332,7 @@ Fig.~\ref{fig:mc:met_fraction},
 The jet identification criteria (jet ID) rejects noise and noise-enhanced jets
 while all real jets are kept. The jet ID is not applied event-wise, but each jet
 is accepted or removed from the list of valid jets. The algorithm works on
-reconstructed jets using information of the clustered particles candidates.
+reconstructed jets using information of the clustered particle candidates.
 Following the official recommendations of the \textsc{JetMET}
 group~\cite{jetmet:jetid}, the loose jet ID is used. All jets passing the jet ID
 are then further processed in the analysis chain. 
@@ -337,13 +343,13 @@ removes HCAL noise and ECAL noise, respectively. Muons, that are falsely
 identified and clustered as jets are removed by the muon fraction criterion.
 Based on information of the tracker, additional selection cuts are enforced in
 the region $|\eta| < 2.4$. Fake jets clustered from electrons are removed by the
-charged electromagnetic fraction cut and the fraction of charged hadrons in the
-jet must be larger than zero. The cut on the charged hadron fraction is
-important since the CHS algorithm removes charged particles from pileup
-vertices. Consequently, jets without any charged hadrons are very likely pileup
-jets. The Figs.~\ref{fig:jet_constituents_fictions}
-and~\ref{fig:jet_constituents_counts} show the distributions of the jet
-quantities observed in data and simulated events.
+charged electromagnetic fraction cut. Furthermore, the fraction of charged hadrons in the
+jet must be larger than zero. This cut is important since the CHS algorithm
+removes charged particles from pileup vertices. Consequently, jets without any
+charged hadrons are very likely to be pileup jets. The
+Figs.~\ref{fig:jet_constituents_fractions} and~\ref{fig:jet_constituents_counts}
+show the distributions of the jet constituents observed in data and simulated
+events.
 
 \begin{figure}[htbp]
     \centering
@@ -368,7 +374,7 @@ quantities observed in data and simulated events.
 While studying the loose and tight jet criteria, it was found that the tight jet
 ID removes a non-negligible fraction of jets in the forward region of the
 phase space considered in this analysis. Therefore, the loose jet ID is favored
-and applied in this thesis as it is also the official recommendations of the
+and applied in this thesis as it is also the official recommendation of the
 \textsc{JetMET} group.
 
 
@@ -468,7 +474,7 @@ here because of the much higher cut on the average transverse momentum. Another
 advantage of the high cut on \ptavg is the avoidance of a turn-on region which
 would lead to complications in the applied unfolding procedure.
 
-\subsection{Pseudo-Rapidity Bias Correction}
+\subsection{Jet Angular Correction}
 
 The jet energy corrections relate the measured jet energy to the true jet energy
 on particle-level, but they do not include any correction for reconstruction
@@ -1047,7 +1053,7 @@ in~\cite{jec_paper}. The Figs.
         the uncertainty arises from jet energy resolution and soft-radiation
         bias corrections. 
     \item[Absolute JES]  The absolute calibration of the jet energy scale relies
-        on Z/$\gamma$+jet and multijet events. The uncertainties are related to
+        on Z/$\gamma$+jet and multi-jet events. The uncertainties are related to
         the lepton momentum scale for muon and the single-pion response in the
         HCAL. Observed differences in applied methods can be traced back to neutrinos
         and ISR and are accounted for in these sources of uncertainty.
