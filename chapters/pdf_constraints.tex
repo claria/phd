@@ -11,6 +11,68 @@ kinematic phasespace. The triple-differential dijet cross section contains
 additional information in the high-$x$ region and can constrain the PDFs, in
 particular the gluon PDF. 
 
+
+\section{Correlation between dijet cross section and PDFs}
+\label{sec:pdf_sensitivity}
+
+\todo{write}
+The potential impact of the CMS inclusive jet data can be illustrated
+by the correlation between the inclusive jet cross section
+$\sigma_{\mathrm{jet}}(Q)$ and the PDF $xf(x,Q^2)$ for any parton
+flavour~$f$. The NNPDF Collaboration~\cite{Ball:2008by} provides PDF
+sets in the form of an ensemble of replicas $i$, which sample
+variations in the PDF parameter space within allowed uncertainties.
+The correlation coefficient $\varrho_f(x,Q)$ between a cross section
+and the PDF for flavour~$f$ at a point $(x,Q)$ can be computed by
+evaluating means and standard deviations from an ensemble of $N$
+replicas as
+
+\begin{equation}
+  \varrho_f (x,Q) =
+  \frac{N}{(N-1)} \frac{%
+    \langle \sigma_{\mathrm{jet}}(Q)_i \cdot xf(x,Q^2)_i \rangle -
+    \langle \sigma_{\mathrm{jet}}(Q)_i \rangle \cdot
+    \langle xf(x,Q^2)_i \rangle}
+  {\Delta_{\sigma_{\mathrm{jet}}(Q)} \Delta_{xf(x,Q^2)}}\,.
+\end{equation}
+
+Here, the angular brackets denote the averaging over the replica index
+$i$, and $\Delta$ represents the evaluation of the corresponding
+standard deviation for either the jet cross section,
+$\Delta_{\sigma_{\mathrm{jet}}(Q)}$, or a PDF, $\Delta_{xf(x,Q^2)}$.
+Figure~\ref{fig:correlation_pdf_xs_gqq} presents the correlation
+coefficient between the inclusive jet cross section and the gluon, u
+valence quark, and d valence quark PDFs in the proton.
+
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y0_0_bw}\hfill%
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y2_0_bw}
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_valence_quark_y0_0_bw}\hfill%
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_valence_quark_y2_0_bw}
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_valence_quark_y0_0_bw}\hfill%
+%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_valence_quark_y2_0_bw}
+%   \caption{The correlation coefficient between the inclusive jet cross
+%     section and the gluon (top row), the u valence quark (middle row),
+%     and the d valence quark PDFs (bottom row), as a function of the
+%     momentum fraction $x$ of the proton and the energy scale $Q$ of
+%     the hard process. The correlation is shown for the central
+%     rapidity region $\yabs<0.5$ (left) and for $2.0<\yabs<2.5$
+%     (right).}
+%   \label{fig:correlation_pdf_xs_gqq}
+% \end{figure}
+
+The correlation between the gluon PDF and the inclusive jet cross
+section is largest at central rapidity for most jet \pt. In contrast,
+the correlation between the valence quark distributions and the jet
+cross section is rather small except for very high \pt such that some
+impact can be expected at high $x$ from including these jet data in
+PDF fits. In the forward region the correlation between the valence
+quark distributions and the jet cross sections is more pronounced at
+high $x$ and smaller jet \pt. Therefore, a significant reduction of
+the PDF uncertainties is expected by including the CMS inclusive jet
+cross section into fits of the proton structure.
+
 \section{The HERAFitter Framework}
 \label{section:herafittersetup}
 

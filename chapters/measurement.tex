@@ -79,7 +79,7 @@ each run period.
     \label{tab:data:datasets}
     \begin{tabular}{cccc}
     \toprule
-    \textbf{Run}  & \textbf{run range} & \textbf{data set}                       & \textbf{luminosity}\\
+    \textbf{run}  & \textbf{run range} & \textbf{data set}                       & \textbf{luminosity}\\
                   &                    &                                        & \si{\fbinv}\\\midrule
     A             & 190456--193621     & /Jet/Run2012A-22Jan2013-v1/AOD         & \num{0.88}\\
     B             & 193834--196531     & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & \num{4.49}\\
@@ -358,7 +358,9 @@ events.
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_muonFraction.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_neutralEMFraction.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_neutralHadronFraction.pdf}
-    \caption{Control distribution for the jet constituent fractions. .}
+    \caption[PF candidate fractions in jets]{The fractions of jet constituents as
+            observed in data and simulated events for different types of PF candidates.
+            Data and simulation are normalized to the same number of events.}
     \label{fig:jet_constituents_fractions}
 \end{figure}
 
@@ -366,10 +368,11 @@ events.
     \centering
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_nConstituents.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_nCharged.pdf}
-    \caption{Control distribution for the jet constituent fractions. .}
+    \caption[Number of particle candidates in jets.]{Number of PF candidates
+             clustered into a jet in data and simulated events. Data and simulation are
+             normalized to the same number of events.}
     \label{fig:jet_constituents_counts}
 \end{figure}
-
 
 While studying the loose and tight jet criteria, it was found that the tight jet
 ID removes a non-negligible fraction of jets in the forward region of the
@@ -377,26 +380,25 @@ phase space considered in this analysis. Therefore, the loose jet ID is favored
 and applied in this thesis as it is also the official recommendation of the
 \textsc{JetMET} group.
 
-
-
 \begin{table}[htbp]
     \centering
     \caption[Jet ID criteria]{The jet ID removes noise and fake jets based on
         the properties of the reconstructed jets and the clustered particle
         candidates. All selection cuts which are recommended by the
-        \textsc{JetMET} group are applied~\cite{jetmet:jetid_twiki}. The loose jet ID is
+        \textsc{JetMET} group are applied~\cite{jetmet:jetid}. The loose jet ID is
         used in this analysis as the tight ID removes a non-negligible fraction
-        of signal events, particularly in the forward region.}
+        of signal events, particularly in the forward region without tracker
+        coverage.}
     \label{tab:jetid}
     \begin{tabular}{llll}
     \toprule
                                  & \textbf{property}       & \textbf{loose ID} & \textbf{tight ID}\\\cmidrule(lr){2-4}
-    \textbf{Whole $\eta$ region} &                         &                   & \\\cmidrule(lr){1-1}
+                                 \textbf{Whole $\bm{\eta}$ region} &                         &                   & \\\cmidrule(lr){1-1}
                                  & neutral hadron fraction & $< 0.99$          & $< 0.90$\\
                                  & neutral EM fraction     & $< 0.99$          & $< 0.90$\\
                                  & number of constituents  & $> 1$             & $> 1$\\
                                  & muon fraction           & $< 0.8$           & $< 0.80$\\
-    \textbf{only $|\eta| < 2.4$} &                         &                   & \\\cmidrule(lr){1-1}
+                                 \textbf{only $\bm{|\eta| < 2.4}$} &                         &                   & \\\cmidrule(lr){1-1}
                                  & charged hadron fraction & $> 0$             & $> 0$\\
                                  & charged multiplicity    & $> 0$             & $> 0$\\
                                  & charged EM fraction     & $< 0.99$          & $< 0.90$\\
@@ -407,18 +409,24 @@ and applied in this thesis as it is also the official recommendation of the
 
 \subsection{Jet ID Efficiency}
 
-The jet ID selection ensures a high purity of real jet events while keeping more
-than 99\% of the real jets. The efficiency of the jet ID is studied using a
-tag-and-probe method. 
+The loose jet ID ensures a high purity of real jet events while at the same time
+the efficiency is promised to be larger than 99\% for real jets. To confirm the
+high selection efficiency, it is studied using a tag-and-probe technique.
 
 Dijet events, in which the leading two jets are well balanced in $\phi$, are
-selected using a $\Delta \phi > 2.7$ cut. While the tag jet is required to
-fulfill the loose jet ID, the probe jet is checked if it required the ID as
-well. The ratio of events where the probe
-jet passes the criteria versus the number of events in which the probe doesn't
-pass the critera is used to calculate the efficiency. Fig.~\ref{fig:jetid_eff}
-shows the efficiency as a function of \ptavg of the dijet system for all bins of
-the measurement. It is in all cases larger than 99\%.
+selected using
+\begin{equation*}
+    | \Delta\phi - \pi | < 0.3
+\end{equation*}
+%
+where $\Delta\phi$ is the azimuthal difference between the two leading jets. One of the
+dijets is chosen as tag jets and has to fulfill the loose jet id. It is tested,
+if the probe jet also passes the jet ID. The ratio of events in which the probe
+jet also passes the criteria versus the total number of dijet events is used to
+calculate the efficiency. Fig.~\ref{fig:jetid_eff} shows the efficiency as a
+function of \ptavg of the dijet system for all \ystar and \yboost bins. As
+promised by the \textsc{JetMET} group the efficiency is in all cases larger than
+99\%.
 
 \begin{figure}[htbp]
     \centering
@@ -428,7 +436,8 @@ the measurement. It is in all cases larger than 99\%.
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb1ys0.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb2ys0.pdf}
-    \caption[Efficiency of the jet ID]{The jet ID efficiency is studied using a
+    \caption[Efficiency of the jet ID]{The jet ID efficiciency as a function of
+    \ptavg for all \ystar and \yboost bins. It is studied using a
     tag-and-probe approach on clean dijet event topologies. The efficiency is
     shown as a function of \ptavg for all bins. It is in all cases larger than 99\%.}
     \label{fig:jetid_eff}
@@ -436,62 +445,65 @@ the measurement. It is in all cases larger than 99\%.
 
 \subsection{Jet Correction and Selection}
 
-The measurement is based on jets clustered from Particle Flow candidates using
-the anti-\kt algorithm with a jet size parameter of $R=0.7$. Like the jet ID
-selection, the following phase space cuts remove jets due to their transverse
-momentum and rapidity. Consequently, all jet energy corrections recommended by
-CMS are applied prior to this selection in order to have the correct energy
-scale of the jets. The factorized correction approach employed by CMS is discussed in
-Sec.~\ref{sec:jec} and comprise different correction levels for jets in data\footnote{The
-JEC version applied on data is internally referred to as \texttt{Winter14\_V8}}
-and for jets in simulated events\footnote{The latest JEC for run-independent
-Monte Carlo Samples are called \texttt{START53\_V27}}.
+This measurement is based on jets clustered from PF candidates using the
+anti-\kt algorithm with a jet size parameter of 0.7. The following phase space
+cuts remove jets instead of whole events due to their transverse momentum and rapidity. Consequently,
+all jet energy corrections recommended by CMS are applied prior to this
+selection in order to have the correct energy scale of the jets. The factorized
+correction approach employed by CMS is discussed in Sec.~\ref{sec:jec} and
+comprise different correction levels for jets in data\footnote{The JEC version
+ applied on data is internally referred to as \texttt{Winter14\_V8}} and for
+    jets in simulated events\footnote{The latest JEC for run-independent Monte
+        Carlo Samples are called \texttt{START53\_V27}}.
 
 
-The accessible phase space in theoretical calculations and the measurement is
+The accessible phase space in theoretical calculations and in the measurement is
 synchronized by selecting jets only from a restricted part of the complete phase
 space in which the detector acceptance is high and the applicability of NLO
 pQCD calculations is guaranteed.
-
+%
 \begin{align*}
     \ptjet &> \SI{50}{\GeV}\\
     |y_\mathrm{jet}| &\leq 3.0\\
 \end{align*}
-
-Events, in which the leading or second jet is failing the jet selection, the
-whole event is discarded to only keep event in which the two jets actually stem
-from the hard scattering are selected. Furthermore, an additional cut on the
+%
+Events, in which the leading or second jet is failing the jet selection, are
+discarded to only keep events in which both leading jets actually stem
+from the hard scattering. Furthermore, an additional cut on the
 average transverse momentum of the dijets is applied. This cut is neccessary, as
-the first jet trigger becomes efficient at this point.
-
+the first jet trigger becomes efficient at this point and theory calculations
+and measurement have to be synchronized.
+%
 \begin{align*}
     \ptavg &> \SI{133}{\GeV}
 \end{align*}
-
+%
 Often, it is recommended to have asymmetric cuts on the transverse momentum of
 the two leading jets to avoid an infrared sensitive region. This is not an issue
-here because of the much higher cut on the average transverse momentum. Another
-advantage of the high cut on \ptavg is the avoidance of a turn-on region which
-would lead to complications in the applied unfolding procedure.
+here because of the much higher cut on the average transverse momentum. Other
+advantage of the high cut on \ptavg are the avoidance of a turn-on region which
+would lead to complications in the applied unfolding procedure as well as the
+restriction to a phase space region in which non-perturbative contributions are
+small.
 
 \subsection{Jet Angular Correction}
 
-The jet energy corrections relate the measured jet energy to the true jet energy
-on particle-level, but they do not include any correction for reconstruction
-deficiencies of the jet pseudo-rapidity. However, especially in the transition
+The jet energy corrections relate the reconstructed jet energy to the
+particle level jet energy, but they do not include any correction for angular
+reconstruction deficiencies of the jets. However, especially in the transition
 regions of the detector, \ie when the tracker coverage ends, a systematic
-mismodelling is observed, see Fig.~\ref{fig:jet_eta_corr}. Jets are
-reconstructed with systematically larger absolute pseudo-rapidity, \ie shifted towards
-the forward region. While the absolute shift is rather small, it is a relevant
-systematic effect when the rapidity separation of two jets is a observable.
-However, two effects limit the impact of the mismodelling. At first, it is only
-pronounced for jets with lower transverse momentum as can be seen in
-Fig~\ref{fig:jet_eta_corr_vs_pt} and secondly, the large bin size in rapidity
+reconstruction bias is observed, see Fig.~\ref{fig:jet_eta_corr}. Jets are
+reconstructed with systematically larger absolute pseudo-rapidity, \ie shifted
+towards the forward region. While the absolute shift is rather small, it's a
+relevant systematic effect when the rapidity separation of two jets is of
+interest. However, two effects limit the impact of the mismodelling. First, it
+is only pronounced for jets with low transverse momentum as can be seen in
+Fig~\ref{fig:jet_eta_corr_vs_pt} and second, the large bin size in rapidity
 reduces the effects. 
 
 Nonetheless, the systematic error is accounted for by applying a correction on
 each jet based on the average difference between the pseudo-rapidity of
-particle-level jets and reconstructed jets as a function of reconstructed jet
+particle level jets and reconstructed jets as a function of reconstructed jet
 \pt and pseudo-rapidity. The Figs.~\ref{fig:jet_eta_corr} and
 ~\ref{fig:jet_eta_corr_vs_pt} also show the dstribution after applying the
 correction, in which the majority of the $\eta$ dependent effects is removed.
@@ -503,7 +515,7 @@ correction, in which the majority of the $\eta$ dependent effects is removed.
     \caption[Differences of pseudo-rapidity of reconstructed jets to
         generator-level jets]{The difference between the pseudo-rapdity of the
             reconstructed jets and the generated jets is shown over the
-            pseuudo-rapidity of the generated jet. The distribution is shown
+            pseudo-rapidity of the generated jet. The distribution is shown
             before (left) and after (right) applying the pseudo-rapidity
             correction. The blue points indicate the mean of the distribution in
             each $\eta_{\mathrm{gen}}$ bin.}
@@ -515,13 +527,13 @@ correction, in which the majority of the $\eta$ dependent effects is removed.
     \centering
     \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_vs_genpt.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_vs_genpt_corr.pdf}
-    \caption[Differences of pseudo-rapidity of reconstructed jets and particle-level jets as a function of the reconstructed jet \pt]
+    \caption[Differences of pseudo-rapidity of reconstructed jets and particle level jets as a function of the reconstructed jet \pt]
             {The pseudo-rapidity of the
             generated jets is shown as a function of the transverse momentum of
             the jets. The color indicates the differences of the pseudo-rapidity
             of the generated and reconstructed jets. The distribution is shown
-            before (left) and after (right) applying the pseudo-rapidity
-        correction.}
+            before (left) and after (right) the angular
+        correction is applied.}
     \label{fig:jet_eta_corr_vs_pt}
 \end{figure}
 
@@ -541,9 +553,9 @@ cross section increase is not noticeably.
     \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb1ys0.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/rap_corr_data_yb2ys0.pdf}
-    \caption[Effect of pseudo-rapidity correction]{The effect of the
-        pseudo-rapidity correction is demonstrated by showing the ratio of the
-        cross section after applying the correction to the result without
+    \caption[Effect of angular correction]{The effect of the angular correction
+        on the cross section  is demonstrated by calculating the ratio of the
+        cross section after applying the correction to the one without
         correction. The cross section decreases in bins involving forward jets
         and is more pronounced for higher values of \ystar.}
     \label{fig:rap_corr_data}
@@ -574,8 +586,8 @@ differences are negligible.
     \caption[Stability of result over all run periods]{Ratio of the measured
     cross section in each run period to the cross section obtained with data
     from Run D. There are small differences, mostly due to statistical fluctuations.
-    A slight slope is observed for the result of run B, but overall the differences
-    are negligible.}
+    A slight slope is observed for the result of run B, but overall separately
+    obtained cross sections are in good agreement.}
     \label{fig:run_comparison}
 \end{figure}
 
@@ -614,40 +626,58 @@ reweighting the simulated events, vanishes.
     \label{fig:mc:npv_reweighting}
 \end{figure}
 
-\subsection{Control distributions}
+\subsection{Kinematic distributions}
 
-Figure~\ref{fig:controlplots:properties} show the numerous energy fractions of the jet constituents. The top
-row of this figure show the charged and neutral fraction of hadrons in the jet. The middle row shows
-the fraction of muons and photons within the jet while the bottom row show the electron fraction and
-the HF hadron fraction.
-
-
-
-\subsection{Comparison of Kinematic Quantities}
-
-The measured data distributions on reconstructed level are compared with simulated events
-processed through the whole event generation and detector simulation. In this section
-the basic kinematic quantities of the leading two jets are compared as well as the properties
-of each of the jets mainly describing the constituent fractions of each jet. Figure~\ref{fig:controlplots:kinematic}
-shows the transverse momentum $\pt$, the rapidity $y$ and the azimuthal angle $\phi$ for the leading
-two jets. The kinematic of the two dijet system is well described by the MC simulation apart from
-a few regions with larger discrepancies. The \pt-distribution is not that well described especially in
-the lower \pt region and the number of events with forward jets is overestimated in the MC simulation.
+Kinematic quantities of dijet events are compared with simulated events on
+reconstructed level. To achieve that, the generated events were processed
+through the complete detector simulation and reconstruction.
+Figure~\ref{fig:controlplots:kinematic} shows the transverse momentum $\pt$, the
+rapidity $y$ and the azimuthal angle $\phi$ for the leading two jets. The
+\pt-distribution is not that well described especially in the lower \pt region.
+While the rapidity distribution is well described within the tracker coverage of
+$y \approx 2.4$, there are larger discrepancices at higher rapidities.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet1pt_default.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet2pt_default.pdf}
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet1rap_default.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet2rap_default.pdf}
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet1phi_default.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{figures/measurement/jet2phi_default.pdf}
-    \caption[Control plots of kinematic quantities of the dijet system]{The plots show the basic kinematic quantities of the two leading jets in a selected event.
-             The transvers momentum of the leading (left plot) and the second (right plots) jet is shown
-         in the top row. The rapidity of the jets is shown in the middle row. The azimuthal angle of the
-     leading jet and the second jet is shown on the bottom row.}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet1pt.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet2pt.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet1rap.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet2rap.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet1phi.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/jet_quantities_jet2phi.pdf}
+    \caption[Kinematic quantities of the jets]{The 
+        kinematic quantities of the two leading jets are shown for the leading
+        jet (left) and the second jet (right) both for data (markers) and
+        simulated events (solid). The transverse momentum of the
+        jets is shown in the top row, the rapdity in the middle row. The
+        azimuthal angle of the jets is shown the bottom row.}
     \label{fig:controlplots:kinematic}
 \end{figure}
+
+\todo{text for dijet quantities}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_dijet_deltaphi.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_dijet_deltar.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_dijet_mass.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_ptavg.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_dijet_yboost.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/dijet_quantities_dijet_ystar.pdf}
+    \caption[Kinematic quantities of the dijet system]{Kinematic quantities of
+    the dijet system are shown for data (markers) and simulated events. The
+azimuthal distance $\Delta\phi$ and the distance in the $\phi$-$\eta$ plane
+$\Delta R$ are shown in the top row. The dijet mass $M_{1,2}$ and the average
+transverse momentum of the dijet system $\ptavg$ is shown in the middle row. The
+rapidity separation $0.5(y_1 - y_2)$ and the boost $0.5(y_1+y_2)$ is shown in
+the bottom row.}
+    \label{fig:controlplots:dijets}
+\end{figure}
+
+
+To illustrate the origin of the dijets in the different \ystar and \yboost bin
+of the measured, the two-dimensional distributions in
+Fig.~\ref{fig:controlplots:rapidity} give the events as a function of the
+leading and second jet in data.
 
 \begin{figure}[htbp]
     \centering
@@ -665,15 +695,18 @@ the lower \pt region and the number of events with forward jets is overestimated
     \label{fig:controlplots:rapidity}
 \end{figure}
 
-\subsection{Cross section Comparison}
+\subsection{Cross Section Comparison}
 
-The Monte-Carlo simulation is used to compare the prediction including the detector simulation
-to the measured data distribution which is smeared due to the finite detector resolution. Figure~\ref{fig:ratio_recotodata}
-show the prediction of the MG+P6 and the P8 simulations as a ratio to the measured data spectrum.
-While the agreement in the inner detector region is fine, the shape and especially the normalization
-of the MC prediction cannot describe the data. Additionally the fixed order prediction of NLOJET++
-is shown. This prediction is on parton level and is not corrected for non-perturbative effects. Still
-it describes best the data apart from the known effects due to NP and detector resolution effects.
+The Monte-Carlo simulation is used to compare the prediction including the
+detector simulation to the measured data distribution which is smeared due to
+the finite detector resolution. Figure~\ref{fig:ratio_recotodata} shows the
+prediction of the Madgraph and the Pythia 8 simulations as a ratio to the
+measured data spectrum.  While the agreement in the inner detector region is
+fine, the shape and especially the normalization of the MC prediction cannot
+describe the data. Additionally, a fixed-order prediction of NLOJET++ is shown.
+This prediction is on parton level and is not corrected for non-perturbative
+effects. Still it describes best the data apart from the known effects due to NP
+and detector resolution effects.
 
 \begin{figure}[htbp]
     \centering
@@ -693,35 +726,37 @@ it describes best the data apart from the known effects due to NP and detector r
 \section{Dijet Transverse Momentum  Resolution}
 \label{sec:resolution}
 
-The true transverse momentum of the jets measured in the CMS detector is smeared through the finite
-resolution. In order to correct the finally measured cross section for these
-detector effects, the energy resolution of the obserable has to be determined.
-As the simulated events are propagated through the detector simulated, the
-information both at particle-level and at reconstructed level is available. To
-compare particle-level jets and reconstructed jets, they have to be matched to
-each other. The distance $\Delta R$ in the $\eta$-$\phi$ plane is calculated as
-
+The transverse momentum of jets, which are measured in the CMS detector, is
+smeared because of the finite detector resolution. In order to correct the
+measured cross section for these detector effects, the momentum resolution of
+the observable has to be determined. As the simulated events are propagated
+through the detector simulation, the information at both particle level and
+reconstructed level is available. To compare particle level jets and
+reconstructed jets, the jets belonging together have to be matched to each
+other. The distance $\Delta R$ in the $\eta$-$\phi$ plane between two jets is
+calculated as
+%
 \begin{equation}
 \Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2}
 \end{equation}
 %
-and needs to satisfy $\Delta R < 0.3$, roughly half the jet size parameter
-$R=0.7$. The jets closest in the $\eta$-$\phi$ space are then matched. However,
-studies of the \textsc{JERC} working group~\cite{jetmet:resolution} turned out that the resolution
-determined in simulated events is better than the resolution observed in data
-using data-driven methods. Therefore, the jet transverse momentum in simulated
-events is additionally smeared in order to match the resolution in data.
-Table~\ref{tab:res_smearing} gives these smearing factors together with the
-assigned uncertainty, indicated by the up- and downwards variations. To consider
-the detector geometry, the smearing factors are derived separately for multiple
-$|\eta|$-regions.
+and needs to satisfy $\Delta R < 0.3$, roughly half of the jet size parameter
+$0.7$. The jets closest in the $\eta$-$\phi$ space are then matched together.
+However, studies of the \textsc{JERC} working group~\cite{jetmet:resolution}
+revealed that the resolution determined in simulated events is better than the
+resolution measured in data using data-based techniques. Therefore, the jet
+transverse momentum in simulated events is additionally smeared in order to
+match the resolution in data.  Table~\ref{tab:res_smearing} gives the smearing
+factors together with the assigned uncertainty, indicated by the upwards and
+downwards variation. To consider the dependence on the detector geometry, the
+smearing factors are derived for various $|\eta|$-regions.
 
 \begin{table}[htbp]
 \setlength\tabcolsep{4.5pt} 
     \centering
     \caption[Jet energy resolution scale factors]{
              The jet energy resolution in data is significantly worse than in
-             simulated events. Therefore, the reconstructed jet tansverse
+             simulated events. Therefore, the reconstructed jet transverse
              momentum in simulated events is smeared using a factor $c$ to
              effectively match the resolution in data, following the
              recommendations of \JetMET group of CMS~\cite{jetmet:resolution}.
@@ -744,22 +779,23 @@ $|\eta|$-regions.
 \end{table}
 
 The smearing of the reconstructed jet \pt is performed as a multiplicative scale
-factor based on the difference of \ptreco and \ptgen.
+factor based on the difference of \ptreco and \ptgen, so that \ptreco is shifted
+to
 
 \begin{equation}
 \ptreco = \max \left( 0, \ptgen + c(\eta) \cdot (\ptreco - \ptgen) \right)
 \end{equation}
 %
-After smearing, the response defined as
-
+After the smearing, the response which is defined as
+%
 \begin{equation}
     R = \frac{\ptavg^{\text{reco}}}{\ptavg^{\text{gen}}},
 \end{equation}
-
-is calculated. Figure~\ref{fig:gen_vs_reco_over_gen} shows the two-dimensional
-distributions for each bin. As expected, the resolution of low-\pt is
+%
+is calculated. Fig.~\ref{fig:gen_vs_reco_over_gen} shows the response as a
+function of \ptgen for each bin. As expected, the resolution of low-\pt jets is
 significantly worse than the one of high-\pt jets. As the response is dependent
-on both detector region and the transverse momentum of the jets, the resolution
+on both the detector region and the transverse momentum of the jets, the resolution
 is calculated as a function of \ptavggen separately in each \ystar and \yboost
 bin. 
 
@@ -772,63 +808,62 @@ bin.
     \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
     \caption[Comparison generated vs. reconstructed transverse energy]
-            {The response of reconstructed and particle-level jet transverse
-                momentum as a function of the particle-jet transverse momentum.
+            {The response of reconstructed and particle level jet transverse
+                momentum as a function of the particle level transverse momentum.
                 The width of the distribution in each \ptavg bin indicates the
-             jet energy resolution, which improves from lower to higher higher values of \ptavg. The
-             resolution is extracted separately for each bin and finally
-         paramterized using the NSC-formula.}
+                jet energy resolution, which improves from lower to higher higher values of \ptavg. The
+                resolution is extracted separately for each bin and
+                fitted using the NSC-formula.}
     \label{fig:gen_vs_reco_over_gen}
 \end{figure}
 
-The resolution is now determined as the width of the distribution in each \ptavg
+The resolution is then determined as the width of the distribution in each \ptavg
 bin, as can be seen in Fig.~\ref{fig:resolution_bin}. Both a gaussian function
-as well as a double-sided crystal ball function have been studied in order to
+as well as a double-sided Crystal Ball function have been studied in order to
 describe the observed behaviour. Despite the large differences in the
 description of the non-gaussian tails, enhanced by the logarithmic
 representation, the determined width of the distribution is very similar.
-Nonetheless, the crystal ball function is used to determine the resolution, as
+Nonetheless, the Crystal Ball function is used to determine the resolution, as
 it better describes the measured distributions, especially in the low-\pt
-region.
+region, where the non-gaussian tails are more pronounced.
 
 \begin{figure}[h!tbp]
     \centering
     \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10_cb.pdf}
-    \caption[Gaussian and crystal ball fit of resolution.]{The resolution in
-        each \ptavg bin is fitted using a gaussian (left) and a double-sided crystal ball
-        (right) function. The fit using the crystal ball function better describes the
+    \caption[Gaussian and Crystal Ball fit of resolution.]{The resolution in
+        each \ptavg bin is fitted using a gaussian (left) and a double-sided Crystal Ball
+        (right) function. The fit using the Crystal Ball function better describes the
         non-gaussian tails of the distribution. Therefore, it is favored in the
-    determination of the jet energy resolution determination.}
+    determination of the jet energy resolution.}
     \label{fig:resolution_bin}
 \end{figure}
 
 Fig.~\ref{fig:resolution_ptavg} shows the resolution in each \ystar and
 \yboost bin as a function of \ptavg. The relative resolution is fitted using a
 modified version of the NSC formula.
-
-
+%
 \begin{equation}
     \frac{\sigma_{\text{ptavg}}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
     \label{eq:resolution}
 \end{equation}
 %
-The formula is based on the common NSC formula which describes the resolution in
-terms of noise $N$, a stochastic component $S$ and a constant term $C$.
-Especially in the low-\pt region in which the tracking has a non-negligible
-influence on the resolution due to the particle flow algorithm, a slightly
-better fit is obtained by using the modified resolution
-formula~\ref{eq:resolution}. The influence of the different resolution formula
+The formula is based on the common NSC formula which describes the resolution
+with different terms for noise $N$, a stochastic component $S$ and a constant
+shift $C$.  Especially in the low-\pt region in which the tracking has a
+non-negligible influence on the resolution due to the PF algorithm, a
+slightly better fit is obtained by using the modified resolution given in
+Formula~\ref{eq:resolution}. The influence of the different resolution formulae
 on the unfolded cross section however is negligible, as the spectrum starts at
-much higher \pt. Table~\ref{tab:resolution_parameters} gives the parameters of
+much higher \ptavg. Table~\ref{tab:resolution_parameters} gives the parameters of
 the fit in each \ystar and \yboost bin of the measurement.
 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/measurement/resolution_ptavg_crystalball.pdf}
+    \includegraphics[width=0.8\textwidth]{figures/measurement/resolution_ptavg_crystalball.pdf}
     \caption[Relative jet resolution vs \ptavg]{The jet energy resolution as a
-        function of \ptavg is shown for all measurement bins. The data points
+        function of \ptavg is shown for all \ystar and \yboost bins. The data points
         indicate the separate determinations while the solid lines give the
     result of the fit using the NSC-formula.}
     \label{fig:resolution_ptavg}
@@ -838,8 +873,8 @@ the fit in each \ystar and \yboost bin of the measurement.
 \begin{table}[htbp]
     \centering
     \caption[Relative dijet transverse momentum resolution parameters]
-    {Fitted paramameters of the modified NSC formula describing the transverse
-    momentum resolution in the individual \ystar and \yboost bins.}
+    {Fitted parameters of the modified NSC formula describing the transverse
+    momentum resolution in the \ystar and \yboost bins.}
     \label{tab:resolution_parameters}
     \begin{tabular}{cccccc}
         \toprule
@@ -859,9 +894,9 @@ the fit in each \ystar and \yboost bin of the measurement.
 
 The final goal of this analysis is the comparison of the triple-differential
 dijet cross section measurement with higher-order QCD calculations on
-particle-level. Due to finite detector acceptance and resolution, the jet
-transverse momentum is smeared causing differences between the particle-level
-\ptavg spectrum and the measured spectrum. To allow particle-level comparisons,
+particle level. Due to finite detector acceptance and resolution, the jet
+transverse momentum is smeared causing differences between the particle level
+\ptavg spectrum and the measured spectrum. To allow particle level comparisons,
 the measurement has to be unfolded. Thus, calculations from future Monte-Carlo
 event generators can be easily compared with this measurement without the need to
 apply the detector simulation.
@@ -871,18 +906,19 @@ which is implemented in the RooUnfold~\cite{Adye:2011gm} package is used. The
 unfolding process is regularized by the number of interation steps in this
 algorithm. A higher number of iterations yields a better reduced \chisq but also
 increases the uncertainty and introduces larger bin-by-bin fluctuations and
-correlations.  The regularization is optimized using a Monte-Carlo data sample
-and best results with low bin-by-bin correlations and a low \chisq were achieved
-using four iterations in the unfolding algorithm.
+correlations. The regularization is optimized using simulated events and best
+results with low bin-by-bin correlations and low \chisq are achieved using
+four iterations in the unfolding algorithm.
 
 In principal, the response matrix for the unfolding algorithm can be populated
-directly using simulated events as they contain both the particle-level and
+directly using simulated events as they contain both the particle level and
 reconstructed jets. However, this method has several drawbacks. The LO
-prediction does not describes the shape of the distribution perfectly in all
-bins. Moreover, the limited number of events in the Monte-Carlo sample, especially at high
-rapidities and high transverse momenta, introduces non-negligible statistical
-fluctuations in the response matrix. Because of these undesired effects an
-alternative stategy is employed to populate the response matrix.
+prediction does not describe the shape of the distribution well in all
+bins. Moreover, the limited number of events in the Monte-Carlo sample,
+especially at high rapidities and high transverse momenta, introduces
+non-negligible statistical fluctuations in the response matrix. Because of these
+undesired effects an alternative stategy is employed to populate the response
+matrix.
 
 Relying on the good description of the data spectrum by NLO predictions, a forward
 smearing technique is applied. The NLO prediction, obtained with the CT14-NLO PDF
@@ -897,13 +933,13 @@ which describes both the normalization and shape of the distribution. Using toy
 Monte Carlo events, a flat \ptavg spectrum is generated, which is weighted
 according to the fitted NLO distribution. The distribution of this generated
 sample resembles the fastNLO cross section prediction and is used as the
-particle-level \ptavg spectrum. All generated events are also smeared using the
+particle level \ptavg spectrum. All generated events are then smeared using the
 resolution function obtained in Section~\ref{sec:resolution}. The generation of
 these Monte-Carlo toy events is very fast, and the response matrices can be
-filled with around 100 million events each, resulting in negligible statistical
+filled with more than 100 million events each, resulting in negligible statistical
 fluctuations. Figure~\ref{fig:res_matrix} shows the response matrices used in
 the unfolding process. The matrices in the figure are normalized to the number
-of particle-level entries in each row to improve the readibility. The response
+of events in each particle level bin to improve the readibility. The response
 matrices are diagonal with small off-diagonal migrations between neighboring
 \ptavg bins.
 
@@ -915,49 +951,94 @@ matrices are diagonal with small off-diagonal migrations between neighboring
     \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
-    \caption[Response matrix used for the unfolding procedure]{Response matrix
-        used for the unfolding procedure. The response matrices are obtained
-        using the smearing method and are normalized to the number of gen events
-        in each row to improve the readibility.}
+    \caption[Response matrix used for the unfolding procedure]{Response matrices
+        illustrating the bin migrations in the \ystar and \yboost bins. The
+        response matrices are obtained using smearing method and are normalized
+        to the number of events in each row to improve readability. The response
+        matrices are diagonal with small off-diagonal entries indicating bin
+    migrations between neighboring bins.}
     \label{fig:res_matrix}
 \end{figure}
 
-A closure test was performed by performing the unfolding using response matrices
-filled directly from the simulated events of the Madgraph data sample and
-filled using the forward smearing technique. It was found that the results agree
-in both cases within statistical uncertainties which are dominated by the
-uncertainties of the Madgraph sample. It has to be noted, that these
+A closure test was performed by unfolding the generated smeared spectrum in two
+ways. Once, the smeared spectrum was obtained using the same events as were used
+to fill the response matrix and once, the spectrum was generated using
+statistically independent events. In the first case, exactly the same truth spectrum should
+be reobtained after unfolding, while in the second case, the results should
+agree within statistical uncertainties. Fig.~\ref{fig:unf_closure_test} demonstrates that both
+assumptions hold for the applied unfolding technique.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb0ys1.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb1ys0.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_check_yb2ys0.pdf}
+    \caption[Closure check of unfolding technique]{Closure test of the employed unfolding
+    procedure. The smeared spectrum is obtained once from the same events which
+were used to fill the response matrix and once from statistically independent
+events. As expected, unfolding the former spectrum (green line) yields again exactly the
+truty spectrum. Unfolding the statistically independently smeared spectrum
+(blue line) gives compatible results within statistical uncertainties.}
+    \label{fig:unf_closure_test}
+\end{figure}
+
+Another closure test was performed by filling the response matrices directly
+from the simulated events of the Madgraph data sample and compare the unfolded
+cross section with the one from the forward smearing technique. It was found
+that the results agree in both cases within statistical uncertainties which are
+dominated by the uncertainties of the Madgraph sample.
+
+It has to be noted, that these
 techniques do not consider fluctuations between \ystar and \yboost bins.
 However, migrations between neighbouring \ystar and \yboost bins were studied
-and and found to be negligible. Therefore, it is justified to perform the
+and and found to be very small. Therefore, it is justified to perform the
 unfolding in each \ystar and \yboost bin separately and to not perform a
-three-dimensional unfolding which is much more cumbersome error-prone.
+three-dimensional unfolding which is much more cumbersome and error-prone.
 
-Statistical uncertainties of the data distributions are propagated through
-the unfolding procedure using toy experiments. The procedure as well as its
-results are discussed in detail in Sec.~\ref{sec:stat_unf_uncert} when the
-experimental uncertainties are discussed. The uncolded cross sections are shown
-in Sec.~\ref{sec:nlo_comparisons} in which the comparison to NLO calculations is presented.
+Statistical uncertainties of the data distributions are propagated through the
+unfolding procedure using toy experiments. The procedure as well as its results
+are discussed in detail in Sec.~\ref{sec:stat_unf_uncert} when experimental
+sources ofuncertainties are discussed. The unfolded cross sections are shown in
+Sec.~\ref{sec:nlo_comparisons} in which the comparison to NLO calculations is
+presented.
 
 \section{Experimental Uncertainties}
 \label{sec:experimental_uncertainties}
 
-In this section, all experimental sources of uncertainty which affect the cross
-section measurement are discussed. The comprehensive studies involve five
-sources of uncertainty of wich the jet energy correction uncertainties were
-found to be the dominant. Statistical uncertainties were propagated through the
-unfolding procedure while taking into account correlations due to bin
-migrations. The imperfection of the CMS luminosity measurement causes a
-normalization uncertainty. The uncertainty of the jet energy resolution
-determination is also propagated to the unfolded cross section. Residual
-systematic errors due to jet ID and trigger efficiencies are very small and
-covered by 1\% uncorrelated uncertainty.
+In this section all experimental sources of uncertainty which affect the cross
+section measurement are discussed. These statistical uncertainties, jet energy
+scale and resolution uncertainties, the luminosity uncertainty, and
+a residual uncertainty accounting for systematic errors due to the jet ID and
+trigger efficiencies. 
 
-Fig.~\ref{fig:exp_unc_overview} depicts all sources of experimental uncertainty
+Fig.~\ref{fig:exp_unc_overview} depicts all sources of experimental unc0ertainty
 in combination with the total experimental uncertainty, obtained by adding in
-quadrature all individual sources. The total uncertainty is 8\% in the
-measurement bins involving jets at central rapidity and increases up to 20\% in
-bins involving jets in worse understood phase space regions.
+quadrature all individual sources. The total uncertainty is only 5\% in the
+measurement bins involving jets at central rapidity and increases up to 25\% in
+bins where jets from worse understood phase space regions contribute.
+
+\begin{table}[htbp]
+    \centering
+    \caption[Summary of experimental uncertainties]
+       {Five experimental sources of uncertainty affect the accuracy of the
+        measurement from which the dominant source arises from jet energy scale
+        corrections. The total uncertainties are as low as 5\% in the best understood
+        region and increase up to 25\% in worse understood phase space regions.}
+    \label{tab:data:expunc}
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{uncertainty source} & \textbf{min}       & \textbf{average}   & \textbf{max}\\\midrule
+    luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
+    statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
+    jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
+    jet energy scale            & \SI{2.5}{\percent} & \SI{4.0}{\percent} & \SI{11}{\percent}\\
+    residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \todo{table exp uncertainties}
 
@@ -965,24 +1046,23 @@ bins involving jets in worse understood phase space regions.
 \label{sec:luminosity_uncertainty}
 
 As discussed in Sec.~\ref{sec:lumi_measurement}, the luminosity is measured from
-the number of clusters in the silicon pixel detector. The integrated luminosity
-for certified data of the 2012 LHC run is measured to be \SI{19.71}{\per \femto
-\barn}. The uncertainty on the luminosity measurement for the 2012 LHC run is
-estimated to be 2.5\% (syst.) and 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. As
-the luminosity uncertainty afffects the normalization of any absolute cross
-section measurement, a combined systematic uncertainty of 2.6\% is assigned.
+the number of clusters in the silicon pixel detector. The uncertainty on the
+luminosity measurement for the 2012 LHC run is estimated to be 2.5\% (syst.) and
+0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. As the luminosity uncertainty
+translates into a normalization uncertainty on any absolute cross section
+measurement, a combined systematic uncertainty of 2.6\% is assigned which is
+fully correlated across all bins.
 
 \subsection{Unfolding and Statistical Uncertainty}
 \label{sec:stat_unf_uncert}
 
 Statistical uncertainties of data points are propagated through the unfolding
 using a toy MC technique in which the measured data points are smeared within
-their statistical uncertainties and the unfolding procedure is performed
-multiple times for each smeared spectra. A million such toy spectra are used to
-propagate the statistical uncertainty.  Figure~\ref{fig:statunc_relative} shows
+their statistical uncertainties and the unfolding procedure is repeated multiple
+times for each smeared spectra. One million of such toy spectra are used to
+propagate the statistical uncertainty. Figure~\ref{fig:statunc_relative} shows
 the relative statistical uncertainty before and after the unfolding procedure.
-The uncertainty slightly increases during the unfolding process which is
-expected.
+The uncertainty slightly increases during the unfolding process.
 
 \begin{figure}[htbp]
     \centering
@@ -993,9 +1073,9 @@ expected.
     \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
     \caption[Statistical uncertainty of measured and unfolded sprectrum]{The
-    statistical uncertainties of the measured and the unfolded spectrum. Due to
-    the unfolding procedure, the uncertainties slightly increase compared to the
-    measured spectrum.}
+    statistical uncertainties of the measured and the unfolded data. Depending
+    on the unfolding procedure, the uncertainties can slighlty increase, which
+    is observed.}
     \label{fig:statunc_relative}
 \end{figure}
 
@@ -1014,33 +1094,34 @@ into account in a statistical analysis of the data, such as in a PDF fit.
     \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb1ys0.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/unf_nlo_corr_yb2ys0.pdf}
-    \caption[Correlations of statistical uncertainty]{Correlation of the
+    \caption[Correlations of statistical uncertainty]{Correlations of the
         statistical uncertainty introduced by the unfolding procedure.
         Neighbouring bins have a significant correlation or anti-correlation
-        through bin-by-bin migrations.}
+        through bin migrations.}
     \label{fig:corr_unfolding_nlo}
 \end{figure}
 
 \subsection{Jet Energy Correction Uncertainty}
 
-The dominant part of the experimental uncertainties comes from jet energy
-calibration, which correct the measured jet energy for a variety of detector
-effects, see Sec.~\ref{sec:jec}. As the corrections are afflicted with multiple
-sources of systematic uncertainty, these are propagated individually to the cross section
-to preserve all correlations.
+The dominant part of the experimental uncertainties comes from the jet energy
+calibration, which corrects the measured jet energy for a variety of detector
+effects and is discussed in Sec.~\ref{sec:jec}. As the corrections are afflicted
+with multiple sources of systematic uncertainty, all sources are propagated
+individually to the cross section to preserve their correlations.
 
 The JEC uncertainties are split into 25 mutually independent sources of
-uncertainty (JES), in which each source is fully correlated in \pt and $\eta$
-but uncorrelated to all other sources. Each variation presents a $1\sigma$
+uncertainty, in which each source is fully correlated in \pt and $\eta$
+but uncorrelated to all other sources and presents a $1\sigma$
 shift. As these uncertainties can be asymmetric, the upwards and downwards
-variation of each source are treated seperately. The sum in quadrature of all uncertainty
-sources equals the total uncertainty. Therefore they can be treated exactly like
-the PDF eigenvector sets, which were discussed in
-Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainties are grouped in
-four categories which relate to the underlying correction. In the following
-list, a short summary of the sources of uncertainty is given. The calibration
-procedure and the uncertainties are described in great detail
-in~\cite{jec_paper}. The Figs.
+variation of each source are treated separately. The sum in quadrature of all
+sources yields the total JEC uncertainty. Therefore, they can be treated
+in exactly the same way as the PDF eigenvector sets, which were discussed in
+Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainty are grouped in four
+categories according to their origin. In the following, a short summary of the
+sources is given. More details about the jet energy corrections and
+uncertainties are given in~\cite{jec_paper}. The
+Figs.~\ref{fig:jec_relunc_0}---\ref{fig:jec_relunc_5} show the size of each of
+the 25 sources separately.
 
 \begin{description}
     \item[Pileup JES] Differences in the transverse momentum between the true
@@ -1065,23 +1146,26 @@ in~\cite{jec_paper}. The Figs.
 
 \subsection{Jet Energy Resolution Uncertainty}
 
-The jet energy resolution, as derived in Sec.~\ref{sec:resolution}, influences
-the unfolding and consequently introduces a further source of uncertainty on the
-unfolded cross section. 
+The jet energy resolution, which was derived in Sec.~\ref{sec:resolution}, is
+used to popoulate the reponse matrix using a forward smearing technique in the
+unfolding procedure. Therefore, a dependence on the jet energy resolution on the
+unfolded cross section is introduced and a further uncertainty source due to the
+uncertainty on the jet energy resolution is introduced.
 
 Table~\ref{tab:res_smearing} shows the smearing factors, which were applied on
-MC to obtain the actual resolution in data. The official recommendations involve
-an uncertainty on this smearing factor to estimate an uncertainty on the
-determined resolution, see the varied smearing factors in
+reconstructed simulated events to obtain the actual resolution in data. The
+official recommendations include offset variations of these smearing factors to
+estimate the uncertainty on the resolution and are also given in
 Table~\ref{tab:res_smearing}. The determination of the resolution is repeated
-with the up- and down-wards variation of the resolution smearing factor $c$
+with the upwards and downwards variation of the resolution smearing factor
 applied. The unfolding procedure is also reiterated using the variations of the
 resolution and the differences of the obtained cross section to the nominal
-cross section are accounted for as a systematic uncertainty. The uncertainty on
-the cross section is comparably small, about 1\% at low rapidity and increasing
-up to 3\% at larger rapidities, see Fig.~\ref{fig:exp_unc_overview}.
+cross section are accounted for as a systematic uncertainty. The influence on
+the cross section is comparably small, about 1\% in low \ystar and \yboost and increasing
+up to 3\% for the highest \ystar value.  
 
-\todo[inline]{uncertainty overview small paragraph}
+An overview of all uncertainties including the total uncertainty is given in
+Fig.~\ref{fig:exp_unc_overview} which shows their relative size in each bin.
 
 \begin{figure}[htbp]
     \centering
@@ -1141,7 +1225,7 @@ has been observed earlier and can be attributed to the neglection of
 electroweak corrections which are positive and sizeable at low rapidity and high
 transverse momenta.  Theory colleagues are currently working on providing the
 electroweak corrections specifically for this measurement, but they were not
-available in time\todo[inline]{check for ewk}.
+available in time.\todo{check for ewk}
 
 \begin{figure}[htbp]
     \centering
