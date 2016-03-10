@@ -1187,13 +1187,12 @@ Fig.~\ref{fig:exp_unc_overview} which shows their relative size in each bin.
 \section{Comparison with NLO Predictions}
 \label{sec:nlo_comparisons}
 
-After unfolding the measurement to particl-level, it is finally possible to
-compare the cross sections with the NLO calculations which were obtained in
+After unfolding the measurement for detector effects, it is finally possible to
+compare the cross sections with the NLO calculations obtained in
 Sec.~\ref{sec:theory_predictions}. A general comparison is given in
-Fig.~\ref{fig:measurement_result} which shows the data overlayed with the NLO
-theory prediction obtained with the CT14-NLO PDF set. The measurement and the
-prediction agree over eight orders of magnitude in cross section and up to
-highest transverse momenta.
+Fig.~\ref{fig:measurement_result} which shows the data overlayed with the
+\NLOJETPP theory prediction obtained with the CT14 PDF set. The measurement and the
+prediction agree over many orders of magnitude of the cross section.
 
 \begin{figure}[h!tbp]
     \centering
@@ -1206,26 +1205,34 @@ highest transverse momenta.
     \label{fig:measurement_result}
 \end{figure}
 
-A more detailed comparison is achievable when the ratio of the data to theory is
-calculation. Figures~\ref{fig:ratio_ct14_nlo}---\ref{fig:ratio_nnpdf30_nlo}
-present such a ratio including all statistical and systematic uncertainties. To
-emphasize the sensitivity of PDFs to this observable, calculations using the
-newest CT14, NNPDF 3.0, MMHT 2014 and ABM 11 PDF sets, all derived at NLO, are
-shown. Apart from the bins with high values of \yboost, the predictions of most
-PDF sets coincide within uncertainties. However, the ABM 11 predictions
-systematically underestimate the data. This behaviour of ABM 11 PDF set is well
-known and seen in a multidue of other jet measurements. It is due to the
-combination of a soft gluon PDF accompanied with a low value of \asmz in the PDF
-set.
+A more detailed comparison is possible when the ratio of the data to theory is
+calculated. Figs.~\ref{fig:ratio_ct14_nlo}---\ref{fig:ratio_nnpdf30_nlo} present
+such ratios for different PDF sets and also include all statistical and
+systematic uncertainties. Apart from a few phase space regions, the predictions
+using all PDF sets except for the ABM 11 PDF set describe the data well. The
+predictions using the ABM 11 PDF set systematically underestimate the data.
+That behaviour is well known \eg from \cite{Khachatryan:2014waa,Stober:2012abc} and can be traced
+back to the soft gluon PDF accompanied with a low value of \asmz.
 
-A further effect in which all theory predictions differ from the data, is
-prominently visible in the central region at large transverse momenta. Here, the
-theory predictions underestimate the measured data by up to 20\%. This effect
-has been observed earlier and can be attributed to the neglection of
-electroweak corrections which are positive and sizeable at low rapidity and high
-transverse momenta.  Theory colleagues are currently working on providing the
-electroweak corrections specifically for this measurement, but they were not
-available in time.\todo{check for ewk}
+In the central region, at low \yboost and \ystar, a systematic difference of up
+to \SI{20}{\percent} between data and NLO predictions is observed for transverse
+momenta beyond \SI{1}{\TeV}. This mismatch is caused by missing electroweak
+corrections, which are positive and sizable at low rapidity and \pt larger
+\SI{1}{\TeV}. Theory colleagues are currently working on providing the
+electroweak corrections specifically for this measurement, but the corrections
+were not available in time.
+\todo{check for ewk}
+
+Especially phase space regions, in which the data discriminates between the
+predictions of different PDF sets, are interesting input for PDF studies. As
+discussed in Sec.~\ref{sec:crosssection_definition}, the bins involving boosted
+same-side dijet events, in which the fractional proton momenta $x_1$ and $x_2$
+are very different, are predestined for PDF studies. The predictions of the
+different PDF sets, especially compared to the NNPDF PDF set, yield different
+results and are afflicted with large PDF uncertainties. Moreover, none of the
+investigated PDF sets yields a good description of the data in this phase space
+region, see bottom right plot in Fig.~\ref{fig:ratio_ct14_nlo}, making it a very
+interesting subject for PDF studies.
 
 \begin{figure}[htbp]
     \centering
@@ -1242,7 +1249,7 @@ available in time.\todo{check for ewk}
     indicated by markers, the total experimental uncertainty is represented by the
     hatched red band. The solid blue band indicates the PDF uncertainty and the
     continous colored lines the predictions of the cross sections calculated with
-    other PDF sets. }
+    other PDF sets.}
     \label{fig:ratio_ct14_nlo}
 \end{figure}
 
@@ -1261,20 +1268,8 @@ available in time.\todo{check for ewk}
     indicated by markers, the total experimental uncertainty is represented by the
     hatched red band. The solid blue band indicates the PDF uncertainty and the
     continous colored lines the predictions of the cross sections calculated with
-    other PDF sets. }
-
+    other PDF sets.}
     \label{fig:ratio_nnpdf30_nlo}
 \end{figure}
-
-Especially phase space regions, in which the data discriminates between the
-predictions of different PDF sets, are interesting input for PDF studies. As
-discussed in Sec.~\ref{sec:crosssection_definition}, the bins involving boosted
-same-side dijet events, in which the fractional proton momenta $x_1$ and $x_2$
-are very different, are predestined for PDF studies. The predictions of the
-different PDF sets, especially the NNPDF PDF set, yield different results and
-are afflicted with a large PDF uncertainty. Moreover, none of the investigated
-PDF sets yields a good description of the data in this phase space region, see
-bottom right plot in Fig.~\ref{fig:ratio_ct14_nlo}.
-
 
 

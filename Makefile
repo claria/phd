@@ -30,7 +30,12 @@ all: thesis.pdf
 # missing file reference and interactively asking you for an alternative.
 
 thesis.pdf: thesis.tex
-	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make thesis.tex 
+	latexmk -pdf -silent       \
+	-jobname=thesis-hardcopy   \
+	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\hardcopy{}\input{%S}'" thesis.tex
+	latexmk -pdf -silent   \
+	-jobname=thesis        \
+	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\input{%S}'" thesis.tex
 
 thesis.acr: thesis.aux
 	makeglossaries thesis
