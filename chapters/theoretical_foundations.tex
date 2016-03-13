@@ -3,23 +3,24 @@
 \chapter{Theoretical Foundations}
 \label{sec:theoretical_foundations}
 
-A deeper understanding about physical principles always relies on the interplay
-of theoretical predictions and accompanying experimental measurements.
-Theoretical models try to describe the behavior of nature and have to be
-confirmed or excluded in precise experiments. In the second half of the 20th
-century, theoretical and experimental physicists made great progress in describing the
-fundamental particles and their interactions in a self-consistent model which is
-now-a-days established as the Standard Model of particle physics.
+A deeper understanding of physical principles always results from the interplay
+of experimental measurements and the corresponding theoretical predictions.
+Theoretical models attempt to describe nature's behavior and must be excluded or
+tentatively confirmed in precise experiments. In the second half of the 20th
+century, theoretical and experimental physicists have made great progress in
+describing the fundamental particles and their interactions in a self-consistent
+model which is today established as the Standard Model of particle physics (SM).
 
 This chapter shortly summarizes the Standard Model while concentrating on
-quantum chromodynamics (QCD) and its important properties which are the
-theoretical foundations of this thesis. More extensive and profound
-discussions can be found in~\cite{Peskin:1995ev,Agashe:2014kda,Ellis:1991qj,Buckley:2011ms}.
+quantum chromodynamics (QCD) and those properties, which are the theoretical
+foundations of this thesis. More extensive and profound discussions can be found
+in~\cite{Peskin:1995ev,Agashe:2014kda,Ellis:1991qj,Buckley:2011ms}.
 
-Throughout this thesis, the common unit conventions in particle physics are
-used.  They are based on SI units, but also include the units electron volt
-(\si{\electronvolt}) and barn (\si{\barn}). Furthermore, the speed of light $c$
-and the reduced Planck constant $\hbar$ are set to unity,
+Throughout this thesis, the common unit convention in particle physics is used.
+It is based on SI units, but is supplemented with the units electron volt
+(\si{\electronvolt}) for energy and barn (\si{\barn}) for the interaction cross
+section. Furthermore, the speed of light $c$ and the reduced Planck constant
+$\hbar$ are set to unity,
 %
 \begin{equation*}
     c = \hbar = 1.
@@ -27,46 +28,47 @@ and the reduced Planck constant $\hbar$ are set to unity,
 
 \section{Standard Model of Particle Physics}
 
-The Standard Model of particle physics (SM) is a comprehensive theoretical
-concept which describes the fundamental particles and their interactions from
-basic principles. The SM is founded on the concept of quantum field theories, in
-which the interaction between particles are mediated by quantized gauge fields.
-While predictions of the SM demonstrated to be extremely robust in a huge variety
-of experiments, it falls short in being a complete theory of everything, as it
-does not include the gravitational force and cannot describe dark matter as well
-as non-zero neutrino masses coming along with neutrino oscillations.
+The Standard Model of particle physics is a comprehensive theory  which
+describes the fundamental particles and their interactions from first
+principles. The SM is founded on the concept of quantum field theories, in which
+the elementary particles and the interactions between them are described by
+quantized gauge fields. There are four fundamental forces of which three are
+considered in the SM. While the predictions of the SM have been demonstrated to
+be extremely robust in a huge variety of experiments, it falls short of being a
+complete theory of everything, as it does not include a description of the
+gravitational force and can describe neither dark matter nor non-zero neutrino
+masses resulting from neutrino oscillations.
 
-Each of the fundamental spin-\sfrac{1}{2} particles, also known as fermions,
-has a corresponding antiparticle with same properties but opposite sign of
-quantum numbers. They are classified in three families and carry quantum numbers
-of electric charge $Q$, weak isospin $T$ and color. The weak hypercharge $Y_W$
-is related to the weak isospin and the electric charge by $Y_W = 2(Q-T_3)$. The
-quantum numbers define the coupling of the fermions. There are four fundamental
-forces of which three are considered in the SM.
+Each of the fundamental spin-\sfrac{1}{2} particles, also known as fermions, has
+a corresponding antiparticle with the same properties but opposite-sign quantum
+numbers. They are classified into three families and carry quantum numbers of
+electric charge $Q$, weak isospin $T$ and color. The weak hypercharge $Y_W$ is
+related to the weak isospin and the electric charge by $Y_W = 2(Q-T_3)$.
 
-The electromagnetic and weak force are described by a U(1)$\times$SU(2)
-symmetry, which is spontaneously broken by the coupling to the scalar Higgs
-field. The gauge bosons of the unified electroweak theory are a mixture
-resulting in the massive $W^\pm$ and $Z^0$ bosons and the massless photon. The
-eigenstates of the weak interaction differ from the mass eigenstates and can be
-calculated by rotating the mass-eigenstates using the CKM
-matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}. The same effect is observed in
-the lepton sector in which the mass eigenstates of the neutrinos do not match
-the interaction eigenstates leading to oscillations between neutrino flavors.
-The analogue matrix is called PMNS matrix~\cite{Maki:1962mu,Pontecorvo:1957qd}.
+The electromagnetic and weak forces are described by a U(1)$\times$SU(2)
+symmetry which is spontaneously broken by the coupling to the scalar Higgs
+field. The gauge bosons of the unified electroweak theory are a mixture of the
+gauge bosons of the unbroken symmetry resulting in the massive $W^\pm$ and $Z^0$
+bosons and the massless photon. The eigenstates of the weak interaction differ
+from the mass eigenstates and can be calculated by rotating the mass eigenstates
+using the CKM matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}. The same effect is
+observed in the lepton sector in which the mass eigenstates of the neutrinos do
+not match the interaction eigenstates leading to oscillations between neutrino
+flavors.  The analogous matrix is called PMNS
+matrix~\cite{Maki:1962mu,Pontecorvo:1957qd}.
 
 The strong force is described by the unbroken $\mathrm{SU}(3)$ color gauge
-theory~\cite{Zweig:1981pd,Fritzsch:1973pi}, called quantum chromodynamics. There
-are eight gauge bosons, the gluons, which carry color charge. 
+theory~\cite{Zweig:1981pd,Fritzsch:1973pi}, called quantum chromodynamics. The
+eight gauge bosons of the theory, called gluons, carry color charge. 
 
-The Higgs boson, the field quanta of the Higgs field which causes the
-electroweak symmetry breaking and was predicted for a long time by theorists was
-recently discovered at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
+The Higgs boson, the field quantum of the Higgs field responsible for
+electroweak symmetry breaking, had long been postulated by theoretical models
+until its recent discovery at the LHC~\cite{Chatrchyan:2012xdj,Aad:2012tfa}.
 
 \section{Quantum Chromodynamics}
 
-Quantum chromodynamics (QCD) is the gauge field theory that describes the
-strong interaction of quarks and gluons. The gauge group of the theory is a
+Quantum chromodynamics is the gauge field theory that describes the
+strong interaction of quarks and gluons. The gauge group of the theory is the
 special unitary group SU(3). The QCD Lagrangian is given by
 
 \begin{equation*}
@@ -75,12 +77,13 @@ special unitary group SU(3). The QCD Lagrangian is given by
    \right) \psi_{q,b} - \frac{1}{4} F_{\mu\nu}^{A} F^{A \mu\nu},
 \end{equation*}
 %
-where $\gamma_\mu$ are the Dirac $\gamma$-matrices, $\psi_{q,a}$ are
-quark-field spinors for a quark with flavor $q$ and mass $m_q$ and a color of
-index $a$ which runs from $1$ to $N_C=3$. $\mathcal{A}_\mu^C$ denotes the gluon
-fields and $C$ runs from 1 to $N_C-1$ resulting in eight kinds of gluons. The
-QCD coupling strength is defined by $g_s$. The field tensor $F_{\mu\nu}^A$ is
-given by
+where $\gamma_\mu$ are the Dirac $\gamma$-matrices and $\psi_{q,a}$ are quark-field
+spinors for a quark with flavor $q$, mass $m_q$ and a color of index $a$
+which runs from $1$ to $N_C=3$. The $t_{ab}^C$ correspond to the eight
+$3\times3$ matrices and are the generators of the $\mathrm{SU}(3)$
+group.$\mathcal{A}_\mu^C$ denotes the gluon fields and $C$ runs from 1 to
+$N_C-1$, resulting in eight different gluons. The QCD coupling strength is defined
+by $g_s$. The field tensor $F_{\mu\nu}^A$ is given by
 
 \begin{equation*}
     F_{\mu\nu}^A = \partial_\mu \mathcal{A}_\nu^A - \partial_{\nu}
@@ -89,19 +92,19 @@ given by
 \end{equation*}
 %
 where $f_{ABC}$ are the structure constants of the SU(3) group. The last term of
-the field tensor originates from the non-Abelian structure, where the generators
-do not commutate, but obey the relation
+the field tensor originates from the non-abelian structure, where the generators
+do not commute, but obey the relation
 
 \begin{equation*}
-    \left[t^A, t^B \right] = if_{ABC} t^{C},
+    \left[t^A, t^B \right] = if_{ABC} t^{C}.
 \end{equation*}
 %
-causing the self-coupling of gluons, one of the prominent features of QCD
-resulting in three-gluon vertex and four-gluon vertex. The fundamental
-interaction vertices of QCD can be illustrated by the Feynman graphs in
+This leads to the self-coupling of gluons, one of the prominent features of QCD,
+resulting in three and four gluon vertex interactions. The fundamental
+interaction vertices of QCD can be illustrated by the Feynman diagrams in
 Fig.~\ref{fig:fundamental_couplings}. The complete QCD Lagrangian also includes
-a gauge-fixing term and the Faddeev-Popov ghost term~\cite{Faddeev:1967fc},
-which are neglected here.
+a gauge-fixing term and the Faddeev-Popov ghost fields~\cite{Faddeev:1967fc},
+which are not further discussed in this thesis.
 
 \begin{figure}[htb] 
     \centering
@@ -110,26 +113,26 @@ which are neglected here.
     \includegraphics[width=0.33\textwidth]{figures/drawings/feynman/gggg.pdf}\hfill
     \caption[Fundamental vertices of QCD]{The fundamental Feynman rules of QCD
     comprise a quark-antiquark-gluon vertex, a three-gluon vertex and a four-gluon
-    vertex. The first two are proportional to $g_{s}$, the last one
+    vertex. The first two are proportional to $g_{s}$, the last one is
     proportional to $g_{s}^2$.} 
     \label{fig:fundamental_couplings} 
 \end{figure}
 
-Unlike the other forces, the strong force force exhibits two unique and opposing
-features. It is shown in experiments that quarks and gluons behave like free
-particles at high energies or small distances, called \emph{asymptotic freedom}
-described in QCD by the falling of the strong coupling at high energies.
-However, quarks and gluons cannot be observed as free particles at larger
-distances. The strong force rises with increasing distance and the creation of
-new quark-antiquark pairs are favored at some point. This phenomenon, called
-\emph{confinement}, implies that the strong coupling increases at small energies
-and is divergent. Consequently, perturbative QCD is not applicable in this
-energy regime.
+Unlike the other fundamental forces, the strong force exhibits two unique and
+opposing features. Experiments show that quarks and gluons behave like free
+particles at high energies or small distances. This is called \emph{asymptotic
+freedom} and is described in QCD by the decreasing of the strong coupling at
+high energies. At low energies however, quarks and gluons cannot be observed as
+free particles at larger distances. The strong coupling increases with distance
+and the creation of new quark-antiquark pairs from the vacuum is energetically
+favored at some point. This phenomenon, called \emph{confinement}, implies that
+the strong coupling increases at low energies and is divergent. Consequently,
+perturbative QCD is not applicable in this energy regime.
 
 \subsection{Perturbative QCD}
 
 All observables $X$ in perturbative QCD (pQCD) are developed as a
-perturbative series in powers of the strong coupling \as
+perturbative series in powers of the strong coupling \as:
 
 \begin{equation*}
     X = \sum_{n=0}^N \as^n c_i = c_0 + \as^1 c_1 + \as^2 c_2 + \ldots, 
@@ -137,29 +140,28 @@ perturbative series in powers of the strong coupling \as
 %
 where $c_i$ are the perturbative coefficients. The expansion already yields
 sufficiently accurate results after the first orders of the perturbative series
-if $\as \ll 1$ so that the series converges quickly. However several features
-complicate perturbative calculations. Ultra-violet (UV) divergences enter the
-calculations beyond leading order in form of loop corrections. The divergences
-can be removed by a procedure called renormalization, see
+if $\as \ll 1$ so that the series converges quickly. However, several features
+complicate perturbative calculations. Ultraviolet (UV) divergences enter the
+calculations beyond leading order due to loop corrections. The divergences can
+be removed by a procedure called renormalization which is described in
 Sec.~\ref{sec:renormalization}. Soft and collinear divergences also need to be
 handled in perturbative calculations. They arise from singularities at
 phase-space boundaries and neglected quark masses. Observables need to be
-defined infrared safe and short-distance effects need to be separated from the
-divergent long-range part, which can be factorized into the PDFs, see
-Sec.~\ref{sec:factorization}, in a procedure called \emph{collinear
-factorization}.
+defined to be infrared safe and short-distance effects need to be separated from
+the divergent long-range part, which can be absorbed into the PDFs in a
+procedure called \emph{collinear factorization}, detailed in
+Sec.~\ref{sec:factorization}.
 
 \subsection{Renormalization and Running of the Strong Coupling}
 \label{sec:renormalization}
 
 Beyond leading order, the calculations include loop corrections which result in
 UV divergences when calculating the momenta integrals of the loops. To make the
-result finite, a regularization procedure called renormalization is applied. The
-renormalization introduces another scale $\mur$, the renormalization scale.
-There are different renormalization schemes, of which the
-$\overline{\mathrm{MS}}$-scheme~\cite{Weinberg:1951ss,tHooft:1973mm} is the most
-popular. Consequently the observable $X$ and the strong coupling become
-functions of this scale \mur. 
+result finite, a renormalization procedure is applied. It introduces the
+renormalization scale \mur. There are different renormalization schemes, of
+which the $\overline{\mathrm{MS}}$ scheme~\cite{Weinberg:1951ss,tHooft:1973mm}
+is the most popular. Consequently, the observable $X$ and the strong coupling
+become functions of \mur. 
 
 Nonetheless, the observable $X$ may not depend on the arbitrarily chosen \mur.
 The renormalization group equation (RGE) states that the dependence of $X$ on
@@ -171,8 +173,8 @@ The renormalization group equation (RGE) states that the dependence of $X$ on
     \as(\mu^2)}{\partial \mur^2} \frac{\partial X}{\partial \as(\mu^2)} \right) \stackrel{!}{=} 0 
 \end{equation}
 %
-and states that any dependence of $X$ on \mur must be cancelled by the
-\mur-depedence of \as. Subsequently the strong coupling has to fulfill the
+and states that any dependence of $X$ on \mur must be canceled by the
+\mur-depedence of \as. Thus, the strong coupling has to fulfill the
 equation
 
 \begin{equation}
@@ -182,9 +184,10 @@ equation
 \end{equation}
 %
 where $\beta_0$, $\beta_1$ and $\beta 2$ are the 1-loop, 2-loop and 3-loop 
-$\beta$-function coefficients, which are given for the coupling of an effective
+$\beta$-function coefficients, which encode the the dependence of the coupling
+on the energy scale. They are given for the coupling of an effective
 theory, in which the $n_f$ quark flavors are light ($m_q \ll \mur$). Here, they
-are given in the $\overline{\mathrm{MS}}$-scheme:
+are given in the $\overline{\mathrm{MS}}$ scheme:
 
 \begin{equation} 
     \beta_0 = \frac{33 - 2 n_f}{12\pi},
@@ -199,20 +202,20 @@ are given in the $\overline{\mathrm{MS}}$-scheme:
    \right)n_f^2}{128 \pi^3}.
 \end{equation}
 %
-By integrating Eq.~\ref{eq:as_rge}, the energy dependence of \as is given. In an
-energy range of constant number of flavors, an analytic solution exists in
-1-loop approximation. 
+By integrating Eq.~\ref{eq:as_rge}, the energy dependence of \as is yielded.
+Working in an energy range of constant number of flavors \ie if no quark mass
+thresholds are passed, an analytic solution exists in 1-loop approximation. 
 
 \begin{equation*}
    \as(\mur^2) = \frac{1}{\beta_0 \ln \left( \sfrac{\mur^2}{\Lambda^2} \right)}
 \end{equation*}
 
-$\Lambda$ is the constant of the integration and corresponds to the scale at
-which the perturbative coupling would diverge. Very often it is convenient to
-give the strong coupling at a specific scale, from which the coupling at any
-scale is calculated. It is common practice to report \asmz, the strong couplint
-at the scale of the Z-boson. Consequently the 1-loop analytical function can be
-expressed as
+$\Lambda$ is the constant of integration and corresponds to the scale at which
+the perturbative coupling would become large and the perturbative series
+diverge. It is very often convenient to give the strong coupling at a specific
+scale, from which the coupling at any scale is calculated. It is common practice
+to report \asmz, the strong coupling at the scale of the Z boson mass. Thus, the
+1-loop analytical function can be expressed as
 
 \begin{equation*}
    \as\left(\mur, \as(\mz)\right) = \frac{\as(\mz)}{1 + \as(\mz)\beta_0 \ln
@@ -224,15 +227,15 @@ expressed as
     \includegraphics[width=0.95\textwidth]{figures/sm_model/as_running.pdf}\hfill
     \caption[Running of the strong coupling]{Running of the strong coupling
         constant as predicted by QCD. Determinations of the strong coupling from
-        several experiments are shown at the scale of the measurement and prove
-        the running up to \SI{1}{\TeV}. Recent measurements from
+        several experiments are shown at the scale of the measurement and
+        confirm the running up to \SI{1}{\TeV}. Recent measurements from
         CMS~\cite{Khachatryan:2014waa,CMS:2014mna} probe the running at even
         higher scales. Figure taken from~\cite{Agashe:2014kda}.} 
     \label{fig:as_running} 
 \end{figure}
 
 
-As the parameter \as is a free parameter of the theory, it is determined from
+As the parameter \as is a free parameter of the theory, it is deduced from
 experimental measurements and evolved to the scale of the $Z$-boson. The current
 world average value of the strong coupling according to the
 PDG~\cite{Agashe:2014kda} reads as
@@ -241,10 +244,10 @@ PDG~\cite{Agashe:2014kda} reads as
     \asmz = 0.1185 \pm 0.0006
 \end{equation*}
 %
-and is determined from hadronic $\tau$-lepton decays, lattice QCD calculations,
-deep-inelastic scattering data, electron-positron annihilation processes and
+and is determined from hadronic $\tau$ lepton decays, lattice QCD calculations,
+deep inelastic scattering data, electron-positron annihilation processes and
 electroweak precision fits. Fig.~\ref{fig:as_running} shows various
-determinations of the strong coupling constant from measurements at scales $Q$,
+determinations of the strong coupling from measurements at scales $Q$,
 which describe the running of the strong coupling up to the \SI{1}{\TeV} scale.
 
 \subsection{Factorization and Parton Density Functions}

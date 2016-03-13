@@ -5,27 +5,28 @@
 
 In many precision measurements at the LHC, the proton PDFs are an essential
 ingredient. As the PDFs cannot be calculated from perturbative QCD, they are
-derived from experimental data of collider and fixed-target experiments.
-Deep-inelastic scattering (DIS) data from the HERA collider cover most of the
-kinematic phasespace. The triple-differential dijet cross section contains
-additional information in the high-$x$ region and can constrain the PDFs, in
-particular the gluon PDF. 
-
+derived from fits to experimental data of collider and fixed-target experiments.
+The precise DIS data from the HERA collider provides the base data sets as they
+cover most of the kinematic phase space. By adding more data from different
+experiments, the precision on the PDFs can be improved. To study the the
+constraints of the triple-differential dijet cross section on the PDFs, a
+combined fit of the dijet data and the DIS data from HERA is performed.
 
 \section{Correlation between dijet cross section and PDFs}
 \label{sec:pdf_sensitivity}
 
 \todo{write}
-The potential impact of the CMS inclusive jet data can be illustrated
-by the correlation between the inclusive jet cross section
-$\sigma_{\mathrm{jet}}(Q)$ and the PDF $xf(x,Q^2)$ for any parton
-flavour~$f$. The NNPDF Collaboration~\cite{Ball:2008by} provides PDF
-sets in the form of an ensemble of replicas $i$, which sample
-variations in the PDF parameter space within allowed uncertainties.
-The correlation coefficient $\varrho_f(x,Q)$ between a cross section
-and the PDF for flavour~$f$ at a point $(x,Q)$ can be computed by
-evaluating means and standard deviations from an ensemble of $N$
-replicas as
+To illustrate the impact 
+
+
+The potential impact of the CMS inclusive jet data can be illustrated by the
+correlation between the inclusive jet cross section $\sigma_{\mathrm{jet}}(Q)$
+and the PDF $xf(x,Q^2)$ for any parton flavour~$f$. The NNPDF Collaboration
+provides PDF sets in the form of an ensemble of replicas $i$, which sample
+variations in the PDF parameter space within allowed uncertainties.  The
+correlation coefficient $\varrho_f(x,Q)$ between a cross section and the PDF for
+flavour~$f$ at a point $(x,Q)$ can be computed by evaluating means and standard
+deviations from an ensemble of $N$ replicas as
 
 \begin{equation}
   \varrho_f (x,Q) =
@@ -44,23 +45,23 @@ Figure~\ref{fig:correlation_pdf_xs_gqq} presents the correlation
 coefficient between the inclusive jet cross section and the gluon, u
 valence quark, and d valence quark PDFs in the proton.
 
-% \begin{figure}[p]
-%   \centering
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_gluon_y2_0_bw}
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_valence_quark_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_u_valence_quark_y2_0_bw}
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_valence_quark_y0_0_bw}\hfill%
-%   \includegraphics[width=0.45\textwidth]{herafitter_Figures/correlation_plots/corr_fnl2332d_NNPDF21_d_valence_quark_y2_0_bw}
-%   \caption{The correlation coefficient between the inclusive jet cross
-%     section and the gluon (top row), the u valence quark (middle row),
-%     and the d valence quark PDFs (bottom row), as a function of the
-%     momentum fraction $x$ of the proton and the energy scale $Q$ of
-%     the hard process. The correlation is shown for the central
-%     rapidity region $\yabs<0.5$ (left) and for $2.0<\yabs<2.5$
-%     (right).}
-%   \label{fig:correlation_pdf_xs_gqq}
-% \end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_gluon_ys0_0yb0_0_cl.pdf}\hfill%
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_gluon_ys0_0yb2_0_cl.pdf}
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_u_valence_quark_ys0_0yb0_0_cl.pdf}\hfill%
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_u_valence_quark_ys0_0yb2_0_cl.pdf}
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_d_valence_quark_ys0_0yb0_0_cl.pdf}\hfill%
+  \includegraphics[width=0.49\textwidth]{figures/pdf_constraints/corr_PTMAXEXPYS_YBYS_NLO_FINALBINS_NNPDF23_d_valence_quark_ys0_0yb2_0_cl.pdf}
+  % \caption{The correlation coefficient between the inclusive jet cross
+  %   section and the gluon (top row), the u valence quark (middle row),
+  %   and the d valence quark PDFs (bottom row), as a function of the
+  %   momentum fraction $x$ of the proton and the energy scale $Q$ of
+  %   the hard process. The correlation is shown for the central
+  %   rapidity region $\yabs<0.5$ (left) and for $2.0<\yabs<2.5$
+  %   (right).}
+  \label{fig:correlation_pdf_xs_gqq}
+\end{figure}
 
 The correlation between the gluon PDF and the inclusive jet cross
 section is largest at central rapidity for most jet \pt. In contrast,
@@ -353,10 +354,10 @@ Fig.~\ref{fig:pdfconstraints:overview:19}.
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V017_EIG/pdfratio/HFTD_HERA_V017_EIG_0_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_0_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V017_EIG/pdfratio/HFTD_HERA_V017_EIG_9_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_9_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_0_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_9_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_1_9.pdf}
   \caption[The gluon and sea quark PDFs]{The gluon (top) and sea quark (bottom) PDFs as a function of $x$ as
   derived from HERA-II inclusive DIS data alone (left) and in combination with
   the CMS dijet data (right). The PDFs are shown at the starting scale $Q^2 =
@@ -368,10 +369,10 @@ Fig.~\ref{fig:pdfconstraints:overview:19}.
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V017_EIG/pdfratio/HFTD_HERA_V017_EIG_7_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_7_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V017_EIG/pdfratio/HFTD_HERA_V017_EIG_8_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_8_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_7_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_8_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_1_9.pdf}
   \caption[The d valence and u valence quark PDFs]{The d valence quark (top) and u
     valence quark (bottom) PDFs as a function of $x$ as
   derived from HERA-II inclusive DIS data alone (left) and in combination with
@@ -385,10 +386,10 @@ Fig.~\ref{fig:pdfconstraints:overview:19}.
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_0_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_9_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_7_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_8_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_1_9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_1_9.pdf}
   \caption[Direct comparison of gluon and quark PDFs]{The gluon (top left), sea
   quark (top right), d valence quark (bottom left) and u valence quark (bottom
 right) PDFs as a function of $x$ as derived from HERA-II inclusive DIS data
@@ -400,10 +401,10 @@ uncertainty of the PDF is shown (hatched and solid bands).}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_0_10000_0.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_9_10000_0.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_7_10000_0.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V017_EIG/pdfratio/HFTD_HERACMSTDJETS_V017_EIG_8_10000_0.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_10000_0.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_10000_0.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_10000_0.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_10000_0.pdf}
   \caption[Direct comparison of gluon and quark PDFs]{The gluon (top left), sea
   quark (top right), d valence quark (bottom left) and u valence quark (bottom
 right) PDFs as a function of $x$ as derived from HERA-II inclusive DIS data
@@ -415,7 +416,7 @@ uncertainty of the PDF is shown (hatched and solid bands).}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/pdf_constraints/hftd/overview/HFTD_HERACMSTDJETS_V017_EIG/pdfoverview/HFTD_HERACMSTDJETS_V017_EIG_1_9.pdf}\hfill%
+  \includegraphics[width=0.9\textwidth]{figures/pdf_constraints/hftd/overview/HFTD_HERACMSTDJETS_V101_EIG/pdfoverview/HFTD_HERACMSTDJETS_V101_EIG_1_9.pdf}\hfill%
   \caption[Overview of gluon and quark PDFs]{Overview of the gluon, sea, u
   valence and d valence quark Pdfs before (dashed line) and after (full line)
   including the CMS dijet data int the fit. The PDFs are shown at the starting

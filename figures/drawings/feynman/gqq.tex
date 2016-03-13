@@ -63,6 +63,9 @@
   \fill (2,0) circle (0.05cm);
   \path (2,0.0) edge[decorate,decoration={gluon, amplitude=3.0pt, segment length=5pt, aspect=1.1}] (0,0);
   \draw[postaction={decorate, decoration={markings, mark=at position 0.5 with {\arrow[xshift=3.333pt]{triangle 45}}}}] (2.0,0.0) -- (3.4,1.4);
-  \draw[postaction={decorate, decoration={markings, mark=at position 0.5 with {\arrow[xshift=3.333pt]{triangle 45}}}}] (2.0,0.0) -- node {} (3.4,-1.4);
+  \draw[postaction={decorate, decoration={markings, mark=at position 0.5 with {\arrow[xshift=3.333pt]{triangle 45}}}}] (3.4,-1.4) -- node {} (2.0,0.0);
+  \node[] at (0.2,-0.5) {g};
+  \node[] at (3.3,-0.8) {$\bar{\mathrm{q}}$};
+  \node[] at (3.3,0.8) {${\mathrm{q}}$};
 \end{tikzpicture}
 \end{document}
