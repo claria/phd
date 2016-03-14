@@ -29,14 +29,14 @@ all: thesis.pdf
 # -interactive=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex
+thesis thesis.pdf: thesis.tex
 	latexmk -pdf   \
 	-jobname=thesis        \
 	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\input{%S}'" thesis.tex
 
-hardcover: thesis.tex
+book book.pdf: thesis.tex
 	latexmk -pdf       \
-	-jobname=thesis-hardcopy   \
+	-jobname=book   \
 	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\def\hardcopy{}\input{%S}'" thesis.tex
 
 
