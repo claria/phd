@@ -426,50 +426,35 @@ uncertainty of the PDF is shown (hatched and solid bands).}
 \end{figure}
 
 \section{Simultaneous Fit of PDFs and Strong Coupling}
-\todo{write and analyze}
-gluon PDF after freeing alphas
-and result of alphasmz including all uncertainties
 
+The triple-differential dijet cross section does not only provide constraints on
+the PDFs, but also on the strong coupling constant. The bin which contains the
+boosted dijet events is the most sensitive to the PDFs. However, the
+experimental uncertainties are larger than in the bin containing two central
+jets, \ie at low \yboost and low \ystar values. At the same time, the highest
+transverse momentum are reached in that bin. Due to the known correlations
+between these phase space regions, this measurement is a good input for a
+simultaneous fit of both the PDFs and the strong coupling. 
 
-%
-% At the same time CMS jet data favour a larger gluon PDF at high $x$
-% compared to the DIS data alone. As expected, no improvement is
-% exhibited in the low-$x$ region, where the gluon is well constrained
-% by the HERA data through scaling violations.
-%
-% It can also be seen that the parameterization and model uncertainties
-% of the up- and down-quark distributions are reduced for $x >
-% 0.3$. This is expected from the correlations, studied in
-% Fig.~\ref{fig:correlation_pdf_xs_gqq}, where the quark distributions
-% are constrained via the $qq$ contribution to jet production at high
-% \yabs and \pt.
-%
-% Considering the significant increase in the u valence uncertainty
-% exhibited in the low-$x$ region of
-% Fig.~\ref{fit:cmsjets2011:directcomparison:fitscale} one has to
-% remember that a more flexible parameterization is used than for the
-% original HERAPDF1.0 fits and that in this region the contribution of
-% the u valence quarks is very small. Through the QCD sum rules better
-% constraints at high $x$ can then counterintuitively lead to larger
-% uncertainties at low $x$, if this region is not sufficiently
-% constrained by other data. In fact, the experimental uncertainty is
-% reduced and only the model and parameterization uncertainties have
-% become larger for this region, which is clearly visible from
-% Fig.~\ref{fit:cmsjets2011:seauvdv:fitscale}.
-%
-% Inclusive DIS data alone are not sufficient to disentangle effects on
-% cross section predictions from changes in the gluon distribution or
-% the strong coupling constant at the same time. Therefore the strong
-% coupling constant was always fixed to be $\alpsmz= 0.1176$ in all the
-% presented results as in the original HERAPDF1.0 derivation. Including
-% the CMS jet data this constraint can be dropped giving similar PDFs
-% with, of course, larger uncertainties than previously. Direct
-% comparisons of fits with and without the CMS data are not possible in
-% this case, because the fitting procedure does not converge anymore
-% with inclusive DIS data alone when \alpsmz is considered as a free
-% parameter. %
+Therefore, the same PDF fit as in the previous section is performed but with the
+additional free parameter \as. The uncertainty on \as is determined using
+\textsc{Minuit} by profiling the likelihood. Furthermore, the model and
+parameterization uncertainties were calculated in the same way as in
+Sec.~\ref{section:cmsjets2011_pdfconstraints}. In addition, the scale
+uncertainties are estimated by varying the renormalization and factorization
+scale and repeating the fit in a similar way as in
+Sec.~\ref{sec:scale_uncertainties}. The scale of the HERA DIS remained
+unchanged. 
 
-% Including the CMS jet data the strong coupling constant is determined
-% to be $\alpsmz = 0.1192\,^{+0.0017}_{-0.0015}$, where the uncertainty
-% accounts for the experimental uncertainties of the inclusive HERA DIS
-% and CMS jet data, and the NP uncertainties.
+The strong coupling constant \asmz is determined as
+
+\begin{equation*}
+  \asmz = 0.1188_{-0.0015}^{+0.0015}(\mathrm{exp})_{-0.0002}^{+0.0004}(\mathrm{mod})_{-0.0005}^{+0.0003}(\mathrm{par})_{-0.0010}^{+0.0029}(\mathrm{scale})
+\end{equation*}
+
+where the \emph{exp} uncertainty accounts for the experimental uncertainties of
+the incvlusive HERA DIS and CMS jet data and NP uncertainties. The \emph{mod}
+and \emph{par} uncertainty denotes the model respectively the parameterization
+uncertainty and \emph{scale} the scale uncertainties.  The determined value of
+\asmz in agreement with the world average of $\asmz=0.1181\pm 0.0013$ of the
+PDG~\cite{Agashe:2014kda}.
