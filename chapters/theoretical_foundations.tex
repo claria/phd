@@ -224,7 +224,7 @@ to report \asmz, the strong coupling at the scale of the Z boson mass. Thus, the
 
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/sm_model/as_running.pdf}\hfill
+    \includegraphics[width=0.95\textwidth]{figures/theoretical_foundations/as_running.pdf}\hfill
     \caption[Running of the strong coupling]{Running of the strong coupling
         constant as predicted by QCD. Determinations of the strong coupling from
         several experiments are shown at the scale of the measurement and
@@ -295,8 +295,8 @@ cross section measurement is discussed.
 
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_2.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{figures/sm_model/ct14_100.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/theoretical_foundations/ct14_2.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{figures/theoretical_foundations/ct14_100.pdf}
     \caption[CT14 NNLO PDF sets]{The CT14 NNLO PDF set with the gluon and quark
         PDFs at the scale $Q=\SI{2}{\GeV}$ (left) and evolved to $Q=\SI{100}{\GeV}$
     (right) using the DGLAP evolution equations. Figure taken
@@ -347,7 +347,7 @@ parton $b$ with momentum fraction $\xi$.
 
 \begin{figure}[htb] 
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/sm_model/phasespace.pdf}\hfill
+    \includegraphics[width=0.8\textwidth]{figures/theoretical_foundations/phasespace.pdf}\hfill
     \caption[Kinematic phase space region of the experiments]{The phase space
         in $x$ and $Q^2$ which is accessible in current experiments.  The most
         important input for the PDFs continues to be provided by DIS
@@ -401,7 +401,7 @@ Herwig is based on the cluster fragmentation model.
 
 Within the Lund string model, the attraction between a $q\bar q$ pair is
 modeled using so-called strings, whose energy follows a Coulomb potential as a function
-of the distance between the two quarks. Final-state gluons from the parton
+of the distance between the two quarks~\cite{Sjostrand:1984ic}. Final-state gluons from the parton
 shower are considered as kinks in the strings. If the string exceeds a certain
 energy threshold, it breaks up and new quark-antiquark pairs are formed. If the
 available energy is too small, the quarks and antiquarks recombine into mesons
@@ -410,39 +410,40 @@ and baryons.
 \paragraph{Cluster Fragmentation Model}
 
 First, all gluons are split into quark antiquark pairs. Neighboring pairs are
-grouped together to form colorless clusters. Most of these clusters decay into
-hadrons in an isotropic two-body phase space model.
+grouped together to form colorless
+clusters~\cite{Webber:1983if,Marchesini:1987cf}. Most of these clusters decay
+into hadrons in an isotropic two-body phase space model.
 
-\section{Jet Algorithms}
+\section{Jets and Jet Algorithms}
 \label{sec:jet_algorithms}
 
-The information of the clustered stream of particles, also known as jets,
-provides the link between the short-scale physics and the final-state
-observations. There are many different algorithms available which cluster jets
+Particle jets are the clustered streams of particles which were produced by the
+hadronization of quarks or gluons. Since they provide the link between the
+short-scale physics and the observed final states, they yield important
+information about the PDFs and the hard interaction.
+
+There are many different algorithms available which cluster jets
 from a set of input objects. Both \CMS and \ATLAS rely on the \antikt and
-inclusive-\kt jet algorithms, which proved to be very robust and both are
+inclusive-\kt jet algorithms, which have proved to be very robust and are both
 collinear and infrared safe, see Section~\ref{sec:coll_safety}. They are
 sequential recombination algorithms and combine input objects based on a
-distance measure in Minkowski space. All jets were reconstructed using the
+distance measure in Minkowski space. All jets in this thesis were reconstructed using the
 efficient algorithms implemented in the \textsc{FastJet} library~\cite{Cacciari:2011ma}.
 
 \subsection{Collinear and Infrared Safety}
 \label{sec:coll_safety}
 
-Hard partons undergo many collinear splittings in the fragmentation process.
+Hard partons undergo many collinear splittings during the fragmentation process.
 Furthermore, there are always emissions of soft particles in QCD-like events
-caused by non-perturbative and perturbative effects. The reconstructed jets
-should be insensitive to all these effects. Furthermore, fixed-order pQCD
-calculations are associated with divergent tree-level matrix elements and the
-corresponding loop level matrix elements. While these divergences cancel for
-infrared safe and collinear safe jet algorithms, this is not guaranteed for jet
-algorithms not fulfilling the infrared and collinear safety
-requirements.\todo{Klaus fragen}
+caused by non-perturbative and perturbative effects. If the set of hard jets in an
+events remains unchanged by those effects, they are considered to be infrared
+and collinear safe~\cite{Salam:2009jx}.
+
 Fig.~\ref{fig:infrared_safety} shows the effect of a collinear splitting (right
 plot) and of additional soft particles (left plot) on the results of an unsafe
 jet algorithm. Most of the cone-based jet algorithms which cluster elements
-by employing a constant distance measure in the $\eta-\phi$ space are affected by the
-previously mentioned issues. This leads to the popularity of the modern sequential
+using a constant distance measure in the $\eta$-$\phi$ space are affected by the
+previously mentioned issues, hence the popularity of the modern sequential
 recombination algorithms which are used in almost all of today's jet-based
 analyses.
 
@@ -463,15 +464,15 @@ jet clustering algorithm.}
 \subsection{Generalized \kt Jet Algorithms}
 
 The most popular sequential recombination algorithms are the \kt jet
-algorithms which cluster jets based on a jet size parameter $R$ and an
-additional parameter $p$, introducing a dependence on the transverse momentum of
-the input objects. The pair-wise algorithm uses a list of input objects which
+algorithms. They cluster jets based on a jet size parameter $R$ and an
+additional parameter $p$ which introduces a dependence on the transverse momentum of
+the input objects. The pairwise algorithm uses a list of input objects which
 can be partons, stable particles or reconstructed particle candidates.
 
-At first, the distance $d_{ij}$ between two particles and the distances of the
-particles to the beam $d_{iB}$ and $d_{jB}$ are calculated based on the rapidity
-difference $\Delta y_{ij}$ and the azimuthal angle $\Delta \phi_{ij}$ between two
-particles $i$ and $j$
+First, the distance $d_{ij}$ between two particles $i$ and $j$ and the distances
+$d_{iB}$ and $d_{jB}$ of the particles to the beam are calculated based on the
+rapidity difference $\Delta y_{ij}$ and the azimuthal angle $\Delta \phi_{ij}$
+between them:
 
 \begin{align*} 
     d_{ij} &= \min(p_{\mathrm{T}i}^{2p},p_{\mathrm{T}j}^{2p})\frac{\left(\Delta
@@ -485,22 +486,22 @@ with the angular distance
     \left(\Delta R_{ij}\right)^2 &= (\Delta y_{ij})^2 + (\Delta \phi_{ij})^2
 \end{align*} 
 %
-If distance $d_{ij}$ is smaller than the distances to the beam line, the two
+If the distance $d_{ij}$ is smaller than the distances to the beam line, the two
 particles $i$ and $j$ are merged into a new particle $k$ which then replaces the
 particles $i$ and $j$ in the input list. These steps are repeated until all
 particles are clustered into jets. Since the distance measures are defined in
-Minkowski space, the shapes of the jets in the $\eta-\phi$ plane are not circular but
+Minkowski space, the shapes of the jets in the $\eta$-$\phi$ plane are not circular but
 irregular, see Figure~\ref{fig:jet_shapes}. Based on the parameter $p$, there
 are three important \kt based algorithms with distinct properties:
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/jet_reconstruction/jet_shapes.pdf}
-    \caption[Jet areas of various jet algorithms]{Catchment areas of jets obtained by the described \kt-based algorithm
-        and the cone-based SISCone algorithm~\cite{Salam:2009jx}. For most jet
-        algorithms the shape is irregular, while the \antikt algorithm yields
-        circular shapes for hard jets while soft jets are crescent shaped. Taken
-        from~\cite{Berger:2014aca}.}
+    \includegraphics[width=0.8\textwidth]{figures/theoretical_foundations/jet_shapes.pdf}
+    \caption[Jet areas of various jet algorithms]{Catchment areas of jets
+        obtained by the described \kt-based algorithm. For most jet algorithms the shape is
+        irregular, while the \antikt algorithm yields circular shapes for hard
+        jets while and crescent-shaped soft jets. Adapted
+        from~\cite{Salam:2009jx}.}
     \label{fig:jet_shapes}
 \end{figure}
 
@@ -512,35 +513,38 @@ are three important \kt based algorithms with distinct properties:
     \item $p=0$: The \textbf{Cambridge-Aachen
         algorithm}~\cite{Dokshitzer:1997in} is only based on the spatial
         separation of the objects and does not rely on the transverse energy of
-        the input objects. Similarly to the inclusive \kt algorithm its jets
-        have an irregular shape. This jet algorithm is particularly interesting
-        for jet substructure studies.
+        the input objects. Similarly to the inclusive \kt algorithm, it produces
+        jets of irregular shape. While it is not widely used for jet analyses,
+        it is very interesting in the context of jet substructure studies, where
+        at first a jet with a large jet size is clustered and subsequently its
+        structure is investigated.
     \item  $p=-1$: The \textbf{anti-$\mathbf{\kt}$
-    algorithm}~\cite{Cacciari:2008gp} favours clustering hard input objects
-    resulting in fairly circular jet shapes for hard jets, while soft jets are
-    crescent-shaped if they are close to a hard jet.
+    algorithm}~\cite{Cacciari:2008gp} favors clustering hard input objects
+    resulting in fairly circular jet shapes for hard jets, while soft jets in
+    close proximity to a reconstructed hard jet are crescent-shaped. It is the
+    most widely used jet algorithm for physics analyses at the LHC.
 \end{itemize}
 
-\section{Dijet Production at Hadron-Hadron Colliders}
+\section{Dijet Production at Proton Colliders}
 
-When two hadrons collide, the actual interaction takes place between the
+When two protons collide, the actual interaction takes place between the
 constituents of the proton, the partons. The cross section $\sigma$ of such a hard
-scattering process can be computed in collinear factorization through
+scattering process can be expressed in collinear factorization as
 
 \begin{equation*}
     \begin{split}
-    \sigma_{H_1 H_2 \rightarrow X} = &\sum_{i,j} \int dx_1 dx_2 f_{i, H_1}
-    \left(x_1, \muf^2 \right) f_{j,H_2} \left(x_2, \muf^2 \right) \\ 
-    &\times \hat\sigma_{i,j \rightarrow X} \left( x_1 P_1, x_2P_2, \as(\mur^2),
-    \frac{Q^2}{\muf^2} \right)
+    \sigma_{P_1 P_2 \rightarrow X} = &\sum_{i,j} \int dx_1 dx_2 f_{i, P_1}
+    \left(x_1, \muf^2 \right) f_{j,P_2} \left(x_2, \muf^2 \right) \\ 
+    &\times \hat\sigma_{i,j \rightarrow X} \left( x_1 p_1, x_2p_2, \as(\mur^2),
+    \frac{Q^2}{\muf^2} \right),
 \end{split}
 \end{equation*}
 %
-where $f_i$ and $f_j$ denote the parton distributions which depend on the
-momentum fraction $x$ of the parent hadron $H$ and the factorization scale
+where $f_i$ and $f_j$ denote the parton distributions, which depend on the
+momentum fraction $x$ of the parent proton $P$ and the factorization scale
 $\muf$. The parton-level cross section $\hat \sigma$ for the production of the
-final state $X$ depends on the final-state phase, the factorization scale and
-the renormalization scale. The sum runs over all contributing initial-state
+final state $X$ depends on the final state phase, the factorization scale and
+the renormalization scale. The sum runs over all contributing initial state
 partons. Fig.~\ref{fig:crosssection_factorization} illustrates the factorization
 into the PDFs and the hard scattering cross section.
 
@@ -549,22 +553,21 @@ into the PDFs and the hard scattering cross section.
     \includegraphics[width=0.5\textwidth]{figures/drawings/hardscattering.pdf}
     \caption[Factorization of hard scattering cross section.]
         {The total cross section is factorized into the hard scattering cross
-        section and the PDFs.}
+        section $\hat \sigma$ and the PDFs $f_i(x)$.}
     \label{fig:crosssection_factorization}
 \end{figure}
-\todo{finalize figure}
 
 \subsection{Kinematics of the Dijet System}
 \label{sec:dijet_kinematics}
 
-The outgoing partons of a hard interaction manifest themselves as a spray of
-collimated particles, which are clustered into jets. Consequently, the
-properties of jets are studied in order to gain a deeper understanding about
+The outgoing partons of a hard interaction manifest themselves as streams of
+collimated particles which are clustered into jets. Consequently, the
+properties of jets are studied in order to gain a deeper understanding of
 QCD and the proton structure. In the following discussion, the incoming partons
 involved in the scattering process are assumed to be massless and collinear to
-the beam protons. Furthermore, it is convenient to describe the kinematic of
-the dijet system using the transverse momentum \pt and the rapidity $y$, as it
-is introduced in Sec.~\ref{sec:coord_system}. The rapidity $y$, defined as
+the beam protons. Furthermore, it is convenient to describe the kinematics of
+the dijet system using the transverse momentum \pt and the rapidity $y$ of the
+jets, as it is introduced in Sec.~\ref{sec:coord_system}. The rapidity $y$, defined as
 
 \begin{equation*}
     y = \frac{1}{2} \ln \left( \frac{E+p_z}{E-p_z} \right),
@@ -579,6 +582,7 @@ $x_2$ via
     e^{-y_2} \right),
 \end{equation*}
 %
+\todo{herleitung}
 with $x_{\mathrm{T}} = \pt/E$ and the rapidities $y_1$ and $y_2$ of the
 two outgoing partons.
 
@@ -602,19 +606,18 @@ rapidities $y_1$ and $y_2$ of the two jets emerging from the partons.
     \yboost = \frac{1}{2} |y_1 + y_2|
 \end{equation*}
 
-The quantities $\pm\ystar$ are the jet rapidities of the two jets in the
-parton-parton CM frame. Since they are symmetric, \ystar is defined as half the
-absolute rapidity separation between the two jets.
+In the center-of-mass (CM) frame, the rapidities of the jets can be expressed
+using the variable $\ystar$. As \ystar is symmetric, it is defined as
 
 \begin{equation*}
-    \ystar = \frac{1}{2} |y_1 - y_2|
+    \ystar = \frac{1}{2} |y_1 - y_2|.
 \end{equation*}
 
-\ystar is related to the polar scattering angle $\theta^*$ with respect to the
-beamline by 
+The quantity \ystar may also be expressed in terms of the polar scattering angle
+$\theta^*$ with respect to the beamline by 
 
 \begin{equation*}
     \ystar = \frac{1}{2} \ln \left( \frac{1 + |\cos \theta^*|}{1- | \cos \theta^*|} \right).
 \end{equation*}
 
-\todo{mehr ausführen}
+\todo{generell mehr ausführen.}
