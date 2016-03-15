@@ -1,6 +1,6 @@
 % vim: tw=80
 
-\chapter{Constraints on PDFs and Strong Coupling Constant}
+\chapter{Constraints on PDFs and Determination of the Strong Coupling Constant}
 \label{sec:pdf_constraints}
 
 In many precision measurements at the LHC, the proton PDFs are an essential
@@ -15,20 +15,12 @@ combined fit of the dijet data and the DIS data from HERA is performed.
 \section{Correlation between dijet cross section and PDFs}
 \label{sec:pdf_sensitivity}
 
-\todo{write}
 To illustrate the phase space regions in which the triple-differential dijet
 cross section has an impact on the the PDFs, the correlation between the
 cross section $\sigma(Q)$ and the PDF $xf(x,Q^2)$ for any parton flavor~$f$ can
-be calculated.
-
-
-
-
-correlation between the inclusive jet cross section $\sigma_{\mathrm{jet}}(Q)$
-and the PDF  for any parton flavour~$f$. The NNPDF Collaboration
-provides PDF sets in the form of an ensemble of replicas $i$, which sample
-variations in the PDF parameter space within allowed uncertainties.  The
-correlation coefficient $\varrho_f(x,Q)$ between a cross section and the PDF for
+be calculated. The PDF sets of the NNPDF collaboration are an ensemble of
+replicas $i$, which sample variations in the PDF parameter space within the
+PDF's uncertainties. The correlation coefficient $\varrho_f(x,Q)$ between the cross section and the PDF for
 flavour~$f$ at a point $(x,Q)$ can be computed by evaluating means and standard
 deviations from an ensemble of $N$ replicas as
 
@@ -41,13 +33,14 @@ deviations from an ensemble of $N$ replicas as
   {\Delta_{\sigma(Q)} \Delta_{xf(x,Q^2)}}\,.
 \end{equation}
 
-Here, the angular brackets denote the averaging over the replica index
-$i$, and $\Delta$ represents the evaluation of the corresponding
-standard deviation for either the jet cross section,
-$\Delta_{\sigma_{\mathrm{jet}}(Q)}$, or a PDF, $\Delta_{xf(x,Q^2)}$.
-Figure~\ref{fig:correlation_pdf_xs_gqq} presents the correlation
-coefficient between the inclusive jet cross section and the gluon, u
-valence quark, and d valence quark PDFs in the proton.
+where angular brackets denote the averaging over all replicas, and
+$\Delta_{\sigma(Q)}$ and $\Delta_{xf(x,Q^2)}$ are the standard deviations of the
+dijet cross section or of the PDF with flavour $f$, respectively.
+Fig.~\ref{fig:correlation_pdf_xs_gqq} presents the correlation coefficient
+between the dijet cross section and the gluon, u valence quark, and d
+valence quark PDFs in the proton for the most central bin with low \ystar and
+low \yboost values and the bin containing boosted dijet events ($2 \leq \yboost
+< 3$).
 
 \begin{figure}[p]
   \centering
@@ -67,18 +60,19 @@ valence quark, and d valence quark PDFs in the proton.
   \label{fig:correlation_pdf_xs_gqq}
 \end{figure}
 
-The correlation between the gluon PDF and the inclusive jet cross
-section is largest at central rapidity for most jet \pt. In contrast,
-the correlation between the valence quark distributions and the jet
-cross section is rather small except for very high \pt such that some
-impact can be expected at high $x$ from including these jet data in
-PDF fits. In the forward region the correlation between the valence
-quark distributions and the jet cross sections is more pronounced at
-high $x$ and smaller jet \pt. Therefore, a significant reduction of
-the PDF uncertainties is expected by including the CMS inclusive jet
-cross section into fits of the proton structure.
+The correlation between the gluon PDF and the jet cross section is large for
+highest \ptavg > \SI{1}{\TeV} and central jets ($\yboost < 1, \ystar < 1$) for
+momentum fractions $0.1 < x < 0.5$. In the boosted region ($2 \leq \yboost < 3$)
+there is a large correlation for $\SI{200}{\GeV} \leq \ptavg < \SI{400}{\GeV}$
+for momentum fractions $0.2 < x < 0.7$. In contrast, the correlation between the
+jet cross section and the u valence and d valence quark PDFs is much smaller,
+especially in the central region. Again, the correlation for the boosted dijet
+region is more pronounced, particularly for highest momentum fractions $x >
+0.5$. Based on the results of the correlation studies, a significant impact of
+the dijet cross section is expected by including the dijet cross sections in a
+PDF fit.
 
-\section{The HERAFitter Framework}
+\section{The \xfitter Framework}
 \label{section:herafittersetup}
 
 The constraints of the triple-differential dijet measurement on the proton PDFs
@@ -87,7 +81,7 @@ combination with inclusive DIS cross sections from the HERA experiments. The
 HERA-II DIS data were the basis for the determination of the HERAPDF 2.0 PDF
 set.
 
-HERAFitter is an open source framework to fit the PDFs to experimental data
+\xfitter is an open source framework to fit the PDFs to experimental data
 based on the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi
 (DGLAP)~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg} equations. To
 ensure consistency between DIS and QCD calculations, the fits are performed at
@@ -253,19 +247,20 @@ less than one standard deviation $\sigma$ as expected.
   \begin{tabular}{lrlr}
     \toprule
     Systematic source        & Shift in $\sigma$ & Systematic source        & Shift in $\sigma$\rbthm\\\midrule
-    \textsc{AbsoluteMPFBias} & 1.07              & \textsc{RelativeJEREC1}  & 0.72\rbtrr\\
-    \textsc{AbsoluteScale}   & 0.04              & \textsc{RelativeJEREC2}  & -0.04\rbtrr\\
-    \textsc{AbsoluteStat}    & 0.12              & \textsc{RelativeJERHF}   & -0.04\rbtrr\\
-    \textsc{FlavorQCD}       & 1.23              & \textsc{RelativePtBB}    & 0.27\rbtrr\\
-    \textsc{Fragmentation}   & -0.21             & \textsc{RelativePtEC1}   & -0.43\rbtrr\\
-    \textsc{PileUpDataMC}    & -0.08             & \textsc{RelativePtEC2}   & -2.01\rbtrr\\
-    \textsc{PileUpPtBB}      & 0.59              & \textsc{RelativePtHF}    & -0.02\rbtrr\\
-    \textsc{PileUpPtEC1}     & -0.84             & \textsc{RelativeStatEC2} & -0.17\rbtrr\\
-    \textsc{PileUpPtEC2}     & 0.03              & \textsc{RelativeStatFSR} & 0.05\rbtrr\\
-    \textsc{PileUpPtHF}      & -0.01             & \textsc{RelativeStatHF}  & -0.03\rbtrr\\
-    \textsc{PileUpPtRef}     & -1.43             & \textsc{SinglePionECAL}  & 0.57\rbtrr\\
-    \textsc{RelativeFSR}     & 2.78              & \textsc{SinglePionHCAL}  & -0.44\rbtrr\\
-    \textsc{Luminosity}      & 0.88              & \textsc{NP uncertainty}  & -3.10\rbtrr\\
+    \textsc{AbsoluteScale}   & -0.18             & \textsc{RelativeFSR}     & 2.45  \rbtrr\\
+    \textsc{AbsoluteStat}    & -0.37             & \textsc{RelativeStatEC2} & -0.38  \rbtrr\\
+    \textsc{AbsoluteMPFBias} & -0.21             & \textsc{RelativeStatHF}  & 0.03  \rbtrr\\
+    \textsc{Fragmentation}   & -0.06             & \textsc{RelativeStatFSR} & -0.06  \rbtrr\\
+    \textsc{SinglePionECAL}  & 0.13              & \textsc{PileUpDataMC}    & -0.03  \rbtrr\\
+    \textsc{SinglePionHCAL}  & -0.85             & \textsc{PileUpPtRef}     & -1.05  \rbtrr\\
+    \textsc{FlavorQCD}       & 1.26              & \textsc{PileUpPtBB}      & 0.89  \rbtrr\\
+    \textsc{RelativeJEREC1}  & 0.54              & \textsc{PileUpPtEC1}     & -0.73  \rbtrr\\
+    \textsc{RelativeJEREC2}  & -0.26             & \textsc{PileUpPtEC2}     & 0.03  \rbtrr\\
+    \textsc{RelativeJERHF}   & 0.04              & \textsc{PileUpPtHF}      & 0.00  \rbtrr\\
+    \textsc{RelativePtBB}    & -0.14             & \textsc{nperr}           & -2.02  \rbtrr\\
+    \textsc{RelativePtEC1}   & -1.03             & \textsc{jererr}          & 0.36  \rbtrr\\
+    \textsc{RelativePtEC2}   & -2.49             & \textsc{lumi}            & 0.62  \rbtrr\\
+    \textsc{RelativePtHF}    & 0.01              &                          & \rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -303,22 +298,22 @@ experiments.
     \multicolumn{1}{c}{\chipsqndata} &
     \multicolumn{1}{c}{\chipsq} &
     \multicolumn{1}{c}{\chipsqndata}\rbthm\\\midrule
-    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 60.47  & 1.44  & 60.37  & 1.44 \rbtrr\\
-    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 41.47  & 1.06  & 45.04  & 1.15 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 223.35 & 1.40  & 221.91 & 1.40 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 203.91 & 1.09  & 203.15 & 1.09 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 196.27 & 0.84  & 198.36 & 0.85 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 59.02  & 0.94  & 61.13  & 0.97 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 369.42 & 1.11  & 395.66 & 1.19 \rbtrr\\
-    CMS Triple-Differential Dijets                              & 122 & ---    & ---   & 167.61 & 1.37
+    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 54.96  & 1.31  & 54.8   & 1.30 \rbtrr\\
+    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 38.36  & 0.98  & 38.16  & 0.98 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 218.2  & 1.37  & 218.99 & 1.38 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 206.83 & 1.11  & 207.62 & 1.11 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 200.8  & 0.86  & 203.07 & 0.87 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 61.14  & 0.97  & 62.73  & 1.00 \rbtrr\\
+    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 370.18 & 1.12  & 387.34 & 1.17 \rbtrr\\
+    CMS Triple-Differential Dijets                              & 111 & ---    & ---   & 90.57  & 0.82
     \rbtrr\\\bottomrule
     data set(s) & \ndof &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof} &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof}\rbthm\\\midrule
-    HERA data                       & 1042 & 1216.42 & 1.17  &  --- &  --- \rbtrr\\
-    HERA \& CMS data                & 1164 &    --- &  --- & 1438.12 & 1.24 \rbtrr\\
+    HERA data                       & 1042 & 1203.86 & 1.16  &  --- &  --- \rbtrr\\
+    HERA \& CMS data                & 1164 &    --- &  --- & 1330.61 & 1.15 \rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
