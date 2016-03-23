@@ -5,7 +5,7 @@
 
 # The first rule in a Makefile is the one executed by default ("make"). It
 # should always be the "all" rule, so that "make" and "make all" are identical.
-all: thesis.pdf
+all: thesis.pdf book.pdf
 
 # CUSTOM BUILD RULES
 
@@ -34,6 +34,12 @@ thesis thesis.pdf: thesis.tex
 	-jobname=thesis        \
 	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\input{%S}'" thesis.tex
 
+force: thesis.tex
+	latexmk -pdf -g   \
+	-jobname=thesis        \
+	-pdflatex="pdflatex --file-line-error --shell-escape --synctex=1 %O '\input{%S}'" thesis.tex
+
+
 book book.pdf: thesis.tex
 	latexmk -pdf       \
 	-jobname=book   \
@@ -46,6 +52,7 @@ thesis.acr: thesis.aux
 clean:
 	latexmk -C
 	rm -f thesis.acn thesis.acr thesis.alg thesis.bbl thesis.run.xml thesis.xdy
+	rm -f book.acn book.acr book.alg book.bbl book.run.xml book.xdy
 
 show: thesis.pdf
 	zathura thesis.pdf &

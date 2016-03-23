@@ -81,14 +81,14 @@ where $\gamma_\mu$ are the Dirac $\gamma$-matrices and $\psi_{q,a}$ are quark-fi
 spinors for a quark with flavor $q$, mass $m_q$ and a color of index $a$
 which runs from $1$ to $N_C=3$. The $t_{ab}^C$ correspond to the eight
 $3\times3$ matrices and are the generators of the $\mathrm{SU}(3)$
-group.$\mathcal{A}_\mu^C$ denotes the gluon fields and $C$ runs from 1 to
+group. $\mathcal{A}_\mu^C$ denotes the gluon fields and $C$ runs from 1 to
 $N_C-1$, resulting in eight different gluons. The QCD coupling strength is defined
 by $g_s$. The field tensor $F_{\mu\nu}^A$ is given by
 
 \begin{equation*}
     F_{\mu\nu}^A = \partial_\mu \mathcal{A}_\nu^A - \partial_{\nu}
     \mathcal{A}_{\mu}^A - g_s f_{ABC} \mathcal{A}_{\mu}^B
-    \mathcal{A}_{\nu}^C
+    \mathcal{A}_{\nu}^C,
 \end{equation*}
 %
 where $f_{ABC}$ are the structure constants of the SU(3) group. The last term of
@@ -142,15 +142,14 @@ where $c_i$ are the perturbative coefficients. The expansion already yields
 sufficiently accurate results after the first orders of the perturbative series
 if $\as \ll 1$ so that the series converges quickly. However, several features
 complicate perturbative calculations. Ultraviolet (UV) divergences enter the
-calculations beyond leading order due to loop corrections. The divergences can
-be removed by a procedure called renormalization which is described in
-Sec.~\ref{sec:renormalization}. Soft and collinear divergences also need to be
-handled in perturbative calculations. They arise from singularities at
-phase-space boundaries and neglected quark masses. Observables need to be
-defined to be infrared safe and short-distance effects need to be separated from
-the divergent long-range part, which can be absorbed into the PDFs in a
-procedure called \emph{collinear factorization}, detailed in
-Sec.~\ref{sec:factorization}.
+calculations beyond leading order due to loop corrections. The divergences
+can be removed by a procedure called renormalization which is described in
+Sec.~\ref{sec:renormalization}. Soft and collinear divergences also need to
+be handled in perturbative calculations. They arise from singularities at
+phase-space boundaries and neglected quark masses. Observables must be
+defined in a way that they are infrared safe and short-distance effects need
+to be separated from the divergent long-range part, which can be absorbed
+into the PDFs in a procedure called \emph{collinear factorization}.
 
 \subsection{Renormalization and Running of the Strong Coupling}
 \label{sec:renormalization}
@@ -167,44 +166,44 @@ Nonetheless, the observable $X$ may not depend on the arbitrarily chosen \mur.
 The renormalization group equation (RGE) states that the dependence of $X$ on
 \mur must cancel. This can be mathematically expressed by
 
-\begin{equation} 
+\begin{equation*} 
     \mur^2 \frac{d}{d \mur^2} X \left(\frac{Q^2}{\mur^2},\as(\mur^2)\right) = \left(
     \mur^2 \frac{\partial X}{\partial \mur^2} + \mur^2 \frac{\partial
     \as(\mu^2)}{\partial \mur^2} \frac{\partial X}{\partial \as(\mu^2)} \right) \stackrel{!}{=} 0 
-\end{equation}
+\end{equation*}
 %
 and states that any dependence of $X$ on \mur must be canceled by the
 \mur-depedence of \as. Thus, the strong coupling has to fulfill the
 equation
 
-\begin{equation}
+\begin{equation*}
     \mur^2 \frac{d \as}{d \mur^2} = \beta(\as) = - \left( \beta_0 \as^2 + \beta_1 \as^3
     + \beta_2 \as^4 + \ldots \right)
     \label{eq:as_rge}
-\end{equation}
+\end{equation*}
 %
-where $\beta_0$, $\beta_1$ and $\beta 2$ are the 1-loop, 2-loop and 3-loop 
-$\beta$-function coefficients, which encode the the dependence of the coupling
+where $\beta_0$, $\beta_1$ and $\beta_2$ are the 1-loop, 2-loop and 3-loop 
+$\beta$-function coefficients, which encode the dependence of the coupling
 on the energy scale. They are given for the coupling of an effective
 theory, in which the $n_f$ quark flavors are light ($m_q \ll \mur$). Here, they
 are given in the $\overline{\mathrm{MS}}$ scheme:
 
-\begin{equation} 
+\begin{equation*} 
     \beta_0 = \frac{33 - 2 n_f}{12\pi},
-\end{equation}
+\end{equation*}
 
-\begin{equation} 
+\begin{equation*} 
     \beta_1 = \frac{153 - 19 n_f}{24\pi^2},
-\end{equation}
+\end{equation*}
 
-\begin{equation} 
+\begin{equation*} 
    \beta_2 = \frac{2857 -\left(\sfrac{5033}{9}\right)n_f + \left(\sfrac{335}{27}
    \right)n_f^2}{128 \pi^3}.
-\end{equation}
+\end{equation*}
 %
 By integrating Eq.~\ref{eq:as_rge}, the energy dependence of \as is yielded.
 Working in an energy range of constant number of flavors \ie if no quark mass
-thresholds are passed, an analytic solution exists in 1-loop approximation. 
+thresholds are passed, an analytic solution exists in 1-loop approximation:
 
 \begin{equation*}
    \as(\mur^2) = \frac{1}{\beta_0 \ln \left( \sfrac{\mur^2}{\Lambda^2} \right)}
@@ -253,8 +252,8 @@ which describe the running of the strong coupling up to the \SI{1}{\TeV} scale.
 \subsection{Factorization and Parton Density Functions}
 \label{sec:factorization}
 
-The \emph{collinear factorization} factorization allows to separate the
-calculation of an obserable into a short-distance part, calculable in QCD, and
+The \emph{collinear factorization} allows to separate the
+calculation of an observable into a short-distance part, calculable in QCD, and
 an approximately but universal long-distance part, which is described by parton
 distribution functions. The factorization analogously to the renormalization
 involves an arbitrary choice of a factorization scale \muf. Particle emissions
@@ -361,7 +360,7 @@ parton $b$ with momentum fraction $\xi$.
 
 \section{Hadronization and Parton Shower}
 
-As perturbative QCD calculations lack the the capabilitiy of describing the
+As perturbative QCD calculations lack the capabilitiy of describing the
 soft component of the interaction, additional models are employed which describe
 the emission of additional partons and the hadronization into colorless bound
 states. 
@@ -425,7 +424,7 @@ information about the PDFs and the hard interaction.
 There are many different algorithms available which cluster jets
 from a set of input objects. Both \CMS and \ATLAS rely on the \antikt and
 inclusive-\kt jet algorithms, which have proved to be very robust and are both
-collinear and infrared safe, see Section~\ref{sec:coll_safety}. They are
+collinear and infrared safe, see Sec.~\ref{sec:coll_safety}. They are
 sequential recombination algorithms and combine input objects based on a
 distance measure in Minkowski space. All jets in this thesis were reconstructed using the
 efficient algorithms implemented in the \textsc{FastJet} library~\cite{Cacciari:2011ma}.
@@ -443,7 +442,7 @@ Fig.~\ref{fig:infrared_safety} shows the effect of a collinear splitting (right
 plot) and of additional soft particles (left plot) on the results of an unsafe
 jet algorithm. Most of the cone-based jet algorithms which cluster elements
 using a constant distance measure in the $\eta$-$\phi$ space are affected by the
-previously mentioned issues, hence the popularity of the modern sequential
+previously mentioned issues. This explains the popularity of the modern sequential
 recombination algorithms which are used in almost all of today's jet-based
 analyses.
 
@@ -491,7 +490,7 @@ particles $i$ and $j$ are merged into a new particle $k$ which then replaces the
 particles $i$ and $j$ in the input list. These steps are repeated until all
 particles are clustered into jets. Since the distance measures are defined in
 Minkowski space, the shapes of the jets in the $\eta$-$\phi$ plane are not circular but
-irregular, see Figure~\ref{fig:jet_shapes}. Based on the parameter $p$, there
+irregular, see Fig.~\ref{fig:jet_shapes}. Based on the parameter $p$, there
 are three important \kt based algorithms with distinct properties:
 
 \begin{figure}[htbp]
