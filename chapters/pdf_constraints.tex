@@ -1,4 +1,4 @@
-
+% vim : tw=80
 \chapter{Constraints on PDFs and Determination of the Strong Coupling Constant}
 \label{sec:pdf_constraints}
 
@@ -6,18 +6,18 @@ In many precision measurements at the LHC, the proton PDFs are an essential
 ingredient. As the PDFs cannot be calculated from perturbative QCD, they are
 derived from fits to experimental data of collider and fixed-target experiments.
 The precise DIS data from the combined measurements of the HERA-I and HERA-II
-runs provides the base data set as it covers most of the kinematic phase space.
+run periods provides the base data set since it covers most of the kinematic phase space.
 By including more data from different experiments which provide constraints in
 additional phase space regions, the precision on the PDFs can be improved. In a
 similar way, the constraints of the triple-differential dijet cross section on
-the PDFs are studied by performing a combined fit of the HERA DIS data and the
+the PDFs are studied by performing a fit of the combined HERA DIS data and the
 triple-differential dijet cross section measurement.
 
 \section{Correlation between Dijet Cross Section and PDFs}
 \label{sec:pdf_sensitivity}
 
 To illustrate the phase space regions in which the triple-differential dijet
-cross section has an impact on the PDFs, the correlation between the cross
+cross section measurement has an impact on the PDFs, the correlation between the cross
 section $\sigma(\mu)$ and the PDFs $xf(x,\mu^2)$ for any parton flavor~$f$ can be
 calculated. The PDF sets of the NNPDF collaboration are an ensemble of replicas
 $i$, which sample variations in the PDF parameter space within the PDF's
@@ -39,7 +39,7 @@ $\Delta_{\sigma(Q)}$ and $\Delta_{xf(x,Q^2)}$ are the standard deviations of the
 dijet cross section and of the PDF with flavour $f$, respectively.
 Fig.~\ref{fig:correlation_pdf_xs_gqq} presents the correlation coefficient
 between the dijet cross section and the gluon, u valence quark, and d valence
-quark PDFs in the proton for the central region ($\yboost < 1, \ystar < 1$) and the
+quark PDFs for the central region ($\yboost < 1, \ystar < 1$) and the
 boosted region ($2 \leq \yboost < 3$).
 
 \begin{figure}[p]
@@ -53,10 +53,10 @@ boosted region ($2 \leq \yboost < 3$).
   \caption[Correlation between dijet cross section and PDFs]{
     The correlation coefficient between the triple-differential dijet cross
     section and the gluon (top row), the u valence quark (middle row),
-    and the d valence quark PDFs (bottom row), as a function of the
+    and the d valence quark PDFs (bottom row) as a function of the
     momentum fraction $x$ of the proton and the energy scale $\mu$ of
     the hard process. The correlation is shown for the central
-    bin $\yboost < 1 and \ystar < 1$ (left) and for the boosted region $2 \leq
+    bin $\yboost < 1,\,\ystar < 1$ (left) and for the boosted region $2 \leq
     \yboost < 3$ (right).}
   \label{fig:correlation_pdf_xs_gqq}
 \end{figure}
@@ -81,10 +81,10 @@ The constraints of the triple-differential dijet measurement on the proton PDFs
 are demonstrated by including the cross section measurement in a PDF fit in
 combination with inclusive DIS cross sections from the HERA experiments. The
 combined HERA-I and HERA-II DIS data\footnote{In the following, the combined
-HERA DIS data is always referred to as HERA-II DIS.} were the basis for the determination of the HERAPDF 2.0 PDF
-set.
+HERA-I and HERA-II DIS data are always referred to as HERA DIS data.} were the
+basis for the determination of the HERAPDF 2.0 PDF set.
 
-\xfitter is an open source framework to fit the PDFs to experimental data based
+\xfitter~\cite{Alekhin:2014irh} is an open source framework to fit the PDFs to experimental data based
 on the DGLAP~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg} equations.
 To ensure consistency between DIS and QCD calculations, the fits are performed
 at NLO as the latter are only available at that order. The DIS cross sections
@@ -92,19 +92,20 @@ are calculated by the QCDNUM software~\cite{Botje:2010ay}.
 
 The parametrization used in the PDF fit is based of the
 HERAPDF~2.0~\cite{Abramowicz:2015mha} parametrization and introduces additional
-terms which were found to better describe the additionally included jet
-measurement. The PDFs parameterization is defined at the starting scale $Q_0$
-which is set to $Q_0 = \SI{1.9}{\GeV \square}$ and the five independent PDFs
-$xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and $x\bar{D}(x)$ are parameterized
+terms which were found to better describe the included dijet
+measurement. The parametrization of the PDFs is defined at the starting scale
+$Q_0^2$
+which is set to $Q_0^2 = \SI{1.9}{\GeV \squared}$ and the five independent PDFs
+$xu_v(x)$, $xd_v(x)$, $xg(x)$, $x\bar{U}(x)$ and $x\bar{D}(x)$ are parametrized
 as follows:
 %
-\begin{align}
+\begin{align*}
   xg(x) &= A_g x^{B_g} (1-x)^{C_g} (1 + E_g x^2) - A'_g x^{B'_g} (1-x)^{C'_g} \\
   xu_v(x) &= A_{u_{v}} x^{B_{u_{v}}} (1-x)^{C_{u_{v}}}(1 + D_{u_{v}}x + E_{u_{v}}x^2)\\
   xd_v(x) &= A_{d_v} x^{B_{d_v}} (1-x)^{C_{d_{v}}}\\
   x\bar U(x) &= A_{\bar U} x^{B_{\bar U}} (1-x)^{C_{\bar U}}(1 + D_{\bar U}x)\\
   x\bar D(x) &= A_{\bar D} x^{B_{\bar D}} (1-x)^{C_{\bar D}}
-\end{align}
+\end{align*}
 %
 Actually, not all parameters are fitted. The normalization parameters $A_g$,
 $A_{u_{v}}$ and $A_{d_{v}}$ are calculated using the QCD sum rules. $B_{\bar
@@ -125,7 +126,7 @@ and is followed in this thesis.
 
 \paragraph{Experimental Uncertainties} 
 They result from propagated statistical and systematic uncertainties of the data
-points and are propagated to the PDF using the Hessian eigenvector
+points and are propagated to the PDFs using the Hessian eigenvector
 method~\cite{Pumplin:2001ct}. The Hessian matrix is defined by the second
 derivatives of the fitted PDF parameters at the \chisq minimum. The matrix is
 diagonalized and the eigenvectors are computed as depicted in
@@ -147,13 +148,14 @@ eigenvector corresponding to $\chisq = \chisq_{\mathrm{min}} + 1$ is calculated.
 Since the eigenvectors are orthogonal, the eigenvector variation PDFs correspond
 to independent sources of uncertainty on the PDFs. The asymmetric uncertainties
 $\Delta X^+$ and $\Delta X^-$ on a quantity of interest $X$ are evaluated as
-
+%
 \begin{align*}
   \Delta X^+_{\mathrm{exp}} &= \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[ \max(X_i^{\mathrm{up}}
     -X_0, X_i^{\mathrm{dn}} - X_0, 0)\right]^2}\\
-    \Delta X^-_{\mathrm{exp}} &= \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[ \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}
+    \Delta X^-_{\mathrm{exp}} &= \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[
+    \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}\,,
 \end{align*}
-
+%
 where $X_0$ describes the central prediction and $X_i^{\mathrm{up}}$ and
 $X_i^{\mathrm{dn}}$ denote the result using the upwards and downwards variation of
 the eigenvector PDF set $i$ of the $N_{\mathrm{EV}}$ eigenvectors in the PDF set.
@@ -161,20 +163,21 @@ the eigenvector PDF set $i$ of the $N_{\mathrm{EV}}$ eigenvectors in the PDF set
 \paragraph{Model uncertainties} 
 The uncertainties of several input parameters in
 the PDF fits are combined into one PDF model uncertainty. For the evaluation of
-the model uncertainties the following variations on the input parameters are considered:
+the model uncertainties the following variations on the input parameters are
+considered, following the prescription of the HERAPDF 2.0 publication.:
 %
 \begin{itemize}
 \item The assumption is made that the shape of the strange quark PDF follows the
   shape of the down-like sea quark PDF. Thus, the strange quark PDF is not
-  fitted but determined as a fraction of the $xD$ PDF.The strangeness fraction
+  fitted but determined as a fraction of the $x\overline{D}$ PDF. The strangeness fraction
   $f_s$, by default set equal to $0.40$, is varied between $0.30$ and $0.50$.
   \item The b-quark mass is set to $\SI{4.5}{\GeV}$ and varied between
   $\SI{4.25}{\GeV}$ and $\SI{4.75}{\GeV}$.
   \item The c-quark mass, set by default to $\SI{1.47}{\GeV}$ is varied between
   $\SI{1.41}{\GeV}$ and $\SI{1.53}{\GeV}$.
-  \item The minimum $Q^2$ value for data used in the fit,
+  \item The minimum $Q^2$ value for DIS data used in the fit,
     $Q^2_\mathrm{min}=\SI{7.5}{\GeVsq}$, is varied to $Q^2_\mathrm{min} =
-    \SI{5.0}{\GeV\square}$ and $Q^2_\mathrm{min} = \SI{10.0}{\GeV\square}$.
+    \SI{5.0}{\GeV\squared}$ and $Q^2_\mathrm{min} = \SI{10.0}{\GeV\squared}$.
 \end{itemize}
 %
 The model uncertainty is evaluated in the same way as the PDF eigenvectors.
@@ -182,15 +185,15 @@ The variation of each input parameter is treated as an independent variation
 leading to the definition of the asymmetric model uncertainty as:
 
 \begin{align*}
-  \Delta X^+_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{N_{\mathrm{par}}}}} \left[ \max(X_i^{\mathrm{up}}
+  \Delta X^+_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{par}}} \left[ \max(X_i^{\mathrm{up}}
     -X_0, X_i^{\mathrm{dn}} - X_0, 0)\right]^2}\\
-    \Delta X^-_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{N_{\mathrm{par}}}}} \left[ \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}
+    \Delta X^-_{\mathrm{mod}} &= \sqrt{\sum_i^{N_{\mathrm{par}}} \left[ \min(X_i^{\mathrm{up}} - X_0, X_i^{\mathrm{dn}} - X_0,0)\right]^2}
 \end{align*}
 
-\paragraph{Parameterization uncertainty}
+\paragraph{Parametrization uncertainty}
 
-To estimate the influence of the initial PDF parameterization on the fit result, a
-more flexible form of parametrization is used. Using the general
+To estimate the influence of the initial PDF parametrization on the fit result, a
+more flexible function form is used. Using the general
 parametrizations for the gluon PDF $xg(x)$ and the quark PDFs $xf(x)$
 %
 \begin{align*}
@@ -199,11 +202,11 @@ parametrizations for the gluon PDF $xg(x)$ and the quark PDFs $xf(x)$
    xf(x) &= A_{f}  x^{B_{f}} (1-x)^{C_{f}} (1 + D_{f}x + E_{f}x^2),
 \end{align*}
 %
-it is studied if the inclusion of additional parameters in the fit yields a
-different result. Each parameter is succesively added in the PDF fit and the
-envelope of all changes to the PDF shape is collected in a parametrization
+it is studied if the inclusion of additional parameters in the fit yields
+different results. Each parameter is succesively added in the PDF fit and the
+envelope of all changes to the PDF shape is combined into one parametrization
 uncertainty. Furthermore, the variation of the starting scale $Q_0^2$ to
-\SI{1.6}{\GeV\square} and \SI{2.2}{\GeV\square} is treated as an 
+\SI{1.6}{\GeV\squared} and \SI{2.2}{\GeV\squared} is treated as an 
 parametrization variation.
 
 \begin{align*}
@@ -222,34 +225,37 @@ $_k$ in the fit, which are applied to the theoretical prediction, to avoid the b
 multiplicative data uncertainties, see~\cite{Lyons:1989gh}. The \chisq is
 defined as
 
-\begin{equation}
-  \chi^2 = \sum_{ij}^N \left(D_i - T_i - \sum_k^K r_k \beta_{ik}\right) \mathrm{C}_{ij}^{-1}
-  \left(D_j - T_j - \sum_k^K r_k \beta_{jk} \right) + \sum_k^K r_k^2 +\sum_j \ln \frac{\Delta_{i,\mathrm{stat}}^2 D_j T_j + \Delta_{i,\mathrm{uncor}}^2 T_i^2}{\left( \Delta_{i,\mathrm{stat}}^2 + \Delta_{i,\mathrm{uncor}}^2 \right) D_i^2}
+\begin{align*}
+  \chi^2 = &\sum_{ij}^N \left(D_i - T_i - \sum_k^K r_k \beta_{ik}\right) \mathrm{C}_{ij}^{-1}
+  \left(D_j - T_j - \sum_k^K r_k \beta_{jk} \right) + \sum_k^K r_k^2\\
+  &+ \sum_j \ln \frac{\Delta_{i,\mathrm{stat}}^2 D_j T_j + \Delta_{i,\mathrm{uncor}}^2 T_i^2}{\left( \Delta_{i,\mathrm{stat}}^2 + \Delta_{i,\mathrm{uncor}}^2 \right) D_i^2}
   \label{chi2_nuisance}
-\end{equation}
+\end{align*}
 
 where $C_{ij}^{-1}$ is the inverse covariance matrix of the uncorrelated
-systematic and statistical uncertainties~\cite{herafitter_paper}. The given
-representation allows to study the influence of the nuisance parameters after
-the fit.
+systematic and statistical uncertainties and $\Delta_\mathrm{stat}$ and
+$\Delta_\mathrm{uncor}$ are the diagonal elements of the statistical and
+uncorrelated uncertainty. More information can be found
+in~\cite{Alekhin:2014irh,Abramowicz:2015mha}. An advantage of such a \chisq
+definition with nuisance parameters is the possibility to study the pulls of
+each systematic source after the fit.
 
 \subsection{Treatment of Systematic Uncertainties}
 \label{section:cmsdatauncertainties}
 
-The dominant source of experimental uncertainty is due to the jet energy scale.
-This uncertainty is split into 25 sources which are correlated among themselves
-but uncorrelated to each other.
-
+% The dominant source of experimental uncertainty is due to the jet energy scale.
+% This uncertainty is split into 25 sources which are correlated among themselves
+% but uncorrelated to each other.
+%
 Since the correlated sources of uncertainty are treated using nuisance
-parameters in the \chisq formula, the pull of each source on the fit result can
-be examined. Tab.~\ref{tab:pdfconstraints:nuisance} shows the 27 sources of
-systematic uncertainty and their pulls. Most of the systematic sources shift by
-less than one standard deviation $\sigma$. Three sources exhibit shifts larger
-than two standard deviations. While this not surprising due to the gaussian
-distribtution of the pulls, no unambiguous reason for these pulls could be
-identified. However, the size of these sources are rather small compared to the
-dominant sources of uncertainty so that no larger influence on the fit is
-expected.
+parameters in the \chisq formula, the pull of each source can be examined.
+Tab.~\ref{tab:pdfconstraints:nuisance} shows the 27 sources of systematic
+uncertainty and their pulls. Most of the systematic sources shift by less than
+one standard deviation. Three sources exhibit larger shifts. While this not
+surprising due to the gaussian distributution of the pulls, no unambiguous
+reason for their behaviour could be identified. However, the size of these
+uncertainty sources is rather small compared to the dominant sources of
+uncertainty so that no significant influence on the fit is expected.
 
 \begin{table}[htbp]
   \caption[Nuisance parameters determined in PDF fit]{Nuisance parameters
@@ -331,111 +337,116 @@ experiments.
   \end{tabular}
 \end{table}
 
-The resulting PDF for the gluon, u valence, d valence and sea quark PDF are
-arranged next to each other in the
+The resulting PDF for the gluon, u valence, d valence and sea quark for a fit
+with and without the CMS dijet data are arranged next to each other in the
 Figs.~\ref{fig:pdfconstraints:split:gluonqsea:19}--\ref{fig:pdfconstraints:split:dvaluval:19}
 while Fig.~\ref{fig:pdfconstraints:direct:19} and
 Fig.~\ref{fig:pdfconstraints:direct:10000} give a direct comparison of the PDFs
-with total uncertainties. The fit quality reported in
-Table~\ref{tab:fit:results} shows that both HERA DIS and CMS dijet data are
-compatible in a combined fit. The uncertainty breakdown in
-Fig.~~\ref{fig:pdfconstraints:split:gluonqsea:19} reveals the large impact of
-the the dijet data. The uncertainty of the gluon PDF is reduced over almost the
+with total uncertainties. The uncertainty breakdown in
+Fig.~\ref{fig:pdfconstraints:split:gluonqsea:19} reveals the large impact of
+the dijet data. The uncertainty of the gluon PDF is reduced over almost the
 whole range in $x$. The experimental uncertainty is drastically reduced in the
 high-$x$ region above $x \gtrsim 0.1$. Less pronounced changes are visible in
 the low-$x$ gluon PDF in which most of the uncertainty changes can be attributed
 to the parameterization uncertainty. The large changes of uncertainties come
 along with a noticeably change of the high-$x$ gluon PDF shape. The gluon PDF is
-much harder compared to the fit with HERA DIS data alone. These changes were
-observed before, \eg in~\cite{Khachatryan:2014waa}, but are even more pronounced
-in this study.
+much harder compared to the fit with HERA DIS data alone. Similar changes were
+observed before, \eg in~\cite{Khachatryan:2014waa}.
 
 The changes of the sea quark PDF, defined as $x\Sigma=2(x\overline U + x
-\overline D +
-x\overline s)$, are much less pronounced.
-Only the parametertrization uncertainty is clearly lower in the high-$x$ region.
+\overline D + x\overline s)$, are much less pronounced.
+Only the parametrization uncertainty is clearly reduced in the high-$x$ region.
 The u valence and d valence quark PDFs also show uncertainty reductions over
 the whole $x$-range. The uncertainty decrease of the experimental uncertainty is
 sizable for high-$x$, while the main differences result from the parametrization
 uncertainty, which is signifcant for the fit with HERA DIS data alone, but
 almost completely vanishes in the fit including the CMS dijet data.
 
-Unlike all previous figures, Fig.~\ref{fig:pdfconstraints:direct:10000} shows
-the PDFs after evolution to scale $Q^2 = \SI{10000}{\GeV \square}$. The PDFs
-exhibit the same features compared to the starting scale $Q_0$. Finally, an
-overview of of the gluon, sea, u valence and d valence quark PDFs is given in
-Fig.~\ref{fig:pdfconstraints:overview:19}.
+In contrast to the previous figures, Fig.~\ref{fig:pdfconstraints:direct:10000}
+shows the PDFs after the evolution to the scale $Q^2 = \SI{10000}{\GeV \square}$
+which is close to the scale of the measurement. The PDFs exhibit the same
+features compared to the starting scale $Q_0$, but even more pronounced.
+Finally, an overview of of the gluon, sea, u valence and d valence quark PDFs is
+given in Fig.~\ref{fig:pdfconstraints:overview:19}. 
+
+The large impact of the data on the PDFs is partly caused by the limited
+precision of the fit using HERA DIS data alone. In a global PDF fit, constraints
+from other measurements already improve the PDFs, so that not such a strong
+impact is expected. However, it was shown in Sec.~\ref{sec:nlo_comparisons} that
+predictions using the global PDF sets do not describe the data in certain phase
+space regions. There, also improvements of the global PDF sets are expected.
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_0_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_9_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERA_V103_EIG_0_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERACMSTDJETS_V103_EIG_0_1.9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERA_V103_EIG_9_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERACMSTDJETS_V103_EIG_9_1.9.pdf}
   \caption[The gluon and sea quark PDFs]{The gluon (top) and sea quark (bottom) PDFs as a function of $x$ as
-  derived from HERA-II inclusive DIS data alone (left) and in combination with
+  derived from HERA inclusive DIS data alone (left) and in combination with
   the CMS dijet data (right). The PDFs are shown at the starting scale $Q^2 =
-  \SI{1.9}{\GeV \square}$. The experimental (inner band), model (middle band)
-  and parameterization uncertainties (outer band) are added quadratically to give
-  te total uncertainty.}
+  \SI{1.9}{\GeV \squared}$. The experimental (inner band), model (middle band)
+  and parametrization uncertainties (outer band) are added quadratically to give
+  the total uncertainty.}
   \label{fig:pdfconstraints:split:gluonqsea:19}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_7_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERA_V101_EIG/pdfratio/HFTD_HERA_V101_EIG_8_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERA_V103_EIG_7_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERACMSTDJETS_V103_EIG_7_1.9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERA_V103_EIG_8_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_HFTD_HERACMSTDJETS_V103_EIG_8_1.9.pdf}
+
   \caption[The d valence and u valence quark PDFs]{The d valence quark (top) and u
     valence quark (bottom) PDFs as a function of $x$ as
-  derived from HERA-II inclusive DIS data alone (left) and in combination with
+  derived from HERA inclusive DIS data alone (left) and in combination with
   the CMS dijet data (right). The PDFs are shown at the starting scale $Q^2 =
-  \SI{1.9}{\GeV \square}$. The experimental (inner band), model (middle band)
-  and parameterization uncertainties (outer band) are added quadratically to give
-  te total uncertainty.}
+  \SI{1.9}{\GeV \squared}$. The experimental (inner band), model (middle band)
+  and parametrization uncertainties (outer band) are added quadratically to give
+  the total uncertainty.}
   \label{fig:pdfconstraints:split:dvaluval:19}
 \end{figure}
 
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_1_9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_1_9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_1_9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_0_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_9_1.9.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_7_1.9.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_8_1.9.pdf}
   \caption[Direct comparison of gluon and quark PDFs]{The gluon (top left), sea
   quark (top right), d valence quark (bottom left) and u valence quark (bottom
-right) PDFs as a function of $x$ as derived from HERA-II inclusive DIS data
-alone (dashed line) and in combination with CMS dijet data (full line). The PDFs
-are shown at the starting scale $Q^2 = \SI{1.9}{\GeV \square}$. The total
-uncertainty of the PDF is shown (hatched and solid bands).}
+right) PDFs as a function of $x$ as derived from HERA inclusive DIS data
+alone (hatched band) and in combination with CMS dijet data (solid band). The PDFs
+are shown at the starting scale $Q^2 = \SI{1.9}{\GeV \squared}$. The total
+uncertainty of the PDFs is shown.}
   \label{fig:pdfconstraints:direct:19}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_0_10000_0.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_9_10000_0.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_7_10000_0.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/hftd/direct/HFTD_HERACMSTDJETS_V101_EIG/pdfratio/HFTD_HERACMSTDJETS_V101_EIG_8_10000_0.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_0_10000.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_9_10000.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_7_10000.pdf}\hfill%
+  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_8_10000.pdf}
   \caption[Direct comparison of gluon and quark PDFs]{The gluon (top left), sea
   quark (top right), d valence quark (bottom left) and u valence quark (bottom
-right) PDFs as a function of $x$ as derived from HERA-II inclusive DIS data
-alone (dashed line) and in combination with CMS dijet data (full line). The PDFs
-are shown at the starting scale $Q^2 = \SI{10000}{\GeV \square}$. The total
-uncertainty of the PDF is shown (hatched and solid bands).}
+right) PDFs as a function of $x$ as derived from HERA inclusive DIS data
+alone (hatched band) and in combination with CMS dijet data (solid band). The PDFs
+are evolved to the scale $Q^2 = \SI{10000}{\GeV \squared}$. The total
+uncertainty of the PDFs is shown.}
 \label{fig:pdfconstraints:direct:10000}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/pdf_constraints/hftd/overview/HFTD_HERACMSTDJETS_V101_EIG/pdfoverview/HFTD_HERACMSTDJETS_V101_EIG_1_9.pdf}\hfill%
+  \includegraphics[width=0.9\textwidth]{figures/pdf_constraints/pdfcomp_direct_overview_1.9.pdf}\hfill%
   \caption[Overview of gluon and quark PDFs]{Overview of the gluon, sea, u
-  valence and d valence quark Pdfs before (dashed line) and after (full line)
-  including the CMS dijet data int the fit. The PDFs are shown at the starting
-  scale $Q^2 = \SI{1.9}{\GeV \square}$. The total uncertainty including the dijet
-  data is shown as solid bind around the central fit result.}
+  valence and d valence quark PDFs before (hatched band) and after (solid band)
+  including the CMS dijet data in the fit. The PDFs are shown at the starting
+  scale $Q^2 = \SI{1.9}{\GeV \squared}$. The PDFs are shown with total
+  uncertainties.}
   \label{fig:pdfconstraints:overview:19}
 \end{figure}
 
