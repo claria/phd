@@ -1,5 +1,7 @@
 doktorarbeiten/*
 thesis.pdf
+book.pdf
+*.png
 *.fls
 *.acn
 *.acr
