@@ -169,21 +169,21 @@ falling and the rates for low-\pt jets are very high, it is not feasible to use
 a single unprescaled trigger for the selection of all interesting events.
 Instead, a set of five prescaled low-\pt trigger paths, each with different
 prescale value, is used to collect sufficient data in the lower part of the \pt
-spectrum.  Additionally, one unprescaled trigger is used in the \pt-region in
-which the rate is sufficiently small, \ie at high \pt, to collect and store all
-events. A prescale value of $n$ means, that only every $n$-th event which is accepted by
+spectrum.  Additionally, one unprescaled trigger is used in the high \pt region, in
+which the rate is sufficiently small to collect and store all
+events. A prescale value of $n$ means, that only every $n$-th event accepted by
 a trigger, is kept. Of course, the applied prescale values have to be taken into
 account when the original spectrum is reconstructed. 
 
 \begin{table}[htbp]
     \centering
     \caption[Single Jet Trigger Paths]{List of all single jet trigger paths used in the analysis. Each
-        trigger is employed in an mutually exclusive phase space in \ptavg in which
+        trigger is employed in a mutually exclusive phase space region in \ptavg in which
         the trigger exhibits an efficiency larger than 99\%. The column
-        $p_{\mathrm{T},99\%}$ indicates the value a which each trigger reaches
+        $p_{\mathrm{T},99\%}$ indicates the value at which each trigger reaches
         that value. The last column reports the effective luminosity seen by
         each trigger. This number, divided by the total integrated luminosity of
-        \SI{19.71}{\fbinv} gives the effective prescale applied on a trigger
+        \SI{19.71}{\fbinv}, gives the effective prescale applied on a trigger
         over the whole run period.}
     \label{tab:triggers}
     \begin{tabular}{lcccc}
@@ -200,7 +200,6 @@ account when the original spectrum is reconstructed.
     \end{tabular}
 \end{table}
 
-
 Table~\ref{tab:triggers} shows all single jet triggers used in the data
 analysis. Each trigger is used in mutually exclusive regions of \ptavg, in which
 the trigger is fully efficient.
@@ -214,46 +213,45 @@ the trigger is fully efficient.
     \includegraphics[width=0.49\textwidth]{figures/measurement/trigger_eff_HLT_PFJET320_default.pdf}\hfill
     \caption[Turn-on curves of single jet HLT trigger paths]{Trigger turn-on curves for the single jet trigger
     paths used in the analysis. To determine the 99\% efficiency threshold, the
-    trigger paths are fitted using a sigmoid function taking into account the
+    trigger turn-on curves are fitted using a sigmoid function taking into account the
     uncertainties using Clopper-Pearson confidence intervals.}
     \label{fig:trigger_eff}
 \end{figure}
 
 The jet reconstruction algorithms and the jet energy corrections applied on HLT
-level are slightly different compared to the finally reconstructed objects used
-in this analysis. Futhermore, the efficiency of each trigger is not calculated
-as a function of jet \pt, which was used in the trigger decision, but versus
-\ptavg of the two leading jets as used in this analysis. Therefore, the triggers
-show a turn-on behaviour, as can been seen in Fig.~\ref{fig:trigger_eff}.
-Consequently, it is neccessary to determine the threshold when a trigger becomes
-fully efficient, which is defined to be the value at which the efficiency is
-larger than 99\%.
+level slightly differ from the ones used for the final event reconstruction.
+Futhermore, the efficiency of each trigger is not calculated as a function of
+jet \pt, which was used in the trigger decision, but versus \ptavg of the two
+leading jets as used in this analysis. Therefore, the triggers exhibit a turn-on
+behaviour, as can been seen in Fig.~\ref{fig:trigger_eff}. Consequently, it is
+neccessary to determine the threshold above which a trigger becomes fully
+efficient. It is defined as the value at which the efficiency is exceeds 99\%.
 
 Basically, it is possible to calculate the efficiency of a given trigger by
 dividing the number of passing events through the number of events which pass
-the next-lower trigger in \pt, as the looser trigger is by definition efficient,
-when the higher trigger becomes efficient. This is aggravated through the
+the next-lower trigger in \pt, because by definition the looser trigger is efficient,
+as soon as the higher trigger becomes efficient. This is aggravated through the
 different prescales applied to each trigger path. While it is possible to
 normalize the yield by the effective luminosity seen by each trigger, this
-method is affected by larger statistiscal fluctuations as the number of events
-is very different between two trigger paths.
+method is affected by larger statistical fluctuations as the number of events
+differs strongly between the two trigger paths.
 
-Therefore, a more challenging but superior method is employed. When the L1
-and HLT triggers are processed, the objects, \ie the jet four-vectors, on
+Therefore, a more challenging but superior method is employed: When the L1
+and HLT triggers are processed, the jet four-vectors, on
 which the trigger decision is based, are stored. Thus, it is possible to
-re-emulate the trigger decision by comparing the transverse momentum of the L1
-trigger object  with the L1 threshold and the \pt of the HLT trigger object with
+recalculate the trigger decision by comparing the transverse momentum of the L1
+trigger object with the L1 threshold and the \pt of the HLT trigger object with
 the HLT threshold~\cite{Stober:2012abc}.
 
-Similarly, the trigger decision of the next-higher trigger can be emulated
+Similarly, the trigger decision of the next higher trigger can be emulated
 starting from a lower trigger path. A set of events $S_1 = \left\{E_i | T_A
 (E_i) = \mathrm{true} \right\}$ which was accepted  by the lower trigger path $T_A$ is
 used to determine the subset $S_2 = \left\{E_i|T_A(E_i) \wedge  T_B(E_i)
-\right\}$ which also passes the next-higher trigger $T_B$, see
-Eq.~\ref{eq:trigger_eff}. The ratio of both event sets is used to determine
+\right\}$ which also passes the next higher trigger $T_B$, see
+Eq.~\ref{eq:trigger_eff}. The quotient of both event sets is used to determine
 the turn-on curve as shown for each trigger path in Fig.~\ref{fig:trigger_eff}. 
 The uncertainty on the efficiency is
-indicated by errorbars which represent Clopper-Pearson confidence intervals.
+indicated by error bars which represent Clopper-Pearson confidence intervals.
 
 \begin{equation}
 \label{eq:trigger_eff}
