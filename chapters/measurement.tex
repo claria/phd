@@ -5,18 +5,18 @@ of the Triple-Differential\\ Dijet Cross Section}
 \label{sec:measurement}
 
 The preceeding chapter laid the foundation for the triple-differential dijet
-cross section measurement by presenting the NLO pQCD calculations for this
-observable and demonstrating the PDFs sensitivity. The sizable PDF uncertainties
-especially in phase space regions involving boosted dijet topologies indicate
-that a sufficiently precise measurement in these phase space regions could be
-used to better constrain the PDFs. 
+cross section measurement by presenting the NLO pQCD calculations and
+demonstrating the observable's sensitivity to the PDFs. Especially the sizable
+PDF uncertainties in phase space regions involving boosted dijet events indicate
+that a sufficiently precise measurement could be exploited to better constrain
+the PDFs. 
 
 This chapter is dedicated to the measurement of the cross section from collision
 data recorded by CMS during the 2012 LHC run at a center-of-mass energy of
 \SI{8}{\TeV}. The first two sections give the definition of the measured cross
 section and the analyzed data sets. Sec.~\ref{sec:event_selection} describes the
-event selection, in which clean dijet events are identified. Based on simulated
-events, the detector response is studied and the jet energy resolution derived
+event selection in which clean dijet events are identified. Based on simulated
+events, the detector response is studied and the jet energy resolution is derived
 which is used subsequently to correct the measured cross section for detector
 effects in an iterative unfolding procedure. A detailed study of all
 experimental sources of uncertainty in Sec.~\ref{sec:experimental_uncertainties}
@@ -30,7 +30,7 @@ released Herwig~7 MC event generator, are shown.
 
 \section{Cross Section Definition}
 
-The observed dijet event yields are transformed into a triple-differrential
+The observed dijet event yields are transformed into a triple-differential
 cross section, which is defined as
 %
 \begin{equation*}
@@ -45,8 +45,8 @@ event selection efficiencies which are greater than 99\% in the measured phase
 space. The cross section is normalized by the widths of the \ptavg, \ystar, and
 \yboost bins. 
 
-The size of the \ptavg bins is somewhat larger than the observed resolution for
-\ptavg at the bin center. For simplification, the same \ptavg binning is chosen
+The size of the \ptavg bins is chosen based on the observed resolution for
+\ptavg at the bin center. For simplification, the same bin widths are chosen
 as for the inclusive jet cross section measurement, which has a slightly worse
 resolution. The equidistant \ystar and \yboost bins start from zero and go up to
 three with a bin size of one.
@@ -67,7 +67,7 @@ data sets \texttt{Jet} and \texttt{JetMon} while the events of unprescaled jet
 triggers were moved into the data set \texttt{JetHT}. As this assignment changed
 over the 2012 run periods, it was taken care to only select the correct subset
 of events. Table~\ref{tab:data:datasets} presents the CMS collision data sets
-analyzed in this thesis together with the integrated luminosity collected in
+analyzed in this thesis as well as the integrated luminosity collected in
 each run period.
 
 \begin{table}[htbp]
@@ -93,7 +93,7 @@ each run period.
 \subsection{Monte Carlo Samples}
 
 To compare the measured data with simulated events, two
-Monte-Carlo event generators were used, which are described in
+Monte Carlo event generators were used, which are described in
 Sec.~\ref{subsection:mc_generators}. Each MC generator is utilizing an optimized
 tune to simulate the underlying event. Additionally, the Monte Carlo event samples
 contain not only the hard scattering event, but also also an admixture
@@ -101,61 +101,62 @@ simulating the pileup collisions observed in real collisions.
 
 The Madgraph Monte Carlo sample is generated with a multi-leg improved QCD
 process. By using Madgraph, the LO matrix elements do not only contain the $2
-\rightarrow 2$ matrix elements, but also multi-leg matrix elements which better
+\rightarrow 2$ matrix elements, but also multi-leg matrix elements. These better
 describe multi-jet events, but have to be matched to the subsequent parton
 shower. The underlying event is modeled using the tune Z2$^*$. The parton shower
-and hadronization is carried out using the Pythia~6 event generator which is
-interfaced to Madgraph by the LHE event record~\cite{Alwall:2006yp}. This Monte
-Carlo sample is the main sample used for data comparisons, not because of the
-multileg-improved matrix elements which are not as important for this dijet
-analysis, but because of the huge number of events generated and simulated.
+and hadronization is carried out using the Pythia~6 event generator interfaced
+to Madgraph by the LHE event record~\cite{Alwall:2006yp}. This simulated events
+sample is the main sample used for data comparisons, not because of the
+multileg-improved matrix elements which are not as important for the dijet
+analysis in this thesis, but because of the huge number of events generated and simulated.
 
 Furthermore, a data sample generated with Pythia~8 is used. While including only the $2
 \rightarrow 2$ LO matrix elements, the event simulation and the underlying event
 tune are improved in this newer version of the Pythia Monte Carlo generator.
 
 To be able to perform comparisons between data and simulated events on
-reconstructed level, events from both Monte Carlo generators were propagated
+reconstructed level, events from both MC event generators were propagated
 through the complete simulation of the CMS detector. This allows for further
 studies like the measurement of the jet transverse momentum resolution which are
-needed to finally correct the measurement for detector effects.
+needed to finally correct the measured cross sections for detector effects.
 
-Predictions of jet cross sections, especially cross sections involving the jet
-transverse momenta, are notoriously difficult because of the steeply falling
-spectrum. Consequently, it isn't possible to generate enough events to populate
-also the highest-\pt phase space regions with a sufficiently large number of
-events. However, there exist two approaches to overcome this issue. The first
-method involves the reweighting of the generation process to generate more
-events at high transverse momentum. Unfortunately, this spoils the absolute
+Predictions of jet cross sections, especially those involving the jet transverse
+momenta, are notoriously difficult to be calculated because of the steeply
+falling spectrum. Consequently, it is not possible to generate enough events to
+populate all the phase space up to highest \pt with a sufficiently large
+number of events. However, there are two approaches to overcome this issue.
+The first method involves the reweighting of the generation process to generate
+more events at high transverse momentum. Unfortunately, this spoils the absolute
 normalization of the cross section as well as it involves the consideration of
 huge event weights. The second method is based on splitting the phase space in
-multiple regions, in which events are generated separately. The
-different phase space regions are then stitched together later in the data
-analysis while taking into account the cross sections in the different phase
-space regions. The Madgraph sample is split into four regions according to the
-scalar sum of the transverse momenta, $H_{\mathrm{T}}$, while the Pythia 8
-sample is split into twelve data sets according to the transverse momentum of
-the leading jet. Table~\ref{tab:mc_samples} shows all Monte Carlo data sets
-as well as the cross section and the generated number of events.
+multiple regions, in which events are generated separately. The different phase
+space regions are then stitched together later in the data analysis while taking
+into account the cross sections in the different phase space regions. 
+
+The Madgraph sample is split into four regions according to the scalar sum of
+the transverse momenta, $H_{\mathrm{T}}$, while the Pythia 8 sample is split
+into twelve data sets according to the transverse momentum of the leading jet.
+Table~\ref{tab:mc_samples} shows all Monte Carlo data sets as well as the cross
+section and the generated number of events.
 
 \section{Event selection}
 \label{sec:event_selection}
 
-The selection of events is based on several quality criteria recommended by CMS
-ore developed specifically for this analysis to yield clean dijet events.
-Furthermore, phase spaces cuts on the jets ensure the applicability and comparibility of NLO
-theory calculations.
+The selection of events is based on several quality criteria which are either
+recommended by CMS or developed specifically for this analysis to yield clean
+dijet events.  Furthermore, phase space cuts on the jets ensure the
+applicability and comparability of NLO theory calculations.
 
 \subsection{Certified Data Selection}
 
 The first step in the event processing chain is to only pick data from runs and
-luminosity sections which fullfill certain criteria. These criteria include
+luminosity sections which fulfill certain criteria. These criteria include
 proper performance of all detector subsystems as well as the passing of data
 quality monitoring (DQM) steps during the validation process. The good
 lumisections within a run are announced using a JSON data file, called
 \textsc{Golden JSON}. The applied lumisection certification
 file\footnote{\texttt{Cert\_190456-208686\_8TeV\_22Jan2013ReReco\_Collisions12\_JSON}}
-in this analysis is based on the final event reconstruction of the 2012 data
+in this analysis is based on the final event reconstruction of the 2012 CMS data
 sets.
 
 \subsection{Trigger Selection}
@@ -596,7 +597,7 @@ differences are negligible.
 
 \subsection{Pileup Reweighting}
 
-The official Monte-Carlo samples are enriched with an admixture of pileup
+The official Monte Carlo samples are enriched with an admixture of pileup
 collisions to mimic the pileup distribution expected in data. Ideally, the
 estimated pileup distribution in data $N_\mathrm{data} (N_\mathrm{PU, est.})$
 would match with the simulated distribution $N_\mathrm{MC} (N_\mathrm{PU,
@@ -697,7 +698,7 @@ leading and second jet in data.
 
 \subsection{Cross Section Comparison}
 
-The Monte-Carlo simulation is used to compare the prediction including the
+The Monte Carlo simulation is used to compare the prediction including the
 detector simulation to the measured data distribution which is smeared due to
 the finite detector resolution. Figure~\ref{fig:ratio_recotodata} shows the
 prediction of the Madgraph and the Pythia 8 simulations as a ratio to the
@@ -897,7 +898,7 @@ dijet cross section measurement with higher-order QCD calculations on
 particle level. Due to finite detector acceptance and resolution, the jet
 transverse momentum is smeared causing differences between the particle level
 \ptavg spectrum and the measured spectrum. To allow particle level comparisons,
-the measurement has to be unfolded. Thus, calculations from future Monte-Carlo
+the measurement has to be unfolded. Thus, calculations from future Monte Carlo
 event generators can be easily compared with this measurement without the need to
 apply the detector simulation.
 
@@ -914,7 +915,7 @@ In principal, the response matrix for the unfolding algorithm can be populated
 directly using simulated events as they contain both the particle level and
 reconstructed jets. However, this method has several drawbacks. The LO
 prediction does not describe the shape of the distribution well in all
-bins. Moreover, the limited number of events in the Monte-Carlo sample,
+bins. Moreover, the limited number of events in the Monte Carlo sample,
 especially at high rapidities and high transverse momenta, introduces
 non-negligible statistical fluctuations in the response matrix. Because of these
 undesired effects an alternative stategy is employed to populate the response
@@ -935,7 +936,7 @@ according to the fitted NLO distribution. The distribution of this generated
 sample resembles the fastNLO cross section prediction and is used as the
 particle level \ptavg spectrum. All generated events are then smeared using the
 resolution function obtained in Section~\ref{sec:resolution}. The generation of
-these Monte-Carlo toy events is very fast, and the response matrices can be
+these Monte Carlo toy events is very fast, and the response matrices can be
 filled with more than 100 million events each, resulting in negligible statistical
 fluctuations. Figure~\ref{fig:res_matrix} shows the response matrices used in
 the unfolding process. The matrices in the figure are normalized to the number
