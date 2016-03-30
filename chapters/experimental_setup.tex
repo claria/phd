@@ -568,7 +568,7 @@ The Kappa software~\cite{Kappa:2015aa} is a skimming framework interfaced to
 objects needed in the subsequent analysis. The data is stored in its distinct
 compact data format using the ROOT object serialization capabilities. The
 resulting Kappa tuples provide all neccesary information of the events and the
-lumisections, while hiding the complexity of the \CMSSW datasets.
+lumisections, while hiding the complexity of the \CMSSW data sets.
 
 \begin{figure}[htp]
     \centering
@@ -719,7 +719,7 @@ reconstructed using different techniques based on the amount of information
 available. If jets are reconstructed from the energy clusters within the
 calorimeters, they are called \emph{calorimeter jets}. If the jet reconstruction
 uses Particle Flow candidates, they are called \emph{Particle Flow jets}. By
-removing pile-up tracks from the Particle Flow candidates before the jet
+removing pileup tracks from the Particle Flow candidates before the jet
 clustering, one yields \emph{Particle Flow CHS jets}. 
 
 In the analysis which is presented in this thesis, all jets are clustered using
@@ -734,7 +734,7 @@ Particle Flow CHS jets.
     levels at which jets can be clustered. If partons or stable particles are
 clustered into yets, parton jets or particle jets are yielded, respectively.
 Jets clustered from reconstructed particle candidates are called reconstructed
-jets.}
+jets. Adapted from.}
     \label{fig:jet_levels}
 \end{figure}
 
@@ -796,7 +796,7 @@ particles, are evenly distributed in the event. The area $A_j$ of a jet $j$ is
 assumed to be proportional to the number of ghost particles clustered into the
 jet. 
 
-The concept of jet areas is especially important in the context of pile-up
+The concept of jet areas is especially important in the context of pileup
 mitigation. The average \pt density $\rho$ in an event is estimated using the inclusive
 \kt algorithm which also clusters many soft jets in the event and covers the
 entire $\phi$-$\eta$ phase space. The average \pt density is defined as
@@ -805,43 +805,37 @@ entire $\phi$-$\eta$ phase space. The average \pt density is defined as
     \rho = \text{median} \frac{\pt^j}{A_j}
 \end{equation*}
 
-$\rho$ is a measure for the underlying event and pile-up activity in the event
+$\rho$ is a measure for the underlying event and pileup activity in the event
 and is used later on to correct the jets for these effects, see
 Sec.~\ref{pileup_correction}.
 
 \subsection{Charged Hadron Subtraction}
 \label{sec:chs_algorithm}
 
-\todo[inline]{define primary vertex. something like that: The primary vertex collection
-    is sorted according to the sum of the Pt squared of the tracks associated to
-    each vertex, such that the vertex with largest sum, likely to be the
-    "signal" vertex, appears first. Some justification of this can be found in
-the Higgs note CMS-AN-11-129.}
-
-\CMS introduced a new technique to reduce pile-up from jets using the high
+\CMS introduced a new technique to reduce pileup from jets using the high
 resolution of the tracker, called Charged Hadron Subtraction
 (CHS)~\cite{Kirschenmann:2014dla}. Naturally the CHS algorithm can only be
 applied on jets within the tracker coverage of $|\eta| < 2.4$. All tracks of
-Particle Flow candidates which originate from a pile-up vertex are removed, see
+Particle Flow candidates which originate from a pileup vertex are removed, see
 Fig.~\ref{fig:chs_jets}. Tracks originating from the signal vertex or tracks not
 associated with any vertex remain in the event. The signal vertex is defined as
 the vertex with the largest sum of of \pt squared of its associated tracks. The
 CHS jets are clustered from this remaining set of particles. Since the jet
 identification criteria in the jet selection in the analysis require at least
 one charged particle in a jet, the CHS method is effectively reducing the
-influence of pile-up on real jets as well as completely removing a majority of
-the pile-up jets in the barrel region of the \CMS detector in combination with
+influence of pileup on real jets as well as completely removing a majority of
+the pileup jets in the barrel region of the \CMS detector in combination with
 the jet identification criteria.
 
 The analysis presented in this thesis relies on CHS jets. Especially in the
-low-\pt region, removing pile-up jets mimicking the leading jet in the event
+low-\pt region, removing pileup jets mimicking the leading jet in the event
 improves the signal efficiency in the forward region.
 
 \begin{figure}[h!tbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/experimental_setup/chs.pdf}
     \caption[Charged Hadron Subtraction]{Illustration of particles clustered
-    into a jet which orginates from the main vertex or into a pile-up jet. The
+    into a jet which orginates from the main vertex or into a pileup jet. The
     CHS algorithm removes charged particles not originating from the main vertex
     before clustering the jets. Taken from~\cite{Berger:2014aca}.}
     \label{fig:chs_jets}
@@ -856,17 +850,18 @@ A detailed understanding of the jet energy scale and the jet transverse momentum
 resolution is important when it comes to drawing conclusions about the
 properties of quarks and gluons produced in high-energy scattering processes. On the
 experimental side, there are multiple effects causing the reconstructed jet
-energy not to correspond to the true jet energy like electronic noise, pile-up
+energy not to correspond to the true jet energy like electronic noise, pileup
 and underlying event effects, but also non-linearities in the calorimeter
 response and numerous further small effects. The jet reconstruction and
 definition itself also introduces effects due to the fragmentation model,
 initial- and final-state radiation which can cause out-of-cone effects.
 
 The jet energy corrections (JEC) relate the measured jet energy to the
-corresponding true particle jet energy. \CMS uses a factorized correction approach
-consisting of multiple correction steps that build on one another. The corrected
-transverse momentum $\pt^{\mathrm{corr}}$ of a jet is yielded by subsequently applying all correction
-factors on an uncorrected jet
+corresponding true particle jet energy and are derived using sophisticated
+methods by the CMS \JetMET group~\cite{jec_paper}. \CMS uses a factorized
+correction approach consisting of multiple correction steps that build on one
+another. The corrected transverse momentum $\pt^{\mathrm{corr}}$ of a jet is
+yielded by subsequently applying all correction factors on an uncorrected jet
 
 \begin{equation*}
     \pt^{\mathrm{corr}} = c_{\mathrm{res}} (\eta, \pt^{\prime}) \cdot c_{\mathrm{mc}}
@@ -877,23 +872,23 @@ factors on an uncorrected jet
 \todo{switch to $p_{\mu}$?}
 
 where $\pt^{\mathrm{raw}}$ is the transverse momentum of the uncorrected jet,
-$\pt^{\prime}$ is the transverse momentum after applying the pile-up correction
+$\pt^{\prime}$ is the transverse momentum after applying the pileup correction
 factor $c_{\mathrm{pileup}}$. $\pt^{\prime\prime}$ is the transverse momentum
 after the additional correction $c_\mathrm{MC}$ of relative and absolute effects
 derived from MC studies. Finally a correction for residual effects
 $c_{\mathrm{res}}$ derived from data is applied to yield the corrected jet
 transverse momentum.
 
-\paragraph{Pile-up Corrections}
+\paragraph{Pileup Corrections}
 \label{pileup_correction}
 
-The first step removes the effects of pile-up contamination. Additional soft
+The first step removes the effects of pileup contamination. Additional soft
 proton-proton interactions produce particles being clustered into the jets
 originating from the hard interaction. This additional amount of energy needs to
-be subtracted by the pile-up correction. The applied correction is based on the
-jet area method by using the pile-up density $\rho$ in the event and the jet
+be subtracted by the pileup correction. The applied correction is based on the
+jet area method by using the pileup density $\rho$ in the event and the jet
 area $A_j$. The raw jet energy is then corrected by a factor proportional to the
-pile-up density and the jet area.
+pileup density and the jet area.
 
 \paragraph{MC Corrections}
 
