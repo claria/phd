@@ -260,7 +260,7 @@ indicated by error bars which represent Clopper-Pearson confidence intervals.
 
 To determine the point, at which the trigger efficiency is larger than 99\%, the
 turn-on distribution is fitted using a sigmoid function, that describes the
-turn-on behaviour of the trigger paths.
+turn-on behavior of the trigger paths.
 
 \begin{equation}
 \label{eq:trigger_eff_fit}
@@ -268,18 +268,18 @@ turn-on behaviour of the trigger paths.
 \end{equation}
 
 The thresholds which were finally used in the data analysis deviate slightly
-from the ones shown in Figure~\ref{fig:trigger_eff} as each trigger threshold
-was measured separately in each \ystar and \yboost bin respectively and the most
+from the ones shown in Fig.~\ref{fig:trigger_eff} as the trigger thresholds
+were measured separately in each \ystar and \yboost bin. The most
 conservative, thus the highest threshold, is finally chosen. They are given in
 Table~\ref{tab:triggers}
 
-It has to be mentioned, that there are also HLT triggers available which
-specifically trigger on the average transverse momentum of the dijet system.
-These were implemented for dijet calibration purposes. Naturally, they appear to
-be the better choice also for this analysis. The \ptavg trigger paths were studied,
-but the performance is only comparable and partially even slightly worse due to
-larger prescales applied to these trigger paths which result in larger
-statistical uncertainties compared to the single jet trigger paths.
+It is important to mention the HLT triggers which specifically trigger on the
+average transverse momentum of the two leading jets and have been implemented
+for dijet calibration purposes. At first, they appear to be the obvious choices
+for this analysis. However, studies of these triggers revealed, that the
+performance is at best comparable to the single jet triggers. Larger prescales
+applied to the \ptavg trigger paths result in larger statistical ucnertainties.
+Therefore, the single jet tigger paths were used in this analysis.
 
 \subsection{Primary Vertex Selection}
 
@@ -288,20 +288,20 @@ crossings. Each event has to contain at least one primary vertex (PV) which is w
 reconstructed within a distance of $|z_\mathrm{PV}| < \SI{24}{\centi \meter}$ to
 the nominal interaction point of the detector. Futhermore, the radial distance
 $\rho_\mathrm{PV}$ needs to be smaller than $\SI{2}{\centi\meter}$. To
-ensure a high quality of the vertex reconstruction in the fit, the number of
-degrees of freedom in the vertex fit, $n_{\mathrm{dof,PV}}$ needs to be at least
-four. Consequently, at least four tracks need to be present in order to
+ensure a high quality of the vertex reconstruction, the number of
+degrees of freedom in the vertex fit, $n_{\mathrm{dof,PV}}$, needs to be at least
+four. Consequently, at least four tracks must be present in order to
 perform a valid vertex fit.
 
 \subsection{Missing transverse energy cut}
 
 If all particles could be identified and perfectly measured, the transverse
 momentum of all particles would sum up to zero. The imbalance in the transverse
-momentum of all visible particles, which can be measured in the detector is
+momentum of all visible particles, which can be measured in the detector, is
 called the missing transverse momentum (MET). Neutrinos, for example, leave the
-detector undetected and do contribute to the MET. MET is an important ingredient
+detector undetected and contribute to the MET. MET is an important ingredient
 in many measurements involving W bosons, top quarks or searches for physics
-beyond the standard model which involve undetectable particles. 
+beyond the Standard Model which involve undetectable particles. 
 
 \begin{figure}[htbp]
     \centering
@@ -309,17 +309,17 @@ beyond the standard model which involve undetectable particles.
     \caption[Missing transverse energy distribution]{Missing transverse energy
     fraction of the total transverse energy per event in data and simulated
     events. To remove background and noise, events with a fraction exceeding a
-    threshold are rejected. }
+    certain threshold are rejected.}
     \label{fig:mc:met_fraction}
 \end{figure}
 
-However, a large fraction of MET in an event is not always caused by physics
-processes. Very often, the reason can be found in detector noise, cosmic rays or
-beam-halo particles. Therefore, a sequence of algorithms developed by the MET
-working group at CMS~\cite{jetmet:metfilters}, is employed which identifies and
-rejects these events.  Moreover, a cut is applied which removes events in which
+However, a large fraction of MET in an event is not always caused by interesting
+physics processes. Very often, the reason can be found in detector noise, cosmic
+rays or beam-halo particles. Therefore, a sequence of algorithms developed by
+the MET working group at CMS~\cite{jetmet:metfilters} is employed, which
+identifies and rejects these events. Moreover, a cut removing events in which
 the missing transverse energy fraction \met constitutes a large fraction of the
-total transverse energy $\sum_i E_{\mathrm{T},i}$, see
+total transverse energy $\sum_i E_{\mathrm{T},i}$ is applied, see
 Fig.~\ref{fig:mc:met_fraction},
 
 \begin{equation}
@@ -329,16 +329,16 @@ Fig.~\ref{fig:mc:met_fraction},
 \subsection{Jet Identification}
 
 The jet identification criteria (jet ID) rejects noise and noise-enhanced jets
-while all real jets are kept. The jet ID is not applied event-wise, but each jet
+while all real jets are kept. The jet ID is not applied per event, but each jet
 is accepted or removed from the list of valid jets. The algorithm works on
 reconstructed jets using information of the clustered particle candidates.
 Following the official recommendations of the \textsc{JetMET}
-group~\cite{jetmet:jetid}, the loose jet ID is used. All jets passing the jet ID
+group~\cite{jetmet:jetid}, the so-called loose jet ID is used. All jets passing the jet ID
 are then further processed in the analysis chain. 
 
 The properties of the reconstructed jets and their respective cuts are listed in
 Table~\ref{tab:jetid}. The cut on the fraction of neutral hadrons and photons
-removes HCAL noise and ECAL noise, respectively. Muons, that are falsely
+removes HCAL noise and ECAL noise respectively. Muons that are falsely
 identified and clustered as jets are removed by the muon fraction criterion.
 Based on information of the tracker, additional selection cuts are enforced in
 the region $|\eta| < 2.4$. Fake jets clustered from electrons are removed by the
@@ -373,7 +373,7 @@ events.
     \label{fig:jet_constituents_counts}
 \end{figure}
 
-While studying the loose and tight jet criteria, it was found that the tight jet
+While studying the loose and tight jet criteria, it was found out that the tight jet
 ID removes a non-negligible fraction of jets in the forward region of the
 phase space considered in this analysis. Therefore, the loose jet ID is favored
 and applied in this thesis as it is also the official recommendation of the
@@ -408,24 +408,23 @@ and applied in this thesis as it is also the official recommendation of the
 
 \subsection{Jet ID Efficiency}
 
-The loose jet ID ensures a high purity of real jet events while at the same time
-the efficiency is promised to be larger than 99\% for real jets. To confirm the
-high selection efficiency, it is studied using a tag-and-probe technique.
-
-Dijet events, in which the leading two jets are well balanced in $\phi$, are
-selected using
+The applied jet ID ensures a high purity of real jet events. The efficiency of
+the jet ID in the investigated phase space is studied is studied using a
+tag-and-probe technique. Dijet events, in which the leading two jets are well
+balanced in $\phi$, are selected using
+%
 \begin{equation*}
-    | \Delta\phi - \pi | < 0.3
+    | \Delta\phi - \pi | < 0.3,
 \end{equation*}
 %
-where $\Delta\phi$ is the azimuthal difference between the two leading jets. One of the
-dijets is chosen as tag jets and has to fulfill the loose jet id. It is tested,
-if the probe jet also passes the jet ID. The ratio of events in which the probe
-jet also passes the criteria versus the total number of dijet events is used to
-calculate the efficiency. Fig.~\ref{fig:jetid_eff} shows the efficiency as a
-function of \ptavg of the dijet system for all \ystar and \yboost bins. As
-promised by the \textsc{JetMET} group the efficiency is in all cases larger than
-99\%.
+where $\Delta\phi$ is the azimuthal difference between the two leading jets. One
+of the dijets is chosen as tag jet and has to fulfill the loose jet ID. The
+other jet is examined, if it also passes the jet ID. The quotient of events in
+which the probe jet also passes the criteria versus the total number of dijet
+events gives the efficiency. Fig.~\ref{fig:jetid_eff} shows the
+efficiency as a function of \ptavg of the dijet system for all \ystar and
+\yboost bins. As advertized by the \textsc{JetMET} group, the efficiency is
+larger than \SI{99}{\percent} in all phase space regions.
 
 \begin{figure}[htbp]
     \centering
@@ -435,30 +434,31 @@ promised by the \textsc{JetMET} group the efficiency is in all cases larger than
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb1ys0.pdf}
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb1ys1.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/jetideff_yb2ys0.pdf}
-    \caption[Efficiency of the jet ID]{The jet ID efficiciency as a function of
+    \caption[Efficiency of the jet ID]{The jet ID efficiency as a function of
     \ptavg for all \ystar and \yboost bins. It is studied using a
     tag-and-probe approach on clean dijet event topologies. The efficiency is
-    shown as a function of \ptavg for all bins. It is in all cases larger than 99\%.}
+    shown as a function of \ptavg for all bins and always larger than
+    \SI{99}{\percent}.}
     \label{fig:jetid_eff}
 \end{figure}
 
 \subsection{Jet Correction and Selection}
 
-This measurement is based on jets clustered from PF candidates using the
-anti-\kt algorithm with a jet size parameter of 0.7. The following phase space
-cuts remove jets instead of whole events due to their transverse momentum and rapidity. Consequently,
-all jet energy corrections recommended by CMS are applied prior to this
-selection in order to have the correct energy scale of the jets. The factorized
-correction approach employed by CMS is discussed in Sec.~\ref{sec:jec} and
-comprise different correction levels for jets in data\footnote{The JEC version
- applied on data is internally referred to as \texttt{Winter14\_V8}} and for
-    jets in simulated events\footnote{The latest JEC for run-independent Monte
-        Carlo Samples are called \texttt{START53\_V27}}.
-
+The measurement presented in this thesis is based on jets clustered from PF
+candidates using the anti-\kt algorithm with a jet size parameter of 0.7. The
+following phase space cuts remove jets instead of whole events due to their
+transverse momentum and rapidity. Consequently, all jet energy corrections
+recommended by CMS are applied prior to this selection in order to have the
+correct energy scale of the jets. The factorized correction approach employed by
+CMS is discussed in Sec.~\ref{sec:jec} and comprises different correction levels
+for jets in data\footnote{The JEC version applied on data is internally referred
+to as \texttt{Winter14\_V8}} and for jets in simulated events\footnote{The
+latest JEC for run-independent Monte Carlo Samples are called
+\texttt{START53\_V27}}.
 
 The accessible phase space in theoretical calculations and in the measurement is
 synchronized by selecting jets only from a restricted part of the complete phase
-space in which the detector acceptance is high and the applicability of NLO
+space, in which the detector acceptance is high and the applicability of NLO
 pQCD calculations is guaranteed.
 %
 \begin{align*}
@@ -466,24 +466,24 @@ pQCD calculations is guaranteed.
     |y_\mathrm{jet}| &\leq 3.0\\
 \end{align*}
 %
-Events, in which the leading or second jet is failing the jet selection, are
-discarded to only keep events in which both leading jets actually stem
+Events in which the leading or second jet fails the jet selection, are
+discarded in order to only keep events in which both leading jets stem
 from the hard scattering. Furthermore, an additional cut on the
-average transverse momentum of the dijets is applied. This cut is neccessary, as
-the first jet trigger becomes efficient at this point and theory calculations
-and measurement have to be synchronized.
+average transverse momentum of the dijets is applied:
 %
 \begin{align*}
     \ptavg &> \SI{133}{\GeV}
 \end{align*}
 %
-Often, it is recommended to have asymmetric cuts on the transverse momentum of
-the two leading jets to avoid an infrared sensitive region. This is not an issue
-here because of the much higher cut on the average transverse momentum. Other
-advantage of the high cut on \ptavg are the avoidance of a turn-on region which
-would lead to complications in the applied unfolding procedure as well as the
-restriction to a phase space region in which non-perturbative contributions are
-small.
+This cut is neccessary, as the first employed single jet trigger becomes
+efficient at this point and theory calculations and measurement have to be
+synchronized.  Often, it is recommended to have asymmetric cuts on the
+transverse momentum of the two leading jets to avoid an infrared sensitive
+region. This is not an issue here because of the much higher cut on the average
+transverse momentum. Other advantage of the high cut on \ptavg are the avoidance
+of a turn-on region which would lead to complications in the applied unfolding
+procedure as well as the restriction to a phase space region in which
+non-perturbative contributions are small.
 
 \subsection{Jet Angular Correction}
 
@@ -1197,8 +1197,8 @@ prediction agree over many orders of magnitude of the cross section.
     \caption[Spectrum of the Triple-differential Dijet Cross Section]{The
     triple-differential dijet cross section in six bins of \ystar and \yboost. The
     data is indicated by different markers for each bin and the theory obtained
-    with CT14-NLO is depicted by colored lines. Good agreement between data and
-    NLO calculation is observed over many order of magnitude.}
+    with NNPDF3.0-NLO is depicted by colored lines. The data is well described by
+    NLO theory calculations over many orders of magnitude.}
     \label{fig:measurement_result}
 \end{figure}
 
@@ -1228,7 +1228,7 @@ are very different, are predestined for PDF studies. The predictions of the
 different PDF sets, especially compared to the NNPDF PDF set, yield different
 results and are afflicted with large PDF uncertainties. Moreover, none of the
 investigated PDF sets yields a good description of the data in this phase space
-region, see bottom right plot in Fig.~\ref{fig:ratio_ct14_nlo}, making it a very
+region, see bottom right plot in Fig.~\ref{fig:ratio_nnpdf30_nlo}, making it a very
 interesting subject for PDF studies.
 
 \section{Summary}
@@ -1245,24 +1245,6 @@ high experimental precision of the data and the comprehensive study of all sourc
 uncertainty including their correlation allows to include this measurement in a
 PDF fit to finally improve them.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys1.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys0.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb2ys0.pdf}
-    \caption[Ratio of the cross section to CT14 NLO]{
-    Ratio of the triple-differential dijet cross sections to the theoretical
-    prediction using the central value of the CT14 NLO PDF set for each bin in \ystar
-    and \yboost respectively. The datapoints including statistical uncertainty are
-    indicated by markers, the total experimental uncertainty is represented by the
-    hatched red band. The solid blue band indicates the PDF uncertainty and the
-    continous colored lines the predictions of the cross sections calculated with
-    other PDF sets.}
-    \label{fig:ratio_ct14_nlo}
-\end{figure}
 
 \begin{figure}[htbp]
     \centering
@@ -1283,4 +1265,42 @@ PDF fit to finally improve them.
     \label{fig:ratio_nnpdf30_nlo}
 \end{figure}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb0ys1.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb1ys0.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb2ys0.pdf}
+    \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
+    Ratio of the triple-differential dijet cross sections to the theoretical
+    prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar
+    and \yboost respectively. The datapoints including statistical uncertainty are
+    indicated by markers, the total experimental uncertainty is represented by the
+    hatched red band. The solid blue band indicates the PDF uncertainty and the
+    continous colored lines the predictions of the cross sections calculated with
+    other PDF sets.}
+    \label{fig:ratio_nnpdf30_mccomp_nlo}
+\end{figure}
+
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys0.pdf}\hfill
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys1.pdf}
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys2.pdf}\hfill
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys0.pdf}
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys1.pdf}\hfill
+%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb2ys0.pdf}
+%     \caption[Ratio of the cross section to CT14 NLO]{
+%     Ratio of the triple-differential dijet cross sections to the theoretical
+%     prediction using the central value of the CT14 NLO PDF set for each bin in \ystar
+%     and \yboost respectively. The datapoints including statistical uncertainty are
+%     indicated by markers, the total experimental uncertainty is represented by the
+%     hatched red band. The solid blue band indicates the PDF uncertainty and the
+%     continous colored lines the predictions of the cross sections calculated with
+%     other PDF sets.}
+%     \label{fig:ratio_ct14_nlo}
+% \end{figure}
 
