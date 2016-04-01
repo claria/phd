@@ -77,19 +77,19 @@ beam facility ISOLDE, see Fig.~\ref{fig:lhc_complex}.
 
 The cross section $\sigma$ of a physical process is related to the
 event rate $\dot{N}$ by the luminosity~$\mathcal{L}$,
-
+%
 \begin{equation*}
     \dot{N} = \mathcal{L} \sigma.
 \end{equation*}
-
+%
 The luminosity is dependent on the particle beam parameters and can be expressed
 by
-
+%
 \begin{equation*}
     \mathcal{L} = \frac{n_p^2
         n_b f_\mathrm{rev} \gamma F}{4 \pi \epsilon_n \beta^*},
 \end{equation*}
-
+%
 where $n_p$ is the number of particles per bunch, $n_b$ is the number of bunches
 per beam, $f_\mathrm{rev}$ the revolution frequency, $\gamma$ the relativistic
 gamma factor and $F$ the geometric luminosity reduction factor. The effective
@@ -316,11 +316,11 @@ interesting low-energy photon pairs as well as the discrimination between
 neutral pions and photons.
 
 The relative energy resolution of the ECAL can be parametrized using the NSC-formula
-
+%
 \begin{equation*}
     \left( \frac{\sigma}{E} \right)^2 = \frac{N^2}{E^2} + \frac{S^2}{E} + C^2,
 \end{equation*}
-
+%
 in which the first term describes the contribution by noise (N), the second
 term the stochastic (S) component arising from the proportional relation between
 the number of counted photons and the deposited energy, and last a constant (C)
@@ -411,30 +411,17 @@ component implemented in hardware, the Level 1 trigger (L1) and a High Level
 software trigger (HLT) analyze the events and accept only events which are
 interesting for physics analyses.
 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/experimental_setup/cms_l1_trigger_new.pdf}\hfill
-    \caption[The L1 Trigger of CMS]{Workflow of the L1 trigger system. The
-        regional triggers search for jets and compute the transverse and missing
-        energy of an event. The global calorimeter trigger sorts the objects
-        from the regional calorimeter triggers and passes the top candidates to
-        the Global trigger, which accepts or rejects the event. If it is
-        accepted, the complete data and the trigger objects are passed to the
-        DAQ. Taken from~\cite{Bayatian:922757}.} 
-    \label{fig:cms:l1_trigger}
-\end{figure}
-
 \paragraph{L1 Trigger} 
 At the same frequency as collisions occur, the L1 trigger reads out the detector
 electronics and analyzes the data using custom hardware. The workflow of the L1
-trigger is shown in Fig.~\ref{fig:cms:l1_trigger}. Trigger Primitive Generators
+trigger is shown in Fig.~\ref{fig:cms:l1_trigger} left. Trigger Primitive Generators
 calculate the transverse energy and missing energy from the front-end electronics
 readout. Regional Calorimeter Triggers (RCT) identify electromagnetic showers
 in the ECAL and sum up ECAL and HCAL trigger towers. Furthermore, pattern
 recognition is performed to identify jets and hadronic $\tau$ decays. A jet
 candidate is found, if the transverse energy in a region of $4\times4$ trigger
 towers is greater as or equal to the transverse energy of the eight surrounding
-regions, see Fig.~\ref{fig:cms:l1_calo_towers}. These
+regions, see Fig.~\ref{fig:cms:l1_trigger} right. These
 candidates are passed to the Global Calorimeter Trigger (GCT), which sorts the
 incoming candidates from all 18 regional triggers and passes the top
 candidates to the Global Trigger (GT). The GT accepts events with a frequency
@@ -443,11 +430,17 @@ processes the data and transfers them to the HLT.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/experimental_setup/l1_calo_towers.png}\hfill
-    \caption[Jet Candidates in the Level 1 calorimeter trigger]{Jet Candidates
-        in the Level 1 calorimeter trigger are formed from $4\times4$ trigger
-        towers. Taken from~\cite{Rose:2009zz}.}
-    \label{fig:cms:l1_calo_towers}
+    \includegraphics[width=0.45\textwidth]{figures/experimental_setup/cms_l1_trigger_new.pdf}\hfill
+    \includegraphics[width=0.45\textwidth]{figures/experimental_setup/l1_calo_towers.png}\hfill
+    \caption[The L1 Trigger of CMS]{Left: Workflow of the L1 trigger system. The
+        regional triggers search for jets and compute the transverse and missing
+        energy of an event. The global calorimeter trigger sorts the objects
+        from the regional calorimeter triggers and passes the top candidates to
+        the Global trigger, which accepts or rejects the event. If it is
+        accepted, the complete data and the trigger objects are passed to the
+        DAQ. Right: Jet candidates in the Level 1 calorimeter trigger are formed from $4\times4$ trigger
+        towers. Figures taken from~\cite{Bayatian:922757} and~\cite{Rose:2009zz}.} 
+    \label{fig:cms:l1_trigger}
 \end{figure}
 
 \paragraph{HLT Trigger} 
@@ -518,7 +511,7 @@ Tier-3 sites are mostly used by local groups for data analysis.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/experimental_setup/lhcg.pdf}\hfill
+    \includegraphics[width=0.6\textwidth]{figures/experimental_setup/lhcg.pdf}\hfill
     \caption[Tiered structure of the worldwide LHC Computing Grid]{The Worldwide
         LHC Computing Grid is ordered hierarchically with the \CERN Tier-T0 at the top. Taken
         from~\cite{Stober:2012abc}.}
@@ -734,7 +727,7 @@ Particle Flow CHS jets.
     levels at which jets can be clustered. If partons or stable particles are
 clustered into yets, parton jets or particle jets are yielded, respectively.
 Jets clustered from reconstructed particle candidates are called reconstructed
-jets. Adapted from.}
+jets.}
     \label{fig:jet_levels}
 \end{figure}
 
@@ -800,11 +793,11 @@ The concept of jet areas is especially important in the context of pileup
 mitigation. The average \pt density $\rho$ in an event is estimated using the inclusive
 \kt algorithm which also clusters many soft jets in the event and covers the
 entire $\phi$-$\eta$ phase space. The average \pt density is defined as
-
+%
 \begin{equation*}
-    \rho = \text{median} \frac{\pt^j}{A_j}
+    \rho = \text{median} \frac{\pt^j}{A_j}.
 \end{equation*}
-
+%
 $\rho$ is a measure for the underlying event and pileup activity in the event
 and is used later on to correct the jets for these effects, see
 Sec.~\ref{pileup_correction}.
@@ -841,10 +834,8 @@ improves the signal efficiency in the forward region.
     \label{fig:chs_jets}
 \end{figure}
 
-
 \subsection{Jet Energy Corrections}
 \label{sec:jec}
-\todo{jec paper ref}
 
 A detailed understanding of the jet energy scale and the jet transverse momentum
 resolution is important when it comes to drawing conclusions about the
@@ -858,19 +849,17 @@ initial- and final-state radiation which can cause out-of-cone effects.
 
 The jet energy corrections (JEC) relate the measured jet energy to the
 corresponding true particle jet energy and are derived using sophisticated
-methods by the CMS \JetMET group~\cite{jec_paper}. \CMS uses a factorized
+methods by the \JetMET group~\cite{jec_paper}. \CMS uses a factorized
 correction approach consisting of multiple correction steps that build on one
 another. The corrected transverse momentum $\pt^{\mathrm{corr}}$ of a jet is
 yielded by subsequently applying all correction factors on an uncorrected jet
-
+%
 \begin{equation*}
     \pt^{\mathrm{corr}} = c_{\mathrm{res}} (\eta, \pt^{\prime}) \cdot c_{\mathrm{mc}}
     (\eta, \pt^{\prime\prime}) \cdot c_{\mathrm{pileup}}(\eta, \rho, A_j,
     \pt^{\mathrm{raw}}) \cdot \pt^{\mathrm{raw}},
 \end{equation*}
-
-\todo{switch to $p_{\mu}$?}
-
+%
 where $\pt^{\mathrm{raw}}$ is the transverse momentum of the uncorrected jet,
 $\pt^{\prime}$ is the transverse momentum after applying the pileup correction
 factor $c_{\mathrm{pileup}}$. $\pt^{\prime\prime}$ is the transverse momentum

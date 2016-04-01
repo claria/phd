@@ -309,7 +309,7 @@ beyond the Standard Model which involve undetectable particles.
     \caption[Missing transverse energy distribution]{Missing transverse energy
     fraction of the total transverse energy per event in data and simulated
     events. To remove background and noise, events with a fraction exceeding a
-    certain threshold are rejected.}
+    certain threshold, here indicated by the dashed line, are rejected.}
     \label{fig:mc:met_fraction}
 \end{figure}
 
@@ -477,35 +477,35 @@ average transverse momentum of the dijets is applied:
 %
 This cut is neccessary, as the first employed single jet trigger becomes
 efficient at this point and theory calculations and measurement have to be
-synchronized.  Often, it is recommended to have asymmetric cuts on the
+synchronized. Often, it is recommended to have asymmetric cuts on the
 transverse momentum of the two leading jets to avoid an infrared sensitive
-region. This is not an issue here because of the much higher cut on the average
-transverse momentum. Other advantage of the high cut on \ptavg are the avoidance
-of a turn-on region which would lead to complications in the applied unfolding
-procedure as well as the restriction to a phase space region in which
+region. Because of the much higher cut on the average transverse momentum, this
+is not an issue here. Other advantages of the high cut on \ptavg are the
+avoidance of a turn-on region which would lead to complications in the applied
+unfolding procedure as well as the restriction to a phase space region in which
 non-perturbative contributions are small.
 
 \subsection{Jet Angular Correction}
 
-The jet energy corrections relate the reconstructed jet energy to the
-particle level jet energy, but they do not include any correction for angular
-reconstruction deficiencies of the jets. However, especially in the transition
+The jet energy corrections relate the reconstructed jet energy to the particle
+level jet energy, but they do not include any correction for angular
+reconstruction deficiencies of the jets. However, especially in the transitional
 regions of the detector, \ie when the tracker coverage ends, a systematic
 reconstruction bias is observed, see Fig.~\ref{fig:jet_eta_corr}. Jets are
-reconstructed with systematically larger absolute pseudo-rapidity, \ie shifted
-towards the forward region. While the absolute shift is rather small, it's a
-relevant systematic effect when the rapidity separation of two jets is of
-interest. However, two effects limit the impact of the mismodelling. First, it
-is only pronounced for jets with low transverse momentum as can be seen in
-Fig~\ref{fig:jet_eta_corr_vs_pt} and second, the large bin size in rapidity
-reduces the effects. 
+reconstructed with systematically larger absolute pseudorapidity, meaning they
+are shifted towards the forward region. While the absolute shift is rather
+small, it causes a relevant systematic effect whenever the rapidity separation
+of two jets is of interest. However, there are two effects that limit the impact of the
+misreconstruction: First, it is only pronounced for jets with low transverse momentum
+(as can be seen in Fig~\ref{fig:jet_eta_corr_vs_pt}) and second, the large bin
+size in rapidity reduces the effects. 
 
 Nonetheless, the systematic error is accounted for by applying a correction on
-each jet based on the average difference between the pseudo-rapidity of
-particle level jets and reconstructed jets as a function of reconstructed jet
-\pt and pseudo-rapidity. The Figs.~\ref{fig:jet_eta_corr} and
-~\ref{fig:jet_eta_corr_vs_pt} also show the dstribution after applying the
-correction, in which the majority of the $\eta$ dependent effects is removed.
+each jet based on the average difference between the pseudorapidity of particle
+level jets and reconstructed jets as a function of reconstructed jet \pt and
+pseudorapidity. The Figs.~\ref{fig:jet_eta_corr}
+and~\ref{fig:jet_eta_corr_vs_pt} also show the distribution after applying the
+correction, in which the majority of the $\eta$-dependent effects is removed.
 
 \begin{figure}[htbp]
     \centering
@@ -537,12 +537,11 @@ correction, in which the majority of the $\eta$ dependent effects is removed.
 \end{figure}
 
 To estimate the effect on the resulting cross section, a comparison between the
-yielded cross section with and without applying the pseudo-rapidity correction
-is given in Fig.~\ref{fig:rap_corr_data}. As can be seen immediately, the effect is
-rather small. In the measurement bins containing forward jets, the correction
-causes about 2\% changes of the cross section. Since these events move to bins
-containing more central jets and therefore have a much higher cross section, the
-cross section increase is not noticeably.
+yielded cross section with and without applying the angular correction is
+presented in Fig.~\ref{fig:rap_corr_data}. In the bins containing boosted
+dijets, the correction causes changes of about \SI{2}{\percent} of the cross
+section. Since these events move to bins containing more central jets in which
+the cross section is much higher, there is no change noticeable.
 
 \begin{figure}[htbp]
     \centering
@@ -614,7 +613,7 @@ match the distribution in data:
 Fig.~\ref{fig:mc:npv_reweighting} shows the number of reconstructed vertices
 before and after reweighting. The significant mismatch of the
 pileup distributions in data and simulated events, which can be observed before
-reweighting the simulated events, vanishes.
+reweighting the simulated events, has vanished.
 
 \begin{figure}[htbp]
     \centering
@@ -625,87 +624,18 @@ reweighting the simulated events, vanishes.
     \label{fig:mc:npv_reweighting}
 \end{figure}
 
-\subsection{Kinematic distributions}
-
-Kinematic quantities of dijet events are compared with simulated events on
-reconstructed level. To achieve that, the generated events were processed
-through the complete detector simulation and reconstruction.
-Figure~\ref{fig:controlplots:kinematic} shows the transverse momentum $\pt$, the
-rapidity $y$ and the azimuthal angle $\phi$ for the leading two jets. The
-\pt-distribution is not that well described especially in the lower \pt region.
-While the rapidity distribution is well described within the tracker coverage of
-$y \approx 2.4$, there are larger discrepancices at higher rapidities.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet1pt.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet2pt.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet1rap.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet2rap.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet1phi.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet_quantities_jet2phi.pdf}
-    \caption[Kinematic quantities of the jets]{The 
-        kinematic quantities of the two leading jets are shown for the leading
-        jet (left) and the second jet (right) both for data (markers) and
-        simulated events (solid). The transverse momentum of the
-        jets is shown in the top row, the rapdity in the middle row. The
-        azimuthal angle of the jets is shown the bottom row.}
-    \label{fig:controlplots:kinematic}
-\end{figure}
-
-\todo{text for dijet quantities}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_dijet_deltaphi.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_dijet_deltar.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_dijet_mass.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_ptavg.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_dijet_yboost.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/dijet_quantities_dijet_ystar.pdf}
-    \caption[Kinematic quantities of the dijet system]{Kinematic quantities of
-    the dijet system are shown for data (markers) and simulated events. The
-azimuthal distance $\Delta\phi$ and the distance in the $\phi$-$\eta$ plane
-$\Delta R$ are shown in the top row. The dijet mass $M_{1,2}$ and the average
-transverse momentum of the dijet system $\ptavg$ is shown in the middle row. The
-rapidity separation $0.5(y_1 - y_2)$ and the boost $0.5(y_1+y_2)$ is shown in
-the bottom row.}
-    \label{fig:controlplots:dijets}
-\end{figure}
-
-
-To illustrate the origin of the dijets in the different \ystar and \yboost bin
-of the measured, the two-dimensional distributions in
-Fig.~\ref{fig:controlplots:rapidity} give the events as a function of the
-leading and second jet in data.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb0ys1.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb1ys0.pdf}
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb2ys0.pdf}
-    \caption[Rapidities of the two leading jets in the various \ystar and \yboost bins]{
-             The distribution of the dijet events in the various \ystar and
-             \yboost bins is shown as a function of the rapdities of the two jets.
-             The color indicates the frequency distribution. The figures demonstrate the
-             division of SS and OS dijet events, see \eg mid left and bottom right plot.}
-    \label{fig:controlplots:rapidity}
-\end{figure}
-
 \subsection{Cross Section Comparison}
 
-The Monte Carlo simulation is used to compare the prediction including the
+The Monte Carlo simulation is used to compare the predictions including the
 detector simulation to the measured data distribution which is smeared due to
 the finite detector resolution. Figure~\ref{fig:ratio_recotodata} shows the
 prediction of the Madgraph and the Pythia 8 simulations as a ratio to the
-measured data spectrum.  While the agreement in the inner detector region is
+measured data spectrum. While the agreement in the inner detector region is
 fine, the shape and especially the normalization of the MC prediction cannot
 describe the data. Additionally, a fixed-order prediction of NLOJET++ is shown.
-This prediction is on parton level and is not corrected for non-perturbative
-effects. Still it describes best the data apart from the known effects due to NP
-and detector resolution effects.
+This prediction on parton level is not corrected for non-perturbative
+effects. Still it describes the data, apart from the known effects due to
+non-perturbative and detector resolution effects, most accurately.
 
 \begin{figure}[htbp]
     \centering
@@ -740,13 +670,13 @@ calculated as
 \end{equation}
 %
 and needs to satisfy $\Delta R < 0.3$, roughly half of the jet size parameter
-$0.7$. The jets closest in the $\eta$-$\phi$ space are then matched together.
+$0.7$. The jets closest to each other in the $\eta$-$\phi$ space are then matched together.
 However, studies of the \textsc{JERC} working group~\cite{jetmet:resolution}
 revealed that the resolution determined in simulated events is better than the
 resolution measured in data using data-based techniques. Therefore, the jet
 transverse momentum in simulated events is additionally smeared in order to
 match the resolution in data.  Table~\ref{tab:res_smearing} gives the smearing
-factors together with the assigned uncertainty, indicated by the upwards and
+factors together with the assigned uncertainty indicated by the upwards and
 downwards variation. To consider the dependence on the detector geometry, the
 smearing factors are derived for various $|\eta|$-regions.
 
@@ -788,14 +718,14 @@ to
 After the smearing, the response which is defined as
 %
 \begin{equation}
-    R = \frac{\ptavg^{\text{reco}}}{\ptavg^{\text{gen}}},
+    R = \frac{\ptavg^{\text{reco}}}{\ptavg^{\text{gen}}}
 \end{equation}
 %
 is calculated. Fig.~\ref{fig:gen_vs_reco_over_gen} shows the response as a
 function of \ptgen for each bin. As expected, the resolution of low-\pt jets is
-significantly worse than the one of high-\pt jets. As the response is dependent
+significantly worse than the one of high-\pt jets. Since the response is dependent
 on both the detector region and the transverse momentum of the jets, the resolution
-is calculated as a function of \ptavggen separately in each \ystar and \yboost
+is calculated as a function of \ptavggen separately in all \ystar and \yboost
 bin. 
 
 \begin{figure}[htbp]
@@ -819,12 +749,12 @@ bin.
 The resolution is then determined as the width of the distribution in each \ptavg
 bin, as can be seen in Fig.~\ref{fig:resolution_bin}. Both a gaussian function
 as well as a double-sided Crystal Ball function have been studied in order to
-describe the observed behaviour. Despite the large differences in the
-description of the non-gaussian tails, enhanced by the logarithmic
+describe the observed behavior. Despite the large differences in the
+description of the non-gaussian tails emphasized by the logarithmic
 representation, the determined width of the distribution is very similar.
-Nonetheless, the Crystal Ball function is used to determine the resolution, as
+Nonetheless, the Crystal Ball function is used to determine the resolution as
 it better describes the measured distributions, especially in the low-\pt
-region, where the non-gaussian tails are more pronounced.
+region where the non-gaussian tails are more pronounced.
 
 \begin{figure}[h!tbp]
     \centering
@@ -849,11 +779,11 @@ modified version of the NSC formula.
 %
 The formula is based on the common NSC formula which describes the resolution
 with different terms for noise $N$, a stochastic component $S$ and a constant
-shift $C$.  Especially in the low-\pt region in which the tracking has a
+shift $C$. Especially in the low-\pt region, in which the tracking has a
 non-negligible influence on the resolution due to the PF algorithm, a
 slightly better fit is obtained by using the modified resolution given in
-Formula~\ref{eq:resolution}. The influence of the different resolution formulae
-on the unfolded cross section however is negligible, as the spectrum starts at
+Formula~\ref{eq:resolution}.However, the influence of the different resolution formulae
+on the unfolded cross section is negligible as the spectrum starts at
 much higher \ptavg. Table~\ref{tab:resolution_parameters} gives the parameters of
 the fit in each \ystar and \yboost bin of the measurement.
 
@@ -1197,19 +1127,20 @@ prediction agree over many orders of magnitude of the cross section.
     \caption[Spectrum of the Triple-differential Dijet Cross Section]{The
     triple-differential dijet cross section in six bins of \ystar and \yboost. The
     data is indicated by different markers for each bin and the theory obtained
-    with NNPDF3.0-NLO is depicted by colored lines. The data is well described by
+    with \NLOJETPP and NNPDF3.0-NLO is depicted by colored lines. Apart from the
+    boosted region, the data is well described by
     NLO theory calculations over many orders of magnitude.}
     \label{fig:measurement_result}
 \end{figure}
 
 A more detailed comparison is possible when the ratio of the data to theory is
-calculated. Figs.~\ref{fig:ratio_ct14_nlo}---\ref{fig:ratio_nnpdf30_nlo} present
-such ratios for different PDF sets and also include all statistical and
-systematic uncertainties. Apart from a few phase space regions, the predictions
-using all PDF sets except for the ABM 11 PDF set describe the data well. The
-predictions using the ABM 11 PDF set systematically underestimate the data.
-That behaviour is well known \eg from \cite{Khachatryan:2014waa,Stober:2012abc} and can be traced
-back to the soft gluon PDF accompanied with a low value of \asmz.
+calculated. Fig~\ref{fig:ratio_nnpdf30_mccomp_nlo} presents
+such ratios for calculations using different PDF sets. Apart
+from a few phase space regions, the predictions using all PDF sets except for
+the ABM 11 PDF set well describe the data. The predictions using the ABM 11 PDF
+set systematically underestimate the data. That behaviour is well known \eg
+from \cite{Khachatryan:2014waa,Stober:2012abc} and can be traced back to the
+soft gluon PDF accompanied with a low value of \asmz.
 
 In the central region, at low \yboost and \ystar, a systematic difference of up
 to \SI{20}{\percent} between data and NLO predictions is observed for transverse
@@ -1218,7 +1149,14 @@ corrections, which are positive and sizable at low rapidity and \pt larger
 \SI{1}{\TeV}. Theory colleagues are currently working on providing the
 electroweak corrections specifically for this measurement, but the corrections
 were not available in time.
-\todo{check for ewk}
+\todo{Change if EWK available}
+
+Fig.~\ref{fig:ratio_nnpdf30_nlo} additionally shows ratios to the prediction of
+the Powheg and Herwig 7 NLO MC generators. There are significant differences
+observed between the predictions of both MC generators. These could originate
+from the default scale choices or the PDF choices in each MC generator which are
+not trivially adaptable. In general, Herwig 7 better describes the data in the
+central region while Powheg prevails in the forward region.
 
 Especially phase space regions, in which the data discriminates between the
 predictions of different PDF sets, are interesting input for PDF studies. As
@@ -1257,9 +1195,9 @@ PDF fit to finally improve them.
     \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar
-    and \yboost respectively. The datapoints including statistical uncertainty are
+    and \yboost respectively. The data points including statistical uncertainty are
     indicated by markers, the total experimental uncertainty is represented by the
-    hatched red band. The solid blue band indicates the PDF uncertainty and the
+    hatched band. The solid blue band indicates the PDF uncertainty and the
     continous colored lines the predictions of the cross sections calculated with
     other PDF sets.}
     \label{fig:ratio_nnpdf30_nlo}
@@ -1276,31 +1214,13 @@ PDF fit to finally improve them.
     \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar
-    and \yboost respectively. The datapoints including statistical uncertainty are
+    and \yboost respectively. The data points including statistical uncertainty are
     indicated by markers, the total experimental uncertainty is represented by the
-    hatched red band. The solid blue band indicates the PDF uncertainty and the
-    continous colored lines the predictions of the cross sections calculated with
-    other PDF sets.}
+    hatched band. The solid blue band indicates the PDF uncertainty. The
+    predictions obtained using the NLO MC generators Powheg/Pythia 8 and Herwig 7
+    are depicted by the red and green lines respectively. Powheg uses the CT10
+    NLO PDF set while Herwig 7 uses the MMHT 2014 PDF set.}
     \label{fig:ratio_nnpdf30_mccomp_nlo}
 \end{figure}
 
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys0.pdf}\hfill
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys1.pdf}
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb0ys2.pdf}\hfill
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys0.pdf}
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb1ys1.pdf}\hfill
-%     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_CT14nlo+np_totcomp_yb2ys0.pdf}
-%     \caption[Ratio of the cross section to CT14 NLO]{
-%     Ratio of the triple-differential dijet cross sections to the theoretical
-%     prediction using the central value of the CT14 NLO PDF set for each bin in \ystar
-%     and \yboost respectively. The datapoints including statistical uncertainty are
-%     indicated by markers, the total experimental uncertainty is represented by the
-%     hatched red band. The solid blue band indicates the PDF uncertainty and the
-%     continous colored lines the predictions of the cross sections calculated with
-%     other PDF sets.}
-%     \label{fig:ratio_ct14_nlo}
-% \end{figure}
 
