@@ -72,7 +72,7 @@ each run period.
 
 \begin{table}[htbp]
     \centering
-    \caption[Datasets of the 2012 LHC run period]
+    \caption[Data sets of the 2012 LHC run period]
        {The 2012 collision data of CMS comprises four data sets collected in the run periods
            A, B, C and D. The total integrated luminosity of all data collected
            in 2012 sums up to \SI{19.71}{\fbinv}.}
@@ -90,7 +90,7 @@ each run period.
 \end{table}
 \todo{check for rounding errors}
 
-\subsection{Monte Carlo Samples}
+\subsection{Monte Carlo Event Samples}
 
 To compare the measured data with simulated events, two
 Monte Carlo event generators were used, which are described in
@@ -177,7 +177,7 @@ account when the original spectrum is reconstructed.
 
 \begin{table}[htbp]
     \centering
-    \caption[Single Jet Trigger Paths]{List of all single jet trigger paths used in the analysis. Each
+    \caption[Single jet trigger paths]{List of all single jet trigger paths used in the analysis. Each
         trigger is employed in a mutually exclusive phase space region in \ptavg in which
         the trigger exhibits an efficiency larger than 99\%. The column
         $p_{\mathrm{T},99\%}$ indicates the value at which each trigger reaches
@@ -293,7 +293,7 @@ degrees of freedom in the vertex fit, $n_{\mathrm{dof,PV}}$, needs to be at leas
 four. Consequently, at least four tracks must be present in order to
 perform a valid vertex fit.
 
-\subsection{Missing transverse energy cut}
+\subsection{Missing Transverse Energy Cut}
 
 If all particles could be identified and perfectly measured, the transverse
 momentum of all particles would sum up to zero. The imbalance in the transverse
@@ -367,7 +367,7 @@ events.
     \centering
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_nConstituents.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_nCharged.pdf}
-    \caption[Number of particle candidates in jets.]{Number of PF candidates
+    \caption[Number of particle candidates in jets]{Number of PF candidates
              clustered into a jet in data and simulated events. Data and simulation are
              normalized to the same number of events.}
     \label{fig:jet_constituents_counts}
@@ -442,7 +442,7 @@ larger than \SI{99}{\percent} in all phase space regions.
     \label{fig:jetid_eff}
 \end{figure}
 
-\subsection{Jet Correction and Selection}
+\subsection{Jet Energy Corrections and Selection}
 
 The measurement presented in this thesis is based on jets clustered from PF
 candidates using the anti-\kt algorithm with a jet size parameter of 0.7. The
@@ -485,7 +485,7 @@ avoidance of a turn-on region which would lead to complications in the applied
 unfolding procedure as well as the restriction to a phase space region in which
 non-perturbative contributions are small.
 
-\subsection{Jet Angular Correction}
+\subsection{Angular Jet Corrections}
 
 The jet energy corrections relate the reconstructed jet energy to the particle
 level jet energy, but they do not include any correction for angular
@@ -512,7 +512,7 @@ correction, in which the majority of the $\eta$-dependent effects is removed.
     \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta.pdf}\hfill
     \includegraphics[width=0.49\textwidth]{figures/measurement/genvsreco_eta_corr.pdf}
     \caption[Differences of pseudo-rapidity of reconstructed jets to
-        generator-level jets]{The difference between the pseudo-rapdity of the
+        particle level jets]{The difference between the pseudo-rapdity of the
             reconstructed jets and the generated jets is shown over the
             pseudo-rapidity of the generated jet. The distribution is shown
             before (left) and after (right) applying the pseudo-rapidity
@@ -736,7 +736,7 @@ bin.
     \includegraphics[width=0.47\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys0.pdf}
     \includegraphics[width=0.47\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/gen_vs_reco_vs_gen_ptavg_yb2ys0.pdf}
-    \caption[Comparison generated vs. reconstructed transverse energy]
+    \caption[Comparison of particle level and reconstructed dijet transverse momentum]
             {The response of reconstructed and particle level jet transverse
                 momentum as a function of the particle level transverse momentum.
                 The width of the distribution in each \ptavg bin indicates the
@@ -791,7 +791,7 @@ the fit in each \ystar and \yboost bin of the measurement.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/measurement/resolution_ptavg_crystalball.pdf}
-    \caption[Relative jet resolution vs \ptavg]{The jet energy resolution as a
+    \caption[Relative momentum resolution vs \ptavg]{The jet energy resolution as a
         function of \ptavg is shown for all \ystar and \yboost bins. The data points
         indicate the separate determinations while the solid lines give the
     result of the fit using the NSC-formula.}
@@ -880,7 +880,7 @@ matrices are diagonal with small off-diagonal migrations between neighboring
     \includegraphics[width=0.47\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys0.pdf}
     \includegraphics[width=0.47\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
-    \caption[Response matrix used for the unfolding procedure]{Response matrices
+    \caption[Response matrix used for the unfolding]{Response matrices
         illustrating the bin migrations in the \ystar and \yboost bins. The
         response matrices are obtained using smearing method and are normalized
         to the number of events in each row to improve readability. The response
@@ -980,7 +980,7 @@ translates into a normalization uncertainty on any absolute cross section
 measurement, a combined systematic uncertainty of 2.6\% is assigned which is
 fully correlated across all bins.
 
-\subsection{Unfolding and Statistical Uncertainty}
+\subsection{Unfolding and Statistical Uncertainties}
 \label{sec:stat_unf_uncert}
 
 Statistical uncertainties of data points are propagated through the unfolding
@@ -1028,7 +1028,7 @@ into account in a statistical analysis of the data, such as in a PDF fit.
     \label{fig:corr_unfolding_nlo}
 \end{figure}
 
-\subsection{Jet Energy Correction Uncertainty}
+\subsection{Jet Energy Correction Uncertainties}
 
 The dominant part of the experimental uncertainties comes from the jet energy
 calibration, which corrects the measured jet energy for a variety of detector
@@ -1124,7 +1124,7 @@ prediction agree over many orders of magnitude of the cross section.
 \begin{figure}[h!tbp]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/measurement/ptavg_spectrum.pdf}\hfill
-    \caption[Spectrum of the Triple-differential Dijet Cross Section]{The
+    \caption[Spectrum of the triple-differential dijet cross section]{The
     triple-differential dijet cross section in six bins of \ystar and \yboost. The
     data is indicated by different markers for each bin and the theory obtained
     with \NLOJETPP and NNPDF3.0-NLO is depicted by colored lines. Apart from the
@@ -1192,7 +1192,7 @@ PDF fit to finally improve them.
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_totcomp_yb2ys0.pdf}
-    \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
+    \caption[Ratio of measured cross sections to prediction using different PDFs]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar
     and \yboost respectively. The data points including statistical uncertainty are
@@ -1211,7 +1211,8 @@ PDF fit to finally improve them.
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb1ys0.pdf}
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb1ys1.pdf}\hfill
     \includegraphics[width=0.45\textwidth]{figures/measurement/ratio_to_NNPDF30+np_varcomp_yb2ys0.pdf}
-    \caption[Ratio of the cross section to NNPDF 3.0 NLO]{
+    \caption[Ratio of measured cross sections to predictions using differenct MC event
+    generators]{
     Ratio of the triple-differential dijet cross sections to the theoretical
     prediction using the central value of the NNPDF 3.0 NLO PDF set for each bin in \ystar
     and \yboost respectively. The data points including statistical uncertainty are
