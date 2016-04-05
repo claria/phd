@@ -284,15 +284,14 @@ effects. While a part of these effects is absorbed by the jet algorithm,
 they still must be estimated and accounted for in comparisons of fixed-order
 calculations to data.
 
-The influence of these soft effects are estimated using Monte Carlo event
-generators which are able to simulate those. The usual approach consists of
-calculating the cross section including effects from multi-parton interactions
-(MPI) and hadronization. The non-perturbative (NP) correction $c_k^\mathrm{NP}$
-obtained with a MC event generator $k$ is defined as the ratio between the
-nominal cross section including MPI and hadronization effects and a cross section calculation
+The influence of these soft effects is estimated using Monte Carlo event
+generators which are able to simulate those. The non-perturbative (NP)
+correction $c_k^\mathrm{NP}$ obtained with a MC event generator $k$ is defined
+as the ratio between the nominal cross section including multi-parton
+interactions (MPI) and hadronization effects and a cross section calculation
 neglecting those, see Eq.~\ref{eq:np_definition}. The superscript in the
 equation indicates the applied steps in the simulation: the parton shower (PS),
-the multi-parton interaction model (MPI) and the hadronization (HAD). The
+the MPI and the hadronization (HAD). The
 correction is then applied as a bin-by-bin correction factor to the NLO cross
 section.
 
@@ -301,27 +300,25 @@ section.
     \label{eq:np_definition}
 \end{equation*}
 
-The NP corrections have been calculated by employing two Monte Carlo event
+The NP corrections have been calculated by employing two LO Monte Carlo event
 generators using the newest available tunes within CMS. Herwig++ is used with
 the tune UE-EE-5C~\cite{Seymour:2013qka} and Pythia 8 with the tune
-CUETP8M1~\cite{Khachatryan:2015pea}. The ratio is fitted by a power-law function
+CUETP8M1~\cite{Khachatryan:2015pea}. Futhermore, the NLO generator Powheg has
+been used in combination with Pythia 8. Here, the two tunes CUETP8M1 and
+CUETP8S1 have been studied. For each MC generator, the quotient of a calculation
+with and without the mentioned effects has been calculated. The ratio is fitted
+by a power-law function
 
 \begin{equation*}
   f(\ptavg) = a \cdot \ptavg^b + c.
   \label{fcn:np_fit}
 \end{equation*}
 
-Since the correction factors obtained from Herwig++ and Pythia 8 are quite
-different in the low-\pt region, an uncertainty is assigned to the correction
-factor. The correction factors $c^\mathrm{NP}$ are determined by the average of the factors
-obtained from the Pythia 8 and Herwig++ predictions,
-
-\begin{equation*}
-    c^\mathrm{NP} = \frac{c_{\mathrm{P8}}^{\mathrm{NP}} + c_{\mathrm{HW++}}^{\mathrm{NP}}}{2}
-\end{equation*}
-%
-and the uncertainty quoted for the NP correction factors is given by half the difference
-between the two correction factors.
+Since the correction factors obtained from the different MC generators exhibit
+larger differecences in the low-\pt region, an uncertainty is assigned to the correction
+factor. The envelope which covers all differences is quoted as uncertainty,
+while the medium value of the width of the envelope is used as correction
+factor.
 
 Fig.~\ref{fig:np_factors} shows the resulting correction factors and the
 corresponding uncertainty. The corrections vary between 8\% and 12\% at
@@ -331,12 +328,12 @@ in the bins containing boosted jets.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb0ys0.pdf}\hfill
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb0ys1.pdf}
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb0ys2.pdf}\hfill
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb1ys0.pdf}
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb1ys1.pdf}\hfill
-    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_calc_yb2ys0.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb0ys0.pdf}\hfill
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb0ys1.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb0ys2.pdf}\hfill
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb1ys0.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb1ys1.pdf}\hfill
+    \includegraphics[width=0.48\textwidth]{figures/theory/np_factors_nlo_final_yb2ys0.pdf}
     \caption[Non-perturbative corrections]{The non-perturbative corrections are
         shown for the six bins in \ystar and \yboost. They are derived using a MC event
         generator by calculating the ratio of the cross section with and without

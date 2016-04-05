@@ -1,26 +1,27 @@
 \usepackage[english, ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+
 \usepackage{etoolbox}
 \usepackage{lmodern}
-\usepackage{textcomp}
+
 \usepackage{textpos}
 \usepackage{relsize}
+
+% used to modify geometry of titlepage
 \usepackage[pass]{geometry}
-\usepackage{rotating}
-\usepackage{layout}
+
+% side captions
 \usepackage[rightcaption]{sidecap}
 \sidecaptionvpos{figure}{c}
+
 % add line numbers
 % \usepackage{lineno}
 % \linenumbers
 
-% Are printing a hard copy or not?
-% \boolfalse{hardcopybool}  % the default  
-
 \ifdef{\hardcopy}{
 \KOMAoptions{twoside=true}
-\KOMAoptions{BCOR=1cm}
+\KOMAoptions{BCOR=0cm}
 }{
 \KOMAoptions{twoside=semi}
 \KOMAoptions{BCOR=0cm}
@@ -36,8 +37,6 @@
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
 \usepackage{siunitx}
-% \DeclareSIUnit[] \GeV{\giga \electronvolt}
-% \DeclareSIUnit[] \TeV{\tera \electronvolt}
 \DeclareSIUnit[] \pbinv{\per \pico \barn}
 \DeclareSIUnit[] \fbinv{\per \femto \barn}
 
@@ -49,16 +48,12 @@
 
 \usepackage{graphicx}
 \usepackage{hyphenat}
-% \usepackage{abstract}
 
-% \DeclareFontFamily{T1}{lmtt}{} 
-% \DeclareFontShape{T1}{lmtt}{m}{n}{<-> ec-lmtl10}{} 
-% \DeclareFontShape{T1}{lmtt}{m}{\itdefault}{<-> ec-lmtlo10}{} 
-% \DeclareFontShape{T1}{lmtt}{\bfdefault}{n}{<-> ec-lmtk10}{} 
-% \DeclareFontShape{T1}{lmtt}{\bfdefault}{\itdefault}{<-> ec-lmtko10}{} 
+% defines font for textsc replacement
 \normalfont
 \DeclareFontShape{T1}{lmr}{bx}{sc} { <-> ssub * cmr/bx/sc }{}
 
+% table options
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{makecell}
@@ -73,10 +68,7 @@
 \setlength{\cftbeforepartskip}{0em}
 \setlength{\cftbeforechapskip}{.5\baselineskip}
 
-
-\usepackage{environ}
-\usepackage{csquotes}
-\usepackage[inline]{enumitem}
+% \usepackage[inline]{enumitem}
 
 \usepackage[
         natbib=true,
@@ -88,7 +80,11 @@
         maxcitenames=2,
         maxbibnames=3]{biblatex}
 \usepackage{notoccite}
+
 \addbibresource{papers.bib}
+
+
+\renewbibmacro{in:}{}
 % online title upright
 \DeclareFieldFormat[online]{title}{\mkbibquote{#1}}
 \DeclareFieldFormat[report]{title}{\mkbibquote{#1}}
@@ -100,13 +96,7 @@
     \ifhyperref
       {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
       {\nolinkurl{#1}}}
-% \renewbibmacro*{url+urldate}{%
-%   \usebibmacro{bbx:parunit}% Added
-%   \printfield{url}%
-%   \iffieldundef{urlyear}
-%     {}
-%     {\setunit*{\addspace}%
-%      \printtext[urldate]{\printurldate}}}
+
 % use collaboration instead of author if available
 \DeclareSourcemap{
   \maps[datatype=bibtex]{
@@ -123,10 +113,6 @@
   }%
 }%
 
-\DefineBibliographyStrings{ngerman}{ 
-   andothers = {{et\,al\adddot}},             
-}
-
 \usepackage[headsepline]{scrlayer-scrpage} 
 \pagestyle{scrheadings} 
 \renewcommand*{\chaptermarkformat}{}
@@ -134,20 +120,19 @@
 \usepackage{float}
 \usepackage[labelfont={bf}]{caption}
 \usepackage{subcaption}
-% \captionsetup{subrefformat=parens}
-
-% \usepackage{psfrag}
-% \usepackage{verbatim}
+\captionsetup{subrefformat=parens}
 
 \usepackage[section]{placeins}
 
-\usepackage[normalem]{ulem}
 \usepackage{url}
 
 % allow dots in graphics filenames
 \usepackage{grffile}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\usepackage[colorinlistoftodos, 
+
+% todo notes
+\usepackage[
+    colorinlistoftodos, 
     shadow, 
     figwidth=.75\textwidth]{todonotes}
 \providecommand{\todoi}[1]{\todo[inline]{#1}}
@@ -158,15 +143,14 @@
 
 \usepackage{listings} \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} 
 
-
 \usepackage[pdftex,
     linktoc=all,
     \ifdef{\hardcopy}{hidelinks}{colorlinks=true},
     breaklinks=true,
     pdftitle={Triple-Differential Dijet Cross Sections and PDF Constraints},
     pdfauthor={Georg Sieber},
-    pdfsubject={none},
-    pdfkeywords={none},
+    pdfsubject={Particle physics},
+    pdfkeywords={CERN, LHC, CMS, jets, particle physics, PDF},
     hyperindex,
     pdfpagemode=UseNone,
     bookmarksopen=true]{hyperref}
@@ -184,6 +168,8 @@
 %     numberedsection=nolabel]{glossaries} 
 % \makeglossaries 
 
+
+% defines the style of the chapter headings
 % chapter style, requires chapterprefix=true
 \newcommand\titlerule[1][1pt]{\rule{\textwidth}{#1}}
 \renewcommand*{\chapterformat}{%
@@ -206,8 +192,5 @@ afterskip=1cm]{chapter}
 \usepackage{scrhack}
 \pdfsuppresswarningpagegroup=1
 
+% includes macros for commonly used symbols
 \input{includes/shortcuts.tex}
-
-% \title{Doktorarbeit}
-% \author{Georg Sieber}
-% \date{30.04.2016}

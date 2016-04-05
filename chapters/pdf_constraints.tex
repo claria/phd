@@ -14,6 +14,7 @@ precision on the PDFs can be improved. In a similar way, the constraints of the
 triple-differential dijet cross section on the PDFs are studied by performing a
 fit of the combined HERA DIS data and the triple-differential dijet cross
 section measurement.
+\todo{den ptavg cut < 1000 GeV erwähnen wegen den missing EWK}
 
 \section{Correlation between Dijet Cross Section and PDFs}
 \label{sec:pdf_sensitivity}
@@ -439,36 +440,43 @@ uncertainty of the PDFs is shown.}
 
 \section{Simultaneous Fit of PDFs and Strong Coupling Constant}
 
-The triple-differential dijet cross section does not only provide constraints on
-the PDFs, but also on the strong coupling constant. The bin which contains the
-boosted dijet events is the most sensitive to the PDFs. However, the
-experimental uncertainties are larger than in the bin containing two central
-jets, \ie at low \yboost and low \ystar values. At the same time, the highest
-transverse momentum are reached in that bin. Due to the known correlations
-between these phase space regions, this measurement is a good input for a
-simultaneous fit of both the PDFs and the strong coupling. 
+The measurement of the triple-differential dijet cross section does not only
+provide constraints on the PDFs, but also on the strong coupling constant. As
+shown in the preceding section, the region containing boosted dijet events is
+the most sensitive regarding the PDFs. However, the \as sensitivity is higher in
+the central bin in which highest transverse momenta are reached, and the
+experimental uncertainties are smallest.
 
-Therefore, the same PDF fit as in the previous section is performed but with the
-additional free parameter \as. The uncertainty on \as is determined using
-\textsc{Minuit} by profiling the likelihood. Furthermore, the model and
-parametrization uncertainties were calculated in the same way as in
-Sec.~\ref{section:cmsjets2011_pdfconstraints}. In addition, the scale
-uncertainties are estimated by varying the renormalization and factorization
-scale and repeating the fit in a similar way as in
-Sec.~\ref{sec:scale_uncertainties}. The scale of the HERA DIS remained
-unchanged. 
-\todo{add scale uncertainties from fixed PDFs}
+Due to the known correlation between the different phase space regions in this
+measurement, this can be exploited by performing a fit of the PDFs and the
+strong coupling at the same time. Since the HERA DIS data are not very sensitive
+to the \asmz value, a very consistent value of \asmz is extracted from the CMS
+dijet data as no other data influence the fit. This is a major advantage of this
+method. A disadvantage of such a fit is that unlike in a global PDF fit, further
+constraints from other measurements on the PDFs are neglected. 
 
-The strong coupling constant \asmz is determined as
+The fit is setup in exactly the same manner as
+in the previous section. One additional free paramter is included, the stron
+couplign constant \asmz. The obtained value for the strong coupling constant
+reads
 
 \begin{equation*}
   \asmz = 0.1188_{-0.0015}^{+0.0015}(\mathrm{exp})_{-0.0002}^{+0.0004}(\mathrm{mod})_{-0.0005}^{+0.0003}(\mathrm{par})_{-0.0010}^{+0.0029}(\mathrm{scale})
 \end{equation*}
 
-where the \emph{exp} uncertainty accounts for the experimental uncertainties of
-the inclusive HERA DIS and CMS jet data and NP uncertainties. The \emph{mod}
-and \emph{par} uncertainty denotes the model respectively the parametrization
-uncertainty and \emph{scale} the scale uncertainties.  The determined value of
-\asmz in agreement with the world average of $\asmz=0.1181\pm 0.0013$ of the
-PDG~\cite{Agashe:2014kda}.
-\todo{rewrite paragraph}
+where the experimental uncertainty accounts for all sources of uncertainties of
+the HERA and CMS data sets. NP uncertainties, which were also included in the
+fit, are also absorbed in the experimtal uncertainy. However, these are
+comparably small and do not have a significant influence on the total
+experimental uncertainty. Furthermore, model and parametrization uncertainties
+were calculated in the same way as in the PDF determination. Scale uncertainties
+were evaluated by varying the renormalization and factorization scale and
+repeating the fit in a similar way as was done in
+Sec.~\ref{sec:scale_uncertainties}. The scale of the HERA DIS remained
+unchanged. 
+
+\todo{add scale uncertainties from fixed PDF determination}
+
+The determined value of \asmz is in agreement with the world average of
+$\asmz=0.1181\pm 0.0013$ of the PDG~\cite{Agashe:2014kda}.
+\todo{comparison results 8 tev inc. jets, 7 tev results}
