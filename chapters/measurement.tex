@@ -762,7 +762,7 @@ region where the non-Gaussian tails are more pronounced.
     \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/resolution_yb0ys0_bin10_cb.pdf}
     \caption[Gaussian and Crystal Ball fit of resolution.]{The resolution in
-        each \ptavg bin is fitted using a Gaussian (left) and a double-sided Crystal Ball
+        each \ptavg bin is fitted using a Gaussian (left) or a double-sided Crystal Ball
         (right) function. The fit using the Crystal Ball function better describes the
         non-Gaussian tails of the distribution. Therefore, it is favored in the
     determination of the jet energy resolution.}
@@ -795,7 +795,7 @@ the fit in each \ystar and \yboost bin of the measurement.
     \caption[Relative momentum resolution vs \ptavg]{The jet energy resolution as a
         function of \ptavg is shown for all \ystar and \yboost bins. The data points
         indicate the separate determinations while the solid lines give the
-    result of the fit using the NSC-formula.}
+    results of the fits using the NSC-formula.}
     \label{fig:resolution_ptavg}
 \end{figure}
 
@@ -847,7 +847,7 @@ prediction does not describe the shape of the distribution well in all
 bins. Moreover, the limited number of events in the Monte Carlo sample,
 especially at high rapidities and high transverse momenta, introduces
 non-negligible statistical fluctuations in the response matrix. Because of these
-undesired effects an alternative strategy is employed to populate the response
+undesired effects, an alternative strategy is employed to populate the response
 matrix.
 
 Relying on the good description of the data spectrum by NLO predictions, a forward
@@ -860,18 +860,18 @@ set and corrected for non-perturbative effects, is fitted using the function
 \end{equation}
 
 which describes both the normalization and shape of the distribution. Using toy
-Monte Carlo events, a flat \ptavg spectrum is generated, which is weighted
-according to the fitted NLO distribution. The distribution of this generated
-sample resembles the fastNLO cross section prediction and is used as the
-particle level \ptavg spectrum. All generated events are then smeared using the
-resolution function obtained in Section~\ref{sec:resolution}. The generation of
-these Monte Carlo toy events is very fast, and the response matrices can be
-filled with more than 100 million events each, resulting in negligible statistical
-fluctuations. Figure~\ref{fig:res_matrix} shows the response matrices used in
-the unfolding process. The matrices in the figure are normalized to the number
-of events in each particle level bin to improve the readability. The response
-matrices are diagonal with small off-diagonal migrations between neighboring
-\ptavg bins.
+Monte Carlo events, a flat \ptavg spectrum weighted according to the fitted NLO
+distribution is generated. This distribution resembles the fastNLO cross section
+prediction and is used as the particle level \ptavg spectrum. All generated
+events are then smeared using the resolution function obtained in
+Section~\ref{sec:resolution}. The generation of these Monte Carlo toy events is
+very fast, and the response matrices can be filled with more than 100 million
+events each, resulting in negligible statistical fluctuations.
+Figure~\ref{fig:res_matrix} shows the response matrices used in the unfolding
+process. The matrices in the figure are normalized to the number of events in
+each particle level bin to improve the readability. They are diagonal with small
+off-diagonal elements which represent migrations between neighboring \ptavg
+bins.
 
 \begin{figure}[htp]
     \centering
@@ -882,21 +882,21 @@ matrices are diagonal with small off-diagonal migrations between neighboring
     \includegraphics[width=0.47\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/res_matrix_ptavg_normalized_yb2ys0.pdf}
     \caption[Response matrix used for the unfolding]{Response matrices
-        illustrating the bin migrations in the \ystar and \yboost bins. The
-        response matrices are obtained using smearing method and are normalized
-        to the number of events in each row to improve readability. The response
+        illustrating the bin migrations. They are obtained using the forward smearing method and are normalized
+        to the number of events of particle level events to improve readability. The response
         matrices are diagonal with small off-diagonal entries indicating bin
-    migrations between neighboring bins.}
+    migrations between neighboring \ptavg bins.}
     \label{fig:res_matrix}
 \end{figure}
 
 A closure test was performed by unfolding the generated smeared spectrum in two
-ways. Once, the smeared spectrum was obtained using the same events as were used
-to fill the response matrix and once, the spectrum was generated using
-statistically independent events. In the first case, exactly the same truth spectrum should
-be re-obtained after unfolding, while in the second case, the results should
-agree within statistical uncertainties. Fig.~\ref{fig:unf_closure_test} demonstrates that both
-assumptions hold for the applied unfolding technique.
+ways. Once, the smeared spectrum was obtained using the same events which were
+used to fill the response matrix and once, the spectrum was generated using
+statistically independent events. In the first case, exactly the same truth
+spectrum should be re-obtained after unfolding, while in the second case, the
+results should agree within statistical uncertainties.
+Fig.~\ref{fig:unf_closure_test} demonstrates that both assumptions hold for the
+applied unfolding technique.
 
 \begin{figure}[htp]
     \centering
@@ -907,64 +907,67 @@ assumptions hold for the applied unfolding technique.
     \includegraphics[width=0.47\textwidth]{figures/measurement/unf_nlo_check_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/unf_nlo_check_yb2ys0.pdf}
     \caption[Closure check of unfolding technique]{Closure test of the employed unfolding
-    procedure. The smeared spectrum is obtained once from the same events which
+    procedure. Once, the smeared spectrum is obtained from the same events which
 were used to fill the response matrix and once from statistically independent
-events. As expected, unfolding the former spectrum (green line) yields again exactly the
+events. As expected, unfolding the former spectrum (green line) again yields again exactly the
 truth spectrum. Unfolding the statistically independently smeared spectrum
-(blue line) gives compatible results within statistical uncertainties.}
+gives compatible results within statistical uncertainties (blue line).}
     \label{fig:unf_closure_test}
 \end{figure}
 
 Another closure test was performed by filling the response matrices directly
-from the simulated events of the Madgraph data sample and compare the unfolded
-cross section with the one from the forward smearing technique. It was found
-that the results agree in both cases within statistical uncertainties which are
-dominated by the uncertainties of the Madgraph sample.
+from the simulated events of the Madgraph data sample and comparing the unfolded
+cross section with the one obtained using the forward smearing technique. In
+both cases, the results are consistent within uncertainties. However, the
+statistical uncertainties are very large due to the limited number of events in
+the Madgraph sample.
 
-It has to be noted, that these
-techniques do not consider fluctuations between \ystar and \yboost bins.
-However, migrations between neighboring \ystar and \yboost bins were studied
-and found to be very small. Therefore, it is justified to perform the
-unfolding in each \ystar and \yboost bin separately and to not perform a
-three-dimensional unfolding which is much more cumbersome and error-prone.
+The applied unfolding technique does not consider fluctuations between
+\ystar and \yboost bins. However, migrations between neighboring \ystar and
+\yboost bins were studied and found to be very small. Therefore, it is justified
+to perform the unfolding in each \ystar and \yboost bin separately and to not
+perform a three-dimensional unfolding, which is much more cumbersome and
+error-prone.
 
 Statistical uncertainties of the data distributions are propagated through the
 unfolding procedure using toy experiments. The procedure as well as its results
 are discussed in detail in Sec.~\ref{sec:stat_unf_uncert} when experimental
 sources of uncertainties are discussed. The unfolded cross sections are shown in
-Sec.~\ref{sec:nlo_comparisons} in which the comparison to NLO calculations is
+Sec.~\ref{sec:nlo_comparisons}, in which the comparison to NLO calculations is
 presented.
 
 \section{Experimental Uncertainties}
 \label{sec:experimental_uncertainties}
 
-In this section all experimental sources of uncertainty which affect the cross
-section measurement are discussed. These statistical uncertainties, jet energy
+In this section, all experimental sources of uncertainty which affect the cross
+section measurement are discussed: The statistical uncertainties, jet energy
 scale and resolution uncertainties, the luminosity uncertainty, and
 a residual uncertainty accounting for systematic errors due to the jet ID and
 trigger efficiencies. 
 
+Table~\ref{tab:data:expung} gives a summary of the 
+
 Fig.~\ref{fig:exp_unc_overview} depicts all sources of experimental unc0ertainty
-in combination with the total experimental uncertainty, obtained by adding in
-quadrature all individual sources. The total uncertainty is only 5\% in the
+in combination with the total experimental uncertainty, obtained by adding
+all individual sources in quadrature. The total uncertainty is only 5\% in the
 measurement bins involving jets at central rapidity and increases up to 25\% in
-bins where jets from worse understood phase space regions contribute.
+bins where jets from less well-understood phase space regions contribute.
 
 \begin{table}[htbp]
     \centering
     \caption[Summary of experimental uncertainties]
        {Five experimental sources of uncertainty affect the accuracy of the
-        measurement from which the dominant source arises from jet energy scale
+        measurement. The dominant source arises from jet energy scale
         corrections. The total uncertainties are as low as 5\% in the best understood
         region and increase up to 25\% in worse understood phase space regions.}
     \label{tab:data:expunc}
     \begin{tabular}{cccc}
     \toprule
     \textbf{uncertainty source} & \textbf{min}       & \textbf{average}   & \textbf{max}\\\midrule
-    luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
-    statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
-    jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
     jet energy scale            & \SI{2.5}{\percent} & \SI{4.0}{\percent} & \SI{11}{\percent}\\
+    luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
+    jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
+    statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
     residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\
     \bottomrule
     \end{tabular}

@@ -259,6 +259,7 @@ reason for their behavior could be identified. However, the size of these
 uncertainty sources is rather small compared to the dominant sources of
 uncertainty so that no significant influence on the fit is expected.
 
+\todo{update in the end again with final values}
 \begin{table}[htbp]
   \caption[Nuisance parameters determined in PDF fit]{Nuisance parameters
   obtained by the PDF fit to HERA-II DIS data and the CMS dijet cross
@@ -267,21 +268,21 @@ uncertainty so that no significant influence on the fit is expected.
   \centering
   \begin{tabular}{lrlr}
     \toprule
-    Systematic source        & Shift in $\sigma$ & Systematic source        & Shift in $\sigma$\rbthm\\\midrule
-    \textsc{AbsoluteScale}   & -0.18             & \textsc{RelativeFSR}     & 2.45  \rbtrr\\
-    \textsc{AbsoluteStat}    & -0.37             & \textsc{RelativeStatEC2} & -0.38  \rbtrr\\
-    \textsc{AbsoluteMPFBias} & -0.21             & \textsc{RelativeStatHF}  & 0.03  \rbtrr\\
-    \textsc{Fragmentation}   & -0.06             & \textsc{RelativeStatFSR} & -0.06  \rbtrr\\
-    \textsc{SinglePionECAL}  & 0.13              & \textsc{PileUpDataMC}    & -0.03  \rbtrr\\
-    \textsc{SinglePionHCAL}  & -0.85             & \textsc{PileUpPtRef}     & -1.05  \rbtrr\\
-    \textsc{FlavorQCD}       & 1.26              & \textsc{PileUpPtBB}      & 0.89  \rbtrr\\
-    \textsc{RelativeJEREC1}  & 0.54              & \textsc{PileUpPtEC1}     & -0.73  \rbtrr\\
-    \textsc{RelativeJEREC2}  & -0.26             & \textsc{PileUpPtEC2}     & 0.03  \rbtrr\\
-    \textsc{RelativeJERHF}   & 0.04              & \textsc{PileUpPtHF}      & 0.00  \rbtrr\\
-    \textsc{RelativePtBB}    & -0.14             & \textsc{nperr}           & -2.02  \rbtrr\\
-    \textsc{RelativePtEC1}   & -1.03             & \textsc{jererr}          & 0.36  \rbtrr\\
-    \textsc{RelativePtEC2}   & -2.49             & \textsc{lumi}            & 0.62  \rbtrr\\
-    \textsc{RelativePtHF}    & 0.01              &                          & \rbtrr\\
+    \textbf{Systematic source} & \textbf{Shift in $\sigma$} & \textbf{Systematic source} & \textbf{Shift in $\sigma$}\rbthm\\\midrule
+    \textsc{AbsoluteScale}     &  -0.33                    & \textsc{RelativeFSR}       &   0.97        \rbtrr\\
+    \textsc{AbsoluteStat}      &  -0.29                    & \textsc{RelativeStatEC2}   &   0.52         \rbtrr\\
+    \textsc{AbsoluteMPFBias}   &  -0.57                    & \textsc{RelativeStatHF}    &   0.08        \rbtrr\\
+    \textsc{Fragmentation}     &  -0.22                    & \textsc{RelativeStatFSR}   &   -0.23        \rbtrr\\
+    \textsc{SinglePionECAL}    &  -0.20                    & \textsc{PileUpDataMC}      &   0.03         \rbtrr\\
+    \textsc{SinglePionHCAL}    &  -0.75                    & \textsc{PileUpPtRef}       &   -0.27        \rbtrr\\
+    \textsc{FlavorQCD}         &  -0.77                    & \textsc{PileUpPtBB}        &   -2.57       \rbtrr\\
+    \textsc{RelativeJEREC1}    &  0.12                     & \textsc{PileUpPtEC1}       &   1.11         \rbtrr\\
+    \textsc{RelativeJEREC2}    &  0.04                     & \textsc{PileUpPtEC2}       &   0.37        \rbtrr\\
+    \textsc{RelativeJERHF}     &  0.14                     & \textsc{PileUpPtHF}        &   0.00        \rbtrr\\
+    \textsc{RelativePtBB}      &  -0.74                    & \textsc{NPErr}             &   1.04         \rbtrr\\
+    \textsc{RelativePtEC1}     &  0.54                     & \textsc{JERerr}            &   0.62        \rbtrr\\
+    \textsc{RelativePtEC2}     &  -0.72                    & \textsc{Lumi}              &   0.84        \rbtrr\\
+    \textsc{RelativePtHF}      &  0.00                     &                            &           \rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -295,9 +296,10 @@ each data set as well the \chisq per \ndof for all data sets demonstrate
 the compatibility of the CMS dijet measurement and the DIS data from the HERA
 experiments. 
 
+\todo{update in the end again with final values}
 \begin{table}[htbp]
 \small
-\setlength\tabcolsep{3.5pt} 
+\setlength\tabcolsep{2.5pt} 
   \caption[Fit quality in the HERA DIS and combined fit]{The Partial \chisq's  for each data set in the HERA DIS (middle
     section) or the combined fit including the triple-differential dijet data
     (right section) are shown.
@@ -311,30 +313,30 @@ experiments.
   \begin{tabular}{lrrcrc}
     \toprule
     \multicolumn{2}{c}{} &
-    \multicolumn{2}{c}{HERA data} &
-    \multicolumn{2}{c}{HERA \& CMS data}\rbtrr\\\cmidrule(l){3-6}
-    data set &
+    \multicolumn{2}{c}{\textbf{HERA DIS data}} &
+    \multicolumn{2}{c}{\textbf{HERA DIS \& CMS data}}\rbtrr\\\cmidrule(l){3-6}
+    \textbf{data set} &
     \multicolumn{1}{c}{\ndata} &
     \multicolumn{1}{c}{\chipsq} &
     \multicolumn{1}{c}{\chipsqndata} &
     \multicolumn{1}{c}{\chipsq} &
     \multicolumn{1}{c}{\chipsqndata}\rbthm\\\midrule
-    CC HERA-I+II H1-ZEUS e-p.                                   & 42  & 54.96  & 1.31  & 54.8   & 1.30 \rbtrr\\
-    CC HERA-I+II H1-ZEUS e+p.                                   & 39  & 38.36  & 0.98  & 38.16  & 0.98 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e-p.                                   & 159 & 218.2  & 1.37  & 218.99 & 1.38 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 206.83 & 1.11  & 207.62 & 1.11 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 200.8  & 0.86  & 203.07 & 0.87 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 61.14  & 0.97  & 62.73  & 1.00 \rbtrr\\
-    NC HERA-I+II H1-ZEUS e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 370.18 & 1.12  & 387.34 & 1.17 \rbtrr\\
-    \textsc{CMS Triple-Differential Dijets}                     & 111 & ---    & ---   & 90.57  & 0.82
+    CC HERA-I+II e-p.                                   & 42  & 54.64  & 1.31  & 51.88   & 1.30 \rbtrr\\
+    CC HERA-I+II e+p.                                   & 39  & 37.47  & 0.98  & 37.47  & 0.98 \rbtrr\\
+    NC HERA-I+II e-p.                                   & 159 & 216.72  & 1.37  & 219.66 & 1.38 \rbtrr\\
+    NC HERA-I+II e+p. $E_{\mathrm{p}} = \SI{460}{\GeV}$ & 187 & 204.97 & 1.11  & 205.65 & 1.11 \rbtrr\\
+    NC HERA-I+II e+p. $E_{\mathrm{p}} = \SI{575}{\GeV}$ & 234 & 196.90  & 0.86  & 198.39 & 0.87 \rbtrr\\
+    NC HERA-I+II e+p. $E_{\mathrm{p}} = \SI{820}{\GeV}$ & 63  & 61.68  & 0.97  & 61.83 & 1.00 \rbtrr\\
+    NC HERA-I+II e+p. $E_{\mathrm{p}} = \SI{920}{\GeV}$ & 332 & 376.03 & 1.12  & 401.72 & 1.17 \rbtrr\\
+    CMS Triple-Differential Dijets                      & 111 & ---    & ---   & 99.10  & 0.82
     \rbtrr\\\bottomrule
-    data set(s) & \ndof &
+    \textbf{data set(s)} & \ndof &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof} &
     \multicolumn{1}{c}{\chisq} &
     \multicolumn{1}{c}{\chisqndof}\rbthm\\\midrule
-    HERA data                       & 1042 & 1203.86 & 1.16  &  --- &  --- \rbtrr\\
-    HERA \& CMS data                & 1164 &    --- &  --- & 1330.61 & 1.15 \rbtrr\\
+    HERA DIS data                       & 1043 & 1208.10 & 1.16  &  --- &  --- \rbtrr\\
+    HERA DIS \& CMS data                & 1154 &    --- &  --- & 1341.54 & 1.15 \rbtrr\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -461,7 +463,7 @@ couplign constant \asmz. The obtained value for the strong coupling constant
 reads
 
 \begin{equation*}
-  \asmz = 0.1188_{-0.0015}^{+0.0015}(\mathrm{exp})_{-0.0002}^{+0.0004}(\mathrm{mod})_{-0.0005}^{+0.0003}(\mathrm{par})_{-0.0010}^{+0.0029}(\mathrm{scale})
+  \asmz = 0.1194_{-0.0015}^{+0.0015}(\mathrm{exp})_{-0.0002}^{+0.0002}(\mathrm{mod})_{-0.0004}^{+0.0002}(\mathrm{par})_{-0.0016}^{+0.0026}(\mathrm{scale})
 \end{equation*}
 
 where the experimental uncertainty accounts for all sources of uncertainties of
