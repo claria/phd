@@ -939,19 +939,19 @@ presented.
 \section{Experimental Uncertainties}
 \label{sec:experimental_uncertainties}
 
-In this section, all experimental sources of uncertainty which affect the cross
+In this section all experimental sources of uncertainty which affect the cross
 section measurement are discussed: The statistical uncertainties, jet energy
 scale and resolution uncertainties, the luminosity uncertainty, and
 a residual uncertainty accounting for systematic errors due to the jet ID and
 trigger efficiencies. 
 
-Table~\ref{tab:data:expung} gives a summary of the 
-
-Fig.~\ref{fig:exp_unc_overview} depicts all sources of experimental unc0ertainty
-in combination with the total experimental uncertainty, obtained by adding
-all individual sources in quadrature. The total uncertainty is only 5\% in the
-measurement bins involving jets at central rapidity and increases up to 25\% in
-bins where jets from less well-understood phase space regions contribute.
+An overview depicting all sources of experimental uncertainty can be found in
+Fig.~\ref{fig:exp_unc_overview} at the end of the section. It presents all
+sources of experimental uncertainty in combination with the total experimental
+uncertainty, obtained by adding all individual sources in quadrature. The total
+uncertainty is only 4\% in the measurement bins involving jets at central
+rapidity and increases up to 25\% in bins where jets from less well-understood
+phase space regions contribute, see Table~\ref{tab:data:expunc}.
 
 \begin{table}[htbp]
     \centering
@@ -968,7 +968,8 @@ bins where jets from less well-understood phase space regions contribute.
     luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
     jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
     statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
-    residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\
+    residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\\midrule
+    \textbf{Total}              & \SI{4}{\percent} & \SI{6}{\percent} & \SI{25}{\percent}\\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -981,7 +982,7 @@ the number of clusters in the silicon pixel detector. The uncertainty on the
 luminosity measurement for the 2012 LHC run is estimated to be 2.5\% (syst.) and
 0.5\% (stat.)~\cite{CMS-PAS-LUM-13-001}. As the luminosity uncertainty
 translates into a normalization uncertainty on any absolute cross section
-measurement, a combined systematic uncertainty of 2.6\% is assigned which is
+measurement, a combined systematic uncertainty of 2.6\% is assigned, which is
 fully correlated across all bins.
 
 \subsection{Unfolding and Statistical Uncertainties}
@@ -989,7 +990,7 @@ fully correlated across all bins.
 
 Statistical uncertainties of data points are propagated through the unfolding
 using a toy MC technique in which the measured data points are smeared within
-their statistical uncertainties and the unfolding procedure is repeated multiple
+their statistical uncertainties. Then, the unfolding procedure is repeated multiple
 times for each smeared spectra. One million of such toy spectra are used to
 propagate the statistical uncertainty. Figure~\ref{fig:statunc_relative} shows
 the relative statistical uncertainty before and after the unfolding procedure.
@@ -1005,8 +1006,7 @@ The uncertainty slightly increases during the unfolding process.
     \includegraphics[width=0.47\textwidth]{figures/measurement/statunc_fractional_yb2ys0.pdf}
     \caption[Statistical uncertainty of measured and unfolded spectrum]{The
     statistical uncertainties of the measured and the unfolded data. Depending
-    on the unfolding procedure, the uncertainties can slightly increase, which
-    is observed.}
+    on the unfolding procedure, the uncertainties can slightly increase.}
     \label{fig:statunc_relative}
 \end{figure}
 
@@ -1015,7 +1015,7 @@ migrations. These correlations are significant for neighboring bins in \pt and
 negligible between bins far off in the phase space.
 Figure~\ref{fig:corr_unfolding_nlo} shows the correlations of the statistical
 uncertainty after the unfolding. Of course, these correlations have to be taken
-into account in a statistical analysis of the data, such as in a PDF fit.
+into account in any statistical analysis of the data such as a PDF fit.
 
 \begin{figure}[htbp]
     \centering
@@ -1034,15 +1034,15 @@ into account in a statistical analysis of the data, such as in a PDF fit.
 
 \subsection{Jet Energy Correction Uncertainties}
 
-The dominant part of the experimental uncertainties comes from the jet energy
+The dominant part of the experimental uncertainties derives from the jet energy
 calibration, which corrects the measured jet energy for a variety of detector
 effects and is discussed in Sec.~\ref{sec:jec}. As the corrections are afflicted
 with multiple sources of systematic uncertainty, all sources are propagated
 individually to the cross section to preserve their correlations.
 
 The JEC uncertainties are split into 25 mutually independent sources of
-uncertainty, in which each source is fully correlated in \pt and $\eta$
-but uncorrelated to all other sources and presents a $1\sigma$
+uncertainty, in which each source is fully correlated in \pt and $\eta$,
+but uncorrelated to all other sources, and presents a $1\sigma$
 shift. As these uncertainties can be asymmetric, the upwards and downwards
 variation of each source are treated separately. The sum in quadrature of all
 sources yields the total JEC uncertainty. Therefore, they can be treated
@@ -1051,8 +1051,8 @@ Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainty are grouped in four
 categories according to their origin. In the following, a short summary of the
 sources is given. More details about the jet energy corrections and
 uncertainties are given in~\cite{jec_paper}. The
-Figs.~\ref{fig:jec_relunc_0}---\ref{fig:jec_relunc_5} show the size of each of
-the 25 sources separately.
+Figs.~\ref{fig:jec_relunc_0}---\ref{fig:jec_relunc_5} in the appendix show the
+size of each of the 25 sources separately.
 
 \begin{description}
     \item[Pileup JES] Differences in the transverse momentum between the true
@@ -1062,11 +1062,11 @@ the 25 sources separately.
         calibration.
     \item[Relative JES] The relative $\eta$-dependent corrections calibrate
         forward jets using balanced dijet events. The largest contribution to
-        the uncertainty arises from jet energy resolution and soft-radiation
+        the uncertainty arises from jet energy resolution and soft radiation
         bias corrections. 
     \item[Absolute JES]  The absolute calibration of the jet energy scale relies
         on Z/$\gamma$+jet and multi-jet events. The uncertainties are related to
-        the lepton momentum scale for muon and the single-pion response in the
+        the lepton momentum scale for muon and the single pion response in the
         HCAL. Observed differences in applied methods can be traced back to neutrinos
         and ISR and are accounted for in these sources of uncertainty.
     \item[Flavor JES] Differences in the flavor response are studied using
@@ -1079,21 +1079,20 @@ the 25 sources separately.
 
 The jet energy resolution, which was derived in Sec.~\ref{sec:resolution}, is
 used to populate the response matrix using a forward smearing technique in the
-unfolding procedure. Therefore, a dependence on the jet energy resolution on the
-unfolded cross section is introduced and a further uncertainty source due to the
-uncertainty on the jet energy resolution is introduced.
+unfolding procedure. Therefore, a dependence of the
+unfolded cross section on the jet energy resolution is introduced. 
 
 Table~\ref{tab:res_smearing} shows the smearing factors, which were applied on
 reconstructed simulated events to obtain the actual resolution in data. The
 official recommendations include offset variations of these smearing factors to
 estimate the uncertainty on the resolution and are also given in
 Table~\ref{tab:res_smearing}. The determination of the resolution is repeated
-with the upwards and downwards variation of the resolution smearing factor
-applied. The unfolding procedure is also reiterated using the variations of the
+with the applied upwards and downwards variation of the resolution smearing
+factor. The unfolding procedure is also reiterated using the variations of the
 resolution and the differences of the obtained cross section to the nominal
 cross section are accounted for as a systematic uncertainty. The influence on
-the cross section is comparably small, about 1\% in low \ystar and \yboost and increasing
-up to 3\% for the highest \ystar value.  
+the cross section is comparably small, about 1\% in low \ystar and \yboost and
+increasing up to 3\% for the highest \ystar value.
 
 An overview of all uncertainties including the total uncertainty is given in
 Fig.~\ref{fig:exp_unc_overview} which shows their relative size in each bin.
@@ -1111,7 +1110,7 @@ Fig.~\ref{fig:exp_unc_overview} which shows their relative size in each bin.
     error bars indicate the statistical uncertainty after unfolding. The colored
     lines give the uncertainties resulting of jet energy corrections, jet energy
     resolution, luminosity and residual effects. The total uncertainty is yielded by
-    adding in quadrature the individual sources of uncertainty.}
+    adding the individual sources of uncertainty in quadrature.}
     \label{fig:exp_unc_overview}
 \end{figure}
 
@@ -1119,11 +1118,11 @@ Fig.~\ref{fig:exp_unc_overview} which shows their relative size in each bin.
 \label{sec:nlo_comparisons}
 
 After unfolding the measurement for detector effects, it is finally possible to
-compare the cross sections with the NLO calculations obtained in
+compare the measured cross sections with the NLO calculations obtained in
 Sec.~\ref{sec:theory_predictions}. A general comparison is given in
-Fig.~\ref{fig:measurement_result} which shows the data overlaid with the
-\NLOJETPP theory prediction obtained with the CT14 PDF set. The measurement and the
-prediction agree over many orders of magnitude of the cross section.
+Fig.~\ref{fig:measurement_result}, which shows the data overlaid with the
+\NLOJETPP theory prediction obtained with the NNPDF 3.0 PDF set. The measurement
+and the prediction agree over many orders of magnitude of the cross section.
 
 \begin{figure}[h!tbp]
     \centering
@@ -1132,8 +1131,7 @@ prediction agree over many orders of magnitude of the cross section.
     triple-differential dijet cross section in six bins of \ystar and \yboost. The
     data is indicated by different markers for each bin and the theory obtained
     with \NLOJETPP and NNPDF3.0-NLO is depicted by colored lines. Apart from the
-    boosted region, the data is well described by
-    NLO theory calculations over many orders of magnitude.}
+    boosted region, the data is well described by NLO theory calculations over many orders of magnitude.}
     \label{fig:measurement_result}
 \end{figure}
 
@@ -1142,8 +1140,8 @@ calculated. Fig~\ref{fig:ratio_nnpdf30_mccomp_nlo} presents
 such ratios for calculations using different PDF sets. Apart
 from a few phase space regions, the predictions using all PDF sets except for
 the ABM 11 PDF set well describe the data. The predictions using the ABM 11 PDF
-set systematically underestimate the data. That behavior is well known \eg
-from \cite{Khachatryan:2014waa,Stober:2012abc} and can be traced back to the
+set systematically underestimate the data. That behavior is well known, \eg
+from \cite{Khachatryan:2014waa,Stober:2012abc}, and can be traced back to the
 soft gluon PDF accompanied with a low value of \asmz.
 
 In the central region, at low \yboost and \ystar, a systematic difference of up
@@ -1162,10 +1160,10 @@ from the default scale choices or the PDF choices in each MC generator which are
 not trivially adaptable. In general, Herwig 7 better describes the data in the
 central region while Powheg prevails in the forward region.
 
-Especially phase space regions, in which the data discriminates between the
-predictions of different PDF sets, are interesting input for PDF studies. As
+Especially phase space regions in which the data discriminates between the
+predictions of different PDF sets are interesting input for PDF studies. As
 discussed in Sec.~\ref{sec:crosssection_definition}, the bins involving boosted
-same-side dijet events, in which the fractional proton momenta $x_1$ and $x_2$
+dijet events, in which the fractional proton momenta $x_1$ and $x_2$
 are very different, are predestined for PDF studies. The predictions of the
 different PDF sets, especially compared to the NNPDF PDF set, yield different
 results and are afflicted with large PDF uncertainties. Moreover, none of the
