@@ -1,4 +1,5 @@
 % vim : tw=80
+
 \chapter{Constraints on PDFs and Determination of the Strong Coupling Constant}
 \label{sec:pdf_constraints}
 
@@ -14,7 +15,13 @@ precision on the PDFs can be improved. In a similar way, the constraints of the
 triple-differential dijet cross section on the PDFs are studied by performing a
 fit of the combined HERA DIS data and the triple-differential dijet cross
 section measurement.
-\todo{den ptavg cut < 1000 GeV erwähnen wegen den missing EWK}
+
+As discussed in Sec.~\ref{sec:nlo_comparisons}, the electroweak corrections have
+not been available in time for this thesis. As they are large only at highest
+transverse momenta and central rapiditities, the bins with $\ptavg >
+\SI{1000}{\GeV}$ have not been considered in the PDF determinations. This
+removes 11 of 144 bins. However, the experimental uncertainties of the neglected
+bins is comparably large, thus their impact on the fit result is small.
 
 \section{Correlation between Dijet Cross Section and PDFs}
 \label{sec:pdf_sensitivity}
@@ -413,20 +420,6 @@ space regions. There, also improvements of the global PDF sets are expected.
 \end{figure}
 
 
-\begin{figure}[tbp]
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_0_1.9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_9_1.9.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_7_1.9.pdf}\hfill%
-  \includegraphics[width=0.48\textwidth]{figures/pdf_constraints/pdfcomp_direct_8_1.9.pdf}
-  \caption[Direct comparison of gluon and quark PDFs]{The gluon (top left), sea
-  quark (top right), d valence quark (bottom left) and u valence quark (bottom
-right) PDFs as a function of $x$ as derived from HERA inclusive DIS data
-alone (hatched band) and in combination with CMS dijet data (solid band). The PDFs
-are shown at the starting scale $Q^2 = \SI{1.9}{\GeV \squared}$. The total
-uncertainty of the PDFs is shown.}
-  \label{fig:pdfconstraints:direct:19}
-\end{figure}
 
 
 \begin{figure}[tbp]
