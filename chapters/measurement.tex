@@ -77,9 +77,9 @@ each run period.
            A, B, C and D. The total integrated luminosity of all data collected
            in 2012 sums up to \SI{19.71}{\fbinv}.}
     \label{tab:data:data sets}
-    \begin{tabular}{cccc}
+    \begin{tabular}{cclc}
     \toprule
-    \textbf{run}  & \textbf{run range} & \textbf{data set}                       & \textbf{luminosity}\\
+    \textbf{Run}  & \textbf{Run range} & \multicolumn{1}{c}{\textbf{Data set}}                       & \textbf{Luminosity}\\
                   &                    &                                        & \si{\fbinv}\\\midrule
     A             & 190456--193621     & /Jet/Run2012A-22Jan2013-v1/AOD         & \num{0.88}\\
     B             & 193834--196531     & /Jet[Mon,HT]/Run2012B-22Jan2013-v1/AOD & \num{4.41}\\
@@ -104,7 +104,7 @@ process. By using Madgraph, the LO matrix elements do not only contain the $2
 describe multi-jet events, but have to be matched to the subsequent parton
 shower. The underlying event is modeled using the tune Z2$^*$. The parton shower
 and hadronization is carried out using the Pythia~6 event generator interfaced
-to Madgraph by the LHE event record~\cite{Alwall:2006yp}. This simulated events
+to Madgraph by the LHE event record~\cite{Alwall:2006yp}. This simulated event
 sample is the main sample used for data comparisons, not because of the
 multileg-improved matrix elements which are not as important for the dijet
 analysis in this thesis, but because of the huge number of events generated and simulated.
@@ -224,7 +224,7 @@ jet \pt, which was used in the trigger decision, but versus \ptavg of the two
 leading jets as used in this analysis. Therefore, the triggers exhibit a turn-on
 behavior, as can been seen in Fig.~\ref{fig:trigger_eff}. Consequently, it is
 necessary to determine the threshold above which a trigger becomes fully
-efficient. It is defined as the value at which the efficiency is exceeds 99\%.
+efficient. It is defined as the value at which the efficiency exceeds 99\%.
 
 Basically, it is possible to calculate the efficiency of a given trigger by
 dividing the number of passing events through the number of events which pass
@@ -358,7 +358,8 @@ events.
     \includegraphics[width=0.49\textwidth]{figures/measurement/jet_constituent_neutralHadronFraction.pdf}
     \caption[PF candidate fractions in jets]{The fractions of jet constituents as
             observed in data and simulated events for different types of PF candidates.
-            Data and simulation are normalized to the same number of events.}
+            Data and simulation are normalized to the same number of events. The
+            distributions are shown after the application of the jet ID.}
     \label{fig:jet_constituents_fractions}
 \end{figure}
 
@@ -390,7 +391,7 @@ and applied in this thesis as it is also the official recommendation of the
     \label{tab:jetid}
     \begin{tabular}{llll}
     \toprule
-                                 & \textbf{property}       & \textbf{loose ID} & \textbf{tight ID}\\\cmidrule(lr){2-4}
+                                 & \textbf{Property}       & \textbf{Loose ID} & \textbf{Tight ID}\\\cmidrule(lr){2-4}
                                  \textbf{Whole $\bm{\eta}$ region} &                         &                   & \\\cmidrule(lr){1-1}
                                  & neutral hadron fraction & $< 0.99$          & $< 0.90$\\
                                  & neutral EM fraction     & $< 0.99$          & $< 0.90$\\
@@ -408,7 +409,7 @@ and applied in this thesis as it is also the official recommendation of the
 \subsection{Jet ID Efficiency}
 
 The applied jet ID ensures a high purity of real jet events. The efficiency of
-the jet ID in the investigated phase space is studied is studied using a
+the jet ID in the investigated phase space is studied using a
 tag-and-probe technique. Dijet events, in which the leading two jets are well
 balanced in $\phi$, are selected using
 %
@@ -582,7 +583,7 @@ differences are negligible.
     \includegraphics[width=0.47\textwidth]{figures/measurement/run_comparison_yb2ys0.pdf}
     \caption[Stability of result over all run periods]{Ratio of the measured
     cross section in each run period to the cross section obtained with data
-    from Run D. There are small differences, mostly due to statistical fluctuations.
+    from run D. There are small differences, mostly due to statistical fluctuations.
     A slight slope is observed for the result of run B, but overall separately
     obtained cross sections are in good agreement.}
     \label{fig:run_comparison}
@@ -627,7 +628,7 @@ reweighting the simulated events, has vanished.
 
 The generated events are processed through the complete detector simulation and
 reconstruction in order to compare kinematic quantities of dijet events with
-simulated events on reconstructed level. Figure~\ref{fig:controlplots:kinematic}
+simulated events on reconstructed level. Fig.~\ref{fig:controlplots:kinematic}
 shows the transverse momentum $\pt$, the rapidity $y$ and the azimuthal angle
 $\phi$ for the leading two jets. The \pt distribution is not that well described
 especially in the lower \pt region. While the rapidity distribution is well
@@ -647,7 +648,7 @@ discrepancies at higher rapidities.
         jet (left) and the second jet (right) both for data (markers) and
         simulated events (solid). The transverse momentum of the
         jets is shown in the top row, the rapdity in the middle row. The
-        azimuthal angle of the jets is shown the bottom row.}
+        azimuthal angle of the jets is shown in the bottom row.}
     \label{fig:controlplots:kinematic}
 \end{figure}
 
@@ -679,10 +680,12 @@ tracker, a significant difference is observed.
     \label{fig:controlplots:dijets}
 \end{figure}
 
-
-The origin of the dijet events in each \ystar and \yboost bin is illustrated in
-Fig.~\ref{fig:controlplots:rapidity} which shows the distribution of the leading
-and second jet rapidity in a two-dimensional histogram
+To illustrate the phase space origin of the dijet events in the various \ystar
+and \yboost bins, Fig.~\ref{fig:controlplots:rapidity} shows the event yield as
+a function of the leading jet and second jet rapidities. The plot nicely
+illustrates, that all SS dijet events are contained in the bins with
+large values of \yboost while all OS dijet events are collected in the bins with
+larger values of \ystar.
 
 \begin{figure}[htbp]
     \centering
@@ -694,9 +697,9 @@ and second jet rapidity in a two-dimensional histogram
     \includegraphics[width=0.47\textwidth]{figures/measurement/jet12_rapidity_yb2ys0.pdf}
     \caption[Rapidities of the two leading jets in the various \ystar and \yboost bins]{
              The distribution of the dijet events in the various \ystar and
-             \yboost bins is shown as a function of the rapdities of the two jets.
-             The color indicates the frequency distribution. The figures demonstrate the
-             division of SS and OS dijet events, see \eg mid left and bottom right plot.}
+             \yboost bins is shown as a function of leading jet and second jet
+             rapidities. The distributions illustrate the separation of the
+             dijet phase space in the various \ystar and \yboost bins.}
     \label{fig:controlplots:rapidity}
 \end{figure}
 
@@ -705,7 +708,7 @@ and second jet rapidity in a two-dimensional histogram
 
 The Monte Carlo simulation is used to compare the predictions including the
 detector simulation to the measured data distribution which is smeared due to
-the finite detector resolution. Figure~\ref{fig:ratio_recotodata} shows the
+the finite detector resolution. Fig.~\ref{fig:ratio_recotodata} shows the
 prediction of the Madgraph and the Pythia 8 simulations as a ratio to the
 measured data spectrum. While the agreement in the inner detector region is
 fine, the shape and especially the normalization of the MC prediction cannot
@@ -722,9 +725,12 @@ non-perturbative and detector resolution effects, most accurately.
     \includegraphics[width=0.47\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys0.pdf}
     \includegraphics[width=0.47\textwidth]{figures/measurement/ratio_reco_to_data_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/measurement/ratio_reco_to_data_yb2ys0.pdf}
-    \caption[Comparison of data with simulated events]{Comparison of the measurement and the predictions using P8 and MG+P6. The data distributions are normalized
-    to the integrated luminosity, the simulated events to the number of generated events and the cross section. The ratio of the simulated
-    events to the data points is shown.}
+    \caption[Comparison of data with simulated events]{Comparison of the cross
+        sections of data and simulated events of LO Monte Carlo generators at
+        reconstructed level. The data distributions are normalized to the
+        integrated luminosity, the simulated events to the number of generated
+        events and the cross section. The ratio of the simulated events to the data
+        points is shown.}
     \label{fig:ratio_recotodata}
 \end{figure}
 
@@ -850,7 +856,7 @@ Fig.~\ref{fig:resolution_ptavg} shows the resolution in each \ystar and
 modified version of the NSC formula.
 %
 \begin{equation}
-    \frac{\sigma_{\text{ptavg}}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
+    \frac{\Delta_{\ptavg}}{\ptavg} (\ptavg) = \sqrt{\sgn{N} \left(\frac{N}{\ptavg}\right)^2 + \left(\frac{\ptavg}{\text{GeV}}\right)^s \frac{S^2}{\ptavg} + C^2 }
     \label{eq:resolution}
 \end{equation}
 %
@@ -859,7 +865,7 @@ with different terms for noise $N$, a stochastic component $S$ and a constant
 shift $C$. Especially in the low-\pt region, in which the tracking has a
 non-negligible influence on the resolution due to the PF algorithm, a
 slightly better fit is obtained by using the modified resolution given in
-Formula~\ref{eq:resolution}.However, the influence of the different resolution formulas
+Formula~\ref{eq:resolution}. However, the influence of the different resolution formulas
 on the unfolded cross section is negligible as the spectrum starts at
 much higher \ptavg. Table~\ref{tab:resolution_parameters} gives the parameters of
 the fit in each \ystar and \yboost bin of the measurement.
@@ -940,10 +946,10 @@ Monte Carlo events, a flat \ptavg spectrum weighted according to the fitted NLO
 distribution is generated. This distribution resembles the fastNLO cross section
 prediction and is used as the particle level \ptavg spectrum. All generated
 events are then smeared using the resolution function obtained in
-Section~\ref{sec:resolution}. The generation of these Monte Carlo toy events is
+Sec.~\ref{sec:resolution}. The generation of these Monte Carlo toy events is
 very fast, and the response matrices can be filled with more than 100 million
 events each, resulting in negligible statistical fluctuations.
-Figure~\ref{fig:res_matrix} shows the response matrices used in the unfolding
+Fig.~\ref{fig:res_matrix} shows the response matrices used in the unfolding
 process. The matrices in the figure are normalized to the number of events in
 each particle level bin to improve the readability. They are diagonal with small
 off-diagonal elements which represent migrations between neighboring \ptavg
@@ -985,7 +991,7 @@ applied unfolding technique.
     \caption[Closure check of unfolding technique]{Closure test of the employed unfolding
     procedure. Once, the smeared spectrum is obtained from the same events which
 were used to fill the response matrix and once from statistically independent
-events. As expected, unfolding the former spectrum (green line) again yields again exactly the
+events. As expected, unfolding the former spectrum (green line) again yields exactly the
 truth spectrum. Unfolding the statistically independently smeared spectrum
 gives compatible results within statistical uncertainties (blue line).}
     \label{fig:unf_closure_test}
@@ -1039,12 +1045,12 @@ phase space regions contribute, see Table~\ref{tab:data:expunc}.
     \label{tab:data:expunc}
     \begin{tabular}{cccc}
     \toprule
-    \textbf{uncertainty source} & \textbf{min}       & \textbf{average}   & \textbf{max}\\\midrule
-    jet energy scale            & \SI{2.5}{\percent} & \SI{4.0}{\percent} & \SI{11}{\percent}\\
-    luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
-    jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
-    statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
-    residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\\midrule
+    \textbf{Uncertainty source} & \textbf{Min}       & \textbf{Average}   & \textbf{Max}\\\midrule
+    Jet energy scale            & \SI{2.5}{\percent} & \SI{4.0}{\percent} & \SI{11}{\percent}\\
+    Luminosity                  & \SI{2.6}{\percent} & \SI{2.6}{\percent} & \SI{2.6}{\percent}\\
+    Jet energy resolution       & \SI{0.3}{\percent} & \SI{1}{\percent} & \SI{2.5}{\percent}\\
+    Statistical                 & \SI{0.1}{\percent} & \SI{1.5}{\percent} & \SI{22}{\percent}\\
+    Residual                    & \SI{1}{\percent} & \SI{1}{\percent} & \SI{1}{\percent}\\\midrule
     \textbf{Total}              & \SI{4}{\percent} & \SI{6}{\percent} & \SI{25}{\percent}\\
     \bottomrule
     \end{tabular}
@@ -1068,7 +1074,7 @@ Statistical uncertainties of data points are propagated through the unfolding
 using a toy MC technique in which the measured data points are smeared within
 their statistical uncertainties. Then, the unfolding procedure is repeated multiple
 times for each smeared spectra. One million of such toy spectra are used to
-propagate the statistical uncertainty. Figure~\ref{fig:statunc_relative} shows
+propagate the statistical uncertainty. Fig.~\ref{fig:statunc_relative} shows
 the relative statistical uncertainty before and after the unfolding procedure.
 The uncertainty slightly increases during the unfolding process.
 
@@ -1089,7 +1095,7 @@ The uncertainty slightly increases during the unfolding process.
 Furthermore, the unfolding introduces a correlation between bins due to event
 migrations. These correlations are significant for neighboring bins in \pt and
 negligible between bins far off in the phase space.
-Figure~\ref{fig:corr_unfolding_nlo} shows the correlations of the statistical
+Fig.~\ref{fig:corr_unfolding_nlo} shows the correlations of the statistical
 uncertainty after the unfolding. Of course, these correlations have to be taken
 into account in any statistical analysis of the data such as a PDF fit.
 
@@ -1127,7 +1133,7 @@ Sec.~\ref{sec:pdf_uncertainties}. The sources of uncertainty are grouped in four
 categories according to their origin. In the following, a short summary of the
 sources is given. More details about the jet energy corrections and
 uncertainties are given in~\cite{jec_paper}. The
-Figs.~\ref{fig:jec_relunc_0}---\ref{fig:jec_relunc_5} in the appendix show the
+Figs.~\ref{fig:jec_relunc_0}--\ref{fig:jec_relunc_5} in the appendix show the
 size of each of the 25 sources separately.
 
 \begin{description}
@@ -1165,8 +1171,8 @@ estimate the uncertainty on the resolution and are also given in
 Table~\ref{tab:res_smearing}. The determination of the resolution is repeated
 with the applied upwards and downwards variation of the resolution smearing
 factor. The unfolding procedure is also reiterated using the variations of the
-resolution and the differences of the obtained cross section to the nominal
-cross section are accounted for as a systematic uncertainty. The influence on
+resolution, and the differences of the obtained cross section to the nominal
+cross section are accounted for with a systematic uncertainty. The influence on
 the cross section is comparably small, about 1\% in low \ystar and \yboost and
 increasing up to 3\% for the highest \ystar value.
 
@@ -1245,22 +1251,23 @@ different PDF sets, especially compared to the ones of the NNPDF set, yield
 different results in the boosted region and are afflicted with large PDF
 uncertainties. Moreover, none of the investigated PDF sets yields a good
 description of the data in this phase space region, see
-Fig.~\ref{fig:ratio_nnpdf30_nlo} bottom right, making it a very interesting subject for PDF
-studies.
+Fig.~\ref{fig:ratio_nnpdf30_nlo} bottom right, making it a very interesting
+subject for PDF studies.
 
 \section{Summary}
 
 In this chapter, the complete data analysis of the triple-differential dijet
-cross section measurement has been presented. Thorough studies guarantee  a high
-robustness of the performed measurement. The reconstructed spectrum
-has been unfolded with the iterative d'Agostini algorithm to correct for all detector
-dependent effects. By comparing with NLO pQCD calculations, it was found that
-the data is well described in the majority of the studied phase space.
-Systematic deviations at some edges of the investigated phase space were
-observed and could be traced back to missing electroweak corrections and the PDFs. The
-high experimental precision of the data and the comprehensive study of all sources of
-uncertainties including their correlations allows to include this measurement in a
-PDF fit to improve them.
+cross section measurement has been presented. Thorough studies of trigger,
+reconstruction and detector efficiencies demonstrate the robustness of the
+performed measurement. The reconstructed spectrum has been unfolded with the
+iterative d'Agostini algorithm to correct for all detector dependent effects. By
+comparing with NLO pQCD calculations, it was found that the data is well
+described in the majority of the studied phase space.  Systematic deviations at
+some edges of the investigated phase space were observed and could be traced
+back to missing electroweak corrections and the PDFs. The high experimental
+precision of the data and the comprehensive study of all sources of
+uncertainties including their correlations allows to include this measurement in
+a PDF fit to improve them.
 
 \begin{figure}[htbp]
     \centering
