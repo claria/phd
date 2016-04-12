@@ -521,6 +521,17 @@ Tier-3 sites are mostly used by local groups for data analysis.
 Access to the resources of the LHCG is gained by certificates which authorize
 the user to access the storage and computing resources.
 
+\subsection{Dynamic Cloud Computing Resources}
+
+The static computing resources available in the WLCG are often not optimally
+utilized if used for cpu intensive tasks. It is much more efficient to
+dynamically allocate virtual machines in a shared HPC cluster when they are
+needed and shut them down afterwards. The NLO cross section calculations for the
+triple-differential dijet cross sections are extremely cpu intensive but involve
+only small input/output data transfers. Thus, they are perfectly suited for
+calculations on an remote HPC cluster such as the bwForCluster in Freiburg,
+which was integrated into the local computing infrastructure of the institute
+during the Master's thesis of~\cite{Fleig:2016aaa}.
 
 \subsection{CMS Software Framework}
 
