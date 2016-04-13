@@ -627,7 +627,7 @@ powerful n-dimensional arrays and tools to manipulate them.
 \subsection{Monte Carlo Event Generators and Simulation Software}
 \label{subsection:mc_generators}
 
-\subsubsection{Pythia}
+\paragraph{Pythia}
 
 The multi-purpose event generator Pythia simulates events in high-energy
 collisions, comprising a large set of physics processes. Pythia uses the Lund
@@ -640,7 +640,7 @@ while the study of non-perturbative effects was performed using the new
 Pythia~8~\cite{Sjostrand:2007gs} version, in which all the employed tunes are
 available. 
 
-\subsubsection{Herwig}
+\paragraph{Herwig}
 
 Herwig is also a multi purpose event generator for the simulation of high-energy
 hadron-hadron collisions. The first version was build in Fortran and is known as
@@ -663,7 +663,16 @@ non-perturbative effects, see Sec.~\ref{sec:np_factors}. The NLO capabilities of
 Herwig 7 are shown in the comparison of the unfolded measurement to NLO
 predictions with matched parton showers, see Sec.~\ref{sec:nlo_comparisons}.
 
-\subsubsection{MadGraph}
+\paragraph{\powheg}
+\powheg describes a method by which fixed NLO calculations can be merged with parton
+showers~\cite{Frixione:2007vw,Nason:2004rx}. Furthermore, there is a software called \powheg
+box~\cite{Oleari:2010nx}, which provides a
+general framework for the implementation of NLO calculations. It contains the
+hard matrix elements for NLO dijet production. For the parton shower and
+hadronization, it needs to be interfaced to a Monte Carlo event generator like
+Pythia or Herwig.
+
+\paragraph{MadGraph}
 
 MadGraph~\cite{Alwall:2011uj} is an automated multi-purpose tree-element matrix
 element generator. It implements a large number of processes and can be
@@ -671,7 +680,7 @@ interfaced to Monte Carlo Event generators. In this thesis the MadGraph matrix
 elements are used together with the Pythia 6 event generator for general
 comparisons to data.
 
-\subsubsection{NLOJet++ and fastNLO}
+\paragraph{NLOJet++ and fastNLO}
 \label{sec:nlojetpp}
 
 The complicated NLO cross sections for jet production are calculated using
@@ -689,7 +698,7 @@ obtained with \NLOJETPP in a way that the strong coupling constant and the PDFs
 can be changed afterwards without a recalculation of the perturbative
 coefficients.
 
-\subsubsection{LHAPDF}
+\paragraph{LHAPDF}
 
 All event generators and cross section calculation tools need the parton
 distribution functions as input. They are either hard coded in the generator or
@@ -860,7 +869,7 @@ initial- and final-state radiation which can cause out-of-cone effects.
 
 The jet energy corrections (JEC) relate the measured jet energy to the
 corresponding true particle jet energy and are derived using sophisticated
-methods by the \JetMET group~\cite{jec_paper}. \CMS uses a factorized
+methods by the \JetMET group~\cite{Chatrchyan:2011ds,jec_8tev}. \CMS uses a factorized
 correction approach consisting of multiple correction steps that build on one
 another. The corrected transverse momentum $\pt^{\mathrm{corr}}$ of a jet is
 yielded by subsequently applying all correction factors on an uncorrected jet
