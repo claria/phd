@@ -205,7 +205,8 @@ uncertainties.
     \caption[\NLOJETPP prediction of triple-differential dijet cross section]{
         NLO predictions of \fastNLO interfaced to \NLOJETPP for the
         triple-differential dijet measurement. The calculations using three
-        different scale choices are shown revealing differences up to 10\%. In
+        different scale choices are shown revealing differences up to
+        \SI{10}{\percent}. In
         almost all cases the differences between the calculations are covered by
         the scale uncertainties, see Sec.~\ref{sec:scale_uncertainties}.}
     \label{fig:xs_nlo_comp}
@@ -321,7 +322,8 @@ while the medium value of the width of the envelope is used as correction
 factor.
 
 Fig.~\ref{fig:np_factors} shows the resulting correction factors and the
-corresponding uncertainty. The corrections vary between 8\% and 12\% at
+corresponding uncertainty. The corrections vary between \SI{8}{\percent} and
+\SI{12}{\percent} at
 \SI{133}{\GeV} and get smaller at higher values of \ptavg. While the correction
 decreases for higher transverse momenta, it does not approach unity, especially
 in the bins containing boosted jets. 
@@ -337,10 +339,9 @@ in the bins containing boosted jets.
     \caption[Non-perturbative corrections]{The non-perturbative corrections are
         shown for the six bins in \ystar and \yboost. They are derived using a MC event
         generator by calculating the ratio of the cross section with and without
-        hadronization and MPI effects enabled in the simulation. The green line
-        shows the correction of Pythia 8, the blue line the correction of
-    Herwig++. The average of both gives the central correction and the envelope
-represents the uncertainty on the correction.}
+        hadronization and MPI effects enabled in the simulation. The colored lines
+        show the corrections obtained from different MC generators. The black
+    error bars give the resulting NP correction with uncertainty.}
     \label{fig:np_factors}
 \end{figure}
 
@@ -355,18 +356,18 @@ comparison of all studied theoretical uncertainties is shown in
 Fig.~\ref{fig:theo_uncertainties}.
 
 The scale uncertainty is the dominant source of uncertainty in the low-\pt
-region and is of the size of 5\% to 10\% in most of the phase space regions. For
+region and is of the size of \SI{5}{\percent} to \SI{10}{\percent} in most of the phase space regions. For
 larger \ptavg, the PDF uncertainty becomes the dominant source. Its size ranges
-from 5\% in the low-\ptavg region up to 50\% for highest \ptavg and \yboost
+from \SI{5}{\percent} in the low-\ptavg region up to \SI{50}{\percent} for highest \ptavg and \yboost
 values. The uncertainty afflicted to non-perturbative corrections is only
-sizable for lower \pt and is less than 5\% in all bins.
+sizable for lower \pt and is less than \SI{5}{\percent} in all bins.
 
 As the cross section calculation is performed using \fastNLO interfaced to
 \NLOJETPP, multiple independent calculations can be merged to increase the
 statistical precision of the calculation. The statistical uncertainty is
 estimated by calculating the uncertainty on the arithmetic mean of the cross
-section of all fastNLO tables. It is found to be smaller than 0.5\% in all bins,
-in most of the bins even smaller than 0.1\%. Therefore, the statistical
+section of all fastNLO tables. It is found to be smaller than \SI{0.5}{\percent} in all bins,
+in most of the bins even smaller than \SI{0.1}{\percent}. Therefore, the statistical
 uncertainty is neglected in all further comparisons.
 
 \subsection{Scale uncertainties}
@@ -398,9 +399,9 @@ denotes the number of variations.
 
 Fig.~\ref{fig:scale_uncertainties} shows the relative size of the scale
 uncertainty for each bin of the measurement and the discussed scale choices. The
-scale uncertainty is of the size of 5\% to 10\%. However, when using the scale
+scale uncertainty is of the size of \SI{5}{\percent} to \SI{10}{\percent}. However, when using the scale
 choice $\mu=\ptavg$, the bin with the largest rapidity separation exhibits a large
-increase of the uncertainty up to 40\%, which is clearly undesired.
+increase of the uncertainty up to \SI{40}{\percent}, which is clearly undesired.
 
 \begin{figure}[htp]
     \centering
@@ -416,7 +417,8 @@ increase of the uncertainty up to 40\%, which is clearly undesired.
         independently varying the renormalization and factorization scale choice
         in six independent combinations. The uncertainty is shown for the three
         investigated scale choices, indicated by different colors. In most cases
-        the scale uncertainty is reasonable and of the size of 5\% to 10\%. In
+        the scale uncertainty is reasonable and of the size of \SI{5}{\percent}
+        to \SI{10}{\percent}. In
         the region with the largest values of \ystar, the scale uncertainty of
         the prediction with the scale choice $\mu=\ptavg$ is undesirably large.}
     \label{fig:scale_uncertainties}
@@ -481,9 +483,10 @@ downwards variation.
     X_i^-}{2} \right]^2}
 \end{equation*}
 
-The uncertainty assigned to the CT14 PDF set describes a 90\% confidence
-interval (CI), while the MMHT and NNPDF PDF uncertainties represent a 68\% CI.
-The CT14 uncertainties are scaled to 68\% CI using $s = \sqrt{2}
+The uncertainty assigned to the CT14 PDF set describes a \SI{90}{\percent} confidence
+interval (CI), while the MMHT and NNPDF PDF uncertainties represent a
+\SI{68}{\percent} CI.
+The CT14 uncertainties are scaled to \SI{68}{\percent} CI using $s = \sqrt{2}
 \erf^{-1}(0.9) = 1.645$.
 
 Fig.~\ref{fig:pdf_uncertainties} shows the fractional PDF uncertainty for the
@@ -511,7 +514,8 @@ in large PDF uncertainties in phase space regions not covered by data.
     \includegraphics[width=0.47\textwidth]{figures/theory/pdf_uncert_comp_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/theory/pdf_uncert_comp_yb2ys0.pdf}
     \caption[PDF uncertainties]{The relative PDF uncertainty is calculated using the three PDF sets
-    NNDFP 3.0, CT14, and MMHT 2014. The uncertainty represents a 68\% confidence
+        NNDFP 3.0, CT14, and MMHT 2014. The uncertainty represents a
+        \SI{68}{\percent} confidence
     interval. The PDF uncertainty is sizable especially in the forward region in
     which both jets  are boosted to the same side of the detector and $x_1$ and
     $x_2$ are very different.}

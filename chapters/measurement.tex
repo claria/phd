@@ -5,7 +5,7 @@ of the Triple-Differential\\ Dijet Cross Section}
 \label{sec:measurement}
 
 The preceding chapter laid the foundation for the triple-differential dijet
-cross section measurement by presenting the NLO pQCD calculations and
+cross section measurement by presenting the pQCD calculations and
 demonstrating the observable's sensitivity to the PDFs. Especially the sizable
 PDF uncertainties in phase space regions involving boosted dijet events indicate
 that a sufficiently precise measurement could be exploited to better constrain
@@ -15,7 +15,7 @@ This chapter is dedicated to the measurement of the cross section from collision
 data recorded by CMS during the 2012 LHC run at a center-of-mass energy of
 \SI{8}{\TeV}. The first two sections give the definition of the measured cross
 section and the analyzed data sets. Sec.~\ref{sec:event_selection} describes the
-event selection in which clean dijet events are identified. Based on simulated
+event selection in which clean dijet events are identified. By comparisons with simulated
 events, the detector response is studied and the jet energy resolution is derived
 which is used subsequently to correct the measured cross section for detector
 effects in an iterative unfolding procedure. A detailed study of all
@@ -24,9 +24,8 @@ concludes the measurement.
 
 Finally, the comparison of unfolded data to NLO predictions is presented in
 Sec.~\ref{sec:nlo_comparisons}. Furthermore, comparisons to NLO calculations
-complemented with matched parton showers, as made possible with the recently
-released Herwig~7 MC event generator, are shown.
-~\todo{mention powheg if ready}
+complemented with matched parton showers, as made possible with Powheg and the
+recently released Herwig~7 MC event generator, are shown.
 
 \section{Cross Section Definition}
 
@@ -46,8 +45,8 @@ space. The cross section is normalized by the widths of the \ptavg, \ystar, and
 \yboost bins. 
 
 The size of the \ptavg bins is chosen based on the observed resolution for
-\ptavg at the bin center. For simplification, the same bin widths are chosen
-as for the inclusive jet cross section measurement, which has a slightly worse
+\ptavg at the bin center. For simplification, the same bin widths as for the
+inclusive jet cross section measurement are chosen, which has a comparable
 resolution. The equidistant \ystar and \yboost bins start from zero and go up to
 three with a bin size of one.
 
@@ -58,13 +57,13 @@ The measurement is based on data collected by CMS in the 2012 run
 period of the LHC at a center-of-mass energy of \SI{8}{\TeV}. The accumulated
 data corresponds to a total integrated luminosity of $\SI{19.71}{\fbinv}$. 
 
-The 2012 LHC data taking is subdivided into four periods A, B, C and D and the
+The 2012 CMS data taking is subdivided into four periods A, B, C, and D and the
 data sets are split accordingly into separate samples. Each data set is further
 split into subsets containing only a fraction of all triggered events which are
 grouped according to the physics purpose. This analysis relies on a range of jet
 triggers. All events triggered by prescaled jet triggers were streamed into the
 data sets \texttt{Jet} and \texttt{JetMon} while the events of unprescaled jet
-triggers were moved into the data set \texttt{JetHT}. As this assignment changed
+triggers were stored in the data set \texttt{JetHT}. As this assignment changed
 over the 2012 run periods, it was taken care to only select the correct subset
 of events. Table~\ref{tab:data:data sets} presents the CMS collision data sets
 analyzed in this thesis as well as the integrated luminosity collected in
@@ -99,7 +98,7 @@ contain not only the hard scattering event, but also an admixture
 simulating the pileup collisions observed in real collisions.
 
 The Madgraph Monte Carlo sample is generated with a multi-leg improved QCD
-process. By using Madgraph, the LO matrix elements do not only contain the $2
+process. The LO matrix elements do not only contain the $2
 \rightarrow 2$ matrix elements, but also multi-leg matrix elements. These better
 describe multi-jet events, but have to be matched to the subsequent parton
 shower. The underlying event is modeled using the tune Z2$^*$. The parton shower
@@ -129,27 +128,30 @@ more events at high transverse momentum. Unfortunately, this spoils the absolute
 normalization of the cross section as well as it involves the consideration of
 huge event weights. The second method is based on splitting the phase space in
 multiple regions, in which events are generated separately. The different phase
-space regions are then stitched together later in the data analysis while taking
+space regions are then stitched together in the data analysis while taking
 into account the cross sections in the different phase space regions. 
 
 The Madgraph sample is split into four regions according to the scalar sum of
 the transverse momenta, $H_{\mathrm{T}}$, while the Pythia 8 sample is split
 into twelve data sets according to the transverse momentum of the leading jet.
-Table~\ref{tab:mc_samples} shows all Monte Carlo data sets as well as the cross
+Table~\ref{tab:mc_samples} shows all Monte Carlo data sets as well as their cross
 section and the generated number of events.
 
 \section{Event selection}
 \label{sec:event_selection}
 
 The selection of events is based on several quality criteria which are either
-recommended by CMS or developed specifically for this analysis to yield clean
-dijet events.  Furthermore, phase space cuts on the jets ensure the
-applicability and comparability of NLO theory calculations.
+recommended by CMS or developed specifically for this analysis in order to yield
+a dijet event sample with high purity and high selection efficiency.
+Furthermore, phase space cuts on the jets ensure the applicability and
+comparability of NLO theory calculations.
 
 \subsection{Certified Data Selection}
 
 The first step in the event processing chain is to only pick data from runs and
-luminosity sections which fulfill certain criteria. These criteria include
+lumisections\footnote{CMS stores data splitted in different subsets according to
+    a fixed time range in which the instantaneous luminosity is assumed to be
+constant.}which fulfill certain criteria. These criteria include
 proper performance of all detector subsystems as well as the passing of data
 quality monitoring (DQM) steps during the validation process. The good
 lumisections within a run are announced using a JSON data file, called
@@ -170,8 +172,8 @@ Instead, a set of five prescaled low-\pt trigger paths, each with different
 prescale value, is used to collect sufficient data in the lower part of the \pt
 spectrum.  Additionally, one unprescaled trigger is used in the high \pt region, in
 which the rate is sufficiently small to collect and store all
-events. A prescale value of $n$ means, that only every $n$-th event accepted by
-a trigger, is kept. Of course, the applied prescale values have to be taken into
+events. A prescale value of $n$ means, that only every $n$\textsuperscript{th} event accepted by
+a trigger, is kept. Of course, the applied prescale values are taken into
 account when the original spectrum is reconstructed. 
 
 \begin{table}[htbp]
@@ -258,7 +260,7 @@ indicated by error bars which represent Clopper-Pearson confidence intervals.
 \end{equation}
 
 To determine the point, at which the trigger efficiency is larger than 99\%, the
-turn-on distribution is fitted using a sigmoid function, that describes the
+turn-on distribution is fitted using a sigmoid function that describes the
 turn-on behavior of the trigger paths.
 
 \begin{equation}
@@ -269,12 +271,12 @@ turn-on behavior of the trigger paths.
 The thresholds which were finally used in the data analysis deviate slightly
 from the ones shown in Fig.~\ref{fig:trigger_eff} as the trigger thresholds
 were measured separately in each \ystar and \yboost bin. The most
-conservative, thus the highest threshold, is finally chosen. They are given in
-Table~\ref{tab:triggers}
+conservative, thus the highest threshold, is finally chosen. They are reported in
+Table~\ref{tab:triggers}.
 
 It is important to mention the HLT triggers which specifically trigger on the
 average transverse momentum of the two leading jets and have been implemented
-for dijet calibration purposes. At first, they appear to be the obvious choices
+for dijet calibration purposes. At first, they appear to be the obvious choice
 for this analysis. However, studies of these triggers revealed, that the
 performance is at best comparable to the single jet triggers. Larger prescales
 applied to the \ptavg trigger paths result in larger statistical uncertainties.
@@ -289,7 +291,7 @@ the nominal interaction point of the detector. Furthermore, the radial distance
 $\rho_\mathrm{PV}$ needs to be smaller than $\SI{2}{\centi\meter}$. To
 ensure a high quality of the vertex reconstruction, the number of
 degrees of freedom in the vertex fit, $n_{\mathrm{dof,PV}}$, needs to be at least
-four. Consequently, at least four tracks must be present in order to
+four. Thus, at least four tracks must be present in order to
 perform a valid vertex fit.
 
 \subsection{Missing Transverse Energy Cut}
@@ -373,10 +375,10 @@ events.
     \label{fig:jet_constituents_counts}
 \end{figure}
 
-While studying the loose and tight jet criteria, it was found out that the tight jet
+While studying the loose and tight jet criteria, it was found that the tight jet
 ID removes a non-negligible fraction of jets in the forward region of the
 phase space considered in this analysis. Therefore, the loose jet ID is favored
-and applied in this thesis as it is also the official recommendation of the
+and applied in this thesis which is also the official recommendation of the
 \textsc{JetMET} group.
 
 \begin{table}[htbp]
@@ -421,9 +423,9 @@ where $\Delta\phi$ is the azimuthal difference between the two leading jets. One
 of the dijets is chosen as tag jet and has to fulfill the loose jet ID. The
 other jet is examined, if it also passes the jet ID. The quotient of events in
 which the probe jet also passes the criteria versus the total number of dijet
-events gives the efficiency. Fig.~\ref{fig:jetid_eff} shows the
+events yields the efficiency. Fig.~\ref{fig:jetid_eff} shows the
 efficiency as a function of \ptavg of the dijet system for all \ystar and
-\yboost bins. As advertised by the \textsc{JetMET} group, the efficiency is
+\yboost bins. As advertized by the \textsc{JetMET} group, the efficiency is
 larger than \SI{99}{\percent} in all phase space regions.
 
 \begin{figure}[htbp]
@@ -437,7 +439,7 @@ larger than \SI{99}{\percent} in all phase space regions.
     \caption[Efficiency of the jet ID]{The jet ID efficiency as a function of
     \ptavg for all \ystar and \yboost bins. It is studied using a
     tag-and-probe approach on clean dijet event topologies. The efficiency is
-    shown as a function of \ptavg for all bins and always larger than
+    shown as a function of \ptavg for all bins and is always larger than
     \SI{99}{\percent}.}
     \label{fig:jetid_eff}
 \end{figure}
@@ -445,7 +447,7 @@ larger than \SI{99}{\percent} in all phase space regions.
 \subsection{Jet Energy Corrections and Selection}
 
 The measurement presented in this thesis is based on jets clustered from PF
-candidates using the anti-\kt algorithm with a jet size parameter of 0.7. The
+candidates using the anti-\kt jet algorithm with a size parameter of 0.7. The
 following phase space cuts remove jets instead of whole events due to their
 transverse momentum and rapidity. Consequently, all jet energy corrections
 recommended by CMS are applied prior to this selection in order to have the
@@ -498,7 +500,7 @@ small, it causes a relevant systematic effect whenever the rapidity separation
 of two jets is of interest. However, there are two effects that limit the impact of the
 misreconstruction: First, it is only pronounced for jets with low transverse momentum
 (as can be seen in Fig~\ref{fig:jet_eta_corr_vs_pt}) and second, the large bin
-size in rapidity reduces the effects. 
+size in \ystar and \yboost used in this analysis reduces the impact. 
 
 Nonetheless, the systematic error is accounted for by applying a correction on
 each jet based on the average difference between the pseudorapidity of particle
@@ -563,15 +565,14 @@ the cross section is much higher, there is no change noticeable.
 
 The experimental conditions for data-taking change slightly over the various run
 periods, due to changes of the detector calibration or different trigger
-prescales. Nonetheless the finally measured cross section must not depend on
-these effects. This is checked by calculating the result separately for each run
-period, see Fig.~\ref{fig:run_comparison}, which shows the ratio of the cross
-section in each run period to the cross section obtained in run D. 
+prescales. Nonetheless, the measured cross sections must not depend on
+these effects. This is studied by analyzing the different run periods
+separately. The result for each run period is shown as ratio to the cross
+sections obtained in run D in Fig.~\ref{fig:run_comparison}. 
 
-There are changes visible, most notably due to statistical fluctuations in the
+There are differences visible, most notably due to statistical fluctuations in the
 high-\pt region. Furthermore, a slight slope of the cross section obtained in run
-B is observed. However, in general all results are in good agreement and the
-differences are negligible.
+B is observed. However, the results are in agreement within uncertainties.
 
 \begin{figure}[htbp]
     \centering
@@ -584,8 +585,8 @@ differences are negligible.
     \caption[Stability of result over all run periods]{Ratio of the measured
     cross section in each run period to the cross section obtained with data
     from run D. There are small differences, mostly due to statistical fluctuations.
-    A slight slope is observed for the result of run B, but overall separately
-    obtained cross sections are in good agreement.}
+    A slight slope is observed for the result of run B, but overall the separately
+    obtained cross sections are in agreement within uncertainties.}
     \label{fig:run_comparison}
 \end{figure}
 
@@ -631,8 +632,8 @@ reconstruction in order to compare kinematic quantities of dijet events with
 simulated events on reconstructed level. Fig.~\ref{fig:controlplots:kinematic}
 shows the transverse momentum $\pt$, the rapidity $y$ and the azimuthal angle
 $\phi$ for the leading two jets. The \pt distribution is not that well described
-especially in the lower \pt region. While the rapidity distribution is well
-described within the tracker coverage of $y \approx 2.4$, there are larger
+especially in the low \pt region. While the rapidity distribution is well
+described within the tracker coverage of $|y| \leq 2.4$, there are larger
 discrepancies at higher rapidities.
 
 \begin{figure}[htbp]
