@@ -119,7 +119,7 @@ dijet event are small, both jets must have a low rapidity and consequently also
 small \ystar and \yboost values. These events are filled in the bottom left bin.
 If the dijet system is boosted but the two jets have a small separation in
 rapidity, both jets must be boosted in the forward region to the same side, see
-bottom right . If instead the dijet separation is large and the boost of the
+bottom right. If instead the dijet separation is large and the boost of the
 dijet system is small, the jets are boosted to opposite sides. Dijet events with
 both a large rapidity separation and a large boost of the dijet system are
 suppressed in the accessible phase space.
@@ -137,12 +137,12 @@ PDFs are less precisely known in this region.
 \section{Fixed Order NLO Calculations}
 
 The NLO cross section of the triple-differential dijet cross section is
-calculated using fastNLO~\cite{Kluge:2006xs,Britzger:2012bs} which uses
+calculated using \fastnlo~\cite{Kluge:2006xs,Britzger:2012bs} which uses
 interpolation tables filled with the perturbative coefficients of the \NLOJETPP
 program~\cite{Nagy:2003tz}, see Sec.~\ref{sec:nlojetpp}. The PDFs are accessed
 via the LHAPDF library~\cite{Whalley:2005nh,Buckley:2014ana} and the
 \as-evolution is performed using the routines provided by the PDF sets.
-Employing \fastNLO instead of a direct calculation with \NLOJETPP gives the
+Employing \fastnlo instead of a direct calculation with \NLOJETPP gives the
 possibility to repeatedly calculate the cross sections with  different PDFs and
 scale choices as it is necessary for the calculation of PDF and scale
 uncertainties.
@@ -203,7 +203,7 @@ uncertainties.
     \includegraphics[width=0.48\textwidth]{figures/theory/nlo_xs_comp_yb1ys1.pdf}\hfill
     \includegraphics[width=0.48\textwidth]{figures/theory/nlo_xs_comp_yb2ys0.pdf}
     \caption[\NLOJETPP prediction of triple-differential dijet cross section]{
-        NLO predictions of \fastNLO interfaced to \NLOJETPP for the
+        NLO predictions of \fastnlo interfaced to \NLOJETPP for the
         triple-differential dijet measurement. The calculations using three
         different scale choices are shown revealing differences up to
         \SI{10}{\percent}. In
@@ -316,8 +316,8 @@ by a power-law function
 \end{equation*}
 
 Since the correction factors obtained from the different MC generators exhibit
-larger differecences in the low-\pt region, an uncertainty is assigned to the correction
-factor. The envelope which covers all differences is quoted as uncertainty,
+larger differecences, an uncertainty is assigned to the correction
+factor. The envelope which covers all differences is taken as uncertainty,
 while the medium value of the width of the envelope is used as correction
 factor.
 
@@ -348,12 +348,11 @@ in the bins containing boosted jets.
 \section{Theory Uncertainties}
 
 Multiple sources of uncertainty limit the precision of the NLO cross section
-calculation. In this section, the derivation of scale and PDF
-uncertainties is described. The uncertainties
-on non-perturbative correction uncertainties were already presented together
-with the correction factors themselves in Sec.~\ref{sec:np_factors}. A
-comparison of all studied theoretical uncertainties is shown in
-Fig.~\ref{fig:theo_uncertainties}.
+calculation. In this section, the derivation of scale and PDF uncertainties is
+described. The uncertainties on non-perturbative corrections have been
+already presented together with obtained correction factors themselves in
+Sec.~\ref{sec:np_factors}. A comparison of all studied theoretical uncertainties
+is shown in Fig.~\ref{fig:theo_uncertainties}.
 
 The scale uncertainty is the dominant source of uncertainty in the low-\pt
 region and is of the size of \SI{5}{\percent} to \SI{10}{\percent} in most of the phase space regions. For
@@ -362,11 +361,11 @@ from \SI{5}{\percent} in the low-\ptavg region up to \SI{50}{\percent} for highe
 values. The uncertainty afflicted to non-perturbative corrections is only
 sizable for lower \pt and is less than \SI{5}{\percent} in all bins.
 
-As the cross section calculation is performed using \fastNLO interfaced to
+As the cross section calculation is performed using \fastnlo interfaced to
 \NLOJETPP, multiple independent calculations can be merged to increase the
 statistical precision of the calculation. The statistical uncertainty is
 estimated by calculating the uncertainty on the arithmetic mean of the cross
-section of all fastNLO tables. It is found to be smaller than \SI{0.5}{\percent} in all bins,
+section of all \fastnlo tables. It is found to be smaller than \SI{0.5}{\percent} in all bins,
 in most of the bins even smaller than \SI{0.1}{\percent}. Therefore, the statistical
 uncertainty is neglected in all further comparisons.
 
@@ -447,13 +446,14 @@ The NNPDF PDF set~\cite{Ball:2014uwa} uses a large number of pseudo experiments,
 in which the PDF fit is performed using data smeared within their uncertainties
 while taking into account all correlations. These so-called replicas are
 averaged to give the central result $X_\mathrm{central}$ and the spread of the
-replicas determines the uncertainty. The symmetric PDF uncertainty $\Delta
+replicas determines the uncertainty. The symmetric PDF uncertainties $\Delta
 X^\pm$ of a quantity $X$, which can be a cross section calculation or even the
-PDF itself is expressed as
-
+PDF itself are expressed as
+%
 \begin{equation*}
     \Delta X^{\pm} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N \left[ X_{i} - X_{\mathrm{central}} \right]^2}
 \end{equation*}
+%
 where $N$ denotes the number of replicas.
 
 The CT14 ~\cite{Dulat:2015mca} and MMHT 2014~\cite{Harland-Lang:2014zoa} PDF
@@ -477,12 +477,12 @@ eigenvectors in the PDF set.
 
 The symmetric uncertainty $\Delta X^{\pm}$ is given by half the difference of the upwards and
 downwards variation.
-
+%
 \begin{equation*}
     \Delta X^{\pm} = \sqrt{\sum_i^{N_{\mathrm{EV}}} \left[ \frac{X_i^+ -
     X_i^-}{2} \right]^2}
 \end{equation*}
-
+%
 The uncertainty assigned to the CT14 PDF set describes a \SI{90}{\percent} confidence
 interval (CI), while the MMHT and NNPDF PDF uncertainties represent a
 \SI{68}{\percent} CI.
@@ -491,7 +491,7 @@ The CT14 uncertainties are scaled to \SI{68}{\percent} CI using $s = \sqrt{2}
 
 Fig.~\ref{fig:pdf_uncertainties} shows the fractional PDF uncertainty for the
 three discussed global PDF sets. The PDF uncertainty in the bins with small
-\ystar and small \yboost values is comparatively small. This is due to the fact
+\ystar and small \yboost values is comparably small. This is due to the fact
 that mostly events with opposite side jets contribute, in which the medium-$x$
 region of the proton PDFs is accessed which are well known already. The PDF
 uncertainty of the cross section for high values of \ystar and low values of
@@ -499,11 +499,11 @@ uncertainty of the cross section for high values of \ystar and low values of
 relatively small. Most interestingly the uncertainty strongly increases for the
 bin with largest values of \yboost and small values of \ystar.  Especially in
 the high-\pt region, the uncertainty is sizable. To achieve a high boost of the
-dijet system and a high \ptavg value, the protons must be accessed in the
-high-$x$ region which is not well determined up to now and is afflicted with
-large PDF uncertainties. Especially the NNPDF PDF set has a large uncertainty in
-this region. This is caused by its very flexible parametrization which results
-in large PDF uncertainties in phase space regions not covered by data.
+dijet system and a high \ptavg value, one of the colliding protons must be
+accessed in the high-$x$ region which is not well determined up to now and is
+afflicted with large PDF uncertainties. Especially the NNPDF PDF set has a large
+uncertainty in this region. This is caused by its very flexible parametrization
+which results in large uncertainties in phase space regions not covered by data.
 
 \begin{figure}[htp]
     \centering
@@ -530,10 +530,10 @@ in large PDF uncertainties in phase space regions not covered by data.
     \includegraphics[width=0.47\textwidth]{figures/theory/theo_unc_overview_yb1ys0.pdf}
     \includegraphics[width=0.47\textwidth]{figures/theory/theo_unc_overview_yb1ys1.pdf}\hfill
     \includegraphics[width=0.47\textwidth]{figures/theory/theo_unc_overview_yb2ys0.pdf}
-    \caption[Overview of theoretical uncertainties]{Overview of the theoretical uncertainties of the NLO prediction.
+    \caption[Overview of theoretical uncertainties]{Overview of the theoretical
+        uncertainties of the \NLOJETPP prediction for NNPDF 3.0 .
     The scale uncertainty is the dominant uncertainty in the low-\pt region. At
     high-\pt and especially in the forward region, the PDF uncertainty becomes
-    dominant. The NP uncertainty is sizable only in the low-\pt region and becomes
-    negligible at higher \pt when the NP corrections approach unity.}
+    dominant.}
     \label{fig:theo_uncertainties}
 \end{figure}

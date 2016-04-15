@@ -159,7 +159,7 @@ of the detector.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=1.0\textwidth]{figures/experimental_setup/cms_longitudinal_section.pdf}
+    \includegraphics[width=0.85\textheight,angle=90]{figures/experimental_setup/cms_longitudinal_section.pdf}
     \caption[Longitudinal section of the CMS
     detector]{A longitudinal section of one quadrant of the CMS
         detector in the $y$-$z$ plane. The sketch shows
@@ -167,7 +167,7 @@ of the detector.
 and silicon strip detectors close to the interaction point. They are surrounded
 by the electromagnetic (green) and hadronic (yellow) calorimeters. The barrel is
 encompassed by the superconducting magnet (blue). The muon detection system
-(red) is embedded in the iron return yoke~\cite{Berger:2014aca}.}
+(red) is embedded in the iron return yoke. Taken from~\cite{Berger:2014aca}.}
     \label{fig:cms:longitudinal_section}
 \end{figure}
 
@@ -687,12 +687,12 @@ The complicated NLO cross sections for jet production are calculated using
 \NLOJETPP~\cite{Nagy:2003tz}. It implements the dipole subtraction method for
 the separation of the divergences. \NLOJETPP can calculate up to three-jet
 observables at NLO precision. It implements the ability run user analysis scenarios
-by which it is interfaced to the \fastNLO project~\cite{Kluge:2006xs,Britzger:2012bs}.
+by which it is interfaced to the \fastnlo project~\cite{Kluge:2006xs,Britzger:2012bs}.
 
 Since the pQCD cross section calculations in \NLOJETPP are determined in Monte
 Carlo integration and are therefore very time consuming, it is not feasible to
 repeatedly calculate the cross sections as it is necessary for PDF fits or
-uncertainty estimations. The \fastNLO framework implements a strategy for fast
+uncertainty estimations. The \fastnlo framework implements a strategy for fast
 recalculations of cross sections. It stores the perturbative coefficients
 obtained with \NLOJETPP in a way that the strong coupling constant and the PDFs
 can be changed afterwards without a recalculation of the perturbative
