@@ -202,7 +202,7 @@ distribution inside the proton. A direct connection to the hard process is given
 by the transverse momentum \pt related to Cartesian coordinates as
 
 \begin{equation*}
-    \pt = \sqrt{p_x^2 + p_y^2}.
+    \pt = \sqrt{p_x^2 + p_y^2}\,.
 \end{equation*}
 
 \subsection{Inner Tracking System}
@@ -394,7 +394,7 @@ detectors, the path and the muon momentum are both measured precisely. The muon
 system comprises three different types of detectors each suited for a specific
 task. Drift tubes (DT) cover the barrel region up to $|\eta| < 1.2$, the endcaps
 up to $|\eta| < 2.4$ contain cathode strip chambers (CSC) which also
-work reliably in spatially varying magnetic field. The DT and CSC detectors
+work reliably in the spatially varying magnetic field. The DT and CSC detectors
 yield a precise spatial muon resolution. Both systems are accompanied by
 resistive plate chambers (RPC) which provide fast response to the trigger
 system.
@@ -553,10 +553,10 @@ access external libraries like Monte Carlo event generators for event
 simulation, Geant 4 for the detector simulation or FastJet for the
 reconstruction of jets. 
 
-While having that much information in the event data is convenient to redo
-reconstruction steps, it is unsuited for fast processing in the analysis due to
+While having that much information available in the event data is convenient to redo
+reconstruction steps, it is unsuited for the fast processing of the analysis due to
 its size and complexity. Therefore a skimming step, in which only the necessary
-data is preserved is run before the analysis, see Section~\ref{artus_kappa}.
+data is preserved, is run before the analysis, see Sec.~\ref{artus_kappa}.
 
 \subsection{Analysis Software and Workflow}
 
@@ -680,13 +680,13 @@ interfaced to Monte Carlo Event generators. In this thesis the MadGraph matrix
 elements are used together with the Pythia 6 event generator for general
 comparisons to data.
 
-\paragraph{NLOJet++ and fastNLO}
+\paragraph{NLOJet++ and \fastnlo}
 \label{sec:nlojetpp}
 
 The complicated NLO cross sections for jet production are calculated using
 \NLOJETPP~\cite{Nagy:2003tz}. It implements the dipole subtraction method for
 the separation of the divergences. \NLOJETPP can calculate up to three-jet
-observables at NLO precision. It implements the ability run user analysis scenarios
+observables at NLO precision. It implements the ability to run user analysis scenarios
 by which it is interfaced to the \fastnlo project~\cite{Kluge:2006xs,Britzger:2012bs}.
 
 Since the pQCD cross section calculations in \NLOJETPP are determined in Monte
@@ -834,7 +834,7 @@ Fig.~\ref{fig:chs_jets}. Tracks originating from the signal vertex or tracks not
 associated with any vertex remain in the event. The signal vertex is defined as
 the vertex with the largest sum of \pt squared of its associated tracks. The
 CHS jets are clustered from this remaining set of particles. Since the jet
-identification criteria in the jet selection in the analysis require at least
+identification criteria applied by the jet selection in the analysis require at least
 one charged particle in a jet, the CHS method is effectively reducing the
 influence of pileup on real jets as well as completely removing a majority of
 the pileup jets in the barrel region of the \CMS detector in combination with

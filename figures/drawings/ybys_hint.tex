@@ -24,8 +24,8 @@
   \draw [<->,thick] (0,10) node (yaxis) [above right] {}
   |- (10,0) node (xaxis) [right] {};
 
-  \node[anchor=south east,rotate=90] at (-0.5,10) {\Large $y* = \frac{1}{2}|y_1 -y_2|$};
-  \node[anchor=north east] at (10,-0.5) {\Large $y_\mathrm{b} = \frac{1}{2}|y_1+y_2|$};
+  \node[anchor=south east,rotate=90] at (-0.5,10) {\Large \textbf{Rapidity separation}};
+  \node[anchor=north east] at (10,-0.5) {\Large \textbf{Boost}};
 
   \draw (0,1pt) -- (0,-3pt) node[anchor=north] {0};
   \draw (3,1pt) -- (3,-3pt) node[anchor=north] {1};
@@ -116,12 +116,19 @@
   \end{scope}
 
   \node[circle, draw, minimum size=2.8cm, thick, dashed, red] (hintA) at  (1.5,7.5) {};
-  \node[] (hintAtext) at (6,9) {\Large $x_1 \approx x_2$};
+  \node[] (hintAtext) at (5,9.2) {\Large $x_1 \approx x_2$};
+  \node[] () at (6,9.7) {\Large \textbf{large rapidity separation}};
   \draw[thick, dashed, red] (hintAtext.west) -- (hintA.north east) ;
 
+  \node[circle, draw, minimum size=2.8cm, thick, dashed, red] (hintA) at  (1.5,1.5) {};
+  % \node[] () at (5,9.5) {\Large $x_1 \approx x_2$};
+  \node[] (hintAtext) at (6.5,7.5) {\Large \textbf{central region}};
+  \draw[thick, dashed, red] (hintAtext.south west) -- (hintA) ;
+
   \node[circle, draw, minimum size=2.8cm, thick, dashed, red] (hintA) at  (7.5,1.5) {};
-  \node[] (hintAtext) at (8,6) {\Large $x_1 \ll x_2$};
-  \draw[thick, dashed, red] (hintAtext.south) -- (hintA.north) ;
+  \node[] (hintAtext) at (8.5,4.4) {\Large $x_1 \gg x_2$};
+  \node[] () at (9,5.1) {\Large \textbf{boosted region}};
+  \draw[thick, dashed, red] (hintAtext.south) -- (hintA) ;
 
 
 
