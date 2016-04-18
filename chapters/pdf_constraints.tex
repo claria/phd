@@ -11,7 +11,7 @@ run periods\footnote{In the following, the combined HERA-I and HERA-II DIS data 
 are always referred to as HERA DIS data.} provides the base data set since it
 covers a large part of the kinematic phase space. By including more data from different
 experiments, which provide constraints in additional phase space regions, the
-precision on the PDFs can be improved. In a similar way, the impact of the
+precision of the PDFs can be improved. In a similar way, the impact of the
 triple-differential dijet cross section on the PDFs is studied by performing a
 fit of the combined HERA DIS data and the triple-differential dijet cross
 section measurement.
@@ -19,7 +19,7 @@ section measurement.
 As discussed in Sec.~\ref{sec:nlo_comparisons}, the electroweak corrections have
 not been available in time for this thesis. They are large only at highest
 transverse momenta and central rapiditities. Thus, the bins with $\ptavg >
-\SI{1000}{\GeV}$ have not been considered in the PDF studies removing 11 of 144
+\SI{1000}{\GeV}$ have not been considered in the PDF studies removing 11 out of 144
 bins. However, the experimental uncertainties of the neglected bins are
 comparably large. Hence, their impact on the fit result is small.
 
@@ -87,10 +87,11 @@ cross section is expected by including the dijet cross sections in a PDF fit.
 \label{section:herafittersetup}
 
 The constraints of the triple-differential dijet measurement on the proton PDFs
-are demonstrated by including the cross section measurement in a PDF fit in
-combination with inclusive DIS cross sections from the HERA experiments. The
-combined HERA-I and HERA-II DIS data were the
-basis for the determination of the HERAPDF 2.0 PDF set.
+are demonstrated by including the cross section measurement in a PDF fit
+together with inclusive DIS cross sections from the HERA experiments. The PDF
+determination in this thesis closely follows the procedure applied in the
+original HERAPDF~2.0 publication~\cite{Abramowicz:2015mha}. Adjustments and improvements are applied where
+appropriate.
 
 \xfitter~\cite{Alekhin:2014irh} is an open source framework to fit the PDFs to experimental data based
 on the DGLAP~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg} equations.
@@ -100,14 +101,14 @@ are calculated by the QCDNUM software~\cite{Botje:2010ay}.
 
 The parametrization used in the PDF fit is based on the parametrization used for
 the HERAPDF~2.0 determination~\cite{Abramowicz:2015mha}. After including the
-dijet data, a study of the parametrization was performed resulting in a slightly
+dijet data, a study of the parametrization is performed resulting in a slightly
 different parametrization which was found to better describe the included dijet
 data. The most notable difference is the neglection of the negative gluon term.
-No improvement of the fit result was found when including it. This is presumably
-due to the minimum $Q^2$ cut imposed on the DIS data, which was adapted from
+No improvement of the fit result is found when including it. This is presumably
+due to the minimum $Q^2$ cut imposed on the DIS data, which has been adapted from
 $Q^2_\mathrm{min}=\SI{3.5}{\GeVsq}$ to $Q^2_\mathrm{min}=\SI{7.5}{\GeVsq}$
 following a recent PDF study of inclusive jets~\cite{Khachatryan:2014waa}.
-However, this additional term in the parametrization of the gluon PDF was
+However, this additional term in the parametrization of the gluon PDF is
 considered when deriving the parametrization uncertainties.
 
 The parametrization of the PDFs is defined at the starting scale
