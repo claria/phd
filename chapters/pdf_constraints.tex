@@ -10,7 +10,8 @@ determined from fits to experimental data of collider and fixed-target
 experiments. The precise DIS data from the combined measurements of the HERA-I
 and HERA-II run periods\footnote{In the following, the combined HERA-I and
 HERA-II DIS data sets are always referred to as HERA DIS data.} provides the
-base data set since it covers a large range in $x$ and $Q$. By
+base data set since it covers a large range in $x$ and $Q$ of the kinematic
+phase space. By
 including more data from different experiments, which provide constraints in
 additional phase space regions, the precision of the PDFs can be improved. In
 this chapter, the impact of the triple-differential dijet cross section on the
@@ -46,7 +47,7 @@ evaluating the mean and standard deviation from an ensemble of $N$ replicas as
 \end{equation}
 %
 where $\Delta_{\sigma(\mu)}$ and $\Delta_{xf(x,\mu^2)}$ are the standard deviations of the
-dijet cross section and of the PDF with flavor $f$, respectively.
+dijet cross section prediction and of the PDF with flavor $f$, respectively.
 Fig.~\ref{fig:correlation_pdf_xs_gqq} presents the correlation coefficient
 between the dijet cross section and the gluon, u valence quark, and d valence
 quark PDFs for the central region ($\yboost < 1, \ystar < 1$) and the
@@ -97,15 +98,16 @@ are applied where appropriate.
 \xfitter~\cite{Alekhin:2014irh} is an open source framework to fit the PDFs to
 experimental data. The PDF evolution is based
 on the DGLAP~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg} equations.
-To ensure consistency between DIS and dijet cross section calculations, the fits are performed
-at NLO as the latter are only available at this order. The DIS cross sections
+To ensure consistency between the HERA DIS and the dijet cross section calculations, the fits are performed
+at NLO as the latter are only available at that order. The DIS cross sections
 are calculated by the QCDNUM software~\cite{Botje:2010ay}.
 
 The PDF parametrization is based on the  HERAPDF~2.0
 approach~\cite{Abramowicz:2015mha}. After including the dijet data, a
 parametrization study is performed resulting in a slightly different
 parametrization which was found to better describe the included dijet data. The
-most notable difference is the neglection of the negative gluon term.  No
+most notable difference is the neglection of the negative gluon term, a
+supplemental term allowing the gluon PDF to become negative at low $x$. No
 improvement of the fit result is found when including it. This is presumably due
 to the minimum $Q^2$ cut imposed on the DIS data, which has been adapted from
 $Q^2_\mathrm{min}=\SI{3.5}{\GeVsq}$ to $Q^2_\mathrm{min}=\SI{7.5}{\GeVsq}$
@@ -126,7 +128,7 @@ are parametrized as follows:
   x\bar D(x) &= A_{\bar D} x^{B_{\bar D}} (1-x)^{C_{\bar D}}
 \end{align*}
 %
-Actually, not all parameters are fitted. The normalization parameters $A_g$,
+Actually, not all of those parameters are fitted. The normalization parameters $A_g$,
 $A_{u_{v}}$ and $A_{d_{v}}$ are calculated using the QCD sum rules. $B_{\bar
 U}=B_{\bar D}$ and $A_{\bar U} = A_{\bar D}(1-f_s)$ ensure the same
 normalization for the $\bar u$ and $\bar d$ PDF for the $x \rightarrow 0$
@@ -153,7 +155,7 @@ Fig.~\ref{fig:eigenvector_basis_set}.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=1.0\textwidth]{figures/pdf_constraints/hessianmethod.pdf}
+  \includegraphics[width=0.8\textwidth]{figures/pdf_constraints/hessianmethod.pdf}
   \caption[Transformation of the parameter basis to the eigenvector basis]
     {Transformation from the original parameter basis to the orthonormal
     eigenvector basis. The uncertainty of the PDFs can be propagated to a
@@ -176,7 +178,7 @@ $\Delta X_{\mathrm{exp}}^+$ and $\Delta X_{\mathrm{exp}}^-$ on a quantity $X$ ar
 \end{align*}
 %
 where $X_0$ describes the central prediction and $X_i^{\mathrm{up}}$ and
-$X_i^{\mathrm{dn}}$ denote the result using the upwards and downwards variation of
+$X_i^{\mathrm{dn}}$ denote the result using the upwards and downwards variations of
 the eigenvector $i$ of the $N_{\mathrm{EV}}$ eigenvectors in the PDF
 set. $X$ may be a cross section calculation or the PDFs themselves.
 
@@ -360,8 +362,8 @@ experiments.
 
 
 The resulting PDFs for the gluon, u valence, d valence and sea quark for a fit
-with and without the CMS dijet data are shown next to each other in the
-Figs.~\ref{fig:pdfconstraints:split:gluonqsea:19}--\ref{fig:pdfconstraints:split:dvaluval:19}
+with and without the CMS dijet data are shown next to each other in
+Fig.~\ref{fig:pdfconstraints:split:gluonqsea:19} and Fig.~\ref{fig:pdfconstraints:split:dvaluval:19}
 with a breakdown of the three sources of uncertainty. A direct comparison of
 the PDFs with total uncertainties is presented in Fig.~\ref{fig:pdfconstraints:direct:19}.
 The uncertainty breakdown in Fig.~\ref{fig:pdfconstraints:split:gluonqsea:19} reveals the large impact of
@@ -378,16 +380,16 @@ The changes of the sea quark PDF, defined as $x\Sigma=2(x\overline U + x
 \overline D + x\overline s)$, are much less pronounced.
 The experimental and model uncertainties are reduced in the high-$x$ region.
 The u valence and d valence quark PDFs also show uncertainty reductions over
-a large $x$-range, most pronounced at high $x$. The decrease of the experimental uncertainty is
+a large $x$ range, most pronounced at high $x$. The decrease of the experimental uncertainty is
 sizable for high $x$, while the main differences result from the parametrization
 uncertainty, which is significant for the fit with HERA DIS data alone, but
 almost completely vanishes in the fit including the CMS dijet data.
 
-In contrast to the previous figures, Fig.~\ref{fig:pdfconstraints:direct:10000}
+Figure~\ref{fig:pdfconstraints:direct:10000} in the appendix
 shows the PDFs after the evolution to the scale $Q^2 = \SI{10000}{\GeV
 \square}$, which is close to the scale of the measurement. The PDFs exhibit the same
-features compared to the starting scale $Q_0$, but even more pronounced.
-Finally, an overview of the gluon, sea, u valence and d valence quark PDFs is
+features compared to the starting scale $Q_0$, but the uncertainty reduction is
+even more pronounced. Finally, an overview of the gluon, sea, u valence and d valence quark PDFs is
 given in Fig.~\ref{fig:pdfconstraints:overview:19}. 
 
 The large impact of the dijet data on the PDFs is partly caused by the limited
