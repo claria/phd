@@ -25,7 +25,7 @@ concludes the measurement.
 Finally, the comparison of unfolded data to NLO predictions is presented in
 Sec.~\ref{sec:nlo_comparisons}. Furthermore, comparisons to NLO calculations
 complemented with matched parton showers, as made possible with Powheg and the
-recently released Herwig~7 MC event generator, are shown.
+recently released Herwig~7 MC event generators, are shown.
 
 \section{Cross Section Definition}
 
@@ -41,8 +41,8 @@ cross section, which is defined as
 where $N$ denotes the number of dijet events, $\mathcal{L}_{\mathrm{int, eff}}$
 the effective integrated luminosity and $\epsilon$ the product of trigger and
 event selection efficiencies which are greater than 99\% in the measured phase
-space. The cross sections from background processes like $t\bar t$ production is
-multiple orders of magnitude smaller so that those contributions can be
+space. The cross sections of background processes like $t\bar t$ production are
+multiple orders of magnitude smaller so that their contributions can be
 neglected in this analysis. The cross section is normalized by the widths of
 the \ptavg, \ystar, and \yboost bins. 
 
@@ -183,7 +183,7 @@ account when the original spectrum is reconstructed.
     \caption[Single jet trigger paths]{List of all single jet trigger paths used in the analysis. Each
         trigger is employed in a mutually exclusive phase space region in
         \ptavg, in which the trigger exhibits an efficiency larger than 99\%. The column
-        $p_{\mathrm{T},99\%}$ indicates the value at which each trigger reaches
+        $p_{\mathrm{T,avg},99\%}$ indicates the value at which each trigger reaches
         that value. The last column reports the effective luminosity seen by
         each trigger. This number, divided by the total integrated luminosity of
         \SI{19.71}{\fbinv}, gives the effective prescale applied on a trigger
@@ -191,14 +191,15 @@ account when the original spectrum is reconstructed.
     \label{tab:triggers}
     \begin{tabular}{lcccc}
         \toprule
-        \textbf{Trigger path}        & \textbf{L1 threshold} & \textbf{HLT threshold} & \boldmath$p_{\mathrm{T},99\%}$ & \textbf{Eff. Lumi} \\
+        \textbf{Trigger path}        & \textbf{L1 threshold} & \textbf{HLT
+        threshold} & \boldmath$p_{\mathrm{T,avg},99\%}$ & \textbf{Eff. Lumi} \\
                                      & \si{\GeV}             & \si{\GeV}              & \si{\GeV}              & \si{\fbinv}\\\midrule
-                      HLT\_PFJet40   & 16                    & 40                     & --                     & \num{0.8e-4}\\
-                      HLT\_PFJet80   & 36                    & 80                     & 123                    & \num{0.21e-2}\\
-                      HLT\_PFJet140  & 68                    & 140                    & 192                    & \num{0.56e-1}\\
-                      HLT\_PFJet200  & 92                    & 200                    & 263                    & \num{0.26}\\
-                      HLT\_PFJet260  & 128                   & 260                    & 353                    & \num{1.06}\\
-                      HLT\_PFJet320  & 128                   & 320                    & 412                    & \num{19.71}\\
+                                     \textsc{HLT\_PFJet40}   & 16                    & 40                     & ---                     & \num{0.8e-4}\\
+                                     \textsc{HLT\_PFJet80}   & 36                    & 80                     & 123                    & \num{0.21e-2}\\
+                                     \textsc{HLT\_PFJet140}  & 68                    & 140                    & 192                    & \num{0.56e-1}\\
+                                     \textsc{HLT\_PFJet200}  & 92                    & 200                    & 263                    & \num{0.26}\\
+                                     \textsc{HLT\_PFJet260}  & 128                   & 260                    & 353                    & \num{1.06}\\
+                                     \textsc{HLT\_PFJet320}  & 128                   & 320                    & 412                    & \num{19.71}\\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -331,7 +332,7 @@ Fig.~\ref{fig:mc:met_fraction},
 
 \subsection{Jet Identification}
 
-The jet identification criteria (jet ID) rejects noise and noise-enhanced jets
+The jet identification criteria (jet ID) reject noise and noise-enhanced jets
 while all real jets are kept. The jet ID is not applied per event, but each jet
 is accepted or removed from the list of valid jets. The algorithm works on
 reconstructed jets using information of the clustered particle candidates.
