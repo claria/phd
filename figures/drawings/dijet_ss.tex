@@ -1,5 +1,6 @@
 \documentclass[tikz,border=10pt]{standalone}
 \usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
 \begin{document}
 
 \newcommand{\basejet}[1][]{
@@ -22,8 +23,8 @@
 
 \begin{tikzpicture}
 
-  \draw[thick,->] (-2,0) -- (-0.1,0);
-  \draw[thick,->] (2,0) -- (0.1,0);
+  \draw[thick,-{latex[length=3mm]}] (-1.5,0) -- (-0.1,0);
+  \draw[thick,-{latex[length=3mm]}] (0.8,0) -- (0.2,0);
 
   \begin{scope}[shift={(0.0,0.0)}]
     \begin{scope}[rotate=-60]
